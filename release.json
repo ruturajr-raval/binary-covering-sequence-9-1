@@ -1,5 +1,5 @@
 {
-  "version": "0.1.0",
+  "version": "0.1.1",
   "release_date": "2026-09-02",
   "artifact_status": "reproducible_scoped_result_and_search_benchmark",
   "supported_claim": "The exact maximum overlap between a 70-bit cyclic binary sequence and the retained 64-edge common backbone is 61. The repository also independently verifies the reported 71-bit certificate, retains proof-checked local SAT exclusions, and separately labels bounded solver results that have no proof traces.",

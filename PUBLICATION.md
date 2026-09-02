@@ -1,10 +1,11 @@
-# Release v0.1.0
+# Release v0.1.1
 
 ## What Was Done
 
-This release independently verifies the reported 71-bit `(9,1)` covering
-sequence, retains exact and heuristic search evidence for length 70, and
-establishes an exact finite overlap result for one fixed 64-edge backbone.
+This archival patch refreshes the release and citation metadata after Zenodo
+integration was enabled. It republishes the checked 71-bit certificate, exact
+and heuristic length-70 evidence, and fixed-backbone result without changing
+the mathematical claims or retained evidence.
 
 ## Supported Claim
 
@@ -52,5 +53,5 @@ oracles, but not yet a second full-scale implementation.
 
 ## Citation
 
-Citation metadata is provided in `CITATION.cff`. The release metadata in
-`.zenodo.json` is prepared for durable archival.
+Citation metadata is provided in `CITATION.cff`, and `.zenodo.json` supplies
+the metadata for durable release archival.
