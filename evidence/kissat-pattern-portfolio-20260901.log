@@ -1,0 +1,31 @@
+Experiment: unrestricted length-70 pattern encoding
+Date: 2026-09-01
+Machine: Apple M4 Pro, arm64, macOS
+
+CNF:
+  variables: 36422
+  clauses: 359461
+  sha256: 937bfc749966df7acc75244ebf90f1f3e2eab53cfecbf07d11f91801b4bf8a76
+
+Solver:
+  name: Kissat 4.0.4
+  source_commit: 8af8e56f174b778aef3aa45af9f739b2a5f492c2
+  binary_sha256: fa22d33082fdb4ec40f949bf2a73776d7a6f638dfda2da119084d108cb1cbbdc
+  compiler: Apple clang 21.0.0
+  flags: -W -Wall -O3 -DNDEBUG -DQUIET
+
+Command template:
+  kissat --sat --seed=SEED --time=300 l9-r1-70-pattern.cnf
+
+Results:
+  seed 0: UNKNOWN
+  seed 1: UNKNOWN
+  seed 2: UNKNOWN
+  seed 3: UNKNOWN
+  seed 4: UNKNOWN
+  seed 5: UNKNOWN
+  seed 6: UNKNOWN
+  seed 7: UNKNOWN
+
+The 300-second limit is wall-clock time. No model or proof was produced.
+These timeouts establish neither existence nor impossibility.

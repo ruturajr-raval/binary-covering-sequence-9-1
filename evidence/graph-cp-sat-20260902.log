@@ -1,0 +1,210 @@
+Experiment: connected de Bruijn graph CP-SAT search
+Date: 2026-09-02
+Machine: Apple M4 Pro, arm64, macOS
+Solver: OR-Tools CP-SAT 9.15.6755
+
+Purpose:
+  Search for a valid cyclic binary radius-1 covering sequence through its
+  order-8 de Bruijn edge multiplicities. Decode every feasible count vector
+  as an Euler circuit and verify the resulting bit sequence independently of
+  the solver's auxiliary variables.
+
+Final implementation:
+  source: tools/flow_cp_sat.py
+  source_sha256: 21490b3a8cf0d43d0579a3f879c7482f415edc7fd779a1a227361ed4b2e06f54
+  tests: tests/test_flow_cp_sat.py
+  tests_sha256: 44698937f03500b199c475025c21d757ba6f19e239f52b7cfac8a37326d54cc9
+  model_note: docs/FLOW_MODEL.md
+  model_note_sha256: 316f42de4eba67366a60539fc3cdc3b1844e539a54f2d46f1ea9271cd5a44b2e
+  requirements: requirements-solver.txt
+  requirements_sha256: 672c02ea3f723bea4a8e39643caab8c57c513418c812767096ebed55224240cf
+
+Exact formulations:
+  flow:
+    single-commodity root flow on selected edges
+  tree:
+    selected parent arcs with strictly increasing root depth
+  cuts:
+    repeated solution, component detection, and sound entering-edge cuts
+
+Strengthening:
+  disjoint zero-covering anchor cases
+  exact support-size stages
+  at-most-length constructive mode
+  explicit minimum-support constraint
+  radius-1 Van Wee inequalities
+  Hamming-weight layer inequalities
+  repeated-edge support-defect budget
+
+Validation:
+  solver tests: 15 passed
+  small-instance feasibility: matched direct sequence enumeration
+  disconnected balanced-loop regression: passed
+  tight repeat-defect regression: passed
+  minimum-support enforcement regression: passed
+  Hamming-layer constraint regression: passed
+  full 512-edge order-9 de Bruijn extraction: passed
+  incomplete six-gap seed reconstruction: passed
+
+Retained raw artifacts:
+  directory: evidence/graph-cp-sat
+  Every status and count reported below is present in an individual retained
+  JSON output. Decoded positive-control sequences are retained beside them.
+
+Length-71 positive controls:
+  common parameters:
+    n=9, radius=1, length=71, support_size=71, minimum_support=62
+    partitioned anchor=16, one worker
+  flow:
+    result: OPTIMAL
+    independently decoded and verified: valid, 512 of 512 words covered
+    artifact: evidence/graph-cp-sat/positive-length71-flow.json
+    artifact_sha256: 05d711cea45793e8176c486f8e76d8f30cc9c00e9cd80ca10e93d548376bf915
+    sequence: evidence/graph-cp-sat/positive-length71-flow-sequence.txt
+    sequence_sha256: 388f46791739970ff1a9d1352908d0a6da7d058b089bf3052e1b7212009c4aa3
+  tree:
+    result: OPTIMAL
+    independently decoded and verified: valid, 512 of 512 words covered
+    artifact: evidence/graph-cp-sat/positive-length71-tree.json
+    artifact_sha256: 819b582e4c5b365adf22147c5546a7bfb1e58fda11fc0b7a332813077e3617e4
+    sequence: evidence/graph-cp-sat/positive-length71-tree-sequence.txt
+    sequence_sha256: 388f46791739970ff1a9d1352908d0a6da7d058b089bf3052e1b7212009c4aa3
+  cuts:
+    result: OPTIMAL
+    independently decoded and verified: valid, 512 of 512 words covered
+    artifact: evidence/graph-cp-sat/positive-length71-cuts.json
+    artifact_sha256: 86784962d693fe9f423a43dee0f9e2b21fa898c229d3a2c764d3cd7c379b9b81
+    sequence: evidence/graph-cp-sat/positive-length71-cuts-sequence.txt
+    sequence_sha256: 388f46791739970ff1a9d1352908d0a6da7d058b089bf3052e1b7212009c4aa3
+
+Repeated-edge positive control:
+  parameters: n=2, radius=1, length=5, support_size=3
+  connectivity: cuts
+  repeat-defect constraints: enabled
+  result: OPTIMAL
+  decoded length: 5
+  decoded distinct windows: 3
+  maximum edge multiplicity: 3
+  independently verified: valid, 4 of 4 words covered
+  artifact: evidence/graph-cp-sat/positive-repeated.json
+  artifact_sha256: c079ed9e0a1e76ecb0d814af2693eb110d2ffd9697a487145c27da77fc83ed0a
+  sequence: evidence/graph-cp-sat/positive-repeated-sequence.txt
+  sequence_sha256: 894b7537ad80aed1092a724221d360f14535efd5f1f65aacc48b8e2a87b36258
+
+Production portfolio - disjoint distinct support at every length at most 70:
+  source_sha256: 21490b3a8cf0d43d0579a3f879c7482f415edc7fd779a1a227361ed4b2e06f54
+  connectivity: cuts
+  anchors: 0,1,2,4,8,16,32,64,128,256
+  partitioned anchors: true
+  distinct windows: true
+  length mode: at most 70
+  minimum support: 62
+  Van Wee constraints: enabled
+  Hamming-layer constraints: enabled
+  workers per case: 1
+  time limit per case: 300 seconds
+  seed: 1
+  results: 9 UNKNOWN, 1 INFEASIBLE
+  aggregate branches: 102441874
+  aggregate conflicts: 1315691
+  aggregate solver wall seconds: 2700.045273
+
+  anchor 0:
+    status: UNKNOWN
+    branches: 13090745
+    conflicts: 152304
+    artifact: evidence/graph-cp-sat/distinct-at-most70-anchor-0.json
+    artifact_sha256: bccb54c8e35496ff2f024f452f02b8187824a3215e993d2d965623de3f14d71c
+  anchor 1:
+    status: UNKNOWN
+    branches: 9380058
+    conflicts: 98160
+    artifact: evidence/graph-cp-sat/distinct-at-most70-anchor-1.json
+    artifact_sha256: dd8fb6522cf994e29e4a8914999e6ab9566b94c30c924b3b090c525bf068f812
+  anchor 2:
+    status: UNKNOWN
+    branches: 12116955
+    conflicts: 146545
+    artifact: evidence/graph-cp-sat/distinct-at-most70-anchor-2.json
+    artifact_sha256: fc65319944f7ee42b73e43ff586857582c1f51a4a323232078bb563c96117a2e
+  anchor 4:
+    status: UNKNOWN
+    branches: 10760674
+    conflicts: 157290
+    artifact: evidence/graph-cp-sat/distinct-at-most70-anchor-4.json
+    artifact_sha256: f18d43b8d68f6ab4d7493db157ceb512e5ca746a581bdf2f13822e82408b2d93
+  anchor 8:
+    status: UNKNOWN
+    branches: 10425815
+    conflicts: 153543
+    artifact: evidence/graph-cp-sat/distinct-at-most70-anchor-8.json
+    artifact_sha256: d5cd2ed9ed0429f2799a4735ffc3a6af91d9162816aaa70baad5dd1126ee828c
+  anchor 16:
+    status: UNKNOWN
+    branches: 11071125
+    conflicts: 145673
+    artifact: evidence/graph-cp-sat/distinct-at-most70-anchor-16.json
+    artifact_sha256: 9d55999b5c38304620677d48b0a64dba0b3ca12830434a0bc123f92712e66d6e
+  anchor 32:
+    status: UNKNOWN
+    branches: 12087130
+    conflicts: 158644
+    artifact: evidence/graph-cp-sat/distinct-at-most70-anchor-32.json
+    artifact_sha256: 0df7d03aba01ee8fec3e22be92aad75e7b748bb07b98389e56e58875bb8b22e5
+  anchor 64:
+    status: UNKNOWN
+    branches: 12289344
+    conflicts: 146143
+    artifact: evidence/graph-cp-sat/distinct-at-most70-anchor-64.json
+    artifact_sha256: c609c7ab942c293e13e7531159b8ec424d71ede29f0b5d13fa2812cc2dd1990e
+  anchor 128:
+    status: UNKNOWN
+    branches: 11220028
+    conflicts: 157389
+    artifact: evidence/graph-cp-sat/distinct-at-most70-anchor-128.json
+    artifact_sha256: 80303c7ac1b75bd0dabd45b5f6199a93a80cfbcc70f74b74d8289eaeff95347b
+  anchor 256:
+    status: INFEASIBLE
+    branches: 0
+    conflicts: 0
+    artifact: evidence/graph-cp-sat/distinct-at-most70-anchor-256.json
+    artifact_sha256: 1584369b8486de45a7908aec13e4a08d0124a19d9542bed3a5f4a7db7305d4a6
+
+Anchor-256 scope:
+  In the disjoint partition, anchor 256 forces all earlier words in
+  B_1(0^9) absent. Edge 256 enters vertex 0, while both outgoing edges 0 and 1
+  are absent, contradicting balance. This excludes only that partitioned
+  distinct-support anchor case.
+
+Production stage - one duplicate:
+  source_sha256: 21490b3a8cf0d43d0579a3f879c7482f415edc7fd779a1a227361ed4b2e06f54
+  parameters: n=9, radius=1, exact length=70, support_size=69
+  minimum support: 62
+  partitioned anchor: 64
+  connectivity: cuts
+  repeat-defect constraints: enabled
+  workers: 4
+  time limit: 300 seconds
+  seed: 1
+  result: UNKNOWN
+  branches: 1935091
+  conflicts: 37340
+  solver wall seconds: 300.00418
+  artifact: evidence/graph-cp-sat/support69-anchor-64.json
+  artifact_sha256: a2564896e1de3f49583227b83fa644d4c31bbbe6b9d21043f887c34ad799609a
+
+Evidence policy:
+  Earlier development runs used intermediate source snapshots. They informed
+  model design but are not used as final evidence here. The retained
+  production outputs above all use the recorded final source hash.
+
+Conclusion:
+  No sequence of length at most 70 was found.
+  No global impossibility proof was produced.
+  UNKNOWN results are timeouts, not evidence of unsatisfiability.
+  The one INFEASIBLE status concerns only a single disjoint distinct-support
+  anchor case and does not change the public bound.
+  The support-69 run covers one repeated-window stage and one anchor partition
+  only. The remaining support sizes and anchors are unresolved.
+  A lower bound of 71 would require complete proof evidence for every
+  admissible length from 62 through 70, including all repeated-window cases.

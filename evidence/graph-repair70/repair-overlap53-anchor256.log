@@ -1,0 +1,51 @@
+{
+  "anchor_edge": 256,
+  "base_support_report": {
+    "balanced": true,
+    "component_count": 5,
+    "component_edge_counts": [
+      1,
+      1,
+      4,
+      4,
+      60
+    ],
+    "covered_words": 512,
+    "distinct_edges": 70,
+    "uncovered_words": []
+  },
+  "base_support_sha256": "83814d9a9e1a1964b09f17c590bea4f5fcd9a234cd1846a7594fa863bea18a07",
+  "base_support_size": 70,
+  "binary_propagations": 0,
+  "branches": 0,
+  "conflicts": 0,
+  "connectivity_mode": "tree",
+  "deterministic_limit": null,
+  "deterministic_time": 0.0,
+  "excluded_overlap_at_least": 53,
+  "flow_source_sha256": "90cab0d0bcd3b8ad6c770249e78cf463fa9153abee2120d70ceaa54e99747ce3",
+  "integer_propagations": 0,
+  "length": 70,
+  "lp_iterations": 0,
+  "maximize_overlap": false,
+  "maximum_replacements": 17,
+  "minimum_overlap": 53,
+  "model_constraints": 4922,
+  "model_variables": 2052,
+  "n": 9,
+  "partition_anchor": true,
+  "radius": 1,
+  "repair_source_sha256": "1e1ee62261d9c02fdbe0e05ff268f21fcddc9b9eeff01c119853ec81300803bf",
+  "required_replacements_at_least": 18,
+  "restarts": 0,
+  "seed": 58,
+  "solver": "OR-Tools CP-SAT",
+  "solver_version": "9.15.6755",
+  "status": "INFEASIBLE",
+  "time_limit": 30.0,
+  "wall_seconds": 0.004179,
+  "workers": 1
+}
+real 0.42
+user 0.26
+sys 0.07

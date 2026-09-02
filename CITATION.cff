@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "If you use this software or its retained evidence, please cite the repository release."
+title: "Binary Covering Sequence (9,1) Verification and Exact Search"
+type: software
+abstract: "Verification and exact-search toolkit with a checked 71-bit certificate and an exact finite overlap result for one fixed 64-edge backbone. No new bound on L(9,1) is claimed."
+authors:
+  - family-names: Raval
+    given-names: Ruturaj R
+repository-code: "https://github.com/ruturajr-raval/binary-covering-sequence-9-1"
+license: MIT
+version: 0.1.0
+date-released: 2026-09-02

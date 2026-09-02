@@ -1,0 +1,7 @@
+ranked_starts=1 best_uncovered=6 best_distance_deficit=6 best_singletons=332
+best worker=0 seed=11400714819323198486 uncovered=6 distance_deficit=6 singletons=332
+ejection worker=0 chains=500 evaluations=110835857 beam_states=616853 accepted_endpoints=278 exploration_chains=125 max_origin_distance=49 distant_six_gap_visits=67 distinct_distant_six_gap_states=8 distant_archive_capped=0 best_distant_uncovered=6 best_distant_distance=44
+found=false best_uncovered=6 best_distance_deficit=6 best_singletons=332 worker=0 seed=11400714819323198486
+real 149.60
+user 148.50
+sys 0.82

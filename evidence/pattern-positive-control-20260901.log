@@ -1,0 +1,28 @@
+Experiment: length-71 pattern-encoding positive control
+Date: 2026-09-01
+Machine: Apple M4 Pro, arm64, macOS
+
+Purpose:
+  Constrain the exact pattern encoding to the independently verified 71-bit
+  baseline, solve it, decode the DIMACS model, and verify the recovered file.
+
+CNF:
+  variables: 37006
+  clauses: 364686
+  sha256: c1b27b7d77d76696b00b5edd8ed26ff7ff673de4bdfe8887ae14b7df6fd69f44
+
+Solver:
+  name: Kissat 4.0.4
+  source_commit: 8af8e56f174b778aef3aa45af9f739b2a5f492c2
+  result: SATISFIABLE
+  exit_code: 10
+
+Decoded sequence:
+  byte_for_byte_match_with_baseline: true
+  normalized_sha256: 40c757662f703fc481883fddb8d359f8e0fe685207ac4cba1685a205a2208608
+
+Independent verification:
+  Python: valid, 512 of 512 words covered
+  C++: valid, 512 of 512 words covered
+  distinct_windows: 71
+  uncovered_words: 0

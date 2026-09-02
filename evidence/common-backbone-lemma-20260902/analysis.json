@@ -1,0 +1,2359 @@
+{
+  "backbone": {
+    "component_edges": [
+      [
+        102,
+        204,
+        307,
+        409
+      ],
+      [
+        6,
+        13,
+        16,
+        27,
+        32,
+        43,
+        54,
+        61,
+        64,
+        75,
+        86,
+        93,
+        109,
+        112,
+        123,
+        129,
+        138,
+        151,
+        156,
+        167,
+        172,
+        177,
+        186,
+        199,
+        209,
+        218,
+        225,
+        234,
+        247,
+        252,
+        259,
+        264,
+        277,
+        286,
+        293,
+        302,
+        312,
+        325,
+        334,
+        339,
+        344,
+        355,
+        360,
+        373,
+        382,
+        388,
+        399,
+        402,
+        418,
+        425,
+        436,
+        447,
+        450,
+        457,
+        468,
+        479,
+        484,
+        495,
+        498,
+        505
+      ]
+    ],
+    "component_vertices": [
+      [
+        51,
+        102,
+        153,
+        204
+      ],
+      [
+        3,
+        6,
+        8,
+        13,
+        16,
+        21,
+        27,
+        30,
+        32,
+        37,
+        43,
+        46,
+        54,
+        56,
+        61,
+        64,
+        69,
+        75,
+        78,
+        83,
+        86,
+        88,
+        93,
+        99,
+        104,
+        109,
+        112,
+        117,
+        123,
+        126,
+        129,
+        132,
+        138,
+        143,
+        146,
+        151,
+        156,
+        162,
+        167,
+        169,
+        172,
+        177,
+        180,
+        186,
+        191,
+        194,
+        199,
+        201,
+        209,
+        212,
+        218,
+        223,
+        225,
+        228,
+        234,
+        239,
+        242,
+        247,
+        249,
+        252
+      ]
+    ],
+    "components_are_directed_cycles": true,
+    "contains_loops": false,
+    "file_sha256": "b5647fc146bde53cbbf896784f51c1006e7764c21a216d76939169711fa35c4d",
+    "path": "data/candidates/l9-r1-common-backbone-64.json",
+    "report": {
+      "balanced": true,
+      "component_count": 2,
+      "component_edge_counts": [
+        4,
+        60
+      ],
+      "covered_words": 512,
+      "distinct_edges": 64,
+      "uncovered_words": []
+    },
+    "size": 64,
+    "support_sha256": "8643ddb5e6a35c54b91f8c152b945e4a82bb0c658b8e81865737bf2087849821"
+  },
+  "baseline": {
+    "file_sha256": "40c757662f703fc481883fddb8d359f8e0fe685207ac4cba1685a205a2208608",
+    "length": 71,
+    "path": "data/baseline/l9-r1-71.txt",
+    "support_sha256": "77260f847e6d4fee57d59cc66664dde1462bb7842521dc5c6117a159db30a8ce"
+  },
+  "consequences": [
+    "Every connected balanced distinct-edge support containing the 64-edge backbone has at least 71 edges.",
+    "Every connected nonnegative integral circulation dominating the 64-edge backbone has total multiplicity at least 71.",
+    "Every connected nonnegative integral circulation of total multiplicity 70 uses at most 61 distinct backbone edges.",
+    "The overlap bound 61 is attained by the retained cyclic witness."
+  ],
+  "derived_bounds": {
+    "all_backbone_edges_excluded": true,
+    "candidate_length": 70,
+    "double_omission_excluded": true,
+    "maximum_backbone_overlap_for_candidate": 61,
+    "minimum_distinct_support_size_when_containing_backbone": 71,
+    "minimum_total_multiplicity_when_dominating_backbone": 71,
+    "single_omission_excluded": true
+  },
+  "double_omission_residuals": {
+    "active_omission_cases": [
+      {
+        "combined_component_count_histogram": {
+          "2": 1
+        },
+        "distinct_path_flows": 1,
+        "distinct_residual_flows": 1,
+        "omitted_edges": [
+          6,
+          259
+        ],
+        "raw_exact_decompositions": 1,
+        "sink_vertices": [
+          6
+        ],
+        "source_vertices": [
+          129
+        ]
+      },
+      {
+        "combined_component_count_histogram": {
+          "3": 2
+        },
+        "distinct_path_flows": 1,
+        "distinct_residual_flows": 2,
+        "omitted_edges": [
+          13,
+          27
+        ],
+        "raw_exact_decompositions": 2,
+        "sink_vertices": [
+          27
+        ],
+        "source_vertices": [
+          6
+        ]
+      },
+      {
+        "combined_component_count_histogram": {
+          "3": 1
+        },
+        "distinct_path_flows": 1,
+        "distinct_residual_flows": 1,
+        "omitted_edges": [
+          13,
+          450
+        ],
+        "raw_exact_decompositions": 1,
+        "sink_vertices": [
+          13,
+          194
+        ],
+        "source_vertices": [
+          6,
+          225
+        ]
+      },
+      {
+        "combined_component_count_histogram": {
+          "4": 3,
+          "5": 1
+        },
+        "distinct_path_flows": 1,
+        "distinct_residual_flows": 4,
+        "omitted_edges": [
+          16,
+          325
+        ],
+        "raw_exact_decompositions": 4,
+        "sink_vertices": [
+          16,
+          69
+        ],
+        "source_vertices": [
+          8,
+          162
+        ]
+      },
+      {
+        "combined_component_count_histogram": {
+          "2": 1
+        },
+        "distinct_path_flows": 1,
+        "distinct_residual_flows": 1,
+        "omitted_edges": [
+          27,
+          54
+        ],
+        "raw_exact_decompositions": 1,
+        "sink_vertices": [
+          54
+        ],
+        "source_vertices": [
+          13
+        ]
+      },
+      {
+        "combined_component_count_histogram": {
+          "2": 2,
+          "3": 10,
+          "4": 4
+        },
+        "distinct_path_flows": 3,
+        "distinct_residual_flows": 16,
+        "omitted_edges": [
+          43,
+          86
+        ],
+        "raw_exact_decompositions": 21,
+        "sink_vertices": [
+          86
+        ],
+        "source_vertices": [
+          21
+        ]
+      },
+      {
+        "combined_component_count_histogram": {
+          "3": 2
+        },
+        "distinct_path_flows": 1,
+        "distinct_residual_flows": 2,
+        "omitted_edges": [
+          43,
+          277
+        ],
+        "raw_exact_decompositions": 2,
+        "sink_vertices": [
+          43
+        ],
+        "source_vertices": [
+          138
+        ]
+      },
+      {
+        "combined_component_count_histogram": {
+          "3": 1
+        },
+        "distinct_path_flows": 1,
+        "distinct_residual_flows": 1,
+        "omitted_edges": [
+          61,
+          498
+        ],
+        "raw_exact_decompositions": 1,
+        "sink_vertices": [
+          61,
+          242
+        ],
+        "source_vertices": [
+          30,
+          249
+        ]
+      },
+      {
+        "combined_component_count_histogram": {
+          "4": 2
+        },
+        "distinct_path_flows": 1,
+        "distinct_residual_flows": 2,
+        "omitted_edges": [
+          75,
+          339
+        ],
+        "raw_exact_decompositions": 2,
+        "sink_vertices": [
+          75,
+          83
+        ],
+        "source_vertices": [
+          37,
+          169
+        ]
+      },
+      {
+        "combined_component_count_histogram": {
+          "2": 1
+        },
+        "distinct_path_flows": 1,
+        "distinct_residual_flows": 1,
+        "omitted_edges": [
+          86,
+          172
+        ],
+        "raw_exact_decompositions": 1,
+        "sink_vertices": [
+          172
+        ],
+        "source_vertices": [
+          43
+        ]
+      },
+      {
+        "combined_component_count_histogram": {
+          "2": 3
+        },
+        "distinct_path_flows": 2,
+        "distinct_residual_flows": 3,
+        "omitted_edges": [
+          102,
+          204
+        ],
+        "raw_exact_decompositions": 3,
+        "sink_vertices": [
+          204
+        ],
+        "source_vertices": [
+          51
+        ]
+      },
+      {
+        "combined_component_count_histogram": {
+          "2": 1
+        },
+        "distinct_path_flows": 1,
+        "distinct_residual_flows": 1,
+        "omitted_edges": [
+          102,
+          307
+        ],
+        "raw_exact_decompositions": 1,
+        "sink_vertices": [
+          102
+        ],
+        "source_vertices": [
+          153
+        ]
+      },
+      {
+        "combined_component_count_histogram": {
+          "2": 8,
+          "3": 22,
+          "4": 16,
+          "5": 2
+        },
+        "distinct_path_flows": 6,
+        "distinct_residual_flows": 48,
+        "omitted_edges": [
+          129,
+          259
+        ],
+        "raw_exact_decompositions": 63,
+        "sink_vertices": [
+          3
+        ],
+        "source_vertices": [
+          64
+        ]
+      },
+      {
+        "combined_component_count_histogram": {
+          "3": 1
+        },
+        "distinct_path_flows": 1,
+        "distinct_residual_flows": 1,
+        "omitted_edges": [
+          151,
+          344
+        ],
+        "raw_exact_decompositions": 1,
+        "sink_vertices": [
+          88,
+          151
+        ],
+        "source_vertices": [
+          75,
+          172
+        ]
+      },
+      {
+        "combined_component_count_histogram": {
+          "2": 1
+        },
+        "distinct_path_flows": 1,
+        "distinct_residual_flows": 1,
+        "omitted_edges": [
+          156,
+          334
+        ],
+        "raw_exact_decompositions": 1,
+        "sink_vertices": [
+          156
+        ],
+        "source_vertices": [
+          167
+        ]
+      },
+      {
+        "combined_component_count_histogram": {
+          "3": 1
+        },
+        "distinct_path_flows": 1,
+        "distinct_residual_flows": 1,
+        "omitted_edges": [
+          167,
+          360
+        ],
+        "raw_exact_decompositions": 1,
+        "sink_vertices": [
+          104,
+          167
+        ],
+        "source_vertices": [
+          83,
+          180
+        ]
+      },
+      {
+        "combined_component_count_histogram": {
+          "4": 2
+        },
+        "distinct_path_flows": 1,
+        "distinct_residual_flows": 2,
+        "omitted_edges": [
+          172,
+          436
+        ],
+        "raw_exact_decompositions": 2,
+        "sink_vertices": [
+          172,
+          180
+        ],
+        "source_vertices": [
+          86,
+          218
+        ]
+      },
+      {
+        "combined_component_count_histogram": {
+          "2": 1
+        },
+        "distinct_path_flows": 1,
+        "distinct_residual_flows": 1,
+        "omitted_edges": [
+          177,
+          355
+        ],
+        "raw_exact_decompositions": 1,
+        "sink_vertices": [
+          99
+        ],
+        "source_vertices": [
+          88
+        ]
+      },
+      {
+        "combined_component_count_histogram": {
+          "4": 3,
+          "5": 1
+        },
+        "distinct_path_flows": 1,
+        "distinct_residual_flows": 4,
+        "omitted_edges": [
+          186,
+          495
+        ],
+        "raw_exact_decompositions": 4,
+        "sink_vertices": [
+          186,
+          239
+        ],
+        "source_vertices": [
+          93,
+          247
+        ]
+      },
+      {
+        "combined_component_count_histogram": {
+          "2": 1
+        },
+        "distinct_path_flows": 1,
+        "distinct_residual_flows": 1,
+        "omitted_edges": [
+          204,
+          409
+        ],
+        "raw_exact_decompositions": 1,
+        "sink_vertices": [
+          153
+        ],
+        "source_vertices": [
+          102
+        ]
+      },
+      {
+        "combined_component_count_histogram": {
+          "3": 2
+        },
+        "distinct_path_flows": 1,
+        "distinct_residual_flows": 2,
+        "omitted_edges": [
+          234,
+          468
+        ],
+        "raw_exact_decompositions": 2,
+        "sink_vertices": [
+          212
+        ],
+        "source_vertices": [
+          117
+        ]
+      },
+      {
+        "combined_component_count_histogram": {
+          "2": 8,
+          "3": 22,
+          "4": 16,
+          "5": 2
+        },
+        "distinct_path_flows": 6,
+        "distinct_residual_flows": 48,
+        "omitted_edges": [
+          252,
+          382
+        ],
+        "raw_exact_decompositions": 63,
+        "sink_vertices": [
+          252
+        ],
+        "source_vertices": [
+          191
+        ]
+      },
+      {
+        "combined_component_count_histogram": {
+          "2": 1
+        },
+        "distinct_path_flows": 1,
+        "distinct_residual_flows": 1,
+        "omitted_edges": [
+          252,
+          505
+        ],
+        "raw_exact_decompositions": 1,
+        "sink_vertices": [
+          249
+        ],
+        "source_vertices": [
+          126
+        ]
+      },
+      {
+        "combined_component_count_histogram": {
+          "2": 3
+        },
+        "distinct_path_flows": 2,
+        "distinct_residual_flows": 3,
+        "omitted_edges": [
+          307,
+          409
+        ],
+        "raw_exact_decompositions": 3,
+        "sink_vertices": [
+          51
+        ],
+        "source_vertices": [
+          204
+        ]
+      },
+      {
+        "combined_component_count_histogram": {
+          "2": 1
+        },
+        "distinct_path_flows": 1,
+        "distinct_residual_flows": 1,
+        "omitted_edges": [
+          339,
+          425
+        ],
+        "raw_exact_decompositions": 1,
+        "sink_vertices": [
+          83
+        ],
+        "source_vertices": [
+          212
+        ]
+      },
+      {
+        "combined_component_count_histogram": {
+          "2": 2,
+          "3": 10,
+          "4": 4
+        },
+        "distinct_path_flows": 3,
+        "distinct_residual_flows": 16,
+        "omitted_edges": [
+          425,
+          468
+        ],
+        "raw_exact_decompositions": 21,
+        "sink_vertices": [
+          169
+        ],
+        "source_vertices": [
+          234
+        ]
+      },
+      {
+        "combined_component_count_histogram": {
+          "2": 1
+        },
+        "distinct_path_flows": 1,
+        "distinct_residual_flows": 1,
+        "omitted_edges": [
+          457,
+          484
+        ],
+        "raw_exact_decompositions": 1,
+        "sink_vertices": [
+          201
+        ],
+        "source_vertices": [
+          242
+        ]
+      },
+      {
+        "combined_component_count_histogram": {
+          "3": 2
+        },
+        "distinct_path_flows": 1,
+        "distinct_residual_flows": 2,
+        "omitted_edges": [
+          484,
+          498
+        ],
+        "raw_exact_decompositions": 2,
+        "sink_vertices": [
+          228
+        ],
+        "source_vertices": [
+          249
+        ]
+      }
+    ],
+    "balanced_cycle_flow_counts_by_mass": [
+      1,
+      2,
+      4,
+      8,
+      16,
+      32,
+      64,
+      128,
+      256
+    ],
+    "connected_completion_count": 0,
+    "connected_completions": [],
+    "distinct_path_flows": 44,
+    "distinct_residual_flows": 168,
+    "lower_mass_positive_control": {
+      "connected_completion_count": 2,
+      "connected_completions": [
+        {
+          "omitted_edges": [
+            102,
+            204
+          ],
+          "residual_flow": [
+            [
+              103,
+              1
+            ],
+            [
+              115,
+              1
+            ],
+            [
+              206,
+              1
+            ],
+            [
+              230,
+              1
+            ],
+            [
+              313,
+              1
+            ],
+            [
+              412,
+              1
+            ],
+            [
+              460,
+              1
+            ]
+          ]
+        },
+        {
+          "omitted_edges": [
+            307,
+            409
+          ],
+          "residual_flow": [
+            [
+              51,
+              1
+            ],
+            [
+              99,
+              1
+            ],
+            [
+              198,
+              1
+            ],
+            [
+              281,
+              1
+            ],
+            [
+              305,
+              1
+            ],
+            [
+              396,
+              1
+            ],
+            [
+              408,
+              1
+            ]
+          ]
+        }
+      ],
+      "distinct_residual_flows": 76,
+      "residual_mass": 7
+    },
+    "omission_pairs_checked": 2016,
+    "raw_exact_decompositions": 208,
+    "residual_flow_count_histogram": {
+      "0": 1988,
+      "1": 14,
+      "16": 2,
+      "2": 6,
+      "3": 2,
+      "4": 2,
+      "48": 2
+    },
+    "residual_mass": 8,
+    "source_count_histogram": {
+      "1": 64,
+      "2": 1952
+    }
+  },
+  "multiset_connector": {
+    "allowed_edges": "all de Bruijn edges, including repeated backbone edges",
+    "exhaustive_exclusion_through": 6,
+    "minimum_closed_walk_length": 7,
+    "minimum_connector_count": 2,
+    "minimum_connectors": [
+      [
+        205,
+        411,
+        310,
+        108,
+        217,
+        435,
+        358
+      ],
+      [
+        306,
+        100,
+        201,
+        403,
+        294,
+        76,
+        153
+      ]
+    ],
+    "primary_witness_edges": [
+      205,
+      411,
+      310,
+      108,
+      217,
+      435,
+      358
+    ],
+    "raw_start_bitstring_candidates_at_tight_length": 512,
+    "raw_start_bitstring_candidates_checked_through_exclusion": 504
+  },
+  "n": 9,
+  "radius": 1,
+  "simple_support_connector": {
+    "allowed_edges": "edges outside the backbone",
+    "exhaustive_exclusion_through": 6,
+    "minimum_closed_walk_length": 7,
+    "minimum_connector_count": 2,
+    "minimum_connector_edges_are_distinct": true,
+    "minimum_connectors": [
+      [
+        205,
+        411,
+        310,
+        108,
+        217,
+        435,
+        358
+      ],
+      [
+        306,
+        100,
+        201,
+        403,
+        294,
+        76,
+        153
+      ]
+    ],
+    "primary_witness_edges": [
+      205,
+      411,
+      310,
+      108,
+      217,
+      435,
+      358
+    ],
+    "primary_witness_vertices": [
+      102,
+      205,
+      155,
+      54,
+      108,
+      217,
+      179,
+      102
+    ],
+    "raw_start_bitstring_candidates_at_tight_length": 512,
+    "raw_start_bitstring_candidates_checked_through_exclusion": 504
+  },
+  "single_omission_detours": {
+    "candidate_length": 70,
+    "cases": [
+      {
+        "minimum_detour_length": 13,
+        "omitted_edge": 6,
+        "source": 3,
+        "target": 6,
+        "witness_edges": [
+          7,
+          14,
+          28,
+          57,
+          115,
+          230,
+          460,
+          408,
+          304,
+          96,
+          193,
+          387,
+          262
+        ]
+      },
+      {
+        "minimum_detour_length": 11,
+        "omitted_edge": 13,
+        "source": 6,
+        "target": 13,
+        "witness_edges": [
+          12,
+          25,
+          51,
+          102,
+          204,
+          408,
+          304,
+          97,
+          195,
+          390,
+          269
+        ]
+      },
+      {
+        "minimum_detour_length": 14,
+        "omitted_edge": 16,
+        "source": 8,
+        "target": 16,
+        "witness_edges": [
+          17,
+          35,
+          70,
+          140,
+          281,
+          51,
+          102,
+          204,
+          408,
+          305,
+          98,
+          196,
+          392,
+          272
+        ]
+      },
+      {
+        "minimum_detour_length": 15,
+        "omitted_edge": 27,
+        "source": 13,
+        "target": 27,
+        "witness_edges": [
+          26,
+          52,
+          105,
+          211,
+          422,
+          332,
+          153,
+          306,
+          100,
+          200,
+          401,
+          291,
+          70,
+          141,
+          283
+        ]
+      },
+      {
+        "minimum_detour_length": 13,
+        "omitted_edge": 32,
+        "source": 16,
+        "target": 32,
+        "witness_edges": [
+          33,
+          66,
+          132,
+          265,
+          19,
+          38,
+          76,
+          153,
+          306,
+          100,
+          200,
+          400,
+          288
+        ]
+      },
+      {
+        "minimum_detour_length": 12,
+        "omitted_edge": 43,
+        "source": 21,
+        "target": 43,
+        "witness_edges": [
+          42,
+          84,
+          169,
+          339,
+          166,
+          332,
+          153,
+          306,
+          101,
+          202,
+          405,
+          299
+        ]
+      },
+      {
+        "minimum_detour_length": 12,
+        "omitted_edge": 54,
+        "source": 27,
+        "target": 54,
+        "witness_edges": [
+          55,
+          110,
+          221,
+          443,
+          374,
+          236,
+          473,
+          435,
+          358,
+          205,
+          411,
+          310
+        ]
+      },
+      {
+        "minimum_detour_length": 11,
+        "omitted_edge": 61,
+        "source": 30,
+        "target": 61,
+        "witness_edges": [
+          60,
+          121,
+          243,
+          486,
+          460,
+          409,
+          307,
+          103,
+          207,
+          414,
+          317
+        ]
+      },
+      {
+        "minimum_detour_length": 14,
+        "omitted_edge": 64,
+        "source": 32,
+        "target": 64,
+        "witness_edges": [
+          65,
+          131,
+          262,
+          12,
+          25,
+          51,
+          102,
+          205,
+          410,
+          308,
+          104,
+          208,
+          416,
+          320
+        ]
+      },
+      {
+        "minimum_detour_length": 15,
+        "omitted_edge": 75,
+        "source": 37,
+        "target": 75,
+        "witness_edges": [
+          74,
+          148,
+          297,
+          83,
+          166,
+          332,
+          153,
+          306,
+          101,
+          202,
+          404,
+          297,
+          82,
+          165,
+          331
+        ]
+      },
+      {
+        "minimum_detour_length": 16,
+        "omitted_edge": 86,
+        "source": 43,
+        "target": 86,
+        "witness_edges": [
+          87,
+          174,
+          348,
+          185,
+          371,
+          230,
+          460,
+          409,
+          306,
+          101,
+          202,
+          405,
+          298,
+          85,
+          171,
+          342
+        ]
+      },
+      {
+        "minimum_detour_length": 14,
+        "omitted_edge": 93,
+        "source": 46,
+        "target": 93,
+        "witness_edges": [
+          92,
+          185,
+          371,
+          230,
+          460,
+          409,
+          306,
+          101,
+          202,
+          405,
+          299,
+          87,
+          174,
+          349
+        ]
+      },
+      {
+        "minimum_detour_length": 10,
+        "omitted_edge": 102,
+        "source": 51,
+        "target": 102,
+        "witness_edges": [
+          103,
+          207,
+          414,
+          317,
+          123,
+          246,
+          492,
+          473,
+          435,
+          358
+        ]
+      },
+      {
+        "minimum_detour_length": 13,
+        "omitted_edge": 109,
+        "source": 54,
+        "target": 109,
+        "witness_edges": [
+          108,
+          217,
+          435,
+          358,
+          205,
+          410,
+          309,
+          107,
+          214,
+          429,
+          347,
+          182,
+          365
+        ]
+      },
+      {
+        "minimum_detour_length": 14,
+        "omitted_edge": 112,
+        "source": 56,
+        "target": 112,
+        "witness_edges": [
+          113,
+          227,
+          454,
+          396,
+          281,
+          51,
+          102,
+          205,
+          411,
+          311,
+          110,
+          220,
+          440,
+          368
+        ]
+      },
+      {
+        "minimum_detour_length": 15,
+        "omitted_edge": 123,
+        "source": 61,
+        "target": 123,
+        "witness_edges": [
+          122,
+          244,
+          489,
+          467,
+          422,
+          332,
+          153,
+          306,
+          101,
+          203,
+          407,
+          303,
+          94,
+          189,
+          379
+        ]
+      },
+      {
+        "minimum_detour_length": 14,
+        "omitted_edge": 129,
+        "source": 64,
+        "target": 129,
+        "witness_edges": [
+          128,
+          257,
+          3,
+          6,
+          12,
+          25,
+          51,
+          102,
+          204,
+          408,
+          304,
+          96,
+          192,
+          385
+        ]
+      },
+      {
+        "minimum_detour_length": 12,
+        "omitted_edge": 138,
+        "source": 69,
+        "target": 138,
+        "witness_edges": [
+          139,
+          278,
+          44,
+          89,
+          179,
+          358,
+          204,
+          408,
+          305,
+          98,
+          197,
+          394
+        ]
+      },
+      {
+        "minimum_detour_length": 11,
+        "omitted_edge": 151,
+        "source": 75,
+        "target": 151,
+        "witness_edges": [
+          150,
+          300,
+          89,
+          179,
+          358,
+          204,
+          409,
+          306,
+          101,
+          203,
+          407
+        ]
+      },
+      {
+        "minimum_detour_length": 12,
+        "omitted_edge": 156,
+        "source": 78,
+        "target": 156,
+        "witness_edges": [
+          157,
+          314,
+          116,
+          233,
+          467,
+          422,
+          332,
+          153,
+          307,
+          103,
+          206,
+          412
+        ]
+      },
+      {
+        "minimum_detour_length": 11,
+        "omitted_edge": 167,
+        "source": 83,
+        "target": 167,
+        "witness_edges": [
+          166,
+          332,
+          153,
+          307,
+          102,
+          205,
+          410,
+          308,
+          105,
+          211,
+          423
+        ]
+      },
+      {
+        "minimum_detour_length": 13,
+        "omitted_edge": 172,
+        "source": 86,
+        "target": 172,
+        "witness_edges": [
+          173,
+          347,
+          182,
+          364,
+          217,
+          435,
+          358,
+          205,
+          410,
+          309,
+          107,
+          214,
+          428
+        ]
+      },
+      {
+        "minimum_detour_length": 14,
+        "omitted_edge": 177,
+        "source": 88,
+        "target": 177,
+        "witness_edges": [
+          176,
+          353,
+          195,
+          390,
+          268,
+          25,
+          51,
+          102,
+          205,
+          411,
+          310,
+          108,
+          216,
+          433
+        ]
+      },
+      {
+        "minimum_detour_length": 12,
+        "omitted_edge": 186,
+        "source": 93,
+        "target": 186,
+        "witness_edges": [
+          187,
+          374,
+          236,
+          473,
+          435,
+          358,
+          205,
+          411,
+          311,
+          110,
+          221,
+          442
+        ]
+      },
+      {
+        "minimum_detour_length": 11,
+        "omitted_edge": 199,
+        "source": 99,
+        "target": 199,
+        "witness_edges": [
+          198,
+          396,
+          281,
+          51,
+          103,
+          206,
+          412,
+          312,
+          113,
+          227,
+          455
+        ]
+      },
+      {
+        "minimum_detour_length": 11,
+        "omitted_edge": 204,
+        "source": 102,
+        "target": 204,
+        "witness_edges": [
+          205,
+          411,
+          311,
+          111,
+          223,
+          446,
+          380,
+          249,
+          499,
+          486,
+          460
+        ]
+      },
+      {
+        "minimum_detour_length": 14,
+        "omitted_edge": 209,
+        "source": 104,
+        "target": 209,
+        "witness_edges": [
+          208,
+          417,
+          323,
+          134,
+          268,
+          25,
+          51,
+          103,
+          206,
+          413,
+          314,
+          116,
+          232,
+          465
+        ]
+      },
+      {
+        "minimum_detour_length": 15,
+        "omitted_edge": 218,
+        "source": 109,
+        "target": 218,
+        "witness_edges": [
+          219,
+          438,
+          364,
+          217,
+          435,
+          358,
+          205,
+          411,
+          311,
+          110,
+          221,
+          443,
+          374,
+          237,
+          474
+        ]
+      },
+      {
+        "minimum_detour_length": 14,
+        "omitted_edge": 225,
+        "source": 112,
+        "target": 225,
+        "witness_edges": [
+          224,
+          449,
+          387,
+          262,
+          12,
+          25,
+          51,
+          103,
+          207,
+          414,
+          316,
+          120,
+          240,
+          481
+        ]
+      },
+      {
+        "minimum_detour_length": 15,
+        "omitted_edge": 234,
+        "source": 117,
+        "target": 234,
+        "witness_edges": [
+          235,
+          470,
+          428,
+          345,
+          179,
+          358,
+          205,
+          411,
+          311,
+          111,
+          222,
+          445,
+          378,
+          245,
+          490
+        ]
+      },
+      {
+        "minimum_detour_length": 14,
+        "omitted_edge": 247,
+        "source": 123,
+        "target": 247,
+        "witness_edges": [
+          246,
+          492,
+          473,
+          435,
+          358,
+          205,
+          411,
+          311,
+          111,
+          223,
+          446,
+          381,
+          251,
+          503
+        ]
+      },
+      {
+        "minimum_detour_length": 16,
+        "omitted_edge": 252,
+        "source": 126,
+        "target": 252,
+        "witness_edges": [
+          253,
+          506,
+          500,
+          489,
+          467,
+          422,
+          332,
+          153,
+          307,
+          103,
+          207,
+          415,
+          319,
+          127,
+          254,
+          508
+        ]
+      },
+      {
+        "minimum_detour_length": 16,
+        "omitted_edge": 259,
+        "source": 129,
+        "target": 3,
+        "witness_edges": [
+          258,
+          4,
+          9,
+          19,
+          38,
+          76,
+          153,
+          306,
+          100,
+          200,
+          400,
+          288,
+          64,
+          128,
+          257,
+          3
+        ]
+      },
+      {
+        "minimum_detour_length": 14,
+        "omitted_edge": 264,
+        "source": 132,
+        "target": 8,
+        "witness_edges": [
+          265,
+          19,
+          38,
+          76,
+          153,
+          306,
+          100,
+          200,
+          400,
+          288,
+          65,
+          130,
+          260,
+          8
+        ]
+      },
+      {
+        "minimum_detour_length": 15,
+        "omitted_edge": 277,
+        "source": 138,
+        "target": 21,
+        "witness_edges": [
+          276,
+          41,
+          83,
+          166,
+          332,
+          153,
+          306,
+          100,
+          200,
+          400,
+          289,
+          66,
+          133,
+          266,
+          21
+        ]
+      },
+      {
+        "minimum_detour_length": 14,
+        "omitted_edge": 286,
+        "source": 143,
+        "target": 30,
+        "witness_edges": [
+          287,
+          62,
+          124,
+          249,
+          499,
+          486,
+          460,
+          408,
+          304,
+          97,
+          195,
+          391,
+          271,
+          30
+        ]
+      },
+      {
+        "minimum_detour_length": 15,
+        "omitted_edge": 293,
+        "source": 146,
+        "target": 37,
+        "witness_edges": [
+          292,
+          73,
+          147,
+          294,
+          76,
+          153,
+          306,
+          100,
+          200,
+          401,
+          290,
+          68,
+          137,
+          274,
+          37
+        ]
+      },
+      {
+        "minimum_detour_length": 14,
+        "omitted_edge": 302,
+        "source": 151,
+        "target": 46,
+        "witness_edges": [
+          303,
+          94,
+          188,
+          377,
+          243,
+          486,
+          460,
+          408,
+          305,
+          98,
+          197,
+          395,
+          279,
+          46
+        ]
+      },
+      {
+        "minimum_detour_length": 11,
+        "omitted_edge": 307,
+        "source": 153,
+        "target": 51,
+        "witness_edges": [
+          306,
+          100,
+          200,
+          400,
+          288,
+          65,
+          131,
+          262,
+          12,
+          25,
+          51
+        ]
+      },
+      {
+        "minimum_detour_length": 11,
+        "omitted_edge": 312,
+        "source": 156,
+        "target": 56,
+        "witness_edges": [
+          313,
+          115,
+          230,
+          460,
+          408,
+          305,
+          99,
+          199,
+          398,
+          284,
+          56
+        ]
+      },
+      {
+        "minimum_detour_length": 12,
+        "omitted_edge": 325,
+        "source": 162,
+        "target": 69,
+        "witness_edges": [
+          324,
+          137,
+          275,
+          38,
+          76,
+          153,
+          306,
+          100,
+          200,
+          401,
+          290,
+          69
+        ]
+      },
+      {
+        "minimum_detour_length": 14,
+        "omitted_edge": 334,
+        "source": 167,
+        "target": 78,
+        "witness_edges": [
+          335,
+          158,
+          316,
+          121,
+          243,
+          486,
+          460,
+          409,
+          306,
+          100,
+          201,
+          403,
+          295,
+          78
+        ]
+      },
+      {
+        "minimum_detour_length": 13,
+        "omitted_edge": 339,
+        "source": 169,
+        "target": 83,
+        "witness_edges": [
+          338,
+          164,
+          329,
+          147,
+          294,
+          76,
+          153,
+          306,
+          101,
+          202,
+          404,
+          297,
+          83
+        ]
+      },
+      {
+        "minimum_detour_length": 11,
+        "omitted_edge": 344,
+        "source": 172,
+        "target": 88,
+        "witness_edges": [
+          345,
+          179,
+          358,
+          204,
+          409,
+          306,
+          101,
+          203,
+          406,
+          300,
+          88
+        ]
+      },
+      {
+        "minimum_detour_length": 12,
+        "omitted_edge": 355,
+        "source": 177,
+        "target": 99,
+        "witness_edges": [
+          354,
+          197,
+          395,
+          278,
+          44,
+          89,
+          179,
+          358,
+          204,
+          408,
+          305,
+          99
+        ]
+      },
+      {
+        "minimum_detour_length": 11,
+        "omitted_edge": 360,
+        "source": 180,
+        "target": 104,
+        "witness_edges": [
+          361,
+          211,
+          422,
+          332,
+          153,
+          307,
+          102,
+          205,
+          410,
+          308,
+          104
+        ]
+      },
+      {
+        "minimum_detour_length": 12,
+        "omitted_edge": 373,
+        "source": 186,
+        "target": 117,
+        "witness_edges": [
+          372,
+          233,
+          467,
+          422,
+          332,
+          153,
+          307,
+          103,
+          206,
+          413,
+          314,
+          117
+        ]
+      },
+      {
+        "minimum_detour_length": 14,
+        "omitted_edge": 382,
+        "source": 191,
+        "target": 126,
+        "witness_edges": [
+          383,
+          254,
+          508,
+          505,
+          499,
+          486,
+          460,
+          409,
+          307,
+          103,
+          207,
+          415,
+          319,
+          126
+        ]
+      },
+      {
+        "minimum_detour_length": 15,
+        "omitted_edge": 388,
+        "source": 194,
+        "target": 132,
+        "witness_edges": [
+          389,
+          266,
+          20,
+          41,
+          83,
+          166,
+          332,
+          153,
+          306,
+          100,
+          200,
+          400,
+          289,
+          66,
+          132
+        ]
+      },
+      {
+        "minimum_detour_length": 14,
+        "omitted_edge": 399,
+        "source": 199,
+        "target": 143,
+        "witness_edges": [
+          398,
+          284,
+          57,
+          115,
+          230,
+          460,
+          409,
+          306,
+          100,
+          200,
+          401,
+          291,
+          71,
+          143
+        ]
+      },
+      {
+        "minimum_detour_length": 13,
+        "omitted_edge": 402,
+        "source": 201,
+        "target": 146,
+        "witness_edges": [
+          403,
+          294,
+          76,
+          153,
+          306,
+          101,
+          202,
+          404,
+          297,
+          82,
+          164,
+          329,
+          146
+        ]
+      },
+      {
+        "minimum_detour_length": 10,
+        "omitted_edge": 409,
+        "source": 204,
+        "target": 153,
+        "witness_edges": [
+          408,
+          304,
+          97,
+          194,
+          388,
+          265,
+          19,
+          38,
+          76,
+          153
+        ]
+      },
+      {
+        "minimum_detour_length": 14,
+        "omitted_edge": 418,
+        "source": 209,
+        "target": 162,
+        "witness_edges": [
+          419,
+          326,
+          140,
+          281,
+          51,
+          102,
+          205,
+          410,
+          309,
+          106,
+          212,
+          424,
+          337,
+          162
+        ]
+      },
+      {
+        "minimum_detour_length": 16,
+        "omitted_edge": 425,
+        "source": 212,
+        "target": 169,
+        "witness_edges": [
+          424,
+          337,
+          162,
+          324,
+          137,
+          275,
+          38,
+          76,
+          153,
+          306,
+          101,
+          202,
+          405,
+          298,
+          84,
+          169
+        ]
+      },
+      {
+        "minimum_detour_length": 15,
+        "omitted_edge": 436,
+        "source": 218,
+        "target": 180,
+        "witness_edges": [
+          437,
+          362,
+          212,
+          425,
+          339,
+          166,
+          332,
+          153,
+          306,
+          101,
+          203,
+          406,
+          301,
+          90,
+          180
+        ]
+      },
+      {
+        "minimum_detour_length": 14,
+        "omitted_edge": 447,
+        "source": 223,
+        "target": 191,
+        "witness_edges": [
+          446,
+          380,
+          249,
+          499,
+          486,
+          460,
+          409,
+          306,
+          101,
+          203,
+          407,
+          303,
+          95,
+          191
+        ]
+      },
+      {
+        "minimum_detour_length": 11,
+        "omitted_edge": 450,
+        "source": 225,
+        "target": 194,
+        "witness_edges": [
+          451,
+          390,
+          268,
+          25,
+          51,
+          102,
+          204,
+          408,
+          304,
+          97,
+          194
+        ]
+      },
+      {
+        "minimum_detour_length": 12,
+        "omitted_edge": 457,
+        "source": 228,
+        "target": 201,
+        "witness_edges": [
+          456,
+          401,
+          290,
+          68,
+          137,
+          275,
+          38,
+          76,
+          153,
+          306,
+          100,
+          201
+        ]
+      },
+      {
+        "minimum_detour_length": 12,
+        "omitted_edge": 468,
+        "source": 234,
+        "target": 212,
+        "witness_edges": [
+          469,
+          427,
+          342,
+          172,
+          345,
+          179,
+          358,
+          205,
+          410,
+          309,
+          106,
+          212
+        ]
+      },
+      {
+        "minimum_detour_length": 13,
+        "omitted_edge": 479,
+        "source": 239,
+        "target": 223,
+        "witness_edges": [
+          478,
+          445,
+          379,
+          246,
+          492,
+          473,
+          435,
+          358,
+          205,
+          411,
+          311,
+          111,
+          223
+        ]
+      },
+      {
+        "minimum_detour_length": 15,
+        "omitted_edge": 484,
+        "source": 242,
+        "target": 228,
+        "witness_edges": [
+          485,
+          458,
+          404,
+          297,
+          83,
+          166,
+          332,
+          153,
+          307,
+          103,
+          206,
+          412,
+          313,
+          114,
+          228
+        ]
+      },
+      {
+        "minimum_detour_length": 14,
+        "omitted_edge": 495,
+        "source": 247,
+        "target": 239,
+        "witness_edges": [
+          494,
+          476,
+          441,
+          371,
+          230,
+          460,
+          409,
+          307,
+          103,
+          206,
+          413,
+          315,
+          119,
+          239
+        ]
+      },
+      {
+        "minimum_detour_length": 11,
+        "omitted_edge": 498,
+        "source": 249,
+        "target": 242,
+        "witness_edges": [
+          499,
+          486,
+          460,
+          409,
+          307,
+          103,
+          207,
+          414,
+          316,
+          121,
+          242
+        ]
+      },
+      {
+        "minimum_detour_length": 13,
+        "omitted_edge": 505,
+        "source": 252,
+        "target": 249,
+        "witness_edges": [
+          504,
+          497,
+          483,
+          454,
+          396,
+          281,
+          51,
+          103,
+          207,
+          415,
+          318,
+          124,
+          249
+        ]
+      }
+    ],
+    "exact_backbone_overlap": 63,
+    "exhaustive_exclusion_through": 7,
+    "maximum_detour_length_over_all_cases": 16,
+    "minimum_detour_length_histogram": {
+      "10": 2,
+      "11": 12,
+      "12": 10,
+      "13": 8,
+      "14": 18,
+      "15": 10,
+      "16": 4
+    },
+    "minimum_detour_length_over_all_cases": 10,
+    "omitted_edge_cases": 64,
+    "raw_start_bitstring_candidates_checked": 16256,
+    "residual_edge_budget": 7,
+    "short_detour_found": null
+  },
+  "source_sha256": "57acc8d89ecdeefbf21453efcd26a53e50f195d5304f6556cdbdb84dd6d46a87",
+  "tight_overlap_witness": {
+    "backbone_overlap": 61,
+    "covered_words": 503,
+    "distinct_windows": 70,
+    "file_sha256": "05c9ae778cd1271749930337d3e82eb5d778c79d760f2b4d3db4678ab7fd2652",
+    "length": 70,
+    "normalized_sha256": "feda1d6c7d4d384d1679eda8f2ce5683b0153478e1912b568b126d6064522ca9",
+    "omitted_backbone_edges": [
+      13,
+      307,
+      409
+    ],
+    "path": "data/candidates/l9-r1-70-backbone-overlap-61.txt",
+    "valid_cover": false
+  },
+  "tight_super_supports": [
+    {
+      "connector_edges": [
+        205,
+        411,
+        310,
+        108,
+        217,
+        435,
+        358
+      ],
+      "decoded_sequence_valid": true,
+      "matches_baseline_support": true,
+      "report": {
+        "balanced": true,
+        "component_count": 1,
+        "component_edge_counts": [
+          71
+        ],
+        "covered_words": 512,
+        "distinct_edges": 71,
+        "uncovered_words": []
+      },
+      "size": 71,
+      "support_sha256": "77260f847e6d4fee57d59cc66664dde1462bb7842521dc5c6117a159db30a8ce"
+    },
+    {
+      "connector_edges": [
+        306,
+        100,
+        201,
+        403,
+        294,
+        76,
+        153
+      ],
+      "decoded_sequence_valid": true,
+      "matches_baseline_support": false,
+      "report": {
+        "balanced": true,
+        "component_count": 1,
+        "component_edge_counts": [
+          71
+        ],
+        "covered_words": 512,
+        "distinct_edges": 71,
+        "uncovered_words": []
+      },
+      "size": 71,
+      "support_sha256": "e864da476760744dd8d1a458b511889b04034f6bacf607294a854851e4aac888"
+    }
+  ]
+}

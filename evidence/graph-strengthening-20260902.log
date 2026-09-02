@@ -1,0 +1,233 @@
+Experiment: repeated-window graph-model strengthening
+Date: 2026-09-02
+Machine: Apple M4 Pro, arm64, macOS
+Solver: OR-Tools CP-SAT 9.15.6755
+
+Purpose:
+  Strengthen the exact de Bruijn edge-multiplicity model for repeated windows,
+  validate each new constraint family, and run every disjoint anchor in the
+  exact length-70, support-size-69 stage.
+
+Final implementation:
+  source: tools/flow_cp_sat.py
+  source_sha256: 1fd81c871c62d29bf217de9804d915e8fd00dac489aa2d6dd41b0782f987fac8
+  tests: tests/test_flow_cp_sat.py
+  tests_sha256: 60d539acb12b2f96f84d50aaab3e8eabf8ecf27ef6785482d66c3e2d0cc398a3
+  requirements: requirements-solver.txt
+  requirements_sha256: 672c02ea3f723bea4a8e39643caab8c57c513418c812767096ebed55224240cf
+  model_note: docs/FLOW_MODEL.md
+  model_note_sha256: 409c65ed8b361aedcce4cd13d74abee5cde5356481c11415ef357b7e19788ed1
+  search_plan: docs/SEARCH_PLAN.md
+  search_plan_sha256: 70c1eb224c4c5a0000c7cc508a763758d3983d1b7856decac09024fa6ad95146
+  research_log: docs/RESEARCH_LOG.md
+  research_log_sha256: 385805a3670afcb6adfb7f4e1ca73c9900c71120da819722b8afd93206b65563
+  readme_sha256: e0a34779d24db75a56f1d1e680766b6401dcecc0d9012888194889ecf57c2931
+  release_policy: release.json
+  release_policy_sha256: d4803d7a6441e5bf071097f8e6ea74516b6aaacb492ffd3f065606aed43a8284
+
+New exact constraints:
+  stationarity marginals:
+    For each substring pattern, the maximum selected-support count over all
+    positions in a window is bounded by its common cyclic multiplicity
+    marginal. Widths 1 through 7 are active for n=9 when the equivalent
+    width-8 repeat-defect inequality is already enabled.
+  Walsh aggregates:
+    Radius-1 covering rows imply paired Walsh-transform inequalities for every
+    nonzero Hamming-ball eigenvalue. These dense aggregate rows are tested but
+    remain disabled by default.
+  autocorrelation:
+    Shift distances are even.
+    Radius-1 coverage bounds both differences and agreements for every shift.
+    Exact odd shift-orbits force at least one agreement per orbit.
+
+Scope of the strengthening:
+  Stationarity, Walsh, and autocorrelation parity are propagation consequences
+  of constraints already required by a valid cyclic cover.
+  The radius-1 autocorrelation rows are valid weakened cover aggregates.
+  The odd-orbit upper bound is necessary for one connected cyclic sequence.
+  None of these constraints is by itself a new lower-bound theorem.
+
+Validation:
+  focused OR-Tools tests: 28 passed
+  stationarity identity: exhaustively checked on small cycles
+  Walsh inequality: exhaustively checked on small covering supports
+  autocorrelation identities and bounds: exhaustively checked on small cycles
+  model coefficients: checked directly in the CP-SAT model proto
+  valid Walsh order filtering: checked
+  exact and at-most applicability: checked
+  separate mathematical and code reviews: no correctness blocker found
+
+Retained raw artifacts:
+  directory: evidence/graph-strengthening
+  Every production status and count below is retained as an individual JSON
+  output from the recorded final source.
+
+Length-71 positive controls:
+  common parameters:
+    n=9, radius=1, exact length=71, support_size=71, minimum_support=62
+    partitioned anchor=16, one worker, Walsh disabled
+  flow:
+    result: OPTIMAL
+    verified through tools/covering.py: valid, 512 of 512 words covered
+    artifact: evidence/graph-strengthening/positive-length71-flow.json
+    artifact_sha256: 2a02f261d4d917a1f52e7c1a10598b905b609e261ea9ba964f11f14c4bf6a1e8
+    sequence: evidence/graph-strengthening/positive-length71-flow-sequence.txt
+    sequence_sha256: 388f46791739970ff1a9d1352908d0a6da7d058b089bf3052e1b7212009c4aa3
+  tree:
+    result: OPTIMAL
+    verified through tools/covering.py: valid, 512 of 512 words covered
+    artifact: evidence/graph-strengthening/positive-length71-tree.json
+    artifact_sha256: f7863fd5f017597eec8e05e4bd132cf5ef4bc2776da764ba9151f816844d4572
+    sequence: evidence/graph-strengthening/positive-length71-tree-sequence.txt
+    sequence_sha256: 388f46791739970ff1a9d1352908d0a6da7d058b089bf3052e1b7212009c4aa3
+  cuts:
+    result: OPTIMAL
+    verified through tools/covering.py: valid, 512 of 512 words covered
+    artifact: evidence/graph-strengthening/positive-length71-cuts.json
+    artifact_sha256: 915aa12c47ebe8e2061aebd1ba5a81c6977b2921da56c9773f2cc08f32586448
+    sequence: evidence/graph-strengthening/positive-length71-cuts-sequence.txt
+    sequence_sha256: 388f46791739970ff1a9d1352908d0a6da7d058b089bf3052e1b7212009c4aa3
+
+Repeated-window positive control:
+  parameters: n=3, radius=1, exact length=5, support_size=4
+  connectivity: cuts
+  stationarity constraints: enabled
+  autocorrelation constraints: enabled
+  result: OPTIMAL
+  verified through tools/covering.py: valid, 8 of 8 words covered
+  artifact: evidence/graph-strengthening/positive-repeated.json
+  artifact_sha256: 4b6e276c84bbe131c97821853acb2eaf19e0d8ce591908001f9ab9e5ab072f2f
+  sequence: evidence/graph-strengthening/positive-repeated-sequence.txt
+  sequence_sha256: ca069d6f88b357a29d1a0c8811eb395992832d67c1ab8c155ba5e3eefb2478c4
+
+Production portfolio - one duplicate:
+  source_sha256: 1fd81c871c62d29bf217de9804d915e8fd00dac489aa2d6dd41b0782f987fac8
+  parameters: n=9, radius=1, exact length=70, support_size=69
+  minimum support: 62
+  anchors: 0,1,2,4,8,16,32,64,128,256
+  partitioned anchors: true
+  connectivity: iterative cuts
+  hint: data/candidates/l9-r1-70-uncovered-6.txt
+  hint role: search order only; no overlap objective
+  stationarity maxima: 254 over widths 1 through 7
+  autocorrelation shifts: 1 through 8
+  odd-orbit bounds: shifts 2,4,6,8 have upper bound 68
+  Walsh constraints: disabled
+  Van Wee, Hamming-layer, and repeat-defect constraints: enabled
+  workers per case: 1
+  time limit per case: 300 seconds
+  seed: 1
+  results: 9 UNKNOWN, 1 INFEASIBLE
+  aggregate branches: 1538061
+  aggregate conflicts: 24028
+  aggregate solver wall seconds: 2700.014647
+  aggregate solver calls: 10
+  feasible incumbents: 0
+  connectivity cuts generated: 0
+
+  anchor 0:
+    status: UNKNOWN
+    branches: 206636
+    conflicts: 2622
+    solver wall seconds: 300.001846
+    model variables: 1798
+    model constraints: 4145
+    artifact: evidence/graph-strengthening/support69-anchor-0.json
+    artifact_sha256: 34fc43924cec5b02a52b23df8281a8e885c3a4426aef4a5cc95c0ee5ef0fb5c1
+  anchor 1:
+    status: UNKNOWN
+    branches: 74539
+    conflicts: 2490
+    solver wall seconds: 300.00077500000003
+    model variables: 1798
+    model constraints: 4146
+    artifact: evidence/graph-strengthening/support69-anchor-1.json
+    artifact_sha256: 09e412095413e08e4506c1a05bf1a1b419b2d151c79b13f91ca427d8964b4bdf
+  anchor 2:
+    status: UNKNOWN
+    branches: 197863
+    conflicts: 2708
+    solver wall seconds: 300.00236800000005
+    model variables: 1798
+    model constraints: 4147
+    artifact: evidence/graph-strengthening/support69-anchor-2.json
+    artifact_sha256: fbfeaf1f9eaa4cd7362bbb61c61b2fc3ae1fbfe881378133a2869a99d7cb7ac4
+  anchor 4:
+    status: UNKNOWN
+    branches: 153024
+    conflicts: 2687
+    solver wall seconds: 300.00092700000005
+    model variables: 1798
+    model constraints: 4148
+    artifact: evidence/graph-strengthening/support69-anchor-4.json
+    artifact_sha256: 46c1439d5401cc26cb5233c722a220cbe2417d8020b302e68a1bdd19d59162b9
+  anchor 8:
+    status: UNKNOWN
+    branches: 202371
+    conflicts: 3036
+    solver wall seconds: 299.999972
+    model variables: 1798
+    model constraints: 4149
+    artifact: evidence/graph-strengthening/support69-anchor-8.json
+    artifact_sha256: 42f87b66292f49d4eaf024b426c00550fd2cb31f847378c7c5bccf4451a35b8a
+  anchor 16:
+    status: UNKNOWN
+    branches: 151590
+    conflicts: 2610
+    solver wall seconds: 300.001478
+    model variables: 1798
+    model constraints: 4150
+    artifact: evidence/graph-strengthening/support69-anchor-16.json
+    artifact_sha256: 6ae1092f550f6f40ba8078af62dbf1675b5e41adf534dd8b89a2d155646626c0
+  anchor 32:
+    status: UNKNOWN
+    branches: 209035
+    conflicts: 2723
+    solver wall seconds: 300.000087
+    model variables: 1798
+    model constraints: 4151
+    artifact: evidence/graph-strengthening/support69-anchor-32.json
+    artifact_sha256: 4fcb372ef8c696e871d4652e66214c2f6f8451155cbe79c63446131275184b43
+  anchor 64:
+    status: UNKNOWN
+    branches: 140196
+    conflicts: 2560
+    solver wall seconds: 300.000584
+    model variables: 1798
+    model constraints: 4152
+    artifact: evidence/graph-strengthening/support69-anchor-64.json
+    artifact_sha256: a985431b449ab51245fa7558c468e8a513219fb86e6a9352c2635e66e10a611b
+  anchor 128:
+    status: UNKNOWN
+    branches: 202807
+    conflicts: 2592
+    solver wall seconds: 300.000713
+    model variables: 1798
+    model constraints: 4153
+    artifact: evidence/graph-strengthening/support69-anchor-128.json
+    artifact_sha256: cff9ddaef2786d5126c010bdd302b7eb4b00efc77c76d0a76b4cdda082bb7280
+  anchor 256:
+    status: INFEASIBLE
+    branches: 0
+    conflicts: 0
+    solver wall seconds: 0.005897
+    model variables: 1798
+    model constraints: 4154
+    artifact: evidence/graph-strengthening/support69-anchor-256.json
+    artifact_sha256: 0866e71bdcb6058e999dd18d0ba12e4c965efded2112cfcab8fcce53f6d176f7
+
+Anchor-256 scope:
+  In the disjoint partition, anchor 256 forces every earlier word in
+  B_1(0^9) absent. Edge 256 enters vertex zero, while both outgoing edges 0
+  and 1 are absent, contradicting balance. This excludes only that partitioned
+  anchor case.
+
+Conclusion:
+  No length-70 sequence with support size 69 was found.
+  No global support-size-69 impossibility proof was produced.
+  All ten scheduled bounded anchor runs were executed.
+  Each UNKNOWN status is a timeout, not evidence of unsatisfiability.
+  Support sizes 68 through 62 at length 70 remain unsearched by this portfolio.
+  A lower bound of 71 would additionally require every admissible length from
+  62 through 69, unless a separate monotonicity theorem is proved.
+  The public mathematical interval remains 62 <= L(9,1) <= 71.

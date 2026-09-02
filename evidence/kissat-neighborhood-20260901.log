@@ -1,0 +1,40 @@
+Experiment: exact fixed-seed Hamming neighborhoods
+Date: 2026-09-01
+Machine: Apple M4 Pro, arm64, macOS
+
+Seed:
+  path: data/candidates/l9-r1-70-uncovered-6.txt
+  length: 70
+  uncovered_words: 6
+  file_sha256: d9ab4f217c659a712fd72db06057b8127db18eb2e3151d96265c17f1712941dd
+  normalized_sha256: b16298249cf8e1ca81c7483dba0f3700d19ca905bb72b94890c6ce5480be2d8a
+
+Encoding:
+  type: pattern variables with a sequential Hamming-distance counter
+  symmetry: disabled because rotation and reflection do not preserve distance
+            from a fixed seed
+
+Solver:
+  name: Kissat 4.0.4
+  source_commit: 8af8e56f174b778aef3aa45af9f739b2a5f492c2
+  binary_sha256: fa22d33082fdb4ec40f949bf2a73776d7a6f638dfda2da119084d108cb1cbbdc
+
+Command template:
+  python3 tools/generate_cnf.py neighborhood-kK.cnf \
+    --n 9 --radius 1 --length 70 --encoding pattern \
+    --seed-sequence data/candidates/l9-r1-70-uncovered-6.txt \
+    --max-distance K --no-symmetry
+  kissat --sat neighborhood-kK.cnf
+
+Results:
+  K  variables  clauses  CNF SHA-256                                                       result  real seconds
+  0  36492      359564   1f8758fc4b008a374e1d973c9f6f9f526a37bff46f99fde07d031ff68d8a7387  UNSAT   0.02
+  1  36562      359702   d5989ca978db1a2abc5f5baf529cdaa35406305ea0041e01e57fda896fede1f4  UNSAT   0.04
+  2  36632      359840   6f5e07dd728916d09a80c505a09b8d87d2c2c8074141e242b037599dfcff359d  UNSAT   0.80
+  3  36702      359978   711c0304faa064d12524853995d6abd1894a31b9003ef5896a7815b00c0df2fb  UNSAT   2.94
+  4  36772      360116   25b76dffc742ba37d33d2ec1c4193579487fc8e096210a43d7987f216211365e  UNSAT  17.88
+
+The formulas and solver runs exclude a valid sequence only within the stated
+distance from this seed. The solver was not asked to emit proof traces, so these
+runs are retained as an independent cross-check of the direct enumerator, not
+as standalone proof artifacts.

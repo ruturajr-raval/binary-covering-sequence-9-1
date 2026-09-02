@@ -1,0 +1,18 @@
+The 71-bit baseline certificate in data/baseline/l9-r1-71.txt was reported in a
+May 2025 preprint by Christopher D. Rosin and is also distributed in
+Constructive-Codes/CPro1 at commit
+827f02b4048fc96a6b79f0970c87ca5a54f31f40 under Apache-2.0.
+The retained baseline differs from the upstream file only in whitespace
+formatting.
+
+The incomplete 70-bit search state in
+data/candidates/l9-r1-70-uncovered-6.txt was deterministically reconstructed
+from the CPro1 progCS1 search at seed 4000 and iteration 1530000. It is retained
+only as a search seed and is not a covering certificate.
+
+The Apache-2.0 text for these retained upstream artifacts is in
+LICENSES/Apache-2.0.txt. All original code and documentation in this repository
+is licensed under the MIT license in LICENSE.
+
+The search and verification code in this repository is an independent
+implementation and does not copy the CPro1 covering-sequence programs.

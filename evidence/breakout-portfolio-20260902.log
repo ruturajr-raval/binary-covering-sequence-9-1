@@ -1,0 +1,81 @@
+Experiment: adaptive-breakout search portfolio
+Date: 2026-09-02
+Machine: Apple M4 Pro, arm64, macOS
+
+Seed:
+  path: data/candidates/l9-r1-70-uncovered-6.txt
+  file_sha256: d9ab4f217c659a712fd72db06057b8127db18eb2e3151d96265c17f1712941dd
+  normalized_sha256: b16298249cf8e1ca81c7483dba0f3700d19ca905bb72b94890c6ce5480be2d8a
+
+Search implementation:
+  source: src/search.cpp
+  source_sha256: 6c72197bc4be3f179cbb5acc5d85794fa11bdf7edc1f3428cc825bd15d97a5e6
+  binary_sha256: ae8a42fc97adc60271daffebb6a72706abbb5936a33932be9c34ed10e8892e06
+  compiler_flags: -std=c++20 -O3 -Wall -Wextra -Wpedantic -Werror
+
+Portfolio A:
+  workers: 5
+  iterations_per_worker: 50000
+  seed: 1001
+  breakout_stagnation: 100
+  breakout_increment: 1
+  target_samples: 24
+  pair_samples: 16
+  triple_samples: 8
+  max_target_flips: 5
+  result: no valid sequence and no raw improvement
+  best_uncovered: 6
+  real_seconds: 240.91
+  user_seconds: 1135.01
+  system_seconds: 2.68
+  log_sha256: ab845f88cb03eaa665ab0fb0a30ce00c28ab4491ca500d7fb614c8f073c4f11e
+
+Portfolio B:
+  workers: 5
+  iterations_per_worker: 50000
+  seed: 2001
+  breakout_stagnation: 250
+  breakout_increment: 5
+  target_samples: 24
+  pair_samples: 16
+  triple_samples: 8
+  max_target_flips: 5
+  result: no valid sequence and no raw improvement
+  best_uncovered: 6
+  real_seconds: 239.60
+  user_seconds: 1135.73
+  system_seconds: 2.61
+  log_sha256: f6d09e885b5d420125c0872620c2485282f5d38555ea809c9870800cf43c599d
+
+Portfolio C:
+  workers: 4
+  iterations_per_worker: 25000
+  seed: 3001
+  breakout_stagnation: 500
+  breakout_increment: 20
+  target_samples: 64
+  pair_samples: 48
+  triple_samples: 24
+  max_target_flips: 8
+  result: no valid sequence and no raw improvement
+  best_uncovered: 6
+  real_seconds: 227.59
+  user_seconds: 861.00
+  system_seconds: 2.04
+  log_sha256: 459aa46537797d8f11db869953866ade4587f9810e6745ea3b5b81949743417c
+
+Combined search:
+  workers: 14
+  worker_iterations: 600000
+  valid_sequences_found: 0
+  strict_raw_improvements: 0
+  retained_output_normalized_sha256: b16298249cf8e1ca81c7483dba0f3700d19ca905bb72b94890c6ce5480be2d8a
+
+Verification:
+  Every retained output was checked by the independent Python verifier and
+  the C++ verifier. Each output is the original incomplete seed with six
+  uncovered words.
+
+Scope:
+  This finite heuristic portfolio reports only the states reached by these
+  runs. It establishes no global exclusion and no new bound on L(9,1).

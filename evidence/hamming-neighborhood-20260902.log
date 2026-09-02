@@ -1,0 +1,59 @@
+Experiment: direct exhaustive Hamming-ball search through distance 8
+Date: 2026-09-02
+Machine: Apple M4 Pro, arm64, macOS
+
+Seed:
+  path: data/candidates/l9-r1-70-uncovered-6.txt
+  length: 70
+  uncovered_words: 6
+  file_sha256: d9ab4f217c659a712fd72db06057b8127db18eb2e3151d96265c17f1712941dd
+  normalized_sha256: b16298249cf8e1ca81c7483dba0f3700d19ca905bb72b94890c6ce5480be2d8a
+
+Enumerator:
+  source: src/neighborhood.cpp
+  source_sha256: 0af3dce318f11e7e077504046055f9e3ed9bccc0175dd890a05e8b6257674f7c
+  binary_sha256: 77c179dede1ac7f1cafd973b746f31dfed9863534bcf9279c1acac8e042d32a4
+  compiler_flags: -std=c++20 -O3 -Wall -Wextra -Wpedantic -Werror
+  workers: 14
+
+Command:
+  ./build/cover-neighborhood \
+    --seed data/candidates/l9-r1-70-uncovered-6.txt \
+    --n 9 --radius 1 --max-distance 8 --workers 14
+
+Counts and outcomes:
+  distance  shell size   cumulative evaluated  best uncovered
+  0         1            1                     6
+  1         70           71                    6
+  2         2415         2486                  6
+  3         54740        57226                 6
+  4         916895       974121                6
+  5         12103014     13077135              6
+  6         131115985    144193120             6
+  7         1198774720   1342967840            6
+  8         9440350920   10783318760           6
+
+Final result:
+  found: false
+  evaluated: 10783318760
+  best_uncovered: 6
+  best_distance: 0
+  real_seconds: 1023.21
+  user_seconds: 13006.60
+  system_seconds: 44.86
+  output_log_sha256: b63a948f5b7d9b7cfdfc8ba2bd8d9a050d9c9771255eeafd675eb5e311198b28
+
+Independent checks:
+  Python exhaustive recomputation agreed through distance 3.
+  Python shell minima were 6, 12, 16, and 18 at distances 0, 1, 2, and 3.
+  Independently generated SAT formulas were UNSAT through distance 4.
+  A complete length-8 cube self-test visited all 256 candidates with both
+  one worker and eight workers.
+  AddressSanitizer, UndefinedBehaviorSanitizer, and ThreadSanitizer self-tests
+  passed.
+
+Conclusion:
+  No valid sequence exists within Hamming distance 8 of this retained seed.
+  No sequence in the ball improves on the seed's six uncovered words. Ties
+  were not counted. This result excludes no sequence outside the ball and
+  establishes no new global bound on L(9,1).

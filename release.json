@@ -1,0 +1,39 @@
+{
+  "version": "0.1.0",
+  "release_date": "2026-09-02",
+  "artifact_status": "reproducible_scoped_result_and_search_benchmark",
+  "supported_claim": "The exact maximum overlap between a 70-bit cyclic binary sequence and the retained 64-edge common backbone is 61. The repository also independently verifies the reported 71-bit certificate, retains proof-checked local SAT exclusions, and separately labels bounded solver results that have no proof traces.",
+  "claim_status": "scoped_theorem_no_new_global_bound",
+  "artifact_reproducibility_ready": true,
+  "artifact_release_ready": true,
+  "theorem_announcement_ready": false,
+  "scoped_result_scope": "A graph-theoretic theorem for one project-derived backbone at exact length 70. It is not a new construction, a new bound on L(9,1), or a global impossibility result.",
+  "theorem_announcement_blockers": [
+    "Focused theorem-specific novelty audit",
+    "Independent external mathematical review"
+  ],
+  "external_review_status": "pending",
+  "result_routes": {
+    "scoped_theorem": {
+      "artifact_claim_ready": true,
+      "theorem_announcement_ready": false,
+      "internal_verification_complete": true,
+      "statement": "Every 70-bit cyclic binary sequence contains at most 61 distinct edges of the retained 64-edge common backbone, and the bound is attained.",
+      "evidence": "A finite residual-flow proof, retained exact enumeration, positive controls, and a tight 70-bit witness.",
+      "blocker": "Focused novelty review and independent external mathematical review remain pending."
+    },
+    "construction": {
+      "claim_ready": false,
+      "blocker": "No independently verified 70-bit certificate exists."
+    },
+    "global_lower_bound": {
+      "claim_ready": false,
+      "blocker": "Lengths 62 through 70 have not all been excluded by independently checked proofs."
+    },
+    "benchmark_artifact": {
+      "artifact_complete": true,
+      "scope": "Verified methods, reproduced artifacts, independently checked local DRAT exclusions, separately labeled solver evidence without proof traces, a reduction to nine unresolved cases in the multiplicity-aware overlap-61 shell, the exact common-backbone result, and explicit limitations."
+    }
+  },
+  "last_reviewed": "2026-09-02"
+}

@@ -1,0 +1,80 @@
+{
+  "candidates": [
+    {
+      "added_edges": [
+        187,
+        442
+      ],
+      "conjugate_vertices": [
+        93,
+        221
+      ],
+      "cycle_lengths_after": [
+        1,
+        4,
+        64
+      ],
+      "removed_edges": [
+        186,
+        443
+      ],
+      "uncovered_words": [
+        58,
+        178,
+        184,
+        190
+      ],
+      "valid_cover": false
+    },
+    {
+      "added_edges": [
+        239,
+        494
+      ],
+      "conjugate_vertices": [
+        119,
+        247
+      ],
+      "cycle_lengths_after": [
+        1,
+        4,
+        64
+      ],
+      "removed_edges": [
+        238,
+        495
+      ],
+      "uncovered_words": [
+        367,
+        487,
+        491,
+        493
+      ],
+      "valid_cover": false
+    }
+  ],
+  "cross_join_candidate_count": 2,
+  "cycle_lengths_before": [
+    1,
+    4,
+    4,
+    60
+  ],
+  "n": 9,
+  "radius": 1,
+  "support_report": {
+    "balanced": true,
+    "component_count": 4,
+    "component_edge_counts": [
+      1,
+      4,
+      4,
+      60
+    ],
+    "covered_words": 512,
+    "distinct_edges": 69,
+    "uncovered_words": []
+  },
+  "support_sha256": "143522ecd2c92d9d5ca11b28baba6d3623e8be483e5974c278d9378150eab50d",
+  "valid_cross_join_count": 0
+}

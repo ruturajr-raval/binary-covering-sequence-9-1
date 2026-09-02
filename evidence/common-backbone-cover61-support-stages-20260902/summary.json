@@ -1,0 +1,85 @@
+{
+  "anchor_cases": [
+    0,
+    16
+  ],
+  "exact_overlap": 61,
+  "length": 70,
+  "n": 9,
+  "radius": 1,
+  "results": {
+    "61": {
+      "0": "INFEASIBLE",
+      "16": "INFEASIBLE"
+    },
+    "62": {
+      "0": "INFEASIBLE",
+      "16": "INFEASIBLE"
+    },
+    "63": {
+      "0": "INFEASIBLE",
+      "16": "INFEASIBLE"
+    },
+    "64": {
+      "0": "INFEASIBLE",
+      "16": "INFEASIBLE"
+    },
+    "65": {
+      "0": "INFEASIBLE",
+      "16": "INFEASIBLE"
+    },
+    "66": {
+      "0": "UNKNOWN",
+      "16": "UNKNOWN"
+    },
+    "67": {
+      "0": "UNKNOWN",
+      "16": "UNKNOWN"
+    },
+    "68": {
+      "0": "UNKNOWN",
+      "16": "UNKNOWN"
+    }
+  },
+  "remaining_cases": [
+    {
+      "anchor_edge": 0,
+      "support_size": 66
+    },
+    {
+      "anchor_edge": 16,
+      "support_size": 66
+    },
+    {
+      "anchor_edge": 0,
+      "support_size": 67
+    },
+    {
+      "anchor_edge": 16,
+      "support_size": 67
+    },
+    {
+      "anchor_edge": 0,
+      "support_size": 68
+    },
+    {
+      "anchor_edge": 16,
+      "support_size": 68
+    }
+  ],
+  "repair_source_sha256": "9cfa273c03199c4dc4bf6bc84fa000371594c707c82b64d56e825777c5dbc2fd",
+  "status_counts": {
+    "INFEASIBLE": 10,
+    "UNKNOWN": 6
+  },
+  "time_limit_seconds_per_case": {
+    "61": 120,
+    "62": 120,
+    "63": 120,
+    "64": 120,
+    "65": 180,
+    "66": 180,
+    "67": 180,
+    "68": 180
+  }
+}

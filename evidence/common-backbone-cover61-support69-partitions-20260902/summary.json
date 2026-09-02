@@ -1,0 +1,50 @@
+{
+  "anchor_cases": [
+    0,
+    16
+  ],
+  "candidate_support_size": 69,
+  "exact_overlap": 61,
+  "length": 70,
+  "n": 9,
+  "partition_results": {
+    "anchor_0": {
+      "outside_any": "UNKNOWN",
+      "outside_loop": "INFEASIBLE",
+      "outside_nonloop": "UNKNOWN",
+      "reference_any": "INFEASIBLE"
+    },
+    "anchor_16": {
+      "outside_any": "UNKNOWN",
+      "outside_loop": "INFEASIBLE",
+      "outside_nonloop": "UNKNOWN",
+      "reference_any": "UNKNOWN",
+      "reference_loop": "INFEASIBLE",
+      "reference_nonloop": "UNKNOWN"
+    }
+  },
+  "radius": 1,
+  "remaining_cases": [
+    {
+      "anchor_edge": 0,
+      "duplicate_kind": "nonloop",
+      "duplicate_scope": "outside"
+    },
+    {
+      "anchor_edge": 16,
+      "duplicate_kind": "nonloop",
+      "duplicate_scope": "reference"
+    },
+    {
+      "anchor_edge": 16,
+      "duplicate_kind": "nonloop",
+      "duplicate_scope": "outside"
+    }
+  ],
+  "repair_source_sha256": "1218c6d78a52faa724b52d4edb6fc67c17c416b33897acd61f38548d6eb756bf",
+  "status_counts_for_leaf_cases": {
+    "INFEASIBLE": 4,
+    "UNKNOWN": 3
+  },
+  "time_limit_seconds_per_case": 180
+}

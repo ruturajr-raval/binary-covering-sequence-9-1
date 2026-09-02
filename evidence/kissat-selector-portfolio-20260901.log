@@ -1,0 +1,36 @@
+Experiment: initial length-70 selector encoding
+Date: 2026-09-01
+Machine: Apple M4 Pro, arm64, macOS
+
+CNF:
+  variables: 35910
+  clauses: 1290754
+  sha256: 2ac305140a1c8bce497fe8d1e82b04a2f373d3e714af1917f4261b3bb1981ed6
+
+Solver:
+  name: Kissat 4.0.4
+  source_commit: 8af8e56f174b778aef3aa45af9f739b2a5f492c2
+  binary_sha256: fa22d33082fdb4ec40f949bf2a73776d7a6f638dfda2da119084d108cb1cbbdc
+  compiler: Apple clang 21.0.0
+  flags: -W -Wall -O3 -DNDEBUG -DQUIET
+
+Command template:
+  kissat --sat --seed=SEED --time=300 l9-r1-70.cnf
+
+Results:
+  seed 0: UNKNOWN
+  seed 1: UNKNOWN
+  seed 2: UNKNOWN
+  seed 3: UNKNOWN
+  seed 4: UNKNOWN
+  seed 5: UNKNOWN
+  seed 6: UNKNOWN
+  seed 7: UNKNOWN
+  seed 8: UNKNOWN
+  seed 9: UNKNOWN
+  seed 10: UNKNOWN
+  seed 11: UNKNOWN
+  seed 12: UNKNOWN
+  seed 13: UNKNOWN
+
+The 300-second limit is wall-clock time. No model or proof was produced.

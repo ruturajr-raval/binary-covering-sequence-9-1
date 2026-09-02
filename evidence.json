@@ -1,0 +1,1013 @@
+{
+  "problem": "binary cyclic covering sequence",
+  "parameters": {
+    "n": 9,
+    "radius": 1
+  },
+  "frontier_checked_on": "2026-09-02",
+  "known_lower_bound": 62,
+  "known_upper_bound": 71,
+  "target_length": 70,
+  "baseline_certificate": "data/baseline/l9-r1-71.txt",
+  "baseline_verified": true,
+  "baseline_file_sha256": "40c757662f703fc481883fddb8d359f8e0fe685207ac4cba1685a205a2208608",
+  "baseline_normalized_sha256": "40c757662f703fc481883fddb8d359f8e0fe685207ac4cba1685a205a2208608",
+  "baseline_coverage": {
+    "covered_words": 512,
+    "total_words": 512,
+    "distinct_windows": 71,
+    "coverage_histogram": {
+      "1": 391,
+      "2": 51,
+      "3": 63,
+      "4": 7
+    }
+  },
+  "best_incomplete_length_70_search": {
+    "sequence": "data/candidates/l9-r1-70-uncovered-6.txt",
+    "source": "deterministic replay of CPro1 progCS1",
+    "seed": 4000,
+    "iteration": 1530000,
+    "covered_words": 506,
+    "uncovered_words": [
+      30,
+      60,
+      61,
+      156,
+      206,
+      286
+    ],
+    "distance_deficit": 6,
+    "singleton_words": 332,
+    "distinct_windows": 70,
+    "file_sha256": "d9ab4f217c659a712fd72db06057b8127db18eb2e3151d96265c17f1712941dd",
+    "normalized_sha256": "b16298249cf8e1ca81c7483dba0f3700d19ca905bb72b94890c6ce5480be2d8a",
+    "status": "not a certificate"
+  },
+  "exact_length_70_search": {
+    "encoding_variables": 35910,
+    "encoding_clauses": 1290754,
+    "encoding_sha256": "2ac305140a1c8bce497fe8d1e82b04a2f373d3e714af1917f4261b3bb1981ed6",
+    "solver": "Kissat 4.0.4",
+    "solver_commit": "8af8e56f174b778aef3aa45af9f739b2a5f492c2",
+    "seeds": 14,
+    "wall_seconds_per_seed": 300,
+    "result": "UNKNOWN",
+    "evidence_log": "evidence/kissat-selector-portfolio-20260901.log",
+    "status": "neither a construction nor an impossibility proof"
+  },
+  "pattern_length_70_search": {
+    "encoding_variables": 36422,
+    "encoding_clauses": 359461,
+    "encoding_sha256": "937bfc749966df7acc75244ebf90f1f3e2eab53cfecbf07d11f91801b4bf8a76",
+    "solver": "Kissat 4.0.4",
+    "solver_commit": "8af8e56f174b778aef3aa45af9f739b2a5f492c2",
+    "seeds": 8,
+    "wall_seconds_per_seed": 300,
+    "result": "UNKNOWN",
+    "positive_control": {
+      "length": 71,
+      "result": "SATISFIABLE",
+      "decoded_baseline_exactly": true,
+      "cnf_sha256": "c1b27b7d77d76696b00b5edd8ed26ff7ff673de4bdfe8887ae14b7df6fd69f44"
+    },
+    "evidence_logs": [
+      "evidence/kissat-pattern-portfolio-20260901.log",
+      "evidence/pattern-positive-control-20260901.log"
+    ],
+    "status": "neither a construction nor an impossibility proof"
+  },
+  "fixed_seed_hamming_ball": {
+    "checked_on": "2026-09-02",
+    "seed": "data/candidates/l9-r1-70-uncovered-6.txt",
+    "maximum_distance": 8,
+    "evaluated_sequences": 10783318760,
+    "expected_sequences": 10783318760,
+    "found_valid_sequence": false,
+    "best_uncovered_words": 6,
+    "best_distance": 0,
+    "source_sha256": "0af3dce318f11e7e077504046055f9e3ed9bccc0175dd890a05e8b6257674f7c",
+    "binary_sha256": "77c179dede1ac7f1cafd973b746f31dfed9863534bcf9279c1acac8e042d32a4",
+    "independent_checks": {
+      "python_exhaustive_through_distance": 3,
+      "kissat_unsat_through_distance": 4,
+      "cadical_drat_verified_through_distance": 4,
+      "asan_passed": true,
+      "ubsan_passed": true,
+      "tsan_passed": true
+    },
+    "evidence_log": "evidence/hamming-neighborhood-20260902.log",
+    "scope": "excludes only this seed's Hamming ball and establishes no global bound"
+  },
+  "breakout_portfolio": {
+    "checked_on": "2026-09-02",
+    "workers": 14,
+    "worker_iterations": 600000,
+    "parameter_schedules": 3,
+    "found_valid_sequence": false,
+    "strict_raw_improvements": 0,
+    "best_uncovered_words": 6,
+    "source_sha256": "6c72197bc4be3f179cbb5acc5d85794fa11bdf7edc1f3428cc825bd15d97a5e6",
+    "binary_sha256": "ae8a42fc97adc60271daffebb6a72706abbb5936a33932be9c34ed10e8892e06",
+    "evidence_log": "evidence/breakout-portfolio-20260902.log",
+    "status": "negative heuristic evidence only"
+  },
+  "ejection_chain_search": {
+    "checked_on": "2026-09-02",
+    "source": "evidence/ejection/search_v1.cpp",
+    "source_sha256": "f0c22de3ebd5626be7d151e4ff4b45bd3669a8a2df8cd991e14e52e5cfacfbd6",
+    "binary_sha256": "90c0b436958f70100d010054d9b793518f9413b85ae6a6dcad9586b38889113c",
+    "parameters": {
+      "length": 70,
+      "n": 9,
+      "radius": 1,
+      "workers": 1,
+      "chains": 500,
+      "seed": 1,
+      "worker_seed": 11400714819323198486,
+      "beam_width": 256,
+      "depth": 16,
+      "maximum_action_size": 3,
+      "damage": 20,
+      "endpoint_damage": 6,
+      "actionable_targets_per_node": 1
+    },
+    "metrics": {
+      "candidate_evaluations": 110835857,
+      "beam_states": 616853,
+      "accepted_endpoints": 278,
+      "exploration_chains": 125,
+      "maximum_origin_distance": 49,
+      "distant_six_gap_visits": 67,
+      "distinct_archived_distant_six_gap_states": 8,
+      "archive_capped": false,
+      "best_distant_distance": 44,
+      "distance_metric": "raw aligned Hamming distance without rotation or reflection canonicalization",
+      "retained_state_cyclic_orbit_distance": 0,
+      "wall_seconds": 149.6
+    },
+    "result": {
+      "found_valid_sequence": false,
+      "strict_raw_improvements": 0,
+      "best_uncovered_words": 6,
+      "best_distance_deficit": 6,
+      "best_singletons": 332
+    },
+    "artifacts": {
+      "log": {
+        "path": "evidence/ejection/ejection-postfix-500.log",
+        "sha256": "0f8c367ae859e8f182c1d4b955ab3816c5acb5bc3161cf07e8a81bb243d4387c"
+      },
+      "best_state": {
+        "path": "evidence/ejection/ejection-postfix-500.txt.best",
+        "sha256": "b16298249cf8e1ca81c7483dba0f3700d19ca905bb72b94890c6ce5480be2d8a",
+        "covered_words": 506,
+        "uncovered_words": [
+          30,
+          60,
+          61,
+          156,
+          206,
+          286
+        ],
+        "distinct_windows": 70
+      },
+      "distant_state": {
+        "path": "evidence/ejection/ejection-postfix-500.txt.distant.0",
+        "sha256": "76b56ef0e7ea8d92d3591a642925fb4e5f62773dcd1e954e028198c2e53c2212",
+        "raw_hamming_distance_from_best_state": 44,
+        "cyclic_rotation_from_best_state": 9,
+        "cyclic_orbit_distance_from_best_state": 0,
+        "orbit_distinct_from_best_state": false,
+        "covered_words": 506,
+        "uncovered_words": [
+          30,
+          60,
+          61,
+          156,
+          206,
+          286
+        ],
+        "distinct_windows": 70
+      }
+    },
+    "independent_verification": "Both retained files were checked by the Python and C++ verifiers. The archived file is the best state rotated by 9 positions, so it is not a distinct cyclic orbit.",
+    "global_bound_changed": false,
+    "status": "negative heuristic evidence only"
+  },
+  "graph_cp_sat_search": {
+    "checked_on": "2026-09-02",
+    "snapshot_status": "historical initial graph-model snapshot; see graph_strengthening_search for the current model",
+    "solver": "OR-Tools CP-SAT 9.15.6755",
+    "final_source_sha256": "21490b3a8cf0d43d0579a3f879c7482f415edc7fd779a1a227361ed4b2e06f54",
+    "tests_sha256": "44698937f03500b199c475025c21d757ba6f19e239f52b7cfac8a37326d54cc9",
+    "connectivity_formulations": [
+      "single-commodity flow",
+      "rooted arborescence",
+      "iterative component cuts"
+    ],
+    "strengthening": [
+      "disjoint anchor cases",
+      "support-size stages",
+      "at-most-length search",
+      "minimum support",
+      "Van Wee inequalities",
+      "Hamming-weight layer inequalities",
+      "repeat-defect budget"
+    ],
+    "validation": {
+      "solver_tests_passed": 15,
+      "small_instance_feasibility": "matched direct enumeration",
+      "length_71_positive_control": "OPTIMAL and independently valid",
+      "repeated_edge_positive_control": "OPTIMAL and independently valid"
+    },
+    "bounded_searches": {
+      "partitioned_distinct_at_most_70": "9 UNKNOWN and 1 INFEASIBLE",
+      "support_69_anchor_64": "UNKNOWN"
+    },
+    "found_valid_sequence": false,
+    "global_impossibility_proof": false,
+    "evidence_log": "evidence/graph-cp-sat-20260902.log",
+    "raw_artifacts_directory": "evidence/graph-cp-sat",
+    "evidence_log_sha256": "efb4cb183d846932751baa1c65a723cd12221c00e305cb6aa23f63e24cf34dcd",
+    "scope": "method evidence and one partitioned distinct-anchor exclusion; no new global bound"
+  },
+  "graph_strengthening_search": {
+    "checked_on": "2026-09-02",
+    "solver": "OR-Tools CP-SAT 9.15.6755",
+    "source_sha256": "1fd81c871c62d29bf217de9804d915e8fd00dac489aa2d6dd41b0782f987fac8",
+    "tests_sha256": "60d539acb12b2f96f84d50aaab3e8eabf8ecf27ef6785482d66c3e2d0cc398a3",
+    "strengthening": [
+      "substring stationarity maxima",
+      "optional Walsh covering aggregates",
+      "shift-distance parity",
+      "radius-1 autocorrelation covering inequalities",
+      "exact odd-orbit autocorrelation bounds"
+    ],
+    "validation": {
+      "solver_tests_passed": 28,
+      "small_cycle_identities": "passed",
+      "model_proto_coefficients": "passed",
+      "length_71_positive_controls": "OPTIMAL and independently valid in flow, tree, and cut modes",
+      "repeated_window_positive_control": "OPTIMAL and independently valid"
+    },
+    "bounded_search": {
+      "length": 70,
+      "support_size": 69,
+      "partitioned_anchors": [
+        0,
+        1,
+        2,
+        4,
+        8,
+        16,
+        32,
+        64,
+        128,
+        256
+      ],
+      "workers_per_case": 1,
+      "wall_seconds_per_case": 300,
+      "result": "9 UNKNOWN and 1 INFEASIBLE",
+      "aggregate_branches": 1538061,
+      "aggregate_conflicts": 24028,
+      "aggregate_solver_wall_seconds": 2700.014647,
+      "feasible_incumbents": 0
+    },
+    "found_valid_sequence": false,
+    "support_size_69_impossibility_proof": false,
+    "global_impossibility_proof": false,
+    "evidence_log": "evidence/graph-strengthening-20260902.log",
+    "raw_artifacts_directory": "evidence/graph-strengthening",
+    "evidence_log_sha256": "09acfd2eac7e7fa8c908b7daf0cebb3c5bc770b9c79bfd2f74980a5fc2b311f2",
+    "scope": "all ten scheduled bounded anchor runs executed for exact length 70 and support size 69; nine timeouts leave the stage unresolved and establish no new bound"
+  },
+  "graph_support_repair": {
+    "checked_on": "2026-09-02",
+    "solver": "OR-Tools CP-SAT 9.15.6755",
+    "production_run": "graph-repair-run-20260902",
+    "source_hash_scope": "Source hashes authenticate the retained production snapshots; later interface hardening does not alter the retained solver artifacts.",
+    "flow_source_sha256": "2d833f320e15790afa38887cf1161fe84cebbef617738ee1e124e3f1aff111a6",
+    "repair_source_sha256": "e1d949aaa27fb99f9bf62f37f2c5b9f2e1032377c257dfad70a7ac5641eb85e6",
+    "finder_source_sha256": "75772bb30dcb409aa4d2b67e4ddb445edc41f49a3c231d986d34967dbec7e0f9",
+    "analyzer_source_sha256": "de2b83622ac4146fbcb5c382840fbeab48cde6127130097c8818c6638f3326e7",
+    "source_snapshots": {
+      "flow": {
+        "path": "evidence/graph-repair/source/flow_cp_sat.py",
+        "sha256": "2d833f320e15790afa38887cf1161fe84cebbef617738ee1e124e3f1aff111a6"
+      },
+      "repair": {
+        "path": "evidence/graph-repair/source/repair_support.py",
+        "sha256": "e1d949aaa27fb99f9bf62f37f2c5b9f2e1032377c257dfad70a7ac5641eb85e6"
+      },
+      "finder": {
+        "path": "evidence/graph-repair/source/find_cover_support.py",
+        "sha256": "75772bb30dcb409aa4d2b67e4ddb445edc41f49a3c231d986d34967dbec7e0f9"
+      },
+      "analyzer": {
+        "path": "evidence/graph-repair/source/analyze_support.py",
+        "sha256": "de2b83622ac4146fbcb5c382840fbeab48cde6127130097c8818c6638f3326e7"
+      }
+    },
+    "validation": {
+      "focused_tests_passed": 47,
+      "base_support_balanced": true,
+      "base_support_covered_words": 512,
+      "base_support_distinct_edges": 69,
+      "base_support_component_edge_counts": [
+        1,
+        4,
+        4,
+        60
+      ]
+    },
+    "base_support": {
+      "artifact": "evidence/graph-repair/disconnected-support-anchor-0.json",
+      "artifact_sha256": "9f852d2524f8794a248c7bf2a093774cf67676bfd676f742e508fff1fbc2467c",
+      "normalized_support_sha256": "143522ecd2c92d9d5ca11b28baba6d3623e8be483e5974c278d9378150eab50d"
+    },
+    "cross_join_analysis": {
+      "candidate_count": 2,
+      "valid_cover_count": 0,
+      "artifact": "evidence/graph-repair/cross-joins.json",
+      "artifact_sha256": "5d21ee8d59a13669f96355cd7aada758af21b5ef146a8d4fe9b6a1fe770febcf"
+    },
+    "overlap_neighborhood": {
+      "length": 69,
+      "minimum_overlap": 58,
+      "maximum_replacements": 11,
+      "partitioned_anchors": [
+        0,
+        1,
+        2,
+        4,
+        8,
+        16,
+        32,
+        64,
+        128,
+        256
+      ],
+      "artifacts": {
+        "0": {
+          "path": "evidence/graph-repair/overlap58-anchor-0.json",
+          "sha256": "8796b18625b55140214f0c3d1201fea1e4a738956b4a6c6000672279607b966b"
+        },
+        "1": {
+          "path": "evidence/graph-repair/overlap58-anchor-1.json",
+          "sha256": "bfd564d31f5966293a4e82123bdff8ddc5c435e291428c0120ccc9a97ca6ec40"
+        },
+        "2": {
+          "path": "evidence/graph-repair/overlap58-anchor-2.json",
+          "sha256": "f9b297c050b353159ef6760e9483504baa24ca7dc2b2368bb6e9064438ed81d2"
+        },
+        "4": {
+          "path": "evidence/graph-repair/overlap58-anchor-4.json",
+          "sha256": "c63eaf221ae6f61791d85350f302f2f301578f0d5c1b2cd7f7a3820ae79ba094"
+        },
+        "8": {
+          "path": "evidence/graph-repair/overlap58-anchor-8.json",
+          "sha256": "013a6166c2a9f278dc3b2b7e0ab35fc6bf00a5602b75021c120d2d790d98ff99"
+        },
+        "16": {
+          "path": "evidence/graph-repair/overlap58-anchor-16.json",
+          "sha256": "96e60e5121e7c2a807a9abefbc3f1ac3c34ed445be4fe9f5f1d050cb4d9e5572"
+        },
+        "32": {
+          "path": "evidence/graph-repair/overlap58-anchor-32.json",
+          "sha256": "f085bb781f16bb6212c5ebbce02311511cca31c9babb42346ce27a8375b3a2fe"
+        },
+        "64": {
+          "path": "evidence/graph-repair/overlap58-anchor-64.json",
+          "sha256": "798fa8ba73a253a6a22800cc312682daf021d768ff4be59af38dbcd0db6fda45"
+        },
+        "128": {
+          "path": "evidence/graph-repair/overlap58-anchor-128.json",
+          "sha256": "eb6764a029f08d530b2c20e96620ac00a61c4437952441840cd060965dc579c8"
+        },
+        "256": {
+          "path": "evidence/graph-repair/overlap58-anchor-256.json",
+          "sha256": "a40ac72e3fa63cceaae79ee8f92034b607439689c00b2fdeb73cc8d4d67391ed"
+        }
+      },
+      "result": "10 CP-SAT INFEASIBLE statuses",
+      "cp_sat_implied_required_replacements_at_least": 12,
+      "aggregate_solver_wall_seconds": 800.045133,
+      "aggregate_deterministic_time": 4967.862407911692,
+      "aggregate_branches": 49738757,
+      "aggregate_conflicts": 352824
+    },
+    "anchor_zero_additional_exclusion": {
+      "minimum_overlap": 57,
+      "result": "CP-SAT INFEASIBLE",
+      "cp_sat_implied_required_replacements_at_least": 13,
+      "artifact": "evidence/graph-repair/overlap57-anchor-0.json",
+      "artifact_sha256": "42b18a87c0c8ac05f4dec277d8d1bc59cec9a89a0b3cd32cae0118506b198f30"
+    },
+    "proof_trace_available": false,
+    "found_valid_sequence": false,
+    "length_69_impossibility_proof": false,
+    "global_bound_changed": false,
+    "evidence_log": "evidence/graph-repair-20260902.log",
+    "evidence_log_sha256": "471d2917ccccc5c0309c9d9803f04faba1feb0b3f388e51518e3792c8ecf6855",
+    "raw_artifacts_directory": "evidence/graph-repair",
+    "scope": "CP-SAT exact-model evidence for connected distinct-window length-69 supports sharing at least 58 edges with one retained disconnected support; no proof trace was emitted, repeated-window sequences and more distant supports remain open, and no new bound is claimed"
+  },
+  "graph_support70_repair": {
+    "checked_on": "2026-09-02",
+    "solver": "OR-Tools CP-SAT 9.15.6755",
+    "production_run": "graph-repair70-run-20260902",
+    "source_hash_scope": "Source hashes authenticate the retained production snapshots used for the solver artifacts.",
+    "flow_source_sha256": "90cab0d0bcd3b8ad6c770249e78cf463fa9153abee2120d70ceaa54e99747ce3",
+    "repair_source_sha256": "1e1ee62261d9c02fdbe0e05ff268f21fcddc9b9eeff01c119853ec81300803bf",
+    "source_snapshots": {
+      "flow": {
+        "path": "evidence/graph-repair70/source/flow_cp_sat.py",
+        "sha256": "90cab0d0bcd3b8ad6c770249e78cf463fa9153abee2120d70ceaa54e99747ce3"
+      },
+      "repair": {
+        "path": "evidence/graph-repair70/source/repair_support.py",
+        "sha256": "1e1ee62261d9c02fdbe0e05ff268f21fcddc9b9eeff01c119853ec81300803bf"
+      }
+    },
+    "base_support": {
+      "artifact": "evidence/graph-repair70/anchor-0-seed-1.json",
+      "artifact_sha256": "6049fefe04c580b9afa9bbbf8cd5cee27f56de751ca999baafe8006c1314f711",
+      "normalized_support_sha256": "83814d9a9e1a1964b09f17c590bea4f5fcd9a234cd1846a7594fa863bea18a07",
+      "balanced": true,
+      "covered_words": 512,
+      "distinct_edges": 70,
+      "active_vertices": 70,
+      "component_edge_counts": [
+        1,
+        1,
+        4,
+        4,
+        60
+      ]
+    },
+    "cross_join_analysis": {
+      "artifact": "evidence/graph-repair70/anchor0-cross-joins.json",
+      "artifact_sha256": "48b4e0b7f12c32df55eb986302167d4b34ca7bad1e8f06f24ba18769cbf950aa",
+      "log": "evidence/graph-repair70/anchor0-cross-joins.log",
+      "log_sha256": "48b4e0b7f12c32df55eb986302167d4b34ca7bad1e8f06f24ba18769cbf950aa",
+      "candidate_count": 2,
+      "valid_cover_count": 0
+    },
+    "overlap_neighborhood": {
+      "length": 70,
+      "minimum_overlap": 53,
+      "maximum_replacements": 17,
+      "partitioned_anchors": [
+        0,
+        1,
+        2,
+        4,
+        8,
+        16,
+        32,
+        64,
+        128,
+        256
+      ],
+      "artifacts": {
+        "0": {
+          "path": "evidence/graph-repair70/repair-overlap53-anchor0.json",
+          "sha256": "55fca21dfbf62bc616865e1a8208caac9dacec39b07c8a6e3290e96762b9788e",
+          "log": "evidence/graph-repair70/repair-overlap53-anchor0.log",
+          "log_sha256": "15db911ba0dbcfcb9a6e486f3a1689868a7dc04e1f978796a7b16f511f43fa7e",
+          "status": "INFEASIBLE"
+        },
+        "1": {
+          "path": "evidence/graph-repair70/repair-overlap53-anchor1-w2.json",
+          "sha256": "3b1f495424618f9f1080f0a36d9f919260a158270af4f11d994c659ddb2206fc",
+          "log": "evidence/graph-repair70/repair-overlap53-anchor1-w2.log",
+          "log_sha256": "988faf96d339eb04ff146f784c9f7f56b9be01b0cea7ca158ffe8a8510bd8238",
+          "status": "UNKNOWN"
+        },
+        "2": {
+          "path": "evidence/graph-repair70/repair-overlap53-anchor2-w2.json",
+          "sha256": "0e31dd4d6800e9abb9d39ff51b752c9e0e0522340ec6e6876d733f3862b0902c",
+          "log": "evidence/graph-repair70/repair-overlap53-anchor2-w2.log",
+          "log_sha256": "3294b9a20709fa1bde245892e8dc7e3b8178c540cb0fae9c690dc99574458eb3",
+          "status": "UNKNOWN"
+        },
+        "4": {
+          "path": "evidence/graph-repair70/repair-overlap53-anchor4-w2.json",
+          "sha256": "38b19e288648e20ba9005ed19cd4b2302f2c252aed154f8f8392c41d52dd4f33",
+          "log": "evidence/graph-repair70/repair-overlap53-anchor4-w2.log",
+          "log_sha256": "234b4d6757e7d61d9810fbdd724f7e9fc9104e0d7fbf2a83661923b4a720372b",
+          "status": "UNKNOWN"
+        },
+        "8": {
+          "path": "evidence/graph-repair70/repair-overlap53-anchor8-w2.json",
+          "sha256": "44afa1ae22e420675ed0d567537c3cd94551c3a3b480ed8510298b309dea89f5",
+          "log": "evidence/graph-repair70/repair-overlap53-anchor8-w2.log",
+          "log_sha256": "d408b82f71a209298c19ce10c06e19d79e6d778fb7c1874e91f756418689ccc9",
+          "status": "UNKNOWN"
+        },
+        "16": {
+          "path": "evidence/graph-repair70/repair-overlap53-anchor16-w2.json",
+          "sha256": "eaad84d296416f594357add4cc0b19f2349bfe25acc414ee7812f042a0d228b6",
+          "log": "evidence/graph-repair70/repair-overlap53-anchor16-w2.log",
+          "log_sha256": "75fb1ac5c2c8b1003f65a54af77c8e7bfbd0327c891b6d4bc465b1149979533c",
+          "status": "UNKNOWN"
+        },
+        "32": {
+          "path": "evidence/graph-repair70/repair-overlap53-anchor32-w2.json",
+          "sha256": "3550f9583356f4de1d1aef8baea0894d0fae5188eddbc29b3010eb7dfb16e7b9",
+          "log": "evidence/graph-repair70/repair-overlap53-anchor32-w2.log",
+          "log_sha256": "1a37210fd1d88057a9e03890d840a526a81e32938f6d729cb1494ad3eff50d3a",
+          "status": "UNKNOWN"
+        },
+        "64": {
+          "path": "evidence/graph-repair70/repair-overlap53-anchor64-w2.json",
+          "sha256": "cf90fb56271060cf243bc23c4b21723c9f7817bfc2271a03fc96aee295d0db50",
+          "log": "evidence/graph-repair70/repair-overlap53-anchor64-w2.log",
+          "log_sha256": "0e4d9e537adab7803f2cfaac53353c3cc2fb93f857c0f365ceb429ea551da792",
+          "status": "UNKNOWN"
+        },
+        "128": {
+          "path": "evidence/graph-repair70/repair-overlap53-anchor128.json",
+          "sha256": "92adf8e0f23dd1f46ad84519065faf9084dbb51d9d227c100a097d2a1709b39b",
+          "log": "evidence/graph-repair70/repair-overlap53-anchor128.log",
+          "log_sha256": "54ced8fb1f99cc5e77b9746f73b82891926af39b510974ac014a451147a13185",
+          "status": "INFEASIBLE"
+        },
+        "256": {
+          "path": "evidence/graph-repair70/repair-overlap53-anchor256.json",
+          "sha256": "b78ff263cbaabf00f1a9b52c13e1b7f9128a337d85d86d8c39cc63ce1d57ed4c",
+          "log": "evidence/graph-repair70/repair-overlap53-anchor256.log",
+          "log_sha256": "474434e710d64ba39c177ede3716a6c3086320b07b20a7aad5928efe7c8002bb",
+          "status": "INFEASIBLE"
+        }
+      },
+      "status_counts": {
+        "INFEASIBLE": 3,
+        "UNKNOWN": 7
+      },
+      "scoped_infeasible_anchors": [
+        0,
+        128,
+        256
+      ],
+      "unresolved_anchors": [
+        1,
+        2,
+        4,
+        8,
+        16,
+        32,
+        64
+      ],
+      "aggregate_solver_wall_seconds": 4441.854254,
+      "aggregate_deterministic_time": 16971.360895387817,
+      "aggregate_branches": 68062040,
+      "aggregate_conflicts": 670606
+    },
+    "proof_trace_available": false,
+    "found_valid_sequence": false,
+    "complete_neighborhood_exclusion": false,
+    "global_bound_changed": false,
+    "raw_artifacts_directory": "evidence/graph-repair70",
+    "scope": "Exact CP-SAT search for connected distinct-window length-70 supports sharing at least 53 edges with one retained disconnected support; seven anchor cases remain UNKNOWN, no proof trace was emitted, and no new bound is claimed."
+  },
+  "proof_checked_hamming_neighborhood": {
+    "checked_on": "2026-09-02",
+    "seed": "data/candidates/l9-r1-70-uncovered-6.txt",
+    "seed_file_sha256": "d9ab4f217c659a712fd72db06057b8127db18eb2e3151d96265c17f1712941dd",
+    "maximum_distance": 4,
+    "result": "UNSATISFIABLE",
+    "formula": {
+      "encoding": "pattern variables with a fixed-seed Hamming counter",
+      "variables": 36772,
+      "clauses": 360116,
+      "sha256": "25b76dffc742ba37d33d2ec1c4193579487fc8e096210a43d7987f216211365e",
+      "generator_source": "evidence/sat/generate_cnf_v1.py",
+      "generator_source_sha256": "da3c7a9ed640197cada1f13f287026b5911ecec343ec465ba1994cc7aa5b098e"
+    },
+    "solver": {
+      "name": "CaDiCaL",
+      "version": "3.0.1",
+      "commit": "c60730422e758ef1cebe7aeddf2dda31c996bf04",
+      "binary_sha256": "c0cdc9b28e408906db033915c0847d8ef2d8dd6a043f48276185f0a0a6769e16",
+      "full_binary_proof_bytes": 62232724,
+      "full_binary_proof_sha256": "dd447533961b977e24e8d02c827fc9ac62f59cfa2db33efa9f1a91e279491502"
+    },
+    "retained_proof_core": {
+      "format": "binary DRAT compressed with gzip",
+      "artifact": "evidence/sat/distance4-core-binary.drat.gz",
+      "compressed_bytes": 7925261,
+      "compressed_sha256": "3955b360fc9bf9565f61d756d703b60485f7ca63f3323660c056176bd4001fdb",
+      "raw_bytes": 22414378,
+      "raw_sha256": "3dd0ecba33b08c610e64d9472766078e534866a4119539241f185231bf8ffb8f"
+    },
+    "checker": {
+      "name": "DRAT-trim",
+      "commit": "2e3b2dc0ecf938addbd779d42877b6ed69d9a985",
+      "binary_sha256": "f58f63b0f76945d4c4c9ff6e87afaf870f579e67c0f7cca589492df8fc7ebd47",
+      "result": "VERIFIED"
+    },
+    "solver_log": {
+      "artifact": "evidence/sat/distance4-cadical.log",
+      "sha256": "b72c6a7b357be97571b6d939d54dde76dcf82477fa6885f477054db020075972"
+    },
+    "checker_log": {
+      "artifact": "evidence/sat/distance4-drat-trim.log",
+      "sha256": "cd9a0d028dc529d4636eada556edaa1c78f3e052849f52a69c4aae6fafeacee1"
+    },
+    "retained_log_normalization": "Trailing padding and carriage-return progress formatting were removed, and the local runner hostname was replaced with retained-runner; solver and checker content is unchanged.",
+    "global_bound_changed": false,
+    "scope": "Independently checked proof that no valid length-70 sequence lies within Hamming distance 4 of the retained six-gap seed; this is a local exclusion and no new bound on L(9,1)."
+  },
+  "exact_support_sat_search": {
+    "checked_on": "2026-09-02",
+    "encoding": "pattern variables with reverse window channeling and exact distinct-window cardinality",
+    "generator_source": "evidence/sat/generate_cnf_v1.py",
+    "generator_source_sha256": "da3c7a9ed640197cada1f13f287026b5911ecec343ec465ba1994cc7aa5b098e",
+    "solver": {
+      "name": "CaDiCaL",
+      "version": "3.0.1",
+      "commit": "c60730422e758ef1cebe7aeddf2dda31c996bf04",
+      "binary_sha256": "c0cdc9b28e408906db033915c0847d8ef2d8dd6a043f48276185f0a0a6769e16"
+    },
+    "cases": {
+      "69": {
+        "variables": 72262,
+        "clauses": 537943,
+        "cnf_sha256": "87b1e440edfa59eb08e5bab392c854c4c6f50534802769cce333850de2a2584a",
+        "wall_seconds": 300.01,
+        "conflicts": 1729501,
+        "decisions": 2673503,
+        "result": "UNKNOWN",
+        "solver_log": "evidence/sat/support69-cadical.log",
+        "solver_log_sha256": "b814602f035b198dd5a50e6961ff2caa55ac16a0ef66ebf304a17c380850aa6c"
+      },
+      "70": {
+        "variables": 72774,
+        "clauses": 539988,
+        "cnf_sha256": "66e077fcce6ec405deef4ddedc579f4b61759630a6701093ff6071c0760a1317",
+        "wall_seconds": 300.01,
+        "conflicts": 1704942,
+        "decisions": 2571890,
+        "result": "UNKNOWN",
+        "solver_log": "evidence/sat/support70-cadical.log",
+        "solver_log_sha256": "c4e74c781c247e63ca95f254c0cd5af14e79e53a645719a477894f0013f8df49"
+      }
+    },
+    "retained_log_normalization": "Trailing padding was removed, and the local runner hostname was replaced with retained-runner; solver content and statistics are unchanged.",
+    "found_valid_sequence": false,
+    "support_class_impossibility_proof": false,
+    "global_bound_changed": false,
+    "scope": "Two unrestricted exact-support length-70 searches reached their time limits; both remain unresolved and establish no impossibility result."
+  },
+  "canonical_sat_anchor_cover": {
+    "checked_on": "2026-09-02",
+    "production_run": "sat-anchor-run-20260902",
+    "encoding": "pattern variables, zero-ball anchor transitions, complement leader, lag-XOR distinctness for exact support, and support-balance clauses",
+    "generator_source": "evidence/sat-anchor-cover-20260902/source/generate_cnf_v2.py",
+    "generator_source_sha256": "977f85c151525a2f02e390986ba4a776b4ceaea16a660a63549bf23828ca5dfc",
+    "runner_source": "evidence/sat-anchor-cover-20260902/source/run_cadical_portfolio_v1.py",
+    "runner_source_sha256": "a562d631877479da7a99d8f667a3b4cbf3c66c7eb502cf36f4a718edfe3ba0bb",
+    "file_manifest": "evidence/sat-anchor-cover-20260902/files.sha256",
+    "retained_log_normalization": "Carriage-return progress markers and end-of-line padding were removed, the local runner hostname was replaced with retained-runner, and the absolute solver path was replaced with cadical; solver and checker content is unchanged.",
+    "solver": {
+      "name": "CaDiCaL",
+      "version": "3.0.1",
+      "commit": "c60730422e758ef1cebe7aeddf2dda31c996bf04",
+      "binary_sha256": "c0cdc9b28e408906db033915c0847d8ef2d8dd6a043f48276185f0a0a6769e16"
+    },
+    "checker": {
+      "name": "DRAT-trim",
+      "commit": "2e3b2dc0ecf938addbd779d42877b6ed69d9a985",
+      "binary_sha256": "f58f63b0f76945d4c4c9ff6e87afaf870f579e67c0f7cca589492df8fc7ebd47"
+    },
+    "complete_portfolio": {
+      "summary": "evidence/sat-anchor-cover-20260902/complete/summary.json",
+      "summary_sha256": "0a857cf942efd51c27f4ac18721f2ad60a5aaf213ad2895406387d4489f7f915",
+      "production_run": "sat-anchor-run-20260902",
+      "case_count": 22,
+      "variables_per_case": 38942,
+      "clauses_per_case": 364405,
+      "wall_seconds_per_case": 300,
+      "status_counts": {
+        "UNKNOWN": 22
+      },
+      "scope": "A complete reflection-reduced cover of length-70 candidates; every case timed out, so it produced neither a construction nor an impossibility proof."
+    },
+    "exact_support_70_portfolio": {
+      "summary": "evidence/sat-anchor-cover-20260902/support70/summary.json",
+      "summary_sha256": "d95bf9d2b6fd3fcf7abe970a171e000ee7c79f46e0b225ebac4afec4bdb290d2",
+      "production_run": "sat-anchor-run-20260902",
+      "case_count": 22,
+      "variables_per_case": 41357,
+      "clauses_per_case": 414868,
+      "wall_seconds_per_case": 300,
+      "status_counts": {
+        "UNKNOWN": 20,
+        "UNSATISFIABLE": 2
+      },
+      "mathematical_observation": "In an all-distinct cyclic window sequence, an occurrence of the all-zero 9-bit word must have predecessor and successor bits equal to one; otherwise an adjacent window is identical.",
+      "scope": "The two solved cases are elementary adjacent-window contradictions and validate the proof pipeline; twenty nontrivial all-distinct cases remain unresolved."
+    },
+    "proof_cases": {
+      "anchor-000-p0-s0": {
+        "anchor_word": 0,
+        "predecessor_bit": 0,
+        "successor_bit": 0,
+        "cnf": {
+          "artifact": "evidence/sat-anchor-cover-20260902/proofs/anchor-000-p0-s0.cnf.gz",
+          "compressed_bytes": 1291176,
+          "compressed_sha256": "a73ee418377ac0da2a001f672464b474d30e6534326e37c6b544afc154c9b5bb",
+          "raw_bytes": 6460643,
+          "raw_sha256": "9e2236a141d2044d9d6ae6b36ff4e8b3fd4d597e6dae46f3071ce62d95335414"
+        },
+        "proof": {
+          "format": "binary DRAT compressed with deterministic gzip",
+          "artifact": "evidence/sat-anchor-cover-20260902/proofs/anchor-000-p0-s0.drat.gz",
+          "compressed_bytes": 369034,
+          "compressed_sha256": "69911273c9100dcd7fb60c9f516cf7bd294a9a8209109ace286f22ee094aa0d1",
+          "raw_bytes": 986887,
+          "raw_sha256": "dc0f367a4fbeb8668293fef09c9fa12a3717a5a1bdc424c7534a02b252f66c3c"
+        },
+        "solver_log": {
+          "artifact": "evidence/sat-anchor-cover-20260902/proofs/anchor-000-p0-s0-cadical.log",
+          "sha256": "c98fe12689de55882384737f81205fb88a1b3ef0718510e0527d7159b3457030"
+        },
+        "checker_log": {
+          "artifact": "evidence/sat-anchor-cover-20260902/proofs/anchor-000-p0-s0-drat-trim.log",
+          "sha256": "60feb8683407f3ed6c45f5def2ce13d15581cd39fd7e75788c29c33a13730e24",
+          "result": "VERIFIED"
+        }
+      },
+      "anchor-000-p1-s0": {
+        "anchor_word": 0,
+        "predecessor_bit": 1,
+        "successor_bit": 0,
+        "cnf": {
+          "artifact": "evidence/sat-anchor-cover-20260902/proofs/anchor-000-p1-s0.cnf.gz",
+          "compressed_bytes": 1291175,
+          "compressed_sha256": "e3ce654b9ce48be3668eb75b3ce22535462654f4e54742499b726688891323f1",
+          "raw_bytes": 6460642,
+          "raw_sha256": "ddea3664c1ddc297728ede0bf560c4cc2e2f283b2d5ee340965cd8df0dd0c79d"
+        },
+        "proof": {
+          "format": "binary DRAT compressed with deterministic gzip",
+          "artifact": "evidence/sat-anchor-cover-20260902/proofs/anchor-000-p1-s0.drat.gz",
+          "compressed_bytes": 369811,
+          "compressed_sha256": "62d4b15a28834e29b32904159461069214c0678b23468ad3dbc5093d753705c5",
+          "raw_bytes": 987586,
+          "raw_sha256": "47be92c2331eefcff45257df92eb97138ab5d28321484318e23596ec98d61e77"
+        },
+        "solver_log": {
+          "artifact": "evidence/sat-anchor-cover-20260902/proofs/anchor-000-p1-s0-cadical.log",
+          "sha256": "f283ae2c07f74018a69f62c508658c47acf75b451b374e1c9f3dadb1140689e0"
+        },
+        "checker_log": {
+          "artifact": "evidence/sat-anchor-cover-20260902/proofs/anchor-000-p1-s0-drat-trim.log",
+          "sha256": "145662a6ac83ea26654ffedc455d7e58fd3ae478b6282220ad6456c8cd40d3da",
+          "result": "VERIFIED"
+        }
+      }
+    },
+    "found_valid_sequence": false,
+    "all_distinct_class_resolved": false,
+    "global_impossibility_proof": false,
+    "global_bound_changed": false,
+    "scope": "Two proof-checked elementary transition contradictions inside the all-distinct length-70 class; twenty nontrivial all-distinct anchor cases and all repeated-window candidates remain unresolved."
+  },
+  "common_backbone_theorem": {
+    "checked_on": "2026-09-02",
+    "statement": "Every 70-bit cyclic binary sequence contains at most 61 distinct edges of the retained 64-edge common backbone.",
+    "bound_is_tight": true,
+    "uses_covering_constraints": false,
+    "backbone": {
+      "artifact": "data/candidates/l9-r1-common-backbone-64.json",
+      "file_sha256": "b5647fc146bde53cbbf896784f51c1006e7764c21a216d76939169711fa35c4d",
+      "support_sha256": "8643ddb5e6a35c54b91f8c152b945e4a82bb0c658b8e81865737bf2087849821",
+      "size": 64,
+      "component_edge_counts": [
+        4,
+        60
+      ]
+    },
+    "finite_checks": {
+      "shortest_component_connector_length": 7,
+      "connector_candidates_excluded_through_length_6": 504,
+      "single_omission_cases": 64,
+      "minimum_single_omission_detour_length": 10,
+      "single_omission_candidates_checked_through_length_7": 16256,
+      "two_omission_pairs": 2016,
+      "two_omission_source_count_histogram": {
+        "1": 64,
+        "2": 1952
+      },
+      "distinct_path_flows": 44,
+      "raw_exact_residual_decompositions": 208,
+      "distinct_exact_residual_flows": 168,
+      "connected_residual_completions": 0,
+      "mass_7_positive_control_residual_flows": 76,
+      "mass_7_positive_control_connected_completions": 2
+    },
+    "tight_witness": {
+      "artifact": "data/candidates/l9-r1-70-backbone-overlap-61.txt",
+      "file_sha256": "05c9ae778cd1271749930337d3e82eb5d778c79d760f2b4d3db4678ab7fd2652",
+      "normalized_sha256": "feda1d6c7d4d384d1679eda8f2ce5683b0153478e1912b568b126d6064522ca9",
+      "length": 70,
+      "distinct_windows": 70,
+      "backbone_overlap": 61,
+      "omitted_backbone_edges": [
+        13,
+        307,
+        409
+      ],
+      "covered_words": 503,
+      "valid_cover": false
+    },
+    "evidence": {
+      "directory": "evidence/common-backbone-lemma-20260902",
+      "analysis": "evidence/common-backbone-lemma-20260902/analysis.json",
+      "analysis_sha256": "12ed5603edfa799c9cb9f5dd1f0b6e2afcce15f1a4a7c8e7b83e76ffb4a7407d",
+      "source": "evidence/common-backbone-lemma-20260902/source/analyze_common_backbone_v1.py",
+      "source_sha256": "57acc8d89ecdeefbf21453efcd26a53e50f195d5304f6556cdbdb84dd6d46a87",
+      "manifest": "evidence/common-backbone-lemma-20260902/files.sha256",
+      "manifest_sha256": "fce07582e712f52391b0bf58cbf5e7ef08266a7d31ab41ff78e0d0a023bbffda"
+    },
+    "global_bound_changed": false,
+    "external_review_status": "pending",
+    "scope": "An exact graph-theoretic exclusion for one project-derived backbone. It does not prove or disprove a 70-bit radius-1 covering sequence and does not change 62 <= L(9,1) <= 71."
+  },
+  "common_backbone_cover61_search": {
+    "checked_on": "2026-09-02",
+    "solver": "OR-Tools CP-SAT 9.15.6755",
+    "length": 70,
+    "radius": 1,
+    "exact_overlap": 61,
+    "distinct_windows": true,
+    "repeated_windows_modeled": false,
+    "connectivity": "tree",
+    "partitioned_anchors": [
+      0,
+      1,
+      2,
+      4,
+      8,
+      16,
+      32,
+      64,
+      128,
+      256
+    ],
+    "status_counts": {
+      "INFEASIBLE": 10
+    },
+    "aggregate_solver_wall_seconds": 51.877568,
+    "aggregate_branches": 2471808,
+    "aggregate_conflicts": 37421,
+    "proof_trace_available": false,
+    "summary": "evidence/common-backbone-cover61-20260902/summary.json",
+    "summary_sha256": "2192872642918074d9c2c4a554e7e04f17f75e0db3920faedb5347e2f65f297e",
+    "manifest": "evidence/common-backbone-cover61-20260902/files.sha256",
+    "manifest_sha256": "2c32df8971c89478c24c46aee9b671d75e807aabdd72af3a007e53a8e46438a7",
+    "scope": "Complete CP-SAT discovery campaign for the all-distinct exact-overlap-61 covering subcase. Repeated-window candidates were not modeled, and no independently checkable proof trace was emitted, so the full shell remains unresolved."
+  },
+  "common_backbone_cover61_repeated_search": {
+    "checked_on": "2026-09-02",
+    "solver": "OR-Tools CP-SAT 9.15.6755",
+    "length": 70,
+    "radius": 1,
+    "exact_overlap": 61,
+    "distinct_windows": false,
+    "repeated_windows_allowed": true,
+    "connectivity": "tree",
+    "partitioned_anchors": [
+      0,
+      1,
+      2,
+      4,
+      8,
+      16,
+      32,
+      64,
+      128,
+      256
+    ],
+    "status_counts": {
+      "INFEASIBLE": 8,
+      "UNKNOWN": 2
+    },
+    "unresolved_anchors": [
+      0,
+      16
+    ],
+    "aggregate_solver_wall_seconds": 856.882433,
+    "aggregate_branches": 3248331,
+    "aggregate_conflicts": 10068,
+    "proof_trace_available": false,
+    "summary": "evidence/common-backbone-cover61-repeated-20260902/summary.json",
+    "summary_sha256": "eaa09f0db8f6ff0b27174b81ce566dc9f0eed0049ede294950bde7b3a2d1b25e",
+    "manifest": "evidence/common-backbone-cover61-repeated-20260902/files.sha256",
+    "manifest_sha256": "5676b8a4c68a85c89fd4e225534c739221b461fd6f96441aa3d40569d93b84ff",
+    "scope": "Complete multiplicity-aware CP-SAT discovery campaign for exact overlap 61. Eight anchor cases were computationally infeasible and anchors 0 and 16 timed out. No proof trace was emitted, so the full shell remains unresolved."
+  },
+  "common_backbone_cover61_support_reduction": {
+    "checked_on": "2026-09-02",
+    "solver": "OR-Tools CP-SAT 9.15.6755",
+    "length": 70,
+    "radius": 1,
+    "exact_overlap": 61,
+    "support_69_complete_portfolio": {
+      "status_counts": {
+        "INFEASIBLE": 8,
+        "UNKNOWN": 2
+      },
+      "unresolved_anchors": [
+        0,
+        16
+      ],
+      "summary": "evidence/common-backbone-cover61-support69-20260902/summary.json",
+      "summary_sha256": "8ac4c6ba4b046d9ed1aed257254164b563197143f55e893630803cfff116866b",
+      "manifest": "evidence/common-backbone-cover61-support69-20260902/files.sha256",
+      "manifest_sha256": "9852e20f19c112b0ef2a1d12fde779cc11a45ed7bcce39016bd991b8d1b0e9a6"
+    },
+    "support_61_through_68_stages": {
+      "status_counts": {
+        "INFEASIBLE": 10,
+        "UNKNOWN": 6
+      },
+      "excluded_for_anchors_0_and_16": [
+        61,
+        62,
+        63,
+        64,
+        65
+      ],
+      "unresolved_for_anchors_0_and_16": [
+        66,
+        67,
+        68
+      ],
+      "summary": "evidence/common-backbone-cover61-support-stages-20260902/summary.json",
+      "summary_sha256": "acca75b1977a045f42cd1909daa0735bdc446695b6161b940467fb726623affe",
+      "manifest": "evidence/common-backbone-cover61-support-stages-20260902/files.sha256",
+      "manifest_sha256": "fba4bca6da377cc01b53c50cdc731865d067d128f46d55b1025e9cf9159f7c4b"
+    },
+    "support_69_partitions": {
+      "excluded_leaf_cases": [
+        {
+          "anchor_edge": 0,
+          "duplicate_kind": "any",
+          "duplicate_scope": "reference"
+        },
+        {
+          "anchor_edge": 0,
+          "duplicate_kind": "loop",
+          "duplicate_scope": "outside"
+        },
+        {
+          "anchor_edge": 16,
+          "duplicate_kind": "loop",
+          "duplicate_scope": "reference"
+        },
+        {
+          "anchor_edge": 16,
+          "duplicate_kind": "loop",
+          "duplicate_scope": "outside"
+        }
+      ],
+      "unresolved_leaf_cases": [
+        {
+          "anchor_edge": 0,
+          "duplicate_kind": "nonloop",
+          "duplicate_scope": "outside"
+        },
+        {
+          "anchor_edge": 16,
+          "duplicate_kind": "nonloop",
+          "duplicate_scope": "reference"
+        },
+        {
+          "anchor_edge": 16,
+          "duplicate_kind": "nonloop",
+          "duplicate_scope": "outside"
+        }
+      ],
+      "summary": "evidence/common-backbone-cover61-support69-partitions-20260902/summary.json",
+      "summary_sha256": "114eed8cf3e270082ff1e9dbc4ac27a7422c3fef028866f580f48ce835f9bab5",
+      "manifest": "evidence/common-backbone-cover61-support69-partitions-20260902/files.sha256",
+      "manifest_sha256": "1205eb4e2136ea63dee944d06e036572042234a89192128c32ed1deadcf730a3"
+    },
+    "remaining_exact_cases": 9,
+    "remaining_case_description": "Anchors 0 and 16 at support sizes 66, 67, and 68, plus three nonloop support-69 repeat partitions.",
+    "proof_trace_available": false,
+    "global_bound_changed": false,
+    "scope": "Exact-model computational reduction of the overlap-61 covering shell. Nine cases remain UNKNOWN, no proof trace was emitted, and no mathematical exclusion or new bound is claimed."
+  },
+  "new_certificate": null,
+  "new_claim": {
+    "type": "scoped graph-theoretic theorem",
+    "claim": "The exact maximum number of retained common-backbone edges in a 70-bit cyclic binary sequence is 61.",
+    "global_bound_changed": false,
+    "external_review_status": "pending"
+  }
+}

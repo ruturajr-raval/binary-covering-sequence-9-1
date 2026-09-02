@@ -1,0 +1,248 @@
+Experiment: exact connected-support repair around a 69-edge cover
+Date: 2026-09-02
+Machine: Apple M4 Pro, arm64, macOS
+Solver: OR-Tools CP-SAT 9.15.6755
+
+Purpose:
+  Find a connected distinct-window radius-1 covering cycle of length 69 near
+  a balanced disconnected covering support, or collect exact-model
+  computational evidence about a finite overlap neighborhood around that
+  support.
+
+Final implementation:
+  graph model: tools/flow_cp_sat.py
+  graph model sha256:
+    2d833f320e15790afa38887cf1161fe84cebbef617738ee1e124e3f1aff111a6
+  repair tool: tools/repair_support.py
+  repair tool sha256:
+    e1d949aaa27fb99f9bf62f37f2c5b9f2e1032377c257dfad70a7ac5641eb85e6
+  support finder: tools/find_cover_support.py
+  support finder sha256:
+    75772bb30dcb409aa4d2b67e4ddb445edc41f49a3c231d986d34967dbec7e0f9
+  cross-join analyzer: tools/analyze_support.py
+  cross-join analyzer sha256:
+    de2b83622ac4146fbcb5c382840fbeab48cde6127130097c8818c6638f3326e7
+  graph tests sha256:
+    f61ce781a707c2c9963b4b43a14ad63f42c4c920a6c2f5ec7ef1b8a8c019cc6f
+  repair tests sha256:
+    d3927d5252cf60b884ce24c0da7d5070fc3011e35eadb0ac6c7d86a133911d0f
+  analyzer tests sha256:
+    fa6c1004ac7050857f5d6bdc8579a4936b57adaceaf63e1fa11c7d8a28900bb5
+  support finder tests sha256:
+    806a9755f4a57151b7872689d0b460059925c16f0eaae8183cbd3321c9084d03
+  production evidence tests sha256:
+    8d7c004a79d07178c6203d1374707fd38fedb453a8945285feafecf669393c79
+  solver requirements sha256:
+    672c02ea3f723bea4a8e39643caab8c57c513418c812767096ebed55224240cf
+
+Exact one-duplicate strengthening:
+  At length 70 and support size 69, count-use is a Boolean vector with
+  total one. It identifies the unique duplicated edge.
+  Multiplicity balance gives the exact support imbalance at every vertex.
+  A nonloop duplicate forces local support degrees 1/2 at its prefix and
+  2/1 at its suffix.
+  A loop duplicate gives balanced support and therefore reduces to a
+  distinct-window length-69 search when connectivity holds.
+  The model also uses exact loop-dependent stationarity maxima and
+  support-based autocorrelation cover rows.
+  Optional pair-projection rows were implemented and tested but remain
+  disabled by default after controlled wall-time runs were inconclusive.
+
+Base support certificate:
+  artifact:
+    evidence/graph-repair/disconnected-support-anchor-0.json
+  artifact sha256:
+    9f852d2524f8794a248c7bf2a093774cf67676bfd676f742e508fff1fbc2467c
+  normalized support sha256:
+    143522ecd2c92d9d5ca11b28baba6d3623e8be483e5974c278d9378150eab50d
+  distinct edges: 69
+  balanced: yes
+  radius-1 covered words: 512 of 512
+  directed component edge counts: 1, 4, 4, 60
+  connected cycle: no
+  generation parameters:
+    n=9, radius=1, exact distinct support size=69
+    partitioned anchor=0, connectivity=none
+    hint=data/baseline/l9-r1-71.txt
+    workers=1, seed=1, time limit=30 seconds
+  generation command:
+    python3 tools/find_cover_support.py \
+      evidence/graph-repair/disconnected-support-anchor-0.json \
+      --n 9 --radius 1 --length 69 --anchor-edge 0 \
+      --partition-anchor \
+      --hint-sequence data/baseline/l9-r1-71.txt \
+      --time-limit 30 --workers 1 --seed 1
+
+Cross-join analysis:
+  artifact: evidence/graph-repair/cross-joins.json
+  artifact sha256:
+    5d21ee8d59a13669f96355cd7aada758af21b5ef146a8d4fe9b6a1fe770febcf
+  conjugate cross-join candidates: 2
+  valid covering cross-joins: 0
+  first switch:
+    removed edges: 186,443
+    added edges: 187,442
+    resulting cycle lengths: 1,4,64
+    uncovered words: 58,178,184,190
+  second switch:
+    removed edges: 238,495
+    added edges: 239,494
+    resulting cycle lengths: 1,4,64
+    uncovered words: 367,487,491,493
+
+Repair formulation:
+  target: distinct-window connected cycle of length 69
+  base support size: 69
+  required overlap: at least 58
+  permitted replacements: at most 11
+  connectivity: rooted arborescence
+  anchors: 0,1,2,4,8,16,32,64,128,256
+  partitioned anchors: yes
+  workers per case: 2
+  random seed: 1
+  time limit for anchor 0: 600 seconds
+  time limit for anchors 1 through 256: 300 seconds
+  result requirement:
+    every anchor must report INFEASIBLE for complete portfolio coverage
+  anchor-0 command:
+    python3 tools/repair_support.py \
+      evidence/graph-repair/disconnected-support-anchor-0.json \
+      evidence/graph-repair/overlap58-anchor-0.json \
+      --n 9 --radius 1 --length 69 --anchor-edge 0 \
+      --partition-anchor --connectivity tree --minimum-overlap 58 \
+      --time-limit 600 --workers 2 --seed 1
+  remaining anchor command template:
+    python3 tools/repair_support.py \
+      evidence/graph-repair/disconnected-support-anchor-0.json \
+      evidence/graph-repair/overlap58-anchor-ANCHOR.json \
+      --n 9 --radius 1 --length 69 --anchor-edge ANCHOR \
+      --partition-anchor --connectivity tree --minimum-overlap 58 \
+      --time-limit 300 --workers 2 --seed 1
+
+Retained overlap-58 portfolio:
+  anchor 0:
+    status: INFEASIBLE
+    wall seconds: 462.757683
+    deterministic time: 2888.9815391932625
+    branches: 29975589
+    conflicts: 226090
+    artifact: evidence/graph-repair/overlap58-anchor-0.json
+    artifact sha256:
+      8796b18625b55140214f0c3d1201fea1e4a738956b4a6c6000672279607b966b
+  anchor 1:
+    status: INFEASIBLE
+    wall seconds: 20.839785
+    deterministic time: 120.72716625419733
+    branches: 1459300
+    conflicts: 6014
+    artifact: evidence/graph-repair/overlap58-anchor-1.json
+    artifact sha256:
+      bfd564d31f5966293a4e82123bdff8ddc5c435e291428c0120ccc9a97ca6ec40
+  anchor 2:
+    status: INFEASIBLE
+    wall seconds: 7.759127
+    deterministic time: 39.63680870124931
+    branches: 460228
+    conflicts: 1946
+    artifact: evidence/graph-repair/overlap58-anchor-2.json
+    artifact sha256:
+      f9b297c050b353159ef6760e9483504baa24ca7dc2b2368bb6e9064438ed81d2
+  anchor 4:
+    status: INFEASIBLE
+    wall seconds: 5.818230
+    deterministic time: 27.309443007595828
+    branches: 392751
+    conflicts: 2018
+    artifact: evidence/graph-repair/overlap58-anchor-4.json
+    artifact sha256:
+      c63eaf221ae6f61791d85350f302f2f301578f0d5c1b2cd7f7a3820ae79ba094
+  anchor 8:
+    status: INFEASIBLE
+    wall seconds: 17.566675
+    deterministic time: 100.33143253991662
+    branches: 1172851
+    conflicts: 6518
+    artifact: evidence/graph-repair/overlap58-anchor-8.json
+    artifact sha256:
+      013a6166c2a9f278dc3b2b7e0ab35fc6bf00a5602b75021c120d2d790d98ff99
+  anchor 16:
+    status: INFEASIBLE
+    wall seconds: 277.050560
+    deterministic time: 1757.8939783728424
+    branches: 15762158
+    conflicts: 107043
+    artifact: evidence/graph-repair/overlap58-anchor-16.json
+    artifact sha256:
+      96e60e5121e7c2a807a9abefbc3f1ac3c34ed445be4fe9f5f1d050cb4d9e5572
+  anchor 32:
+    status: INFEASIBLE
+    wall seconds: 4.746739
+    deterministic time: 20.225251496326084
+    branches: 316525
+    conflicts: 2162
+    artifact: evidence/graph-repair/overlap58-anchor-32.json
+    artifact sha256:
+      f085bb781f16bb6212c5ebbce02311511cca31c9babb42346ce27a8375b3a2fe
+  anchor 64:
+    status: INFEASIBLE
+    wall seconds: 3.095439
+    deterministic time: 11.918171316688193
+    branches: 186533
+    conflicts: 891
+    artifact: evidence/graph-repair/overlap58-anchor-64.json
+    artifact sha256:
+      798fa8ba73a253a6a22800cc312682daf021d768ff4be59af38dbcd0db6fda45
+  anchor 128:
+    status: INFEASIBLE
+    wall seconds: 0.401953
+    deterministic time: 0.8386170296143769
+    branches: 12822
+    conflicts: 142
+    artifact: evidence/graph-repair/overlap58-anchor-128.json
+    artifact sha256:
+      eb6764a029f08d530b2c20e96620ac00a61c4437952441840cd060965dc579c8
+  anchor 256:
+    status: INFEASIBLE
+    wall seconds: 0.008942
+    deterministic time: 0
+    branches: 0
+    conflicts: 0
+    artifact: evidence/graph-repair/overlap58-anchor-256.json
+    artifact sha256:
+      a40ac72e3fa63cceaae79ee8f92034b607439689c00b2fdeb73cc8d4d67391ed
+
+Portfolio aggregate:
+  anchor cases: 10
+  statuses: 10 INFEASIBLE
+  solver wall seconds: 800.045133
+  deterministic time: 4967.862407911692
+  branches: 49738757
+  conflicts: 352824
+  binary propagations: 191218493
+  integer propagations: 1200893180
+  LP iterations: 14844876
+
+Additional anchor-0 exclusion:
+  overlap at least 57: INFEASIBLE
+  required replacements in anchor-0 partition: at least 13
+  artifact: evidence/graph-repair/overlap57-anchor-0.json
+  artifact sha256:
+    42b18a87c0c8ac05f4dec277d8d1bc59cec9a89a0b3cd32cae0118506b198f30
+
+Solver-reported result:
+  The ten partitioned anchors cover every connected distinct-window
+  length-69 support.
+  CP-SAT reported every overlap-at-least-58 anchor model INFEASIBLE.
+  Under the tested exact formulation, a connected distinct-window 69-edge
+  radius-1 covering cycle would need to replace at least 12 support edges.
+
+Limitations:
+  This is finite-neighborhood exact-model computational evidence around one
+  support.
+  It does not exclude repeated-window sequences or connected distinct-window
+  supports with overlap 57 or below.
+  It does not settle the existence of a 69-bit covering cycle.
+  It does not establish a new upper or lower bound on L(9,1).
+  CP-SAT did not emit an independently checkable proof trace. The repository
+  therefore does not publish this as a formal infeasibility proof.
+  The public mathematical interval remains 62 <= L(9,1) <= 71.
