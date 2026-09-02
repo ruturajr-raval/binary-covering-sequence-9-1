@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "project": "binary-covering-sequence-9-1",
+  "evaluated_at": "2026-09-02",
+  "candidate_claim": null,
+  "gates": {
+    "significant_original_result": false,
+    "prior_art_refreshed": false,
+    "certificate_retained": false,
+    "python_verifier_passes": false,
+    "cpp_verifier_passes": false,
+    "proof_replay_passes": false,
+    "clean_checkout_replay_passes": false,
+    "claim_scope_audited": false,
+    "limitations_documented": true,
+    "manuscript_ready": false,
+    "external_review_addressed": false
+  },
+  "decision": "hold",
+  "reason": "No valid 70-bit sequence or complete checked exclusion is currently retained."
+}
+

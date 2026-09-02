@@ -4,6 +4,7 @@ __pycache__/
 *.pyc
 build/
 search-results/
+/.research-artifacts/
 *.cnf
 *.drat
 *.lrat

@@ -1,0 +1,28 @@
+schema_version: 1
+project: binary-covering-sequence-9-1
+author: Ruturaj R Raval
+orcid: 0000-0003-4930-8981
+updated: 2026-09-02
+status: exploratory
+target:
+  primary:
+    type: construction
+    statement: A cyclic binary radius-1 covering sequence of length 70 exists.
+  secondary:
+    type: checked-exclusion
+    statement: Precisely scoped length-70 search classes contain no covering sequence.
+current_supported_claim:
+  statement: A verified 71-bit construction exists, and a fixed 64-edge backbone can contribute at most 61 distinct edges to any 70-bit candidate.
+  project_original_upper_bound: false
+candidate_claim:
+  statement: null
+  certificate_sha256: null
+  verifier_commits: []
+novelty:
+  literature_checked_through: 2026-09-02
+  known_public_upper_bound: 71
+limitations:
+  - No valid 70-bit covering sequence is currently retained.
+  - Restricted-shell exclusions do not imply global nonexistence.
+  - Solver timeouts and unlogged infeasibility statuses are not proofs.
+
