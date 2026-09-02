@@ -54,4 +54,7 @@ oracles, but not yet a second full-scale implementation.
 ## Citation
 
 Citation metadata is provided in `CITATION.cff`, and `.zenodo.json` supplies
-the metadata for durable release archival.
+the metadata for durable release archival. The archived `v0.1.1` release DOI
+is [10.5281/zenodo.22260692](https://doi.org/10.5281/zenodo.22260692). The
+stable concept DOI for all versions is
+[10.5281/zenodo.22260691](https://doi.org/10.5281/zenodo.22260691).

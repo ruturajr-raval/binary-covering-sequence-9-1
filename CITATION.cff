@@ -7,6 +7,9 @@ authors:
   - family-names: Raval
     given-names: Ruturaj R
 repository-code: "https://github.com/ruturajr-raval/binary-covering-sequence-9-1"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.22260692"
 license: MIT
 version: 0.1.1
 date-released: 2026-09-02

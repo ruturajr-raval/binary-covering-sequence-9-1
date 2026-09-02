@@ -1,5 +1,7 @@
 # Binary Covering Sequence 9-1
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22260691.svg)](https://doi.org/10.5281/zenodo.22260691)
+
 An independent verification and exact-search toolkit for finding or excluding
 a 70-bit cyclic binary radius-1 covering sequence.
 
