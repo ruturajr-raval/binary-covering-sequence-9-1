@@ -1,5 +1,11 @@
 # Common-Backbone Overlap-61 All-Distinct Covering Search
 
+Historical campaign notice: the status below records the 2026-09-02 CP-SAT
+run. The complete finite classification in
+`evidence/exact-backbone-overlap61-20260904/` now excludes the entire
+exact-overlap-61 covering shell. The solver statuses here are retained only
+as discovery evidence and are not used in that proof.
+
 This directory retains the complete ten-case CP-SAT campaign for a 70-bit
 radius-1 covering sequence with 70 distinct cyclic windows and exactly 61
 edges of the retained 64-edge common backbone.
@@ -12,8 +18,9 @@ used in the common-backbone theorem and do not change the known bounds on
 `L(9,1)`.
 
 The separate graph-theoretic theorem proves that every 70-bit cyclic sequence
-has backbone overlap at most 61. It does not exclude covering sequences at
-overlap 61, including the repeated-window class left open here.
+has backbone overlap at most 61. The later finite classification excludes
+covering sequences at overlap 61, including the repeated-window class that
+this campaign did not model.
 
 ## Retained Files
 

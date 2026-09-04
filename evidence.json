@@ -4,7 +4,7 @@
     "n": 9,
     "radius": 1
   },
-  "frontier_checked_on": "2026-09-02",
+  "frontier_checked_on": "2026-09-04",
   "known_lower_bound": 62,
   "known_upper_bound": 71,
   "target_length": 70,
@@ -868,8 +868,8 @@
     "summary": "evidence/common-backbone-cover61-20260902/summary.json",
     "summary_sha256": "2192872642918074d9c2c4a554e7e04f17f75e0db3920faedb5347e2f65f297e",
     "manifest": "evidence/common-backbone-cover61-20260902/files.sha256",
-    "manifest_sha256": "2c32df8971c89478c24c46aee9b671d75e807aabdd72af3a007e53a8e46438a7",
-    "scope": "Complete CP-SAT discovery campaign for the all-distinct exact-overlap-61 covering subcase. Repeated-window candidates were not modeled, and no independently checkable proof trace was emitted, so the full shell remains unresolved."
+    "manifest_sha256": "1522d86b4628a5607b144b652d22ec50dbc1efb3ea0fde6de35b181708a72a73",
+    "scope": "Historical CP-SAT discovery campaign for the all-distinct exact-overlap-61 covering subcase. Repeated-window candidates were not modeled and no independently checkable proof trace was emitted. The later finite exact-overlap classification supersedes this campaign."
   },
   "common_backbone_cover61_repeated_search": {
     "checked_on": "2026-09-02",
@@ -907,8 +907,8 @@
     "summary": "evidence/common-backbone-cover61-repeated-20260902/summary.json",
     "summary_sha256": "eaa09f0db8f6ff0b27174b81ce566dc9f0eed0049ede294950bde7b3a2d1b25e",
     "manifest": "evidence/common-backbone-cover61-repeated-20260902/files.sha256",
-    "manifest_sha256": "5676b8a4c68a85c89fd4e225534c739221b461fd6f96441aa3d40569d93b84ff",
-    "scope": "Complete multiplicity-aware CP-SAT discovery campaign for exact overlap 61. Eight anchor cases were computationally infeasible and anchors 0 and 16 timed out. No proof trace was emitted, so the full shell remains unresolved."
+    "manifest_sha256": "2d8bce5d0cf7fec12957178801007e24d779adf17f3bf2f08ae0733a497ce56a",
+    "scope": "Historical multiplicity-aware CP-SAT discovery campaign for exact overlap 61. Eight anchor cases were computationally infeasible and anchors 0 and 16 timed out. The later finite exact-overlap classification resolves the full shell without relying on these untraced statuses."
   },
   "common_backbone_cover61_support_reduction": {
     "checked_on": "2026-09-02",
@@ -928,7 +928,7 @@
       "summary": "evidence/common-backbone-cover61-support69-20260902/summary.json",
       "summary_sha256": "8ac4c6ba4b046d9ed1aed257254164b563197143f55e893630803cfff116866b",
       "manifest": "evidence/common-backbone-cover61-support69-20260902/files.sha256",
-      "manifest_sha256": "9852e20f19c112b0ef2a1d12fde779cc11a45ed7bcce39016bd991b8d1b0e9a6"
+      "manifest_sha256": "e6fcb5f19ab628cc1cd8557fc83fb965e2c922469eac85fd91a9ac3bfe363a60"
     },
     "support_61_through_68_stages": {
       "status_counts": {
@@ -950,7 +950,7 @@
       "summary": "evidence/common-backbone-cover61-support-stages-20260902/summary.json",
       "summary_sha256": "acca75b1977a045f42cd1909daa0735bdc446695b6161b940467fb726623affe",
       "manifest": "evidence/common-backbone-cover61-support-stages-20260902/files.sha256",
-      "manifest_sha256": "fba4bca6da377cc01b53c50cdc731865d067d128f46d55b1025e9cf9159f7c4b"
+      "manifest_sha256": "a7d345e07ad811250ca6e475519917354d6a1c9a266defe74383c7abe5645472"
     },
     "support_69_partitions": {
       "excluded_leaf_cases": [
@@ -995,18 +995,96 @@
       "summary": "evidence/common-backbone-cover61-support69-partitions-20260902/summary.json",
       "summary_sha256": "114eed8cf3e270082ff1e9dbc4ac27a7422c3fef028866f580f48ce835f9bab5",
       "manifest": "evidence/common-backbone-cover61-support69-partitions-20260902/files.sha256",
-      "manifest_sha256": "1205eb4e2136ea63dee944d06e036572042234a89192128c32ed1deadcf730a3"
+      "manifest_sha256": "86b80e14f11edcbce13f629ccb7e886454bacb7edfe6a7191573e00cdbe6dcd8"
     },
-    "remaining_exact_cases": 9,
-    "remaining_case_description": "Anchors 0 and 16 at support sizes 66, 67, and 68, plus three nonloop support-69 repeat partitions.",
+    "historical_remaining_exact_cases": 9,
+    "historical_remaining_case_description": "Anchors 0 and 16 at support sizes 66, 67, and 68, plus three nonloop support-69 repeat partitions.",
+    "current_remaining_exact_cases": 0,
+    "superseded_by": "exact_backbone_overlap61_classification",
     "proof_trace_available": false,
     "global_bound_changed": false,
-    "scope": "Exact-model computational reduction of the overlap-61 covering shell. Nine cases remain UNKNOWN, no proof trace was emitted, and no mathematical exclusion or new bound is claimed."
+    "scope": "Historical exact-model computational reduction of the overlap-61 covering shell. Nine solver leaves remained UNKNOWN at this stage. The later finite classification resolves every leaf and does not use these untraced statuses as proof evidence."
+  },
+  "exact_backbone_overlap61_classification": {
+    "checked_on": "2026-09-04",
+    "statement": "No 70-bit cyclic binary radius-1 covering sequence has exact overlap 61 with the retained 64-edge common backbone.",
+    "combined_consequence": "Every valid 70-bit cyclic binary radius-1 covering sequence has overlap at most 60 with the retained backbone.",
+    "parameters": {
+      "n": 9,
+      "radius": 1,
+      "length": 70,
+      "reference_support_size": 64,
+      "exact_overlap": 61,
+      "omitted_support_edges": 3,
+      "residual_mass": 9
+    },
+    "finite_checks": {
+      "omission_triples": 41664,
+      "active_omission_triples": 88,
+      "precomputed_directed_walks": 65408,
+      "distinct_path_flows": 112,
+      "raw_exact_decompositions": 192,
+      "distinct_residual_flows": 188,
+      "component_count_histogram": {
+        "1": 8,
+        "2": 72,
+        "3": 80,
+        "4": 28
+      },
+      "connected_completions": 8,
+      "covering_completions": 0,
+      "connected_coverage_gap_histogram": {
+        "9": 6,
+        "10": 2
+      }
+    },
+    "independent_implementations": {
+      "python": {
+        "source": "evidence/exact-backbone-overlap61-20260904/source/analyze_exact_backbone_overlap_v1.py",
+        "source_sha256": "59d498dafaea60511c945a0341b11227f59cb3b3fa859a211657f89c0db7b63f"
+      },
+      "cpp": {
+        "source": "evidence/exact-backbone-overlap61-20260904/source/exact_overlap_checker_v1.cpp",
+        "source_sha256": "efd83e9c7b6ec39f8396428daf9c454ba172faf3ac5268699af91028f029aa8d",
+        "agreement": "Every aggregate count and connected completion agrees with the Python enumeration."
+      },
+      "semantic_validator": {
+        "source": "evidence/exact-backbone-overlap61-20260904/source/verify_exact_backbone_overlap_v1.py",
+        "source_sha256": "0f733800c9e43c2e77a05ff9538a8a2e73eff6c59a7870a2ac99ffef0111ebac",
+        "scope": "Rechecks all 188 residuals, all derived histograms, every connected completion, the retained witness, parameters, support identity, and source digests."
+      }
+    },
+    "validation": {
+      "small_complete_oracles": 4,
+      "residual_mass_9_three_terminal_oracle": true,
+      "adversarial_mutations_rejected": [
+        "synchronized omission-count change",
+        "deleted connected completions",
+        "corrupted component metadata",
+        "invalid residual mass with a recomputed flow digest"
+      ],
+      "test_source": "tests/test_exact_backbone_overlap.py",
+      "test_source_sha256": "59d8e3e09914d016a9e9318e90d8058b2b2a748a59d0a656caa2a421038c6b7d"
+    },
+    "evidence": {
+      "directory": "evidence/exact-backbone-overlap61-20260904",
+      "analysis": "evidence/exact-backbone-overlap61-20260904/analysis.json",
+      "analysis_sha256": "793e9b7ddcc84c43c0105a88949673f70a8c911e0bbbe87855f2c3f74008ffcb",
+      "independent_check": "evidence/exact-backbone-overlap61-20260904/independent-check.json",
+      "independent_check_sha256": "e38c9f6a99e5312e54b1842df02d7ac5d862d6545c7dd93242e35e810b5f273c",
+      "manifest": "evidence/exact-backbone-overlap61-20260904/files.sha256",
+      "manifest_sha256": "14bd2ee9377c8ac425e88bda9b2a2420074e6dc144794ca5ddbad80aee160b04",
+      "documentation": "docs/EXACT_OVERLAP_61.md",
+      "documentation_sha256": "18d1d289bd35981004e9cb590af12028038a43571e9110987bcf465774105ce0"
+    },
+    "global_bound_changed": false,
+    "external_review_status": "pending",
+    "scope": "Complete fixed-backbone exclusion at exact overlap 61. Candidates with overlap at most 60 remain open, and no new upper or lower bound on L(9,1) is claimed."
   },
   "new_certificate": null,
   "new_claim": {
-    "type": "scoped graph-theoretic theorem",
-    "claim": "The exact maximum number of retained common-backbone edges in a 70-bit cyclic binary sequence is 61.",
+    "type": "scoped exact fixed-backbone theorem",
+    "claim": "The exact maximum backbone overlap of any 70-bit cyclic binary sequence is 61, but no valid radius-1 cover attains 61; every valid cover has overlap at most 60.",
     "global_bound_changed": false,
     "external_review_status": "pending"
   }

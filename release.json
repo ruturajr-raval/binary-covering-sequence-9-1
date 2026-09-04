@@ -1,26 +1,26 @@
 {
-  "version": "0.1.1",
-  "release_date": "2026-09-02",
-  "artifact_status": "reproducible_scoped_result_and_search_benchmark",
-  "supported_claim": "The exact maximum overlap between a 70-bit cyclic binary sequence and the retained 64-edge common backbone is 61. The repository also independently verifies the reported 71-bit certificate, retains proof-checked local SAT exclusions, and separately labels bounded solver results that have no proof traces.",
-  "claim_status": "scoped_theorem_no_new_global_bound",
+  "version": "0.2.0",
+  "release_date": "2026-09-04",
+  "artifact_status": "reproducible_fixed_backbone_theorem_and_search_benchmark",
+  "supported_claim": "The exact maximum overlap between a 70-bit cyclic binary sequence and the retained 64-edge common backbone is 61. A complete finite classification proves that no valid radius-1 cover attains overlap 61, so every valid 70-bit cover has backbone overlap at most 60.",
+  "claim_status": "complete_scoped_theorem_no_new_global_bound",
   "artifact_reproducibility_ready": true,
   "artifact_release_ready": true,
   "theorem_announcement_ready": false,
-  "scoped_result_scope": "A graph-theoretic theorem for one project-derived backbone at exact length 70. It is not a new construction, a new bound on L(9,1), or a global impossibility result.",
+  "scoped_result_scope": "A complete theorem for one project-derived backbone at exact length 70. It is not a new construction, a new bound on L(9,1), or a global impossibility result.",
   "theorem_announcement_blockers": [
-    "Focused theorem-specific novelty audit",
     "Independent external mathematical review"
   ],
-  "external_review_status": "pending",
+  "external_review_status": "Pending; the public artifact explicitly requests independent mathematical review and makes no priority claim.",
   "result_routes": {
     "scoped_theorem": {
       "artifact_claim_ready": true,
       "theorem_announcement_ready": false,
       "internal_verification_complete": true,
-      "statement": "Every 70-bit cyclic binary sequence contains at most 61 distinct edges of the retained 64-edge common backbone, and the bound is attained.",
-      "evidence": "A finite residual-flow proof, retained exact enumeration, positive controls, and a tight 70-bit witness.",
-      "blocker": "Focused novelty review and independent external mathematical review remain pending."
+      "statement": "Every 70-bit cyclic binary sequence contains at most 61 distinct edges of the retained 64-edge common backbone, no valid radius-1 cover attains 61, and every valid cover therefore has overlap at most 60.",
+      "evidence": "Two full finite enumerations, semantic validation of all 188 residual flows, four complete small-instance oracles, adversarial mutation tests, retained source snapshots, and byte-for-byte replay.",
+      "limitation": "The theorem does not exclude candidates with backbone overlap at most 60.",
+      "announcement_blocker": "Independent external mathematical review remains pending."
     },
     "construction": {
       "claim_ready": false,
@@ -32,8 +32,8 @@
     },
     "benchmark_artifact": {
       "artifact_complete": true,
-      "scope": "Verified methods, reproduced artifacts, independently checked local DRAT exclusions, separately labeled solver evidence without proof traces, a reduction to nine unresolved cases in the multiplicity-aware overlap-61 shell, the exact common-backbone result, and explicit limitations."
+      "scope": "Verified methods, reproduced artifacts, independently checked local DRAT exclusions, separately labeled solver evidence without proof traces, the complete exact-overlap-61 classification, and explicit limitations."
     }
   },
-  "last_reviewed": "2026-09-02"
+  "last_reviewed": "2026-09-04"
 }

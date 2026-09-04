@@ -269,3 +269,33 @@
   sizes 66, 67, and 68, plus three nonloop support-69 cases. No proof trace
   was emitted, so none of the solver infeasibility statuses is promoted to a
   theorem.
+
+## 2026-09-04
+
+- Replaced the nine unresolved exact-overlap-61 solver leaves with a direct
+  finite flow classification of the entire shell.
+- Enumerated all `C(64,3) = 41,664` triples of omitted backbone edges. The
+  retained 61-edge part leaves residual mass 9 with uniquely determined
+  divergence.
+- Found 188 distinct admissible residual flows across 88 omission triples.
+  Their support-component histogram is 8 connected, 72 with two components,
+  80 with three components, and 28 with four components.
+- Reconstructed the eight connected Eulerian circulations. All have 70
+  distinct windows. Six leave nine words uncovered and two leave ten, so none
+  is a radius-1 cover.
+- Implemented a separate C++ enumeration. It agrees with the Python analyzer
+  on every aggregate count and every connected completion.
+- Added a semantic artifact validator that independently rechecks all 188
+  residuals, derives every histogram and connected completion, verifies the
+  retained witness, and rejects incomplete or altered attestations.
+- Added direct small-instance oracles, including a residual-mass-9,
+  three-omission case with three divergence terminals.
+- Retained exact source snapshots, both output artifacts, and a complete
+  SHA-256 manifest under
+  `evidence/exact-backbone-overlap61-20260904/`.
+- Combined this exclusion with the earlier maximum-overlap theorem. Every
+  valid 70-bit radius-1 covering sequence now has overlap at most 60 with the
+  retained 64-edge backbone.
+- This closes one fixed-backbone shell. It does not produce a 70-bit
+  construction, exclude overlap at most 60, or change
+  `62 <= L(9,1) <= 71`.

@@ -5,11 +5,12 @@
 An independent verification and exact-search toolkit for finding or excluding
 a 70-bit cyclic binary radius-1 covering sequence.
 
-As of the literature and repository audit dated 2026-09-02, this repository
+As of the literature and repository audit dated 2026-09-04, this repository
 reproduces the reported 71-bit construction, provides independent verifiers,
 proves that every 70-bit cyclic sequence uses at most 61 distinct edges of one
-retained 64-edge common backbone, and develops SAT, graph, and heuristic routes
-toward a 70-bit certificate.
+retained 64-edge common backbone, and proves that no valid 70-bit radius-1
+cover can attain overlap 61. Therefore every valid 70-bit cover has backbone
+overlap at most 60.
 
 The supported scoped result concerns one fixed backbone. This project does not
 claim a new construction, a new bound on `L(9,1)`, or a global impossibility
@@ -58,7 +59,7 @@ The lower bound `62` comes from the corresponding binary radius-1 covering-code
 number: the cyclic windows of any valid sequence form a covering code.
 
 Rosin then reported a 71-bit construction in a May 2025 preprint, improving
-the upper bound by 22 symbols. The public frontier checked on 2026-09-02 was
+the upper bound by 22 symbols. The public frontier checked on 2026-09-04 was
 
 ```text
 62 <= L(9,1) <= 71.
@@ -218,14 +219,26 @@ proof checked independently.
     sizes 61 through 65 are computationally infeasible. Nine exact cases
     remain `UNKNOWN`: both anchors at sizes 66 through 68 and three nonloop
     support-69 repeat partitions. No proof trace was emitted.
+55. Replaced those unresolved solver cases with a complete finite
+    classification of the entire exact-overlap-61 shell, including repeated
+    windows and every support size.
+56. Checked all 41,664 three-edge omissions. Exactly 188 residual integral
+    flows survive; eight produce connected 70-edge circulations, and none
+    covers all 512 words within radius 1.
+57. Reproduced the classification with a separate C++ implementation and a
+    semantic validator that rechecks every residual, histogram, connected
+    completion, and retained witness.
+58. Combined the classification with the earlier common-backbone theorem to
+    prove that every valid 70-bit radius-1 covering sequence has backbone
+    overlap at most 60.
 
 ## What Was Achieved
 
-This project established a reproducible search and verification baseline,
-an independently checked SAT proof for one finite Hamming neighborhood, a
-common-backbone theorem established in this repository, and exact-model
-computational evidence for finite support neighborhoods. It did not establish
-a new upper or lower bound on `L(9,1)`.
+This project established a reproducible search and verification baseline, an
+independently checked SAT proof for one finite Hamming neighborhood, an exact
+common-backbone theorem, and a complete exact classification of its
+overlap-61 covering shell. It did not establish a new upper or lower bound on
+`L(9,1)`.
 
 | Question | Outcome |
 | --- | --- |
@@ -257,12 +270,14 @@ a new upper or lower bound on `L(9,1)`.
 | Did exact repair within 17 replacements settle that length-70 neighborhood? | No. Three anchors returned `INFEASIBLE`, seven returned `UNKNOWN`, and no proof trace was emitted. |
 | What is the maximum common-backbone overlap of any 70-bit cyclic sequence? | Exactly 61. A finite residual-flow proof gives the upper bound, and a retained 70-bit witness attains it. |
 | Does the common-backbone theorem use the covering constraints? | No. It is a de Bruijn graph statement applying to every 70-bit cyclic binary sequence. |
-| Does the common-backbone theorem settle the 70-bit covering problem? | No. Covering candidates with overlap at most 61 remain possible. |
-| What did the first exact overlap-61 CP-SAT campaign cover? | Only the all-distinct class with 70 distinct windows. All ten anchor cases returned `INFEASIBLE`, without proof traces. |
-| What happened when repeated windows were allowed? | Eight anchors returned `INFEASIBLE`; anchors 0 and 16 returned `UNKNOWN`. |
-| How far did exact support staging reduce those two hard anchors? | Sizes 61 through 65 returned `INFEASIBLE`. Sizes 66 through 68 remain `UNKNOWN`. |
-| What remains at exact support size 69? | Three nonloop one-repeat cases: anchor 0 outside the backbone, and anchor 16 inside and outside the backbone. |
-| Are these overlap-61 solver exclusions theorems? | No. No independently checkable proof traces were emitted. |
+| Does the common-backbone theorem settle the 70-bit covering problem? | No. The exact classification excludes overlap 61 for covers, but candidates with overlap at most 60 remain possible. |
+| What did the first exact overlap-61 CP-SAT campaign cover? | Only the all-distinct class with 70 distinct windows. It was a historical discovery campaign without proof traces. |
+| What happened when repeated windows were first allowed? | Eight anchors returned `INFEASIBLE`; anchors 0 and 16 returned `UNKNOWN`. Those statuses are now superseded by the complete finite classification. |
+| How were the nine former overlap-61 timeouts resolved? | The shell was reformulated as 41,664 omission triples with residual mass 9 and exhaustively enumerated without solver time limits. |
+| How many exact residual flows survive? | 188 across 88 omission triples. Only eight are connected, and all eight fail radius-1 coverage. |
+| Is the exact-overlap-61 exclusion checked independently? | Yes. Separate Python and C++ implementations agree, and a semantic validator rechecks every retained residual and completion. |
+| What covering-specific theorem follows? | Every valid 70-bit radius-1 covering sequence uses at most 60 edges of the retained 64-edge backbone. |
+| Are the historical overlap-61 solver exclusions themselves theorems? | No. The theorem comes from the separate finite enumeration, not from untraced solver statuses. |
 | Is a new upper or lower bound claimed? | No. |
 
 The unrestricted timeouts are method evidence only. The Hamming-ball result is
@@ -272,10 +287,9 @@ The two fixed-transition proofs are end-to-end checks of the optimized
 proof-producing pipeline for an elementary adjacent-window contradiction, not
 a new bound or a resolution of a difficult subcase.
 
-This is enough for a reproducible finite exact-overlap analysis, methods, and
-benchmark artifact. A theorem-focused announcement still requires the stated
-novelty audit and external review. It is not enough for a new construction, a
-new bound on `L(9,1)`, or a resolution announcement.
+This is enough for a reproducible fixed-backbone theorem, exact-overlap
+classification, methods, and benchmark artifact. It is not enough for a new
+construction, a new bound on `L(9,1)`, or a global resolution announcement.
 
 ## Why It Matters
 
@@ -304,12 +318,9 @@ checkable certificates.
 - Resolve the 22 complete-cover SAT cases that remain `UNKNOWN`.
 - Resolve the 20 nontrivial all-distinct support-70 SAT cases that remain
   `UNKNOWN`.
-- Convert the all-distinct exact-overlap-61 CP-SAT exclusion into an
-  independently checkable proof.
-- Resolve the nine remaining multiplicity-aware overlap-61 cases: anchors 0
-  and 16 at support sizes 66 through 68, plus the three nonloop support-69
-  repeat partitions.
 - Search structurally different shells with overlap at most 60.
+- Develop exact omission-flow classifications or proof-producing partitions
+  for selected overlap-at-most-60 shells.
 - Search outside the tested 11-replacement neighborhood of the retained
   disconnected 69-edge cover, including diversified support certificates.
 - Diversify the retained 70-edge disconnected support and resolve the seven
@@ -327,9 +338,10 @@ checkable certificates.
 - A SAT timeout or `UNKNOWN` result is not evidence of unsatisfiability.
 - Completing a disjoint case partition with finite time limits is not the same
   as settling that partition when any case remains `UNKNOWN`.
-- The multiplicity-aware common-backbone campaign leaves nine exact cases
-  `UNKNOWN`. The other solver infeasibility statuses have no proof traces and
-  are not mathematical exclusions.
+- The historical multiplicity-aware common-backbone campaign left nine exact
+  cases `UNKNOWN`. The later finite enumeration supersedes those timeouts and
+  excludes the complete overlap-61 shell without relying on their solver
+  statuses.
 - Excluding exactly length 70 would not exclude shorter lengths. Covering
   sequence existence is not monotone in length.
 - Fixed-seed Hamming-ball searches describe only the neighborhood of that seed.
@@ -354,18 +366,19 @@ checkable certificates.
 - The exact encodings have exhaustive small-instance tests, but a global
   impossibility claim would still require a complete proof trace checked by an
   independent proof checker.
-- The common-backbone computation has a production implementation,
-  independently tested small-instance oracles, and a retained tight witness.
-  A second full-scale implementation has not yet been completed.
-- The novelty audit is dated 2026-09-02 and must be repeated before any record
+- The exact overlap-61 classification has separate Python and C++
+  implementations, a semantic artifact validator, direct small-instance
+  oracles, and retained source snapshots. It remains specific to one fixed
+  backbone and says nothing about overlap at most 60.
+- The novelty audit is dated 2026-09-04 and must be repeated before any record
   claim.
-- The common-backbone theorem established in this repository has not yet
-  received independent external review or a focused novelty audit.
+- The fixed-backbone results have not received independent external
+  mathematical review, and no priority claim is made.
 - The common-backbone overlap bound is specific to 70-bit cycles. The retained
   positive control has connected 69-bit cycles at overlap 62, so the theorem
   cannot be extrapolated monotonically to other lengths.
 
-As of the dated 2026-09-02 audit, the mathematical interval remains
+As of the dated 2026-09-04 audit, the mathematical interval remains
 `62 <= L(9,1) <= 71`.
 
 ## Current Result Status
@@ -373,9 +386,9 @@ As of the dated 2026-09-02 audit, the mathematical interval remains
 The supported claims are a reproducible verification and exact-search
 artifact plus a scoped graph-theoretic theorem: the 71-bit certificate is
 independently checked, one finite Hamming neighborhood has a checked proof,
-the exact maximum 70-bit common-backbone overlap is 61, and the remaining
-exact and heuristic results retain their stated scope. No new bound on
-`L(9,1)` and no global impossibility result are claimed.
+the exact maximum 70-bit common-backbone overlap is 61, no valid 70-bit cover
+attains overlap 61, and every valid 70-bit cover therefore has overlap at most
+60. No new bound on `L(9,1)` and no global impossibility result are claimed.
 
 A new construction, global bound, or resolution requires one of these
 additional gates:
@@ -394,10 +407,8 @@ commands, prior-art comparison, and external review.
 
 The highest-value next routes are:
 
-1. Produce independently checkable proof evidence for the all-distinct
-   common-backbone overlap-61 subcase, resolve the nine remaining
-   multiplicity-aware cases, then move to diversified overlap-at-most-60
-   supports.
+1. Search diversified overlap-at-most-60 supports and identify the next shell
+   that admits a compact finite classification or proof-producing partition.
 2. Resolve the 22 unrestricted and 20 nontrivial all-distinct SAT cases with
    stronger structural partitions rather than only extending time limits.
 3. Keep distant archive identity dihedral-canonical while preserving oriented
@@ -445,10 +456,11 @@ Detailed phases and acceptance rules are in
 | Common-backbone shell runner | Stale-result, parameter, radius, and independent-solution checks passed |
 | Common-backbone structural theorem | Exact maximum overlap 61; 2,016 omission pairs and 168 residual flows checked |
 | Common-backbone tight witness | 70 bits, 70 distinct windows, overlap 61, independently verified as a non-cover |
-| All-distinct exact-overlap-61 covering portfolio | 10 `INFEASIBLE`; no proof traces |
-| Multiplicity-aware exact-overlap-61 portfolio | 8 `INFEASIBLE`, 2 `UNKNOWN`; no proof traces |
-| Hard-anchor support stages 61 through 65 | 10 exact cases returned `INFEASIBLE`; no proof traces |
-| Remaining exact overlap-61 cases | 9 `UNKNOWN`: six support-size cases and three nonloop support-69 partitions |
+| Historical exact-overlap-61 CP-SAT portfolios | Superseded discovery evidence; their untraced statuses are not used as proofs |
+| Exact-overlap-61 finite classification | 41,664 omissions, 188 residual flows, 8 connected non-covers, 0 covering completions |
+| Independent exact-overlap-61 implementation | Separate C++ enumeration agrees on every aggregate and connected completion |
+| Exact-overlap-61 semantic validator | Rechecks every residual, histogram, completion, witness, and source-bound artifact |
+| Covering-specific backbone consequence | Every valid 70-bit cover has overlap at most 60 |
 | Exact-support 69 and 70 CaDiCaL runs | Both `UNKNOWN` after 300 seconds |
 | Retained ejection-chain run | 500 chains, no raw improvement; archived file is a rotation of the seed |
 | Exact unique-duplicate and support-repair tests | Passed |
@@ -459,7 +471,7 @@ Detailed phases and acceptance rules are in
 | Best retained incomplete 70-bit state | 6 uncovered words |
 | 70-bit certificate | Not found |
 | New upper or lower bound | None |
-| Current claim | Reproducible scoped theorem, methods, and benchmark artifact; no new bound on `L(9,1)` |
+| Current claim | Complete fixed-backbone overlap-61 exclusion and reproducible benchmark artifact; no new bound on `L(9,1)` |
 
 The retained strengthening evidence is recorded in
 [`evidence/graph-strengthening-20260902.log`](evidence/graph-strengthening-20260902.log).
@@ -476,6 +488,9 @@ recorded in
 The exact common-backbone theorem and retained finite analysis are documented
 in [`docs/COMMON_BACKBONE_LEMMA.md`](docs/COMMON_BACKBONE_LEMMA.md) and
 [`evidence/common-backbone-lemma-20260902/README.md`](evidence/common-backbone-lemma-20260902/README.md).
+The complete exact-overlap-61 classification is documented in
+[`docs/EXACT_OVERLAP_61.md`](docs/EXACT_OVERLAP_61.md) and authenticated under
+[`evidence/exact-backbone-overlap61-20260904/README.md`](evidence/exact-backbone-overlap61-20260904/README.md).
 The separate no-proof CP-SAT campaign for the all-distinct overlap-61
 covering subcase is retained under
 [`evidence/common-backbone-cover61-20260902/README.md`](evidence/common-backbone-cover61-20260902/README.md).
@@ -500,13 +515,15 @@ Solver results, statistics, and proof content are unchanged.
 ## Commands
 
 ```bash
+python3 -m venv .venv
+.venv/bin/python -m pip install -r requirements-solver.txt
 make build
-make test
-python3 -m pip install -r requirements-solver.txt
-make solver-test
-make verify-baseline
-make analyze-baseline
-make analyze-backbone
+make test PYTHON=.venv/bin/python
+make solver-test PYTHON=.venv/bin/python
+make verify-baseline PYTHON=.venv/bin/python
+make analyze-baseline PYTHON=.venv/bin/python
+make analyze-backbone PYTHON=.venv/bin/python
+make analyze-exact-overlap PYTHON=.venv/bin/python
 make search-smoke
 make breakout-smoke
 make ejection-smoke

@@ -6,20 +6,25 @@ DRAT_TRIM ?= drat-trim
 BUILD_DIR := build
 SEARCH_BIN := $(BUILD_DIR)/cover-search
 NEIGHBOR_BIN := $(BUILD_DIR)/cover-neighborhood
+OVERLAP_CHECKER := $(BUILD_DIR)/exact-overlap-checker
 DISTANCE4_CNF := $(BUILD_DIR)/l9-r1-70-distance4-pattern.cnf
 DISTANCE4_PROOF := $(BUILD_DIR)/l9-r1-70-distance4-core.drat
 
-.PHONY: all build test solver-test verify-baseline analyze-baseline analyze-backbone search-smoke breakout-smoke ejection-smoke cnf pattern-cnf pattern-neighborhood-cnf exact-support-cnf backbone-overlap-cnf distance4-cnf distance4-proof-check clean
+.PHONY: all build test solver-test verify-baseline analyze-baseline analyze-backbone analyze-exact-overlap search-smoke breakout-smoke ejection-smoke cnf pattern-cnf pattern-neighborhood-cnf exact-support-cnf backbone-overlap-cnf distance4-cnf distance4-proof-check clean
 
 all: build
 
-build: $(SEARCH_BIN) $(NEIGHBOR_BIN)
+build: $(SEARCH_BIN) $(NEIGHBOR_BIN) $(OVERLAP_CHECKER)
 
 $(SEARCH_BIN): src/search.cpp
 	mkdir -p $(BUILD_DIR)
 	$(CXX) $(CXXFLAGS) $< -o $@
 
 $(NEIGHBOR_BIN): src/neighborhood.cpp
+	mkdir -p $(BUILD_DIR)
+	$(CXX) $(CXXFLAGS) $< -o $@
+
+$(OVERLAP_CHECKER): src/exact_overlap_checker.cpp
 	mkdir -p $(BUILD_DIR)
 	$(CXX) $(CXXFLAGS) $< -o $@
 
@@ -55,6 +60,23 @@ analyze-backbone:
 		--overlap-witness \
 			data/candidates/l9-r1-70-backbone-overlap-61.txt \
 		--n 9 --radius 1 --candidate-length 70
+
+analyze-exact-overlap: $(OVERLAP_CHECKER)
+	$(PYTHON) tools/analyze_exact_backbone_overlap.py \
+		data/candidates/l9-r1-common-backbone-64.json \
+		build/l9-r1-exact-overlap61-analysis.json \
+		--overlap-witness \
+			data/candidates/l9-r1-70-backbone-overlap-61.txt \
+		--n 9 --radius 1 --candidate-length 70 --exact-overlap 61
+	$(OVERLAP_CHECKER) \
+		data/candidates/l9-r1-common-backbone-64.json \
+		> build/l9-r1-exact-overlap61-independent.json
+	$(PYTHON) tools/verify_exact_backbone_overlap.py \
+		build/l9-r1-exact-overlap61-analysis.json \
+		build/l9-r1-exact-overlap61-independent.json \
+		--support data/candidates/l9-r1-common-backbone-64.json \
+		--analyzer tools/analyze_exact_backbone_overlap.py \
+		--witness data/candidates/l9-r1-70-backbone-overlap-61.txt
 
 search-smoke: build
 	@$(SEARCH_BIN) --length 70 \

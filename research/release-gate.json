@@ -1,22 +1,21 @@
 {
   "schema_version": 1,
   "project": "binary-covering-sequence-9-1",
-  "evaluated_at": "2026-09-02",
-  "candidate_claim": null,
+  "evaluated_at": "2026-09-04",
+  "candidate_claim": "No 70-bit cyclic binary radius-1 covering sequence has exact overlap 61 with the retained 64-edge backbone; every valid cover therefore has overlap at most 60.",
   "gates": {
-    "significant_original_result": false,
-    "prior_art_refreshed": false,
-    "certificate_retained": false,
-    "python_verifier_passes": false,
-    "cpp_verifier_passes": false,
-    "proof_replay_passes": false,
+    "significant_original_result": true,
+    "prior_art_refreshed": true,
+    "certificate_retained": true,
+    "python_verifier_passes": true,
+    "cpp_verifier_passes": true,
+    "proof_replay_passes": true,
     "clean_checkout_replay_passes": false,
-    "claim_scope_audited": false,
+    "claim_scope_audited": true,
     "limitations_documented": true,
-    "manuscript_ready": false,
+    "manuscript_ready": true,
     "external_review_addressed": false
   },
   "decision": "hold",
-  "reason": "No valid 70-bit sequence or complete checked exclusion is currently retained."
+  "reason": "Artifact promotion awaits the final clean-checkout replay. A broader theorem-priority announcement also awaits external mathematical review."
 }
-

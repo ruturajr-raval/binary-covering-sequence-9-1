@@ -32,15 +32,19 @@ from the definition by this repository.
 
 ## Novelty Audit
 
-Searches refreshed on 2026-09-02:
+Searches refreshed on 2026-09-04:
 
 - arXiv title, abstract, and full-text searches for covering sequences and
   `(9,1,70)`;
 - GitHub code and repository searches for `L(9,1)`, `(9,1,70)`,
   `result-9-1-70`, and related filenames;
-- direct inspection of the current CPro1 repository and the 2025 papers;
+- direct inspection of CPro1 commit
+  `827f02b4048fc96a6b79f0970c87ca5a54f31f40`, whose covering-sequence results
+  include `result-9-1-71-seed1000.txt` but no length-70 result;
 - inspection of H. Ta and V. K. Vu, "Near-Optimal Covering Sequences",
-  arXiv:2606.29236.
+  arXiv:2606.29236;
+- inspection of T. Etzion and E. Yaakobi, "Covering Sequence Codes for Cyclic
+  Codes", arXiv:2607.14840.
 
 No 70-bit construction was located. This is a dated search result, not a
 guarantee that no unpublished or unindexed construction exists. The audit

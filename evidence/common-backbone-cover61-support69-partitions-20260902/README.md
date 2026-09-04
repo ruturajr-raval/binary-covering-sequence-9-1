@@ -1,5 +1,10 @@
 # Common-Backbone Overlap-61 Support-69 Partitions
 
+Historical campaign notice: the status below records the 2026-09-02 CP-SAT
+partitions. The complete finite classification in
+`evidence/exact-backbone-overlap61-20260904/` now resolves all three former
+timeouts. The untraced solver statuses here are not used as proof evidence.
+
 This directory retains exact partitions of the support-size-69 cases left
 unresolved at anchors 0 and 16.
 

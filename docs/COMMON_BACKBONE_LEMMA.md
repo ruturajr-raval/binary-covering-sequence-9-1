@@ -267,17 +267,19 @@ attained.
 ## Scope
 
 This result does not prove that a 70-bit covering sequence is impossible.
-Candidates with backbone overlap at most 61 remain possible.
+The separate exact-overlap-61 classification proves that no valid cover
+attains the boundary value. Candidates with backbone overlap at most 60
+remain possible.
 
 The overlap bound is specific to 70-bit cycles. It must not be extrapolated
 to length 69 or to other lengths.
 
-The all-distinct covering CP-SAT portfolio also reported all anchor cases
-infeasible at overlap 61, but those runs emitted no independently checkable
-proof trace. A separate multiplicity-aware campaign reduced the unresolved
-shell to nine exact support and repeat-type cases, also without proof traces.
-These campaigns remain computational evidence and are not part of the theorem
-above.
+The earlier all-distinct and multiplicity-aware CP-SAT campaigns emitted no
+independently checkable proof traces and are retained only as historical
+discovery evidence. The complete finite classification in
+`docs/EXACT_OVERLAP_61.md` supersedes their nine timeouts. It is a separate
+covering-specific theorem that combines with the graph-theoretic result above
+to give the overlap-at-most-60 conclusion.
 
 ## Reproduction
 

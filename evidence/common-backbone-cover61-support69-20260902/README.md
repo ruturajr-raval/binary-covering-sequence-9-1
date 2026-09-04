@@ -1,5 +1,10 @@
 # Common-Backbone Overlap-61 Support-69 Search
 
+Historical campaign notice: the status below records the 2026-09-02 CP-SAT
+run. The complete finite classification in
+`evidence/exact-backbone-overlap61-20260904/` now resolves this class. The
+untraced solver statuses here are retained only as discovery evidence.
+
 This directory retains the complete ten-anchor CP-SAT campaign for 70-bit
 radius-1 covering cycles with exact common-backbone overlap 61 and exactly 69
 distinct cyclic windows.

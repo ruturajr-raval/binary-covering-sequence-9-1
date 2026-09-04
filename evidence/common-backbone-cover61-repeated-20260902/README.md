@@ -1,5 +1,11 @@
 # Common-Backbone Overlap-61 Repeated-Window Search
 
+Historical campaign notice: the status below records the 2026-09-02 CP-SAT
+run. The complete finite classification in
+`evidence/exact-backbone-overlap61-20260904/` now resolves the full
+exact-overlap-61 shell. The untraced solver statuses here are not used as
+proof evidence.
+
 This directory retains the complete ten-anchor CP-SAT campaign for 70-bit
 radius-1 covering cycles with exact common-backbone overlap 61 and arbitrary
 window multiplicities.
@@ -8,9 +14,10 @@ The model permits both all-distinct and repeated-window candidates. Eight
 anchor cases returned `INFEASIBLE`. Anchors 0 and 16 returned `UNKNOWN` after
 300 seconds each.
 
-No independently checkable proof trace was emitted. The eight solver
-infeasibility statuses are computational evidence, and the two timeouts leave
-the full overlap-61 shell unresolved.
+No independently checkable proof trace was emitted. At the time of this
+campaign, the eight infeasibility statuses were computational evidence and
+the two timeouts left the shell unresolved. The later finite classification
+supersedes that frontier.
 
 ## Retained Files
 

@@ -1,5 +1,11 @@
 # Common-Backbone Overlap-61 Support Stages
 
+Historical campaign notice: the status below records the 2026-09-02 CP-SAT
+stages. The complete finite classification in
+`evidence/exact-backbone-overlap61-20260904/` now resolves every support size
+at exact overlap 61. The untraced solver statuses here are not used as proof
+evidence.
+
 This directory retains exact support-size stages for the two anchor cases
 left unresolved by the unrestricted repeated-window campaign.
 

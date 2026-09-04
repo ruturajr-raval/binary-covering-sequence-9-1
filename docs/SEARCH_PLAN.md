@@ -99,23 +99,22 @@
 - The all-distinct portfolio returned two proof-checked elementary
   `UNSATISFIABLE` zero-anchor transitions and 20 `UNKNOWN` cases. The remaining
   20 cases are the nontrivial exact-support frontier.
-- A 64-edge common backbone is retained. The next constructive shell fixes
-  exact overlap 61 with this backbone across ten disjoint zero-ball anchors.
+- A 64-edge common backbone is retained.
 - A finite residual-flow proof establishes that every 70-bit cyclic sequence
   uses at most 61 backbone edges. The bound is tight for arbitrary cycles.
-- The all-distinct exact-overlap-61 covering portfolio reported all ten
-  anchors `INFEASIBLE`, but no proof trace was emitted. Repeated-window
-  candidates were not modeled in that campaign.
-- A separate multiplicity-aware portfolio reported eight anchors
-  `INFEASIBLE` and anchors 0 and 16 `UNKNOWN`.
-- Exact support staging closed sizes 61 through 65 computationally for the two
-  hard anchors. Sizes 66 through 68 remain `UNKNOWN`.
-- At support size 69, only three nonloop one-repeat partitions remain
-  `UNKNOWN`: anchor 0 outside the backbone, and anchor 16 inside and outside
-  the backbone.
-- Overlaps 62 through 64 are closed by the graph-theoretic theorem. Future
-  common-backbone searches should target the nine exact overlap-61 cases,
-  certify any computational exclusions, or diversify to overlap at most 60.
+- A complete residual-mass-9 enumeration checks all 41,664 exact-overlap-61
+  omission triples. It leaves 188 residual flows and eight connected
+  circulations, none of which is a radius-1 cover.
+- Separate Python and C++ implementations agree on the classification. A
+  semantic validator rechecks every retained residual, histogram, connected
+  completion, and witness.
+- Combining the two finite results proves that every valid 70-bit radius-1
+  cover has backbone overlap at most 60.
+- The earlier overlap-61 CP-SAT campaigns are retained as historical
+  discovery evidence, but their untraced statuses are not used in the proof.
+- Overlaps 61 through 64 are closed for valid length-70 covers. Future
+  common-backbone searches should diversify to overlap at most 60 and prefer
+  finite classifications or proof-producing partitions over longer timeouts.
 - A proof-producing translation should replace indefinitely longer CP-SAT
   timeouts once the strongest discovery formulation is stable.
 
