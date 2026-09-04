@@ -10,12 +10,12 @@
     "python_verifier_passes": true,
     "cpp_verifier_passes": true,
     "proof_replay_passes": true,
-    "clean_checkout_replay_passes": false,
+    "clean_checkout_replay_passes": true,
     "claim_scope_audited": true,
     "limitations_documented": true,
     "manuscript_ready": true,
     "external_review_addressed": false
   },
-  "decision": "hold",
-  "reason": "Artifact promotion awaits the final clean-checkout replay. A broader theorem-priority announcement also awaits external mathematical review."
+  "decision": "promote_artifact",
+  "reason": "All artifact-release gates pass. A broader theorem-priority announcement remains pending external mathematical review."
 }
