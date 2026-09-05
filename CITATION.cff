@@ -2,7 +2,7 @@ cff-version: 1.2.0
 message: "Please cite the preprint and the archived repository release."
 title: "A Fixed-Backbone Exclusion for Length-70 Binary (9,1) Covering Sequences"
 type: software
-abstract: "A reproducible fixed-backbone theorem for binary (9,1) covering sequences. For an explicit 64-edge support, every connected nonnegative integral circulation of total mass 70 has overlap at most 61, and a complete classification proves that none of the eight connected overlap-61 completions is a radius-1 cover. Therefore every valid length-70 cover has overlap at most 60 with this backbone. The result does not construct or exclude a length-70 covering sequence and does not change the known bounds on L(9,1)."
+abstract: "A reproducible fixed-backbone theorem for binary (9,1) covering sequences. For an explicit 64-edge support, every connected nonnegative integral circulation of total mass 70 has overlap at most 61, and a complete classification proves that none of the eight connected overlap-61 completions is a radius-1 cover. Therefore every valid length-70 cover uses at most 60 distinct edges of this backbone. The result does not construct or exclude a length-70 covering sequence and does not change the known bounds on L(9,1)."
 authors:
   - family-names: Raval
     given-names: Ruturaj R
@@ -29,5 +29,4 @@ preferred-citation:
       given-names: Ruturaj R
       affiliation: Independent Researcher
       orcid: "https://orcid.org/0000-0003-4930-8981"
-  doi: "10.5281/zenodo.22313901"
   year: 2026
