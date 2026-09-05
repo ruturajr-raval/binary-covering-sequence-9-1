@@ -8,7 +8,7 @@
   "pdf_sha256": "e24e4a8dff29000fe5d9d5b95a415090411f2e527f3b88886f6ac5476ccbbd1e",
   "title": "A Fixed-Backbone Exclusion for Length-70 Binary (9,1) Covering Sequences",
   "artifact_status": "preprint_and_reproducible_certificate",
-  "supported_claim": "For the explicit 64-edge backbone, every connected nonnegative integral circulation of total mass 70 has overlap at most 61, and no valid binary radius-1 covering sequence attains overlap 61. Every valid length-70 cover therefore has backbone overlap at most 60.",
+  "supported_claim": "For the explicit 64-edge backbone, every connected nonnegative integral circulation of total mass 70 uses at most 61 distinct backbone edges, and no valid binary radius-1 covering sequence uses exactly 61. Every valid length-70 cover therefore uses at most 60 distinct edges of the backbone.",
   "claim_status": "complete_scoped_theorem_no_new_global_bound",
   "preprint_ready": true,
   "artifact_reproducibility_ready": true,

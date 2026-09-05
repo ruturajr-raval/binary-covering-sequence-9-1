@@ -2,7 +2,7 @@
   "schema_version": 1,
   "project": "binary-covering-sequence-9-1",
   "evaluated_at": "2026-09-05",
-  "candidate_claim": "For the explicit 64-edge backbone, every valid length-70 binary radius-1 covering sequence has overlap at most 60.",
+  "candidate_claim": "For the explicit 64-edge backbone, every valid length-70 binary radius-1 covering sequence uses at most 60 distinct edges of the backbone.",
   "gates": {
     "significant_original_result": true,
     "prior_art_refreshed": true,

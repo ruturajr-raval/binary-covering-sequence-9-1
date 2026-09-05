@@ -1,7 +1,7 @@
 {
   "title": "A Fixed-Backbone Exclusion for Length-70 Binary (9,1) Covering Sequences",
   "upload_type": "software",
-  "description": "Preprint, code, and reproducible certificates for a fixed-backbone theorem in the binary (9,1) covering-sequence problem. For an explicit 64-edge support, every connected nonnegative integral circulation of total mass 70 has overlap at most 61. A complete finite classification retains 188 residual flows and proves that the eight connected overlap-61 completions are all non-covers. Consequently, every valid length-70 cover has backbone overlap at most 60. This does not construct or exclude a length-70 covering sequence and does not change the known bounds 62 <= L(9,1) <= 71. Original project material is MIT licensed; the separately identified retained baseline artifacts remain under Apache-2.0 as documented in NOTICE.",
+  "description": "Preprint, code, and reproducible certificates for a fixed-backbone theorem in the binary (9,1) covering-sequence problem. For an explicit 64-edge support, every connected nonnegative integral circulation of total mass 70 uses at most 61 distinct support edges. A complete finite classification retains 188 residual flows and proves that the eight connected completions using exactly 61 support edges are all non-covers. Consequently, every valid length-70 cover uses at most 60 distinct edges of this backbone. This does not construct or exclude a length-70 covering sequence and does not change the known bounds 62 <= L(9,1) <= 71. Original project material is MIT licensed; the separately identified retained baseline artifacts remain under Apache-2.0 as documented in NOTICE.",
   "creators": [
     {
       "name": "Raval, Ruturaj R",
