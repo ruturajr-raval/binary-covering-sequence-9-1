@@ -9,7 +9,7 @@ permissions:
 
 jobs:
   test:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
         with:
@@ -18,8 +18,42 @@ jobs:
         with:
           python-version: "3.14"
       - run: python -m pip install -r requirements-solver.txt
+      - run: shasum -a 256 -c release-manifest.sha256
       - run: make test
       - run: make solver-test
       - run: make verify-baseline
       - run: make analyze-backbone analyze-exact-overlap
+      - run: make verify-publication
       - run: make search-smoke breakout-smoke ejection-smoke
+
+  paper:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      - run: sudo apt-get update
+      - run: sudo apt-get install -y latexmk texlive-latex-extra
+      - run: make paper-build
+      - run: make paper-bundle
+      - run: tar -tzf dist/arxiv/binary-covering-sequence-9-1.tar.gz
+      - run: mkdir -p build/arxiv-extracted
+      - run: tar -xzf dist/arxiv/binary-covering-sequence-9-1.tar.gz -C build/arxiv-extracted
+      - run: latexmk -pdf -interaction=nonstopmode -halt-on-error -file-line-error main.tex
+        working-directory: build/arxiv-extracted
+
+  artifact-replay:
+    runs-on: ubuntu-24.04
+    strategy:
+      matrix:
+        include:
+          - python: "3.10"
+            cxx: g++
+          - python: "3.12"
+            cxx: clang++
+          - python: "3.14"
+            cxx: g++
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      - uses: actions/setup-python@e797f83bcb11b83ae66e0230d6156d7c80228e7c
+        with:
+          python-version: ${{ matrix.python }}
+      - run: make paper-replay PYTHON=python CXX=${{ matrix.cxx }}

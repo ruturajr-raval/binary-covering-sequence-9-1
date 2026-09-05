@@ -1,83 +1,75 @@
-# Release v0.2.0
+# Release v0.3.0
 
-## What Was Done
+## Result
 
-This release closes the complete exact-overlap-61 shell for the retained
-64-edge common backbone at length 70.
+This release provides the preprint and reproducible certificate for a
+fixed-backbone exclusion at length 70.
 
-Every candidate in this shell omits exactly three backbone edges and has a
-residual integral flow of mass 9. The finite classification checks all 41,664
-omission triples, retains 188 admissible residual flows, and reconstructs all
-eight connected 70-edge circulations. Six leave nine words uncovered and two
-leave ten, so none is a radius-1 cover.
+Let `B` be the explicit 64-edge support retained in the repository. Every
+connected nonnegative integral circulation of total mass 70 uses at most 61
+distinct edges of `B`. The bound is tight for cyclic words. A complete
+classification of the overlap-61 shell checks all 41,664 omission triples,
+retains 188 residual flows, and finds exactly eight connected completions.
+Six leave nine binary 9-words uncovered within radius 1, and two leave ten.
+None is a covering sequence.
 
-## Supported Claim
+It follows that every valid length-70 binary radius-1 covering sequence, if
+one exists, uses at most 60 distinct edges of `B`.
 
-Every 70-bit cyclic binary sequence contains at most 61 distinct edges of the
-retained 64-edge backbone. No valid 70-bit radius-1 covering sequence attains
-overlap 61. Therefore every valid 70-bit cover has backbone overlap at most
-60.
+## Evidence
 
-The first statement is graph-theoretic and applies to every 70-bit cyclic
-binary sequence. The second uses the radius-1 covering condition.
+The common-backbone certificate retains all 168 overlap-62 residual vectors.
+A semantic validator checks every vector and reruns the connector and detour
+exclusions used by the proof.
 
-## Verification
+The overlap-61 classification is reproduced by separate Python and C++
+implementations. A semantic validator checks all 188 residual flows, all
+eight connected completions, and their uncovered-word sets. Four exhaustive
+small-instance oracles test the finite decomposition, including a
+residual-mass-9 case.
 
-The classification is reproduced by separate Python and C++ implementations.
-They agree on every aggregate count and every connected completion.
-
-A standalone semantic validator rechecks all 188 retained residuals, derives
-the component and coverage histograms, reconstructs every connected Eulerian
-circulation, verifies the retained witness, and rejects altered or incomplete
-attestations. Four complete small-instance oracles include a
-residual-mass-9, three-terminal case.
-
-The exact source snapshots, both output artifacts, and their SHA-256 manifest
-are retained under `evidence/exact-backbone-overlap61-20260904/`.
-
-## Not Claimed
-
-- No valid 70-bit covering sequence has been found.
-- Candidates with backbone overlap at most 60 remain open.
-- No new upper or lower bound on `L(9,1)` is claimed.
-- No global length-70 impossibility result is claimed.
-- Historical solver statuses without proof traces are not used as theorem
-  evidence.
-- No priority claim is made before independent external mathematical review.
-
-## Reproduction
+The focused replay uses only the Python standard library and a C++20 compiler:
 
 ```bash
-python3 -m venv .venv
-.venv/bin/python -m pip install -r requirements-solver.txt
-make build
-make test PYTHON=.venv/bin/python
-make solver-test PYTHON=.venv/bin/python
-make verify-baseline PYTHON=.venv/bin/python
-make analyze-baseline PYTHON=.venv/bin/python
-make analyze-backbone PYTHON=.venv/bin/python
-make analyze-exact-overlap PYTHON=.venv/bin/python
+make paper-replay PYTHON=python3 CXX=c++
 ```
 
-The focused evidence replay is documented in
-`evidence/exact-backbone-overlap61-20260904/README.md`.
+The command builds the deterministic arXiv source archive, extracts it into a
+clean temporary directory, authenticates its manifest, reruns both finite
+classifications, and compares the two overlap-61 implementations.
 
-## Remaining Work
+## Claims
 
-The immediate frontier is the overlap-at-most-60 region. A complete solution
-still requires either an independently verified 70-bit construction or
-checked exclusions strong enough to settle every admissible length relevant
-to a new lower bound.
+This release claims:
 
-## Review Request
+- the exact overlap ceiling `61` for the stated backbone at total mass 70;
+- the complete classification of the overlap-61 shell; and
+- the covering-specific consequence that every valid length-70 cover has
+  backbone overlap at most `60`.
 
-Independent mathematical review is requested for the finite-flow reduction,
-the completeness of the residual enumeration, and the combination with the
-prior maximum-overlap theorem. The repository provides byte-reproducible
-artifacts and does not make a priority claim before that review.
+This release does not claim:
 
-## Citation
+- a valid length-70 covering sequence;
+- nonexistence of a length-70 covering sequence;
+- a new upper or lower bound on `L(9,1)`;
+- that the chosen backbone is canonical or optimal; or
+- conclusions for lengths other than 70.
 
-Citation metadata is provided in `CITATION.cff`, and `.zenodo.json` supplies
-the archival metadata. The stable concept DOI for all versions is
+The known interval remains `62 <= L(9,1) <= 71`.
+
+## Review
+
+Independent mathematical review is invited for the path-cycle
+decomposition, the completeness of the two finite enumerations, and the
+combination of their conclusions. No external mathematical review is claimed
+in this release.
+
+## Preprint And Archive
+
+The self-contained manuscript is in `paper/main.tex`. The deterministic arXiv
+source archive is built at
+`dist/arxiv/binary-covering-sequence-9-1.tar.gz`.
+
+Citation metadata is in `CITATION.cff`. Archived repository releases are
+collected under the concept DOI
 [10.5281/zenodo.22260691](https://doi.org/10.5281/zenodo.22260691).

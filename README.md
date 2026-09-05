@@ -16,6 +16,10 @@ The supported scoped result concerns one fixed backbone. This project does not
 claim a new construction, a new bound on `L(9,1)`, or a global impossibility
 result.
 
+The self-contained preprint is in `paper/main.tex`. Its deterministic arXiv
+source archive includes the focused certificate sources, retained evidence,
+and a clean standalone replay.
+
 ## The Problem
 
 Let
@@ -372,8 +376,8 @@ checkable certificates.
   backbone and says nothing about overlap at most 60.
 - The novelty audit is dated 2026-09-04 and must be repeated before any record
   claim.
-- The fixed-backbone results have not received independent external
-  mathematical review, and no priority claim is made.
+- Independent external mathematical review of the fixed-backbone results is
+  invited; no external mathematical review is claimed.
 - The common-backbone overlap bound is specific to 70-bit cycles. The retained
   positive control has connected 69-bit cycles at overlap 62, so the theorem
   cannot be extrapolated monotonically to other lengths.
@@ -454,7 +458,7 @@ Detailed phases and acceptance rules are in
 | Optimized all-distinct support-70 portfolio | 2 elementary proof-checked `UNSATISFIABLE`, 20 `UNKNOWN` |
 | Canonical SAT evidence integrity | Sources, summaries, formulas, proofs, and logs authenticated and tested |
 | Common-backbone shell runner | Stale-result, parameter, radius, and independent-solution checks passed |
-| Common-backbone structural theorem | Exact maximum overlap 61; 2,016 omission pairs and 168 residual flows checked |
+| Common-backbone structural theorem | Exact maximum overlap 61; all 2,016 omission pairs and 168 retained residual flows semantically checked |
 | Common-backbone tight witness | 70 bits, 70 distinct windows, overlap 61, independently verified as a non-cover |
 | Historical exact-overlap-61 CP-SAT portfolios | Superseded discovery evidence; their untraced statuses are not used as proofs |
 | Exact-overlap-61 finite classification | 41,664 omissions, 188 residual flows, 8 connected non-covers, 0 covering completions |
@@ -487,10 +491,10 @@ recorded in
 [`evidence/sat-anchor-cover-20260902/README.md`](evidence/sat-anchor-cover-20260902/README.md).
 The exact common-backbone theorem and retained finite analysis are documented
 in [`docs/COMMON_BACKBONE_LEMMA.md`](docs/COMMON_BACKBONE_LEMMA.md) and
-[`evidence/common-backbone-lemma-20260902/README.md`](evidence/common-backbone-lemma-20260902/README.md).
+[`evidence/common-backbone-lemma-20260905/README.md`](evidence/common-backbone-lemma-20260905/README.md).
 The complete exact-overlap-61 classification is documented in
 [`docs/EXACT_OVERLAP_61.md`](docs/EXACT_OVERLAP_61.md) and authenticated under
-[`evidence/exact-backbone-overlap61-20260904/README.md`](evidence/exact-backbone-overlap61-20260904/README.md).
+[`evidence/exact-backbone-overlap61-20260905/README.md`](evidence/exact-backbone-overlap61-20260905/README.md).
 The separate no-proof CP-SAT campaign for the all-distinct overlap-61
 covering subcase is retained under
 [`evidence/common-backbone-cover61-20260902/README.md`](evidence/common-backbone-cover61-20260902/README.md).
@@ -524,6 +528,9 @@ make verify-baseline PYTHON=.venv/bin/python
 make analyze-baseline PYTHON=.venv/bin/python
 make analyze-backbone PYTHON=.venv/bin/python
 make analyze-exact-overlap PYTHON=.venv/bin/python
+make verify-publication PYTHON=.venv/bin/python
+make paper-bundle PYTHON=.venv/bin/python
+make paper-replay PYTHON=.venv/bin/python CXX=c++
 make search-smoke
 make breakout-smoke
 make ejection-smoke
@@ -736,11 +743,11 @@ A scoped theorem is treated separately from either global route. Its statement
 must identify the fixed object and exact parameter range, the proof and finite
 checks must be reproducible from retained sources, tightness claims must have
 an independently verified witness, and all remaining global cases must be
-stated explicitly. The common-backbone theorem satisfies the repository gates;
-independent external mathematical review remains pending.
+stated explicitly. The common-backbone theorem meets these standards;
+independent external mathematical review is invited and remains pending.
 
-`release.json` records artifact-reproducibility and theorem-announcement
-readiness separately.
+`release.json` records publication status, reproducibility, claim scope, and
+the remaining review status.
 
 ## References
 

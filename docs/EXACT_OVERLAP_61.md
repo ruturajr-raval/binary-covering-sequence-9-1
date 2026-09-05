@@ -151,6 +151,10 @@ build/l9-r1-exact-overlap61-analysis.json
 build/l9-r1-exact-overlap61-independent.json
 ```
 
+The publication snapshot, exact source copies, both outputs, semantic
+validator, and SHA-256 manifest are retained under
+`evidence/exact-backbone-overlap61-20260905`.
+
 ## Scope
 
 This result excludes only the exact overlap-61 shell for length 70. It does not

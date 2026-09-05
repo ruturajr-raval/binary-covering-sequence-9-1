@@ -291,5 +291,8 @@ python3 -m unittest tests.test_common_backbone -v
 ```
 
 The first command writes `build/l9-r1-common-backbone-analysis.json`. The
-retained analysis and exact source snapshot are under
-`evidence/common-backbone-lemma-20260902`.
+strengthened publication analysis, all 168 residual vectors, semantic
+validator, exact source snapshots, and SHA-256 manifest are under
+`evidence/common-backbone-lemma-20260905`. The earlier
+`evidence/common-backbone-lemma-20260902` directory is retained as the
+original discovery snapshot.

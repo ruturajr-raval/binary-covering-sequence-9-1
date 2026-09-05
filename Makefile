@@ -10,7 +10,11 @@ OVERLAP_CHECKER := $(BUILD_DIR)/exact-overlap-checker
 DISTANCE4_CNF := $(BUILD_DIR)/l9-r1-70-distance4-pattern.cnf
 DISTANCE4_PROOF := $(BUILD_DIR)/l9-r1-70-distance4-core.drat
 
-.PHONY: all build test solver-test verify-baseline analyze-baseline analyze-backbone analyze-exact-overlap search-smoke breakout-smoke ejection-smoke cnf pattern-cnf pattern-neighborhood-cnf exact-support-cnf backbone-overlap-cnf distance4-cnf distance4-proof-check clean
+.PHONY: all build test solver-test verify-baseline analyze-baseline \
+	analyze-backbone analyze-exact-overlap verify-publication search-smoke \
+	breakout-smoke ejection-smoke cnf pattern-cnf pattern-neighborhood-cnf \
+	exact-support-cnf backbone-overlap-cnf distance4-cnf \
+	distance4-proof-check paper-build paper-bundle paper-replay clean
 
 all: build
 
@@ -76,6 +80,19 @@ analyze-exact-overlap: $(OVERLAP_CHECKER)
 		build/l9-r1-exact-overlap61-independent.json \
 		--support data/candidates/l9-r1-common-backbone-64.json \
 		--analyzer tools/analyze_exact_backbone_overlap.py \
+		--witness data/candidates/l9-r1-70-backbone-overlap-61.txt
+
+verify-publication:
+	$(PYTHON) tools/verify_common_backbone.py \
+		evidence/common-backbone-lemma-20260905/analysis.json \
+		--support data/candidates/l9-r1-common-backbone-64.json \
+		--witness data/candidates/l9-r1-70-backbone-overlap-61.txt
+	$(PYTHON) tools/verify_exact_backbone_overlap.py \
+		evidence/exact-backbone-overlap61-20260905/analysis.json \
+		evidence/exact-backbone-overlap61-20260905/independent-check.json \
+		--support data/candidates/l9-r1-common-backbone-64.json \
+		--analyzer \
+			evidence/exact-backbone-overlap61-20260905/source/analyze_exact_backbone_overlap_v2.py \
 		--witness data/candidates/l9-r1-70-backbone-overlap-61.txt
 
 search-smoke: build
@@ -159,6 +176,17 @@ distance4-proof-check: distance4-cnf
 	gzip -dc evidence/sat/distance4-core-binary.drat.gz \
 		> $(DISTANCE4_PROOF)
 	$(DRAT_TRIM) $(DISTANCE4_CNF) $(DISTANCE4_PROOF) -i
+
+paper-build:
+	mkdir -p build/paper
+	latexmk -pdf -interaction=nonstopmode -halt-on-error -file-line-error \
+		-output-directory=build/paper paper/main.tex
+
+paper-bundle:
+	$(PYTHON) tools/build_arxiv_bundle.py
+
+paper-replay: paper-bundle
+	CXX="$(CXX)" $(PYTHON) tools/replay_arxiv_bundle.py
 
 clean:
 	rm -rf $(BUILD_DIR)

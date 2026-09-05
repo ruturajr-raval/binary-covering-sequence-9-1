@@ -1,0 +1,563 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{microtype}
+\usepackage[hidelinks]{hyperref}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\cube}{\{0,1\}}
+\newcommand{\dist}{d_{\mathrm H}}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\divg}{\operatorname{div}}
+\newcommand{\ov}{\operatorname{ov}}
+
+\title{A Fixed-Backbone Exclusion for Length-70 Binary
+  $(9,1)$ Covering Sequences}
+\author{Ruturaj R Raval\\
+  Independent Researcher\\
+  \href{https://orcid.org/0000-0003-4930-8981}
+  {ORCID: 0000-0003-4930-8981}}
+\date{September 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+A binary $(n,R)$ covering sequence is a cyclic binary word whose
+length-$n$ windows cover the Hamming cube within radius $R$.  The known
+bounds for the minimum length at $(n,R)=(9,1)$ are
+$62\leq L(9,1)\leq 71$.  We fix an explicit 64-edge balanced covering
+support $B$ in the order-8 binary de Bruijn digraph.  First, a finite
+graph-theoretic certificate proves that every connected nonnegative
+integral circulation of total mass 70 uses at most 61 distinct edges of
+$B$.  Second, an exhaustive path-cycle decomposition classifies the
+exact-overlap-61 shell.  Among all $\binom{64}{3}=41{,}664$ triples of
+omitted backbone edges, 188 residual flows survive and exactly eight
+produce connected 70-edge circulations.  Six of these leave nine binary
+9-words uncovered and two leave ten, so none is a radius-1 cover.
+Consequently, every length-70 binary $(9,1)$ covering sequence, if one
+exists, uses at most 60 distinct edges of $B$.  The overlap-61
+classification is reproduced by separate Python and C++ implementations;
+the prerequisite overlap theorem retains all 168 boundary residuals and
+a semantic validator.  This result does not construct or exclude a
+length-70 covering sequence and does not change the global bounds on
+$L(9,1)$.
+\end{abstract}
+
+\section{Introduction}
+
+Chung and Cooper introduced covering de Bruijn cycles as cyclic analogues
+of covering codes \cite{chung-cooper}.  Chee, Etzion, Ta, and Vu later
+developed general constructions for covering sequences and arrays
+\cite{chee-et-al}.  For the binary radius-1 problem at window length 9,
+their table gave
+\[
+  62\leq L(9,1)\leq 93.
+\]
+Rosin subsequently reported a 71-bit construction \cite{rosin}, giving
+the current public bound
+\[
+  62\leq L(9,1)\leq 71.
+\]
+
+The present work does not improve either endpoint.  Instead, it gives an
+exact finite restriction on any possible length-70 construction.  We fix
+a 64-edge support $B$ that is balanced and covers all 512 binary 9-words
+within radius 1, but has two directed-cycle components of sizes 4 and 60.
+The support arose during exploratory search as the intersection of the
+reported 71-edge cycle support and a disconnected 70-edge covering
+support.  The theorem below depends only on the explicit fixed set $B$,
+not on that discovery route.
+
+There are two parts.  The first proves that a length-70 cyclic word can
+use at most 61 distinct edges of $B$.  The cases of 64 and 63 retained
+edges are excluded by short connector and detour bounds.  The case of 62
+retained edges is closed by an exhaustive enumeration of 168 residual
+flows.  The second part classifies the boundary value 61.  Exactly eight
+connected circulations attain it, and none covers the Hamming cube.
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{@{}lll@{}}
+\toprule
+Source & Global bound & Contribution \\
+\midrule
+Chee et al.\ \cite{chee-et-al} & $62\leq L(9,1)\leq 93$ &
+General constructions and table \\
+Rosin \cite{rosin} & $62\leq L(9,1)\leq 71$ &
+Explicit 71-bit construction \\
+This work & unchanged &
+Every length-70 cover has $\ov_B\leq 60$ \\
+\bottomrule
+\end{tabular}
+\caption{Global bounds and the scoped result proved here.}
+\label{tab:bounds}
+\end{table}
+
+\section{Covering sequences and de Bruijn circulations}
+
+\begin{definition}
+Let $x=x_0x_1\ldots x_{L-1}$ be a cyclic binary word.  Its length-$n$
+window at position $i$ is
+\[
+  W_i=x_ix_{i+1}\cdots x_{i+n-1},
+\]
+with indices reduced modulo $L$.  The word $x$ is an $(n,R)$ covering
+sequence if every $y\in\cube^n$ satisfies
+\[
+  \min_{0\leq i<L}\dist(y,W_i)\leq R.
+\]
+The minimum possible $L$ is denoted by $L(n,R)$.
+\end{definition}
+
+Let $D_8$ be the binary de Bruijn digraph with vertex set $\cube^8$ and
+edge set $\cube^9$.  A 9-bit word $w=w_1\cdots w_9$ is the edge from
+$w_1\cdots w_8$ to $w_2\cdots w_9$.  We identify binary words with their
+integer values from 0 to 511.
+
+For an edge multiplicity vector
+$m\in\mathbb Z_{\geq 0}^{512}$, write
+\[
+  |m|=\sum_e m_e,\qquad
+  \supp(m)=\{e:m_e>0\}.
+\]
+Its divergence is outgoing multiplicity minus incoming multiplicity at
+each vertex.  It is a circulation when $\divg(m)=0$.
+
+\begin{lemma}[Cyclic-word equivalence]
+\label{lem:euler}
+A nonzero vector $m\in\mathbb Z_{\geq0}^{512}$ is the window
+multiplicity vector of a cyclic binary word if and only if $m$ is a
+circulation and the underlying undirected graph of $\supp(m)$ is
+connected.
+\end{lemma}
+
+\begin{proof}
+A cyclic word orders its windows as one closed directed walk, so balance
+and connectedness are immediate.  Conversely, replace every edge $e$ by
+$m_e$ parallel copies.  A finite directed multigraph in which every
+nonisolated vertex is balanced and the underlying graph is connected has
+an Euler circuit.  Reading the appended bit along that circuit gives a
+cyclic binary word.  Consecutive edges overlap in eight bits, and closure
+of the circuit handles the wraparound windows.  Thus the resulting
+window multiplicities are exactly $m$, including repeated edges and
+periodic words.
+\end{proof}
+
+\section{The fixed backbone}
+
+The backbone $B$ consists of the following 64 edges, written as decimal
+values of 9-bit words:
+
+\begin{center}
+\small
+\begin{tabular}{rrrrrrrr}
+6&13&16&27&32&43&54&61\\
+64&75&86&93&102&109&112&123\\
+129&138&151&156&167&172&177&186\\
+199&204&209&218&225&234&247&252\\
+259&264&277&286&293&302&307&312\\
+325&334&339&344&355&360&373&382\\
+388&399&402&409&418&425&436&447\\
+450&457&468&479&484&495&498&505
+\end{tabular}
+\end{center}
+
+For a circulation $m$, define its distinct backbone overlap by
+\[
+  \ov_B(m)=|\supp(m)\cap B|.
+\]
+
+\begin{proposition}[Backbone properties]
+\label{prop:backbone}
+The support $B$ is balanced, has no loops, and covers all 512 binary
+9-words within Hamming radius 1.  Its underlying graph has exactly two
+components, each a directed cycle, with 4 and 60 edges respectively.
+\end{proposition}
+
+These properties are checked directly from the displayed edge list.  In
+particular, they do not depend on a solver result.
+
+\section{Residual-flow decomposition}
+
+The finite classifications use the following standard decomposition.
+
+\begin{lemma}[Integral path-cycle decomposition]
+\label{lem:decomposition}
+Let $a$ be a nonnegative integral edge flow in a finite directed
+multigraph.  Suppose its positive divergence, counted with
+multiplicity, has total value $d$.  Then $a$ is a sum of $d$ directed
+source-to-sink walks and a nonnegative integral circulation.  The
+circulation is a sum of directed closed walks.  Every walk in the
+decomposition has length at most $|a|$.
+\end{lemma}
+
+\begin{proof}
+Regard each unit of edge multiplicity as a separate edge copy.  Starting
+at a positive-divergence vertex, follow unused outgoing copies until a
+negative-divergence vertex is reached, deleting one unit along the
+resulting directed walk.  At an intermediate vertex, failure to continue
+would contradict its remaining divergence.  Repeating this operation
+discharges all $d$ positive units.  The remaining multigraph is balanced.
+Each nonempty weak component of a balanced directed multigraph has an
+Euler circuit, giving the closed-walk decomposition.  No extracted walk
+uses more edge copies than the original flow.
+\end{proof}
+
+\begin{lemma}[Completeness of bounded bit-walk enumeration]
+\label{lem:enumeration}
+Fix a residual mass $M$.  Enumerating every appended-bit string of
+length $1,\ldots,M$ from each required source produces every directed
+walk that can occur in Lemma~\ref{lem:decomposition}.  Enumerating every
+cyclic binary word of length $1,\ldots,M$ and closing under sums produces
+every balanced residual flow of mass at most $M$.  Pairing repeated
+source and sink terminals in every distinct order therefore produces
+every nonnegative integral residual flow of mass $M$ with the prescribed
+divergence.
+\end{lemma}
+
+\begin{proof}
+Every edge leaving a de Bruijn vertex is uniquely determined by its
+appended bit, so a directed walk of length $\ell$ is represented by one
+bit string of length $\ell$.  A directed closed walk of length $\ell$ in
+$D_8$ has a cyclic appended-bit word of length $\ell$; this remains true
+when $\ell<8$, in which case the associated 9-bit windows use the
+periodic extension of the cyclic word.  Hence the closed-walk generator
+contains every term in the balanced remainder of
+Lemma~\ref{lem:decomposition}.  The recursive sum over all remaining
+masses includes every multiset of closed walks.  Distinct pairings of
+the source and sink multisets include repeated terminals, and set
+deduplication removes only duplicate representations of the same flow.
+\end{proof}
+
+\section{Maximum possible backbone overlap}
+
+The certificate establishes three finite facts.
+
+\begin{proposition}[Finite connector facts]
+\label{prop:finite}
+For the backbone $B$:
+\begin{enumerate}
+\item A directed closed walk that starts in the 4-edge component,
+touches the 60-edge component, and returns to its start has length at
+least 7, even when backbone edges may be repeated.
+\item If one backbone edge $e=u\to v$ is omitted, every directed
+$u$-to-$v$ walk that avoids $e$ and touches the other backbone component
+has length at least 10.
+\item For every pair of omitted backbone edges, every residual flow of
+mass 8 with the required divergence and avoiding the omitted edges gives
+a disconnected combined support.
+\end{enumerate}
+\end{proposition}
+
+For part 1, all
+\[
+  4(2^1+\cdots+2^6)=504
+\]
+appended-bit walks through length 6 are checked.  The bound is tight:
+there are two length-7 connectors,
+\[
+\begin{split}
+  &(205,411,310,108,217,435,358),\\
+  &(306,100,201,403,294,76,153).
+\end{split}
+\]
+For part 2, all
+\[
+  64(2^1+\cdots+2^7)=16{,}256
+\]
+walks through the length-7 residual budget are checked.  Breadth-first
+search gives exact per-edge minima from 10 through 16, although only the
+exclusion through 7 is needed below.
+
+For part 3, Lemmas~\ref{lem:decomposition} and
+\ref{lem:enumeration} reduce the problem to a finite enumeration.  The
+certificate checks all $\binom{64}{2}=2{,}016$ omission pairs and retains
+all 168 admissible residual flows.  Their combined support component
+counts are
+\[
+\begin{array}{c|rrrr}
+\text{components}&2&3&4&5\\ \hline
+\text{residual flows}&36&76&50&6.
+\end{array}
+\]
+No support is connected.  As a positive control, the same procedure at
+residual mass 7 finds two connected completions of total mass 69.
+
+\begin{theorem}[Exact overlap ceiling]
+\label{thm:ceiling}
+Every connected nonnegative integral circulation $m$ in $D_8$ with
+$|m|=70$ satisfies
+\[
+  \ov_B(m)\leq 61.
+\]
+The bound is attained by a cyclic 70-bit word.
+\end{theorem}
+
+\begin{proof}
+Suppose first that all 64 backbone edges occur.  Subtract one copy of
+each edge of $B$.  The residual is a balanced flow of mass 6.
+Connectivity of the combined support forces one residual component to
+touch both components of $B$.  Its Euler circuit is a closed connector
+of length at most 6, contradicting Proposition~\ref{prop:finite}(1).
+
+Now suppose exactly one backbone edge $e=u\to v$ is omitted.  After
+retaining one copy of each edge in $B\setminus\{e\}$, the residual has
+mass 7 and divergence concentrated at $u$ and $v$.  Its component $H$
+containing these terminals has a directed Euler trail from $u$ to $v$.
+Indeed, the divergence sum of every weak residual component is zero, so
+the unique positive and negative terminals must lie in the same
+component.
+Removing one edge from one directed-cycle component of $B$ leaves two
+weak components.  Connectivity of the full support implies that some
+residual component $K$ touches both of them.  This follows, for example,
+from the connected bipartite incidence graph between backbone
+components and residual components.
+
+If $K=H$, the Euler trail is an $e$-avoiding detour through the other
+backbone component of length at most 7, contradicting
+Proposition~\ref{prop:finite}(2).  If $K\neq H$, then $K$ is balanced.
+Since $H$ contains at least one edge, $K$ has mass at most 6, producing
+a forbidden closed connector.
+
+If exactly two backbone edges are omitted, the retained backbone part
+has mass 62 and the residual has mass 8.  Proposition
+\ref{prop:finite}(3) shows that every such completion is disconnected.
+Thus overlaps 64, 63, and 62 are impossible.
+
+Finally, the cyclic word
+\[
+\texttt{0010010111010100111000010000001100110000110110100010101100011110111111}
+\]
+has 70 distinct windows and overlap 61 with $B$.  It covers 503 of the
+512 target words, so it certifies tightness of the graph-theoretic bound
+but is not a covering sequence.
+\end{proof}
+
+\section{Classification of the overlap-61 shell}
+
+Let $m$ have total mass 70 and $\ov_B(m)=61$.  It omits a triple
+$E\subset B$.  Retain one copy of each edge in $B\setminus E$.  The
+residual flow $a$ has mass 9, avoids $E$, and has divergence uniquely
+determined by the retained part.
+
+The source multiplicity is one, two, or three.  The enumeration
+precomputes every directed walk of length at most 9 from each of the 64
+backbone vertices:
+\[
+  64(2^1+\cdots+2^9)=65{,}408
+\]
+walks before endpoint grouping.  Balanced residual flows of masses
+$0,\ldots,9$ occur in counts
+\[
+  1,2,4,8,16,32,64,128,256,512.
+\]
+Lemma~\ref{lem:enumeration} proves that the resulting classification is
+exhaustive, including repeated windows and disconnected residual
+remainders.
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{@{}r r r r@{}}
+\toprule
+Quantity & Count & Quantity & Count\\
+\midrule
+Omission triples & 41,664 & Active triples & 88\\
+Raw decompositions & 192 & Distinct residual flows & 188\\
+One component & 8 & Two components & 72\\
+Three components & 80 & Four components & 28\\
+Connected covers & 0 & Connected completions & 8\\
+\bottomrule
+\end{tabular}
+\caption{Exact-overlap-61 enumeration.}
+\label{tab:enumeration}
+\end{table}
+
+\begin{theorem}[Boundary-shell classification]
+\label{thm:shell}
+Exactly eight connected edge-multiplicity vectors of total mass 70 have
+backbone overlap 61.  All eight have 70 distinct edges.  Six leave nine
+binary 9-words uncovered within radius 1, and two leave ten.  In
+particular, no length-70 binary $(9,1)$ covering sequence has overlap 61
+with $B$.
+\end{theorem}
+
+\begin{proof}
+For each of the $\binom{64}{3}=41{,}664$ omission triples, the algorithm
+constructs every residual flow described by
+Lemmas~\ref{lem:decomposition} and \ref{lem:enumeration}, rejects flows
+using an omitted edge, and deduplicates the edge-multiplicity vectors.
+Exactly 188 residuals remain.  Direct balance and connectivity checks
+leave the eight vectors in Table~\ref{tab:completions}.  Direct Hamming
+coverage checks give the listed uncovered sets, none empty.
+\end{proof}
+
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.13\textwidth}
+  >{\raggedright\arraybackslash}p{0.38\textwidth}
+  >{\raggedright\arraybackslash}p{0.38\textwidth}@{}}
+\caption{The eight connected overlap-61 completions.  All residual edge
+multiplicities are one.  Integers encode binary 9-words.}
+\label{tab:completions}\\
+\toprule
+Omitted $E$ & Residual edges & Uncovered words\\
+\midrule
+\endfirsthead
+\toprule
+Omitted $E$ & Residual edges & Uncovered words\\
+\midrule
+\endhead
+13, 307, 409 &
+12, 25, 51, 97, 195, 269, 304, 390, 408 &
+5, 15, 141, 311, 315, 401, 411, 413, 435\\
+61, 102, 204 &
+60, 103, 121, 207, 243, 317, 414, 460, 486 &
+53, 63, 76, 98, 100, 110, 189, 196, 200\\
+102, 151, 307 &
+89, 101, 150, 179, 203, 300, 306, 358, 407 &
+23, 98, 110, 149, 159, 230, 305, 311, 315\\
+102, 204, 498 &
+103, 121, 207, 242, 316, 414, 460, 486, 499 &
+76, 98, 100, 110, 196, 200, 370, 496, 506\\
+102, 307, 344 &
+88, 101, 179, 203, 300, 306, 345, 358, 406 &
+98, 110, 230, 305, 311, 315, 336, 346, 348, 472\\
+167, 204, 409 &
+105, 153, 166, 205, 211, 308, 332, 410, 423 &
+39, 163, 165, 175, 196, 200, 206, 281, 401, 413\\
+204, 360, 409 &
+104, 153, 205, 211, 308, 332, 361, 410, 422 &
+196, 200, 206, 281, 352, 362, 401, 413, 488\\
+307, 409, 450 &
+25, 51, 97, 194, 268, 304, 390, 408, 451 &
+311, 315, 322, 401, 411, 413, 435, 448, 458\\
+\bottomrule
+\end{longtable}
+
+\begin{corollary}
+\label{cor:cover}
+Every length-70 binary $(9,1)$ covering sequence, if one exists,
+satisfies
+\[
+  \ov_B\leq 60.
+\]
+\end{corollary}
+
+\begin{proof}
+Theorem~\ref{thm:ceiling} gives overlap at most 61 for every cyclic word,
+and Theorem~\ref{thm:shell} excludes overlap 61 for a cover.
+\end{proof}
+
+\section{Verification architecture}
+
+The two stages have deliberately different verification claims.
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{@{}p{0.25\textwidth}p{0.65\textwidth}@{}}
+\toprule
+Stage & Checks\\
+\midrule
+Overlap ceiling &
+The Python analyzer retains all 168 overlap-62 residual vectors.
+A separate semantic validator checks every vector, reruns the 504
+connector and 16,256 detour exclusions, reconstructs all histograms,
+and checks the tight witness.\\
+Overlap-61 shell &
+Separate Python and C++ implementations agree on all aggregate counts
+and all eight connected vectors.  A semantic validator checks all 188
+residuals and every uncovered-word set.\\
+Finite oracles &
+Direct enumeration of every cyclic word in four smaller instances
+checks zero-divergence, nonzero-divergence, three-omission, and
+residual-mass-9 cases.\\
+Integrity &
+SHA-256 manifests authenticate the retained source, inputs, and
+outputs.  Mutation tests reject missing or altered residuals.\\
+\bottomrule
+\end{tabular}
+\caption{Verification layers.  Separate implementations improve
+reproducibility but are not a substitute for external mathematical
+review.}
+\label{tab:verification}
+\end{table}
+
+The focused certificate sources use only the Python standard library;
+the second overlap-61 implementation requires a C++20 compiler.  The
+ancillary source archive contains deterministic manifests and exact
+replay commands.
+
+\section{Scope and future work}
+
+The result is local to the explicit backbone $B$ and length 70.  It does
+not show that $B$ is canonical, optimal among backbones, or useful at
+other lengths.  It does not exclude a length-70 cover with overlap at
+most 60.  Because covering-sequence existence is not generally monotone
+in the length \cite{chung-cooper}, excluding length 70 alone would also
+not establish a lower bound of 71 without additional arguments for the
+shorter unresolved lengths.
+
+The immediate use is exact-search reduction: any length-70 candidate may
+be constrained to omit at least four edges of $B$.  More broadly, the
+path-cycle method provides a certificate format for closing successive
+overlap shells or comparing other disconnected covering supports.
+Potential next steps are:
+\begin{enumerate}
+\item classify part or all of the overlap-60 shell;
+\item search for a second backbone whose overlap restriction intersects
+the present one strongly;
+\item derive analytic inequalities that imply several shell exclusions
+at once; and
+\item continue independently verified construction search in the
+remaining region.
+\end{enumerate}
+
+\section*{Data and code availability}
+
+The code, explicit backbone, all retained residual flows, both
+overlap-61 implementations, semantic validators, tests, and deterministic
+ancillary archive are available from the public repository
+\url{https://github.com/ruturajr-raval/binary-covering-sequence-9-1}.
+Archived releases are available under the concept DOI
+\href{https://doi.org/10.5281/zenodo.22260691}
+{10.5281/zenodo.22260691}.  The release and ancillary source archive
+contain the versioned publication evidence directories.
+
+\section*{Acknowledgements}
+
+The author thanks Christopher D. Rosin for making the 71-bit construction
+and its provenance available, and the authors of the cited covering
+sequence literature for their public manuscripts.
+
+\begin{thebibliography}{9}
+
+\bibitem{chung-cooper}
+F.~R. K. Chung and J. Cooper,
+\emph{De Bruijn cycles for covering codes},
+arXiv:math/0310385, 2003.
+
+\bibitem{chee-et-al}
+Y.~M. Chee, T. Etzion, H. Ta, and V.~K. Vu,
+\emph{Constructions of covering sequences and arrays},
+arXiv:2502.08424, 2025.
+
+\bibitem{rosin}
+C.~D. Rosin,
+\emph{New covering sequences based on a two-stage approach using large
+language models and evolutionary algorithms},
+arXiv:2505.23881, 2025.
+
+\end{thebibliography}
+
+\end{document}

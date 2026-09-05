@@ -1,0 +1,8257 @@
+{
+  "backbone": {
+    "component_edges": [
+      [
+        102,
+        204,
+        307,
+        409
+      ],
+      [
+        6,
+        13,
+        16,
+        27,
+        32,
+        43,
+        54,
+        61,
+        64,
+        75,
+        86,
+        93,
+        109,
+        112,
+        123,
+        129,
+        138,
+        151,
+        156,
+        167,
+        172,
+        177,
+        186,
+        199,
+        209,
+        218,
+        225,
+        234,
+        247,
+        252,
+        259,
+        264,
+        277,
+        286,
+        293,
+        302,
+        312,
+        325,
+        334,
+        339,
+        344,
+        355,
+        360,
+        373,
+        382,
+        388,
+        399,
+        402,
+        418,
+        425,
+        436,
+        447,
+        450,
+        457,
+        468,
+        479,
+        484,
+        495,
+        498,
+        505
+      ]
+    ],
+    "component_vertices": [
+      [
+        51,
+        102,
+        153,
+        204
+      ],
+      [
+        3,
+        6,
+        8,
+        13,
+        16,
+        21,
+        27,
+        30,
+        32,
+        37,
+        43,
+        46,
+        54,
+        56,
+        61,
+        64,
+        69,
+        75,
+        78,
+        83,
+        86,
+        88,
+        93,
+        99,
+        104,
+        109,
+        112,
+        117,
+        123,
+        126,
+        129,
+        132,
+        138,
+        143,
+        146,
+        151,
+        156,
+        162,
+        167,
+        169,
+        172,
+        177,
+        180,
+        186,
+        191,
+        194,
+        199,
+        201,
+        209,
+        212,
+        218,
+        223,
+        225,
+        228,
+        234,
+        239,
+        242,
+        247,
+        249,
+        252
+      ]
+    ],
+    "components_are_directed_cycles": true,
+    "contains_loops": false,
+    "file_sha256": "b5647fc146bde53cbbf896784f51c1006e7764c21a216d76939169711fa35c4d",
+    "path": "data/candidates/l9-r1-common-backbone-64.json",
+    "report": {
+      "balanced": true,
+      "component_count": 2,
+      "component_edge_counts": [
+        4,
+        60
+      ],
+      "covered_words": 512,
+      "distinct_edges": 64,
+      "uncovered_words": []
+    },
+    "size": 64,
+    "support_sha256": "8643ddb5e6a35c54b91f8c152b945e4a82bb0c658b8e81865737bf2087849821"
+  },
+  "baseline": {
+    "file_sha256": "40c757662f703fc481883fddb8d359f8e0fe685207ac4cba1685a205a2208608",
+    "length": 71,
+    "path": "data/baseline/l9-r1-71.txt",
+    "support_sha256": "77260f847e6d4fee57d59cc66664dde1462bb7842521dc5c6117a159db30a8ce"
+  },
+  "consequences": [
+    "Every connected balanced distinct-edge support containing the 64-edge backbone has at least 71 edges.",
+    "Every connected nonnegative integral circulation dominating the 64-edge backbone has total multiplicity at least 71.",
+    "Every connected nonnegative integral circulation of total multiplicity 70 uses at most 61 distinct backbone edges.",
+    "The overlap bound 61 is attained by the retained cyclic witness."
+  ],
+  "derived_bounds": {
+    "all_backbone_edges_excluded": true,
+    "candidate_length": 70,
+    "double_omission_excluded": true,
+    "maximum_backbone_overlap_for_candidate": 61,
+    "minimum_distinct_support_size_when_containing_backbone": 71,
+    "minimum_total_multiplicity_when_dominating_backbone": 71,
+    "single_omission_excluded": true
+  },
+  "double_omission_residuals": {
+    "active_omission_cases": [
+      {
+        "combined_component_count_histogram": {
+          "2": 1
+        },
+        "distinct_path_flows": 1,
+        "distinct_residual_flows": 1,
+        "omitted_edges": [
+          6,
+          259
+        ],
+        "raw_exact_decompositions": 1,
+        "residual_flows": [
+          {
+            "combined_component_count": 2,
+            "flow": [
+              [
+                4,
+                1
+              ],
+              [
+                8,
+                1
+              ],
+              [
+                16,
+                1
+              ],
+              [
+                32,
+                1
+              ],
+              [
+                65,
+                1
+              ],
+              [
+                131,
+                1
+              ],
+              [
+                258,
+                1
+              ],
+              [
+                262,
+                1
+              ]
+            ],
+            "flow_sha256": "39062d102fda3c056569418551aa7575f2bfb6739890d481667ffc15604e1758"
+          }
+        ],
+        "sink_vertices": [
+          6
+        ],
+        "source_vertices": [
+          129
+        ]
+      },
+      {
+        "combined_component_count_histogram": {
+          "3": 2
+        },
+        "distinct_path_flows": 1,
+        "distinct_residual_flows": 2,
+        "omitted_edges": [
+          13,
+          27
+        ],
+        "raw_exact_decompositions": 2,
+        "residual_flows": [
+          {
+            "combined_component_count": 3,
+            "flow": [
+              [
+                0,
+                1
+              ],
+              [
+                12,
+                1
+              ],
+              [
+                24,
+                1
+              ],
+              [
+                49,
+                1
+              ],
+              [
+                99,
+                1
+              ],
+              [
+                198,
+                1
+              ],
+              [
+                283,
+                1
+              ],
+              [
+                397,
+                1
+              ]
+            ],
+            "flow_sha256": "d30d0346a5b7a73bb3d372da3b77f118c1b94e406708643b588b938be4b76f07"
+          },
+          {
+            "combined_component_count": 3,
+            "flow": [
+              [
+                12,
+                1
+              ],
+              [
+                24,
+                1
+              ],
+              [
+                49,
+                1
+              ],
+              [
+                99,
+                1
+              ],
+              [
+                198,
+                1
+              ],
+              [
+                283,
+                1
+              ],
+              [
+                397,
+                1
+              ],
+              [
+                511,
+                1
+              ]
+            ],
+            "flow_sha256": "28148764f464204b32e93141a3c3708308499f444b2dd017d0471ee7d6da0ed5"
+          }
+        ],
+        "sink_vertices": [
+          27
+        ],
+        "source_vertices": [
+          6
+        ]
+      },
+      {
+        "combined_component_count_histogram": {
+          "3": 1
+        },
+        "distinct_path_flows": 1,
+        "distinct_residual_flows": 1,
+        "omitted_edges": [
+          13,
+          450
+        ],
+        "raw_exact_decompositions": 1,
+        "residual_flows": [
+          {
+            "combined_component_count": 3,
+            "flow": [
+              [
+                12,
+                1
+              ],
+              [
+                24,
+                1
+              ],
+              [
+                48,
+                1
+              ],
+              [
+                97,
+                1
+              ],
+              [
+                194,
+                1
+              ],
+              [
+                269,
+                1
+              ],
+              [
+                390,
+                1
+              ],
+              [
+                451,
+                1
+              ]
+            ],
+            "flow_sha256": "7f12b95fe6eddeb866a04557252333940c1392ad03efef8ef5e06ec3e4f84a27"
+          }
+        ],
+        "sink_vertices": [
+          13,
+          194
+        ],
+        "source_vertices": [
+          6,
+          225
+        ]
+      },
+      {
+        "combined_component_count_histogram": {
+          "4": 3,
+          "5": 1
+        },
+        "distinct_path_flows": 1,
+        "distinct_residual_flows": 4,
+        "omitted_edges": [
+          16,
+          325
+        ],
+        "raw_exact_decompositions": 4,
+        "residual_flows": [
+          {
+            "combined_component_count": 5,
+            "flow": [
+              [
+                0,
+                1
+              ],
+              [
+                17,
+                1
+              ],
+              [
+                34,
+                1
+              ],
+              [
+                69,
+                1
+              ],
+              [
+                136,
+                1
+              ],
+              [
+                272,
+                1
+              ],
+              [
+                324,
+                1
+              ],
+              [
+                511,
+                1
+              ]
+            ],
+            "flow_sha256": "a9f5ee71bd7c92358c8f4b0cfb80a77a737ec36027b70169f3cee03e219ef57d"
+          },
+          {
+            "combined_component_count": 4,
+            "flow": [
+              [
+                0,
+                2
+              ],
+              [
+                17,
+                1
+              ],
+              [
+                34,
+                1
+              ],
+              [
+                69,
+                1
+              ],
+              [
+                136,
+                1
+              ],
+              [
+                272,
+                1
+              ],
+              [
+                324,
+                1
+              ]
+            ],
+            "flow_sha256": "ed78a880ad7c80b91b0218af93cfcfa20a7c54f8ed0f9d60a77d65d8c1f59dae"
+          },
+          {
+            "combined_component_count": 4,
+            "flow": [
+              [
+                17,
+                1
+              ],
+              [
+                34,
+                1
+              ],
+              [
+                69,
+                1
+              ],
+              [
+                136,
+                1
+              ],
+              [
+                170,
+                1
+              ],
+              [
+                272,
+                1
+              ],
+              [
+                324,
+                1
+              ],
+              [
+                341,
+                1
+              ]
+            ],
+            "flow_sha256": "5b78442102d1c490f91914dd8e6b6bd797228b1cdadf48d2894a30c51887c5bb"
+          },
+          {
+            "combined_component_count": 4,
+            "flow": [
+              [
+                17,
+                1
+              ],
+              [
+                34,
+                1
+              ],
+              [
+                69,
+                1
+              ],
+              [
+                136,
+                1
+              ],
+              [
+                272,
+                1
+              ],
+              [
+                324,
+                1
+              ],
+              [
+                511,
+                2
+              ]
+            ],
+            "flow_sha256": "d92b7d0baf955a127c5af9ad2a7dc6589d44270947aae03cd465f84e8fa4f597"
+          }
+        ],
+        "sink_vertices": [
+          16,
+          69
+        ],
+        "source_vertices": [
+          8,
+          162
+        ]
+      },
+      {
+        "combined_component_count_histogram": {
+          "2": 1
+        },
+        "distinct_path_flows": 1,
+        "distinct_residual_flows": 1,
+        "omitted_edges": [
+          27,
+          54
+        ],
+        "raw_exact_decompositions": 1,
+        "residual_flows": [
+          {
+            "combined_component_count": 2,
+            "flow": [
+              [
+                26,
+                1
+              ],
+              [
+                52,
+                1
+              ],
+              [
+                105,
+                1
+              ],
+              [
+                155,
+                1
+              ],
+              [
+                211,
+                1
+              ],
+              [
+                310,
+                1
+              ],
+              [
+                333,
+                1
+              ],
+              [
+                422,
+                1
+              ]
+            ],
+            "flow_sha256": "af3a2ffe304a055720a0f6703ae92e37f328f2f6b519d1b9d47b4e3b36647f7b"
+          }
+        ],
+        "sink_vertices": [
+          54
+        ],
+        "source_vertices": [
+          13
+        ]
+      },
+      {
+        "combined_component_count_histogram": {
+          "2": 2,
+          "3": 10,
+          "4": 4
+        },
+        "distinct_path_flows": 3,
+        "distinct_residual_flows": 16,
+        "omitted_edges": [
+          43,
+          86
+        ],
+        "raw_exact_decompositions": 21,
+        "residual_flows": [
+          {
+            "combined_component_count": 3,
+            "flow": [
+              [
+                0,
+                1
+              ],
+              [
+                42,
+                1
+              ],
+              [
+                73,
+                1
+              ],
+              [
+                85,
+                1
+              ],
+              [
+                146,
+                1
+              ],
+              [
+                171,
+                1
+              ],
+              [
+                292,
+                1
+              ],
+              [
+                342,
+                1
+              ]
+            ],
+            "flow_sha256": "8de29cc85408cf8f0239dc81395beb343126e0766834ef8f3cb504b1ca51974e"
+          },
+          {
+            "combined_component_count": 4,
+            "flow": [
+              [
+                0,
+                1
+              ],
+              [
+                42,
+                1
+              ],
+              [
+                85,
+                1
+              ],
+              [
+                170,
+                1
+              ],
+              [
+                171,
+                1
+              ],
+              [
+                341,
+                1
+              ],
+              [
+                342,
+                1
+              ],
+              [
+                511,
+                1
+              ]
+            ],
+            "flow_sha256": "f417bf67fa3aa7678fd5bdb24657e656d3400c070f260381bbfefae3885fb26b"
+          },
+          {
+            "combined_component_count": 3,
+            "flow": [
+              [
+                0,
+                1
+              ],
+              [
+                42,
+                1
+              ],
+              [
+                85,
+                1
+              ],
+              [
+                171,
+                1
+              ],
+              [
+                219,
+                1
+              ],
+              [
+                342,
+                1
+              ],
+              [
+                365,
+                1
+              ],
+              [
+                438,
+                1
+              ]
+            ],
+            "flow_sha256": "cea2b8f860d556f31e62997f868b83e4f69eeb2a669ad09ceaefa3e6b1f33d49"
+          },
+          {
+            "combined_component_count": 4,
+            "flow": [
+              [
+                0,
+                1
+              ],
+              [
+                42,
+                1
+              ],
+              [
+                85,
+                1
+              ],
+              [
+                171,
+                1
+              ],
+              [
+                342,
+                1
+              ],
+              [
+                511,
+                3
+              ]
+            ],
+            "flow_sha256": "4aa58cbaa7c27780145d1d13abd7cb7411a3af61dfeab29f0cbb30afdd81f155"
+          },
+          {
+            "combined_component_count": 3,
+            "flow": [
+              [
+                0,
+                2
+              ],
+              [
+                42,
+                1
+              ],
+              [
+                85,
+                1
+              ],
+              [
+                170,
+                1
+              ],
+              [
+                171,
+                1
+              ],
+              [
+                341,
+                1
+              ],
+              [
+                342,
+                1
+              ]
+            ],
+            "flow_sha256": "55182ffadfce0e1b6e1b30116d049e2b01a0fcacdfd5cb889fcb55841a11bc59"
+          },
+          {
+            "combined_component_count": 4,
+            "flow": [
+              [
+                0,
+                2
+              ],
+              [
+                42,
+                1
+              ],
+              [
+                85,
+                1
+              ],
+              [
+                171,
+                1
+              ],
+              [
+                342,
+                1
+              ],
+              [
+                511,
+                2
+              ]
+            ],
+            "flow_sha256": "2e645d8f8e9c427fa25b8a9af3c656c413923e6698721a46d82c88cadd297b18"
+          },
+          {
+            "combined_component_count": 4,
+            "flow": [
+              [
+                0,
+                3
+              ],
+              [
+                42,
+                1
+              ],
+              [
+                85,
+                1
+              ],
+              [
+                171,
+                1
+              ],
+              [
+                342,
+                1
+              ],
+              [
+                511,
+                1
+              ]
+            ],
+            "flow_sha256": "363943263fbea14bc502d49580f41a8806b3e787e661c94749defb1a8e4b00e7"
+          },
+          {
+            "combined_component_count": 3,
+            "flow": [
+              [
+                0,
+                4
+              ],
+              [
+                42,
+                1
+              ],
+              [
+                85,
+                1
+              ],
+              [
+                171,
+                1
+              ],
+              [
+                342,
+                1
+              ]
+            ],
+            "flow_sha256": "86448aead98e4b3f16ba6eacf1affdda4961dfb3a16a39b0f3d50132d06eda35"
+          },
+          {
+            "combined_component_count": 3,
+            "flow": [
+              [
+                34,
+                1
+              ],
+              [
+                42,
+                1
+              ],
+              [
+                68,
+                1
+              ],
+              [
+                85,
+                1
+              ],
+              [
+                136,
+                1
+              ],
+              [
+                171,
+                1
+              ],
+              [
+                273,
+                1
+              ],
+              [
+                342,
+                1
+              ]
+            ],
+            "flow_sha256": "f70b11615cc5a0e04c63df332e959db38a85a633788dd6b1a8f559746f512e92"
+          },
+          {
+            "combined_component_count": 3,
+            "flow": [
+              [
+                42,
+                1
+              ],
+              [
+                73,
+                1
+              ],
+              [
+                85,
+                1
+              ],
+              [
+                146,
+                1
+              ],
+              [
+                171,
+                1
+              ],
+              [
+                292,
+                1
+              ],
+              [
+                342,
+                1
+              ],
+              [
+                511,
+                1
+              ]
+            ],
+            "flow_sha256": "e64e577a06e514d18d40d62d8e6f43adc6b02d17c3ddb3c555fbbe6b8e7a7272"
+          },
+          {
+            "combined_component_count": 2,
+            "flow": [
+              [
+                42,
+                1
+              ],
+              [
+                85,
+                1
+              ],
+              [
+                102,
+                1
+              ],
+              [
+                171,
+                1
+              ],
+              [
+                204,
+                1
+              ],
+              [
+                307,
+                1
+              ],
+              [
+                342,
+                1
+              ],
+              [
+                409,
+                1
+              ]
+            ],
+            "flow_sha256": "2614326e99caf42c8e71eab64f20a46d398928b20d2e3ebf34c380e2e5a6a78f"
+          },
+          {
+            "combined_component_count": 3,
+            "flow": [
+              [
+                42,
+                1
+              ],
+              [
+                85,
+                1
+              ],
+              [
+                170,
+                1
+              ],
+              [
+                171,
+                1
+              ],
+              [
+                341,
+                1
+              ],
+              [
+                342,
+                1
+              ],
+              [
+                511,
+                2
+              ]
+            ],
+            "flow_sha256": "cce97cdc3dd6d9b77ec9e9ecd65d58e74e9494be172f14ce4f34882a13a750e8"
+          },
+          {
+            "combined_component_count": 2,
+            "flow": [
+              [
+                42,
+                1
+              ],
+              [
+                85,
+                1
+              ],
+              [
+                170,
+                2
+              ],
+              [
+                171,
+                1
+              ],
+              [
+                341,
+                2
+              ],
+              [
+                342,
+                1
+              ]
+            ],
+            "flow_sha256": "979cd72eb0f97dfa0ee1d1d6b124ce39443cc3a8d1adae3319dc9ac7d76fd13b"
+          },
+          {
+            "combined_component_count": 3,
+            "flow": [
+              [
+                42,
+                1
+              ],
+              [
+                85,
+                1
+              ],
+              [
+                171,
+                1
+              ],
+              [
+                219,
+                1
+              ],
+              [
+                342,
+                1
+              ],
+              [
+                365,
+                1
+              ],
+              [
+                438,
+                1
+              ],
+              [
+                511,
+                1
+              ]
+            ],
+            "flow_sha256": "41addcfba4ac59d98b7c2ce212678316f56995e97aa3d3edee8ee27d1245b669"
+          },
+          {
+            "combined_component_count": 3,
+            "flow": [
+              [
+                42,
+                1
+              ],
+              [
+                85,
+                1
+              ],
+              [
+                171,
+                1
+              ],
+              [
+                238,
+                1
+              ],
+              [
+                342,
+                1
+              ],
+              [
+                375,
+                1
+              ],
+              [
+                443,
+                1
+              ],
+              [
+                477,
+                1
+              ]
+            ],
+            "flow_sha256": "abf3ea428473c6a471aeb4375a4a2495a52bf65077f111b22c23397011bf68c7"
+          },
+          {
+            "combined_component_count": 3,
+            "flow": [
+              [
+                42,
+                1
+              ],
+              [
+                85,
+                1
+              ],
+              [
+                171,
+                1
+              ],
+              [
+                342,
+                1
+              ],
+              [
+                511,
+                4
+              ]
+            ],
+            "flow_sha256": "cb5b04905fd2bbf952e9efd9e9067be2fb197e0b1e2d0be602de8401fe57847a"
+          }
+        ],
+        "sink_vertices": [
+          86
+        ],
+        "source_vertices": [
+          21
+        ]
+      },
+      {
+        "combined_component_count_histogram": {
+          "3": 2
+        },
+        "distinct_path_flows": 1,
+        "distinct_residual_flows": 2,
+        "omitted_edges": [
+          43,
+          277
+        ],
+        "raw_exact_decompositions": 2,
+        "residual_flows": [
+          {
+            "combined_component_count": 3,
+            "flow": [
+              [
+                0,
+                1
+              ],
+              [
+                41,
+                1
+              ],
+              [
+                82,
+                1
+              ],
+              [
+                149,
+                1
+              ],
+              [
+                165,
+                1
+              ],
+              [
+                276,
+                1
+              ],
+              [
+                299,
+                1
+              ],
+              [
+                330,
+                1
+              ]
+            ],
+            "flow_sha256": "2ea61c5ccbdc6423a3dc4c2f8f6c9b1b4e2e37706c43dabaf2d28ac44e0ad8e9"
+          },
+          {
+            "combined_component_count": 3,
+            "flow": [
+              [
+                41,
+                1
+              ],
+              [
+                82,
+                1
+              ],
+              [
+                149,
+                1
+              ],
+              [
+                165,
+                1
+              ],
+              [
+                276,
+                1
+              ],
+              [
+                299,
+                1
+              ],
+              [
+                330,
+                1
+              ],
+              [
+                511,
+                1
+              ]
+            ],
+            "flow_sha256": "eb926bc08ba7ba53e8e94aa0c83d4622acaea51ef4f88f8d6f8ccbb1712b3392"
+          }
+        ],
+        "sink_vertices": [
+          43
+        ],
+        "source_vertices": [
+          138
+        ]
+      },
+      {
+        "combined_component_count_histogram": {
+          "3": 1
+        },
+        "distinct_path_flows": 1,
+        "distinct_residual_flows": 1,
+        "omitted_edges": [
+          61,
+          498
+        ],
+        "raw_exact_decompositions": 1,
+        "residual_flows": [
+          {
+            "combined_component_count": 3,
+            "flow": [
+              [
+                60,
+                1
+              ],
+              [
+                121,
+                1
+              ],
+              [
+                242,
+                1
+              ],
+              [
+                317,
+                1
+              ],
+              [
+                414,
+                1
+              ],
+              [
+                463,
+                1
+              ],
+              [
+                487,
+                1
+              ],
+              [
+                499,
+                1
+              ]
+            ],
+            "flow_sha256": "ec703becb138693832670bef844d1fa1f2d847595477929904160f91d4a2b1cd"
+          }
+        ],
+        "sink_vertices": [
+          61,
+          242
+        ],
+        "source_vertices": [
+          30,
+          249
+        ]
+      },
+      {
+        "combined_component_count_histogram": {
+          "4": 2
+        },
+        "distinct_path_flows": 1,
+        "distinct_residual_flows": 2,
+        "omitted_edges": [
+          75,
+          339
+        ],
+        "raw_exact_decompositions": 2,
+        "residual_flows": [
+          {
+            "combined_component_count": 4,
+            "flow": [
+              [
+                0,
+                1
+              ],
+              [
+                74,
+                1
+              ],
+              [
+                83,
+                1
+              ],
+              [
+                148,
+                1
+              ],
+              [
+                165,
+                1
+              ],
+              [
+                297,
+                1
+              ],
+              [
+                331,
+                1
+              ],
+              [
+                338,
+                1
+              ]
+            ],
+            "flow_sha256": "a2535adc59589057c68a400f983cba56a874718ebfbe00a97aa8ef8a0e111971"
+          },
+          {
+            "combined_component_count": 4,
+            "flow": [
+              [
+                74,
+                1
+              ],
+              [
+                83,
+                1
+              ],
+              [
+                148,
+                1
+              ],
+              [
+                165,
+                1
+              ],
+              [
+                297,
+                1
+              ],
+              [
+                331,
+                1
+              ],
+              [
+                338,
+                1
+              ],
+              [
+                511,
+                1
+              ]
+            ],
+            "flow_sha256": "4dd74c38042896e29b17829df09bfbebae68983b376b01d39abc8593940cfb56"
+          }
+        ],
+        "sink_vertices": [
+          75,
+          83
+        ],
+        "source_vertices": [
+          37,
+          169
+        ]
+      },
+      {
+        "combined_component_count_histogram": {
+          "2": 1
+        },
+        "distinct_path_flows": 1,
+        "distinct_residual_flows": 1,
+        "omitted_edges": [
+          86,
+          172
+        ],
+        "raw_exact_decompositions": 1,
+        "residual_flows": [
+          {
+            "combined_component_count": 2,
+            "flow": [
+              [
+                87,
+                1
+              ],
+              [
+                174,
+                1
+              ],
+              [
+                186,
+                1
+              ],
+              [
+                235,
+                1
+              ],
+              [
+                349,
+                1
+              ],
+              [
+                373,
+                1
+              ],
+              [
+                428,
+                1
+              ],
+              [
+                470,
+                1
+              ]
+            ],
+            "flow_sha256": "5d4d968e83f4dae8fbbc5381d0e2d58c605f4531fdff4136090f3cc33b3f69fc"
+          }
+        ],
+        "sink_vertices": [
+          172
+        ],
+        "source_vertices": [
+          43
+        ]
+      },
+      {
+        "combined_component_count_histogram": {
+          "2": 3
+        },
+        "distinct_path_flows": 2,
+        "distinct_residual_flows": 3,
+        "omitted_edges": [
+          102,
+          204
+        ],
+        "raw_exact_decompositions": 3,
+        "residual_flows": [
+          {
+            "combined_component_count": 2,
+            "flow": [
+              [
+                0,
+                1
+              ],
+              [
+                103,
+                1
+              ],
+              [
+                115,
+                1
+              ],
+              [
+                206,
+                1
+              ],
+              [
+                230,
+                1
+              ],
+              [
+                313,
+                1
+              ],
+              [
+                412,
+                1
+              ],
+              [
+                460,
+                1
+              ]
+            ],
+            "flow_sha256": "f0a963974017fb31af2335b6c6689f6163b130c2863f4dcbd6fcf84b78afb2d8"
+          },
+          {
+            "combined_component_count": 2,
+            "flow": [
+              [
+                103,
+                1
+              ],
+              [
+                115,
+                1
+              ],
+              [
+                206,
+                1
+              ],
+              [
+                230,
+                1
+              ],
+              [
+                313,
+                1
+              ],
+              [
+                412,
+                1
+              ],
+              [
+                460,
+                1
+              ],
+              [
+                511,
+                1
+              ]
+            ],
+            "flow_sha256": "d6fd17651ffa69c8cd0add8e75283c8e11e17da2ed8db1faac11f496be2d511a"
+          },
+          {
+            "combined_component_count": 2,
+            "flow": [
+              [
+                103,
+                1
+              ],
+              [
+                121,
+                1
+              ],
+              [
+                207,
+                1
+              ],
+              [
+                243,
+                1
+              ],
+              [
+                316,
+                1
+              ],
+              [
+                414,
+                1
+              ],
+              [
+                460,
+                1
+              ],
+              [
+                486,
+                1
+              ]
+            ],
+            "flow_sha256": "49c9cd479945d563d863f583594868c2191cfba1429704abae4a80c3c4295485"
+          }
+        ],
+        "sink_vertices": [
+          204
+        ],
+        "source_vertices": [
+          51
+        ]
+      },
+      {
+        "combined_component_count_histogram": {
+          "2": 1
+        },
+        "distinct_path_flows": 1,
+        "distinct_residual_flows": 1,
+        "omitted_edges": [
+          102,
+          307
+        ],
+        "raw_exact_decompositions": 1,
+        "residual_flows": [
+          {
+            "combined_component_count": 2,
+            "flow": [
+              [
+                89,
+                1
+              ],
+              [
+                101,
+                1
+              ],
+              [
+                179,
+                1
+              ],
+              [
+                203,
+                1
+              ],
+              [
+                300,
+                1
+              ],
+              [
+                306,
+                1
+              ],
+              [
+                358,
+                1
+              ],
+              [
+                406,
+                1
+              ]
+            ],
+            "flow_sha256": "28ac2ae476eac145e8b53b9ebf7e7858e0d81ba80115ddd67f44b11a653cdc9b"
+          }
+        ],
+        "sink_vertices": [
+          102
+        ],
+        "source_vertices": [
+          153
+        ]
+      },
+      {
+        "combined_component_count_histogram": {
+          "2": 8,
+          "3": 22,
+          "4": 16,
+          "5": 2
+        },
+        "distinct_path_flows": 6,
+        "distinct_residual_flows": 48,
+        "omitted_edges": [
+          129,
+          259
+        ],
+        "raw_exact_decompositions": 63,
+        "residual_flows": [
+          {
+            "combined_component_count": 2,
+            "flow": [
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                1
+              ],
+              [
+                3,
+                1
+              ],
+              [
+                73,
+                1
+              ],
+              [
+                128,
+                1
+              ],
+              [
+                146,
+                1
+              ],
+              [
+                256,
+                1
+              ],
+              [
+                292,
+                1
+              ]
+            ],
+            "flow_sha256": "77d3f4de2e50422d2558c13dc0ea1fae92f5ce4fbe93c9fb4cccc66c52017b8b"
+          },
+          {
+            "combined_component_count": 4,
+            "flow": [
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                1
+              ],
+              [
+                3,
+                1
+              ],
+              [
+                128,
+                1
+              ],
+              [
+                170,
+                1
+              ],
+              [
+                256,
+                1
+              ],
+              [
+                341,
+                1
+              ],
+              [
+                511,
+                1
+              ]
+            ],
+            "flow_sha256": "34d02f77ac123c6c69e6bdbe96f7bddc35e8a08556fac2689f18cd96beac152a"
+          },
+          {
+            "combined_component_count": 2,
+            "flow": [
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                1
+              ],
+              [
+                3,
+                1
+              ],
+              [
+                128,
+                1
+              ],
+              [
+                219,
+                1
+              ],
+              [
+                256,
+                1
+              ],
+              [
+                365,
+                1
+              ],
+              [
+                438,
+                1
+              ]
+            ],
+            "flow_sha256": "be11f3462a403e5bf1b43c4355c67a9f27e7ba5f2d56f49d90b814aef1537dbf"
+          },
+          {
+            "combined_component_count": 3,
+            "flow": [
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                1
+              ],
+              [
+                3,
+                1
+              ],
+              [
+                128,
+                1
+              ],
+              [
+                256,
+                1
+              ],
+              [
+                511,
+                3
+              ]
+            ],
+            "flow_sha256": "41caa008305c8656f7328485a025a501bf4ff51f97a1ac9d498a3cfce13fb553"
+          },
+          {
+            "combined_component_count": 4,
+            "flow": [
+              [
+                0,
+                1
+              ],
+              [
+                3,
+                1
+              ],
+              [
+                34,
+                1
+              ],
+              [
+                68,
+                1
+              ],
+              [
+                128,
+                1
+              ],
+              [
+                136,
+                1
+              ],
+              [
+                257,
+                1
+              ],
+              [
+                273,
+                1
+              ]
+            ],
+            "flow_sha256": "84f96dd4e38508f77477623ed872cf85928908d887b02f5c3d592b4d237fe845"
+          },
+          {
+            "combined_component_count": 4,
+            "flow": [
+              [
+                0,
+                1
+              ],
+              [
+                3,
+                1
+              ],
+              [
+                73,
+                1
+              ],
+              [
+                128,
+                1
+              ],
+              [
+                146,
+                1
+              ],
+              [
+                257,
+                1
+              ],
+              [
+                292,
+                1
+              ],
+              [
+                511,
+                1
+              ]
+            ],
+            "flow_sha256": "4130738eb9bfb98d3838fc06c8c6f20ba2ccd58cd08ea01408ee00eca4f483c3"
+          },
+          {
+            "combined_component_count": 3,
+            "flow": [
+              [
+                0,
+                1
+              ],
+              [
+                3,
+                1
+              ],
+              [
+                102,
+                1
+              ],
+              [
+                128,
+                1
+              ],
+              [
+                204,
+                1
+              ],
+              [
+                257,
+                1
+              ],
+              [
+                307,
+                1
+              ],
+              [
+                409,
+                1
+              ]
+            ],
+            "flow_sha256": "08ca614b3206e241f44467cfdc69502cd2b86c4259d487e909a4c1883aeef7cc"
+          },
+          {
+            "combined_component_count": 5,
+            "flow": [
+              [
+                0,
+                1
+              ],
+              [
+                3,
+                1
+              ],
+              [
+                128,
+                1
+              ],
+              [
+                170,
+                1
+              ],
+              [
+                257,
+                1
+              ],
+              [
+                341,
+                1
+              ],
+              [
+                511,
+                2
+              ]
+            ],
+            "flow_sha256": "1d2a489cea10b4cdd0ca993a26341b640f982e71c0b9713c2df7bf501f947392"
+          },
+          {
+            "combined_component_count": 4,
+            "flow": [
+              [
+                0,
+                1
+              ],
+              [
+                3,
+                1
+              ],
+              [
+                128,
+                1
+              ],
+              [
+                170,
+                2
+              ],
+              [
+                257,
+                1
+              ],
+              [
+                341,
+                2
+              ]
+            ],
+            "flow_sha256": "eb18d103dce851eb8389a51eb27a421eb95117720a0f4fc71bc1f2e433867589"
+          },
+          {
+            "combined_component_count": 4,
+            "flow": [
+              [
+                0,
+                1
+              ],
+              [
+                3,
+                1
+              ],
+              [
+                128,
+                1
+              ],
+              [
+                219,
+                1
+              ],
+              [
+                257,
+                1
+              ],
+              [
+                365,
+                1
+              ],
+              [
+                438,
+                1
+              ],
+              [
+                511,
+                1
+              ]
+            ],
+            "flow_sha256": "6303bf2d2faf61e1dc65d930d7c2874c275d03bca2dc92317d07f3e6051abb9b"
+          },
+          {
+            "combined_component_count": 4,
+            "flow": [
+              [
+                0,
+                1
+              ],
+              [
+                3,
+                1
+              ],
+              [
+                128,
+                1
+              ],
+              [
+                238,
+                1
+              ],
+              [
+                257,
+                1
+              ],
+              [
+                375,
+                1
+              ],
+              [
+                443,
+                1
+              ],
+              [
+                477,
+                1
+              ]
+            ],
+            "flow_sha256": "906f5348e251a5472cc57fc0e347838e09c95f4770f4d1b9924b8d2154bf1d7b"
+          },
+          {
+            "combined_component_count": 4,
+            "flow": [
+              [
+                0,
+                1
+              ],
+              [
+                3,
+                1
+              ],
+              [
+                128,
+                1
+              ],
+              [
+                257,
+                1
+              ],
+              [
+                511,
+                4
+              ]
+            ],
+            "flow_sha256": "313b5efc3bcd520d25f2ce2c9c826859c8946e38392c057acd9b0a7205d24b04"
+          },
+          {
+            "combined_component_count": 3,
+            "flow": [
+              [
+                0,
+                2
+              ],
+              [
+                1,
+                1
+              ],
+              [
+                3,
+                1
+              ],
+              [
+                128,
+                1
+              ],
+              [
+                170,
+                1
+              ],
+              [
+                256,
+                1
+              ],
+              [
+                341,
+                1
+              ]
+            ],
+            "flow_sha256": "f0c41e697a7d38043f2b805ca650f1390b0ad15e8f6a01ff826f2e8782b26278"
+          },
+          {
+            "combined_component_count": 3,
+            "flow": [
+              [
+                0,
+                2
+              ],
+              [
+                1,
+                1
+              ],
+              [
+                3,
+                1
+              ],
+              [
+                128,
+                1
+              ],
+              [
+                256,
+                1
+              ],
+              [
+                511,
+                2
+              ]
+            ],
+            "flow_sha256": "d1ca44bfd3c748b6a7ad6a28313029c9c80df36e2b00eb8b45c5002e518b6050"
+          },
+          {
+            "combined_component_count": 3,
+            "flow": [
+              [
+                0,
+                2
+              ],
+              [
+                3,
+                1
+              ],
+              [
+                73,
+                1
+              ],
+              [
+                128,
+                1
+              ],
+              [
+                146,
+                1
+              ],
+              [
+                257,
+                1
+              ],
+              [
+                292,
+                1
+              ]
+            ],
+            "flow_sha256": "702e4875b92957386c53e0297726cba24d03cd4c9266e1a9cf4aeed90066a8fd"
+          },
+          {
+            "combined_component_count": 5,
+            "flow": [
+              [
+                0,
+                2
+              ],
+              [
+                3,
+                1
+              ],
+              [
+                128,
+                1
+              ],
+              [
+                170,
+                1
+              ],
+              [
+                257,
+                1
+              ],
+              [
+                341,
+                1
+              ],
+              [
+                511,
+                1
+              ]
+            ],
+            "flow_sha256": "60dc6cbb3c2affdd12a9c2728ea5f4db3b618c08e431f38ab3dd59ad407a0f4a"
+          },
+          {
+            "combined_component_count": 3,
+            "flow": [
+              [
+                0,
+                2
+              ],
+              [
+                3,
+                1
+              ],
+              [
+                128,
+                1
+              ],
+              [
+                219,
+                1
+              ],
+              [
+                257,
+                1
+              ],
+              [
+                365,
+                1
+              ],
+              [
+                438,
+                1
+              ]
+            ],
+            "flow_sha256": "b85f34d0a068a1b13404beab1510ad1ff04085f744fd4425c23e2931d89af434"
+          },
+          {
+            "combined_component_count": 4,
+            "flow": [
+              [
+                0,
+                2
+              ],
+              [
+                3,
+                1
+              ],
+              [
+                128,
+                1
+              ],
+              [
+                257,
+                1
+              ],
+              [
+                511,
+                3
+              ]
+            ],
+            "flow_sha256": "3161832aeab9b7e1f2f45a4f3ce4111f0bbea506097f1afa150f2a332152f6db"
+          },
+          {
+            "combined_component_count": 3,
+            "flow": [
+              [
+                0,
+                3
+              ],
+              [
+                1,
+                1
+              ],
+              [
+                3,
+                1
+              ],
+              [
+                128,
+                1
+              ],
+              [
+                256,
+                1
+              ],
+              [
+                511,
+                1
+              ]
+            ],
+            "flow_sha256": "b794655c97def38265e57a2ee5e9ec40d9b3bcf38d97d78751df21289adbfcad"
+          },
+          {
+            "combined_component_count": 4,
+            "flow": [
+              [
+                0,
+                3
+              ],
+              [
+                3,
+                1
+              ],
+              [
+                128,
+                1
+              ],
+              [
+                170,
+                1
+              ],
+              [
+                257,
+                1
+              ],
+              [
+                341,
+                1
+              ]
+            ],
+            "flow_sha256": "a9aff94da8ed359c0ea81e70e356c7b7c80721c961f23cee3f34d6a8f5a33856"
+          },
+          {
+            "combined_component_count": 4,
+            "flow": [
+              [
+                0,
+                3
+              ],
+              [
+                3,
+                1
+              ],
+              [
+                128,
+                1
+              ],
+              [
+                257,
+                1
+              ],
+              [
+                511,
+                2
+              ]
+            ],
+            "flow_sha256": "c92b0a84e4240710c2213f0d60418fc5a77fe4223954c232b080667912ce76ad"
+          },
+          {
+            "combined_component_count": 2,
+            "flow": [
+              [
+                0,
+                4
+              ],
+              [
+                1,
+                1
+              ],
+              [
+                3,
+                1
+              ],
+              [
+                128,
+                1
+              ],
+              [
+                256,
+                1
+              ]
+            ],
+            "flow_sha256": "7464bd3d2bdef71053694c5d8b53130b629cb3c34c8905d9f6c7ec7a45819479"
+          },
+          {
+            "combined_component_count": 4,
+            "flow": [
+              [
+                0,
+                4
+              ],
+              [
+                3,
+                1
+              ],
+              [
+                128,
+                1
+              ],
+              [
+                257,
+                1
+              ],
+              [
+                511,
+                1
+              ]
+            ],
+            "flow_sha256": "9dc7734ae03c61d8882d0dd427db1bff5387878480b62badc6656cc2ccb1d0c3"
+          },
+          {
+            "combined_component_count": 3,
+            "flow": [
+              [
+                0,
+                5
+              ],
+              [
+                3,
+                1
+              ],
+              [
+                128,
+                1
+              ],
+              [
+                257,
+                1
+              ]
+            ],
+            "flow_sha256": "2ce3f7ff1b73e789c824f7ca02e71ca5ccda52d6464043e3ce10c5e7a5d1bcf1"
+          },
+          {
+            "combined_component_count": 3,
+            "flow": [
+              [
+                1,
+                1
+              ],
+              [
+                3,
+                1
+              ],
+              [
+                34,
+                1
+              ],
+              [
+                68,
+                1
+              ],
+              [
+                128,
+                1
+              ],
+              [
+                136,
+                1
+              ],
+              [
+                256,
+                1
+              ],
+              [
+                273,
+                1
+              ]
+            ],
+            "flow_sha256": "441bdfeca5bdf52e75fa0dc0f3d76c147748bc1f46019f8a544dd5104f1e2dfa"
+          },
+          {
+            "combined_component_count": 3,
+            "flow": [
+              [
+                1,
+                1
+              ],
+              [
+                3,
+                1
+              ],
+              [
+                73,
+                1
+              ],
+              [
+                128,
+                1
+              ],
+              [
+                146,
+                1
+              ],
+              [
+                256,
+                1
+              ],
+              [
+                292,
+                1
+              ],
+              [
+                511,
+                1
+              ]
+            ],
+            "flow_sha256": "3716b42da66bad55480016fccdd970fa690013b042f488d8839241b968c5995d"
+          },
+          {
+            "combined_component_count": 2,
+            "flow": [
+              [
+                1,
+                1
+              ],
+              [
+                3,
+                1
+              ],
+              [
+                102,
+                1
+              ],
+              [
+                128,
+                1
+              ],
+              [
+                204,
+                1
+              ],
+              [
+                256,
+                1
+              ],
+              [
+                307,
+                1
+              ],
+              [
+                409,
+                1
+              ]
+            ],
+            "flow_sha256": "82648710f0d00623a2189167189d7c826f288778fa3a684e0b00a5b543166b6f"
+          },
+          {
+            "combined_component_count": 4,
+            "flow": [
+              [
+                1,
+                1
+              ],
+              [
+                3,
+                1
+              ],
+              [
+                128,
+                1
+              ],
+              [
+                170,
+                1
+              ],
+              [
+                256,
+                1
+              ],
+              [
+                341,
+                1
+              ],
+              [
+                511,
+                2
+              ]
+            ],
+            "flow_sha256": "bff7d0e13e5763768e29b8da68ebe692cae090596e90ed46b38bf4f3546340be"
+          },
+          {
+            "combined_component_count": 3,
+            "flow": [
+              [
+                1,
+                1
+              ],
+              [
+                3,
+                1
+              ],
+              [
+                128,
+                1
+              ],
+              [
+                170,
+                2
+              ],
+              [
+                256,
+                1
+              ],
+              [
+                341,
+                2
+              ]
+            ],
+            "flow_sha256": "bcdd522289e8a7699deb82baee4dfb4dd6d235629defa863b25aeda9db7c9605"
+          },
+          {
+            "combined_component_count": 3,
+            "flow": [
+              [
+                1,
+                1
+              ],
+              [
+                3,
+                1
+              ],
+              [
+                128,
+                1
+              ],
+              [
+                219,
+                1
+              ],
+              [
+                256,
+                1
+              ],
+              [
+                365,
+                1
+              ],
+              [
+                438,
+                1
+              ],
+              [
+                511,
+                1
+              ]
+            ],
+            "flow_sha256": "4d5928d8e099b3ac9e10df563ae05c9ebaa286a366864716520d9b73713af56b"
+          },
+          {
+            "combined_component_count": 3,
+            "flow": [
+              [
+                1,
+                1
+              ],
+              [
+                3,
+                1
+              ],
+              [
+                128,
+                1
+              ],
+              [
+                238,
+                1
+              ],
+              [
+                256,
+                1
+              ],
+              [
+                375,
+                1
+              ],
+              [
+                443,
+                1
+              ],
+              [
+                477,
+                1
+              ]
+            ],
+            "flow_sha256": "de58aaab30f10ee86e2b0986969d2b277377b062008e9ec96a36fd496cad1f73"
+          },
+          {
+            "combined_component_count": 3,
+            "flow": [
+              [
+                1,
+                1
+              ],
+              [
+                3,
+                1
+              ],
+              [
+                128,
+                1
+              ],
+              [
+                256,
+                1
+              ],
+              [
+                511,
+                4
+              ]
+            ],
+            "flow_sha256": "ad3f0805a8a5ad87e980c3bf37f7cb9ff2cfdd57d65bc3a4e888ee2a77c419a1"
+          },
+          {
+            "combined_component_count": 2,
+            "flow": [
+              [
+                3,
+                1
+              ],
+              [
+                16,
+                1
+              ],
+              [
+                33,
+                1
+              ],
+              [
+                66,
+                1
+              ],
+              [
+                128,
+                1
+              ],
+              [
+                132,
+                1
+              ],
+              [
+                257,
+                1
+              ],
+              [
+                264,
+                1
+              ]
+            ],
+            "flow_sha256": "f36f3371f8c986df344a7508cc99862825674005a89d12d4eda25314ff2ffe60"
+          },
+          {
+            "combined_component_count": 4,
+            "flow": [
+              [
+                3,
+                1
+              ],
+              [
+                34,
+                1
+              ],
+              [
+                68,
+                1
+              ],
+              [
+                128,
+                1
+              ],
+              [
+                136,
+                1
+              ],
+              [
+                257,
+                1
+              ],
+              [
+                273,
+                1
+              ],
+              [
+                511,
+                1
+              ]
+            ],
+            "flow_sha256": "d9d75b9e665f8af0be1ba763d5aaf8d0b750e54a60f5ace905b5ef58487afe4b"
+          },
+          {
+            "combined_component_count": 2,
+            "flow": [
+              [
+                3,
+                1
+              ],
+              [
+                49,
+                1
+              ],
+              [
+                99,
+                1
+              ],
+              [
+                128,
+                1
+              ],
+              [
+                198,
+                1
+              ],
+              [
+                257,
+                1
+              ],
+              [
+                280,
+                1
+              ],
+              [
+                396,
+                1
+              ]
+            ],
+            "flow_sha256": "621f6c7bab297251ffb2dc74ae4017b0283058de417c340e83c2608cd7641c6e"
+          },
+          {
+            "combined_component_count": 3,
+            "flow": [
+              [
+                3,
+                1
+              ],
+              [
+                73,
+                1
+              ],
+              [
+                128,
+                1
+              ],
+              [
+                146,
+                1
+              ],
+              [
+                170,
+                1
+              ],
+              [
+                257,
+                1
+              ],
+              [
+                292,
+                1
+              ],
+              [
+                341,
+                1
+              ]
+            ],
+            "flow_sha256": "2fe88324195399de089e4a104556daa2ca21fbf9247600abd1f6c0c0b8a5bc4c"
+          },
+          {
+            "combined_component_count": 3,
+            "flow": [
+              [
+                3,
+                1
+              ],
+              [
+                73,
+                1
+              ],
+              [
+                128,
+                1
+              ],
+              [
+                146,
+                1
+              ],
+              [
+                257,
+                1
+              ],
+              [
+                292,
+                1
+              ],
+              [
+                511,
+                2
+              ]
+            ],
+            "flow_sha256": "ca49080cc9cd7c7c1307eaa7377667f3313e4b86f99cb817c4db04f06b3d7f2f"
+          },
+          {
+            "combined_component_count": 3,
+            "flow": [
+              [
+                3,
+                1
+              ],
+              [
+                82,
+                1
+              ],
+              [
+                128,
+                1
+              ],
+              [
+                148,
+                1
+              ],
+              [
+                165,
+                1
+              ],
+              [
+                257,
+                1
+              ],
+              [
+                297,
+                1
+              ],
+              [
+                330,
+                1
+              ]
+            ],
+            "flow_sha256": "3bed9bc6a36df41f9c8a765b6f9a61f8cc02d105fd860ac6267b664b332f3510"
+          },
+          {
+            "combined_component_count": 3,
+            "flow": [
+              [
+                3,
+                1
+              ],
+              [
+                102,
+                1
+              ],
+              [
+                128,
+                1
+              ],
+              [
+                204,
+                1
+              ],
+              [
+                257,
+                1
+              ],
+              [
+                307,
+                1
+              ],
+              [
+                409,
+                1
+              ],
+              [
+                511,
+                1
+              ]
+            ],
+            "flow_sha256": "dfdbb12a252b424d1419eee39189a0ec1043c25f41e21eb642b9310262e1a742"
+          },
+          {
+            "combined_component_count": 2,
+            "flow": [
+              [
+                3,
+                1
+              ],
+              [
+                115,
+                1
+              ],
+              [
+                128,
+                1
+              ],
+              [
+                231,
+                1
+              ],
+              [
+                257,
+                1
+              ],
+              [
+                313,
+                1
+              ],
+              [
+                412,
+                1
+              ],
+              [
+                462,
+                1
+              ]
+            ],
+            "flow_sha256": "e7496ba3b1c6ff608df7f1357286fd09dd133ea0943c157ac2dde98debded807"
+          },
+          {
+            "combined_component_count": 3,
+            "flow": [
+              [
+                3,
+                1
+              ],
+              [
+                128,
+                1
+              ],
+              [
+                170,
+                1
+              ],
+              [
+                219,
+                1
+              ],
+              [
+                257,
+                1
+              ],
+              [
+                341,
+                1
+              ],
+              [
+                365,
+                1
+              ],
+              [
+                438,
+                1
+              ]
+            ],
+            "flow_sha256": "3d3095f4071e49ff501b7a9faf5ec4328d4c3521a5d921012e71ee7d4b8326d2"
+          },
+          {
+            "combined_component_count": 4,
+            "flow": [
+              [
+                3,
+                1
+              ],
+              [
+                128,
+                1
+              ],
+              [
+                170,
+                1
+              ],
+              [
+                257,
+                1
+              ],
+              [
+                341,
+                1
+              ],
+              [
+                511,
+                3
+              ]
+            ],
+            "flow_sha256": "3377f1ad9912e5dae6f58a39d1e7b7316222704a46b9e841844a97be620074f5"
+          },
+          {
+            "combined_component_count": 4,
+            "flow": [
+              [
+                3,
+                1
+              ],
+              [
+                128,
+                1
+              ],
+              [
+                170,
+                2
+              ],
+              [
+                257,
+                1
+              ],
+              [
+                341,
+                2
+              ],
+              [
+                511,
+                1
+              ]
+            ],
+            "flow_sha256": "b991c771746259d7876f530f6eadc6a92af9236b2684a91869bac8d770500861"
+          },
+          {
+            "combined_component_count": 3,
+            "flow": [
+              [
+                3,
+                1
+              ],
+              [
+                128,
+                1
+              ],
+              [
+                181,
+                1
+              ],
+              [
+                214,
+                1
+              ],
+              [
+                257,
+                1
+              ],
+              [
+                346,
+                1
+              ],
+              [
+                363,
+                1
+              ],
+              [
+                429,
+                1
+              ]
+            ],
+            "flow_sha256": "7cee5c3360251a3d5e0ebbc72e9a4a53bdc5ca32e0f6177e60a86a72aacb1b14"
+          },
+          {
+            "combined_component_count": 3,
+            "flow": [
+              [
+                3,
+                1
+              ],
+              [
+                128,
+                1
+              ],
+              [
+                219,
+                1
+              ],
+              [
+                257,
+                1
+              ],
+              [
+                365,
+                1
+              ],
+              [
+                438,
+                1
+              ],
+              [
+                511,
+                2
+              ]
+            ],
+            "flow_sha256": "edcf2f9beba33d479c28619a5dd8be56047211541c1435a4433fa25f943c8e3d"
+          },
+          {
+            "combined_component_count": 4,
+            "flow": [
+              [
+                3,
+                1
+              ],
+              [
+                128,
+                1
+              ],
+              [
+                238,
+                1
+              ],
+              [
+                257,
+                1
+              ],
+              [
+                375,
+                1
+              ],
+              [
+                443,
+                1
+              ],
+              [
+                477,
+                1
+              ],
+              [
+                511,
+                1
+              ]
+            ],
+            "flow_sha256": "09716944237afc66a3fbbf929db086fa6d1259315d8ec12c40a0d1140ea023dd"
+          },
+          {
+            "combined_component_count": 2,
+            "flow": [
+              [
+                3,
+                1
+              ],
+              [
+                128,
+                1
+              ],
+              [
+                247,
+                1
+              ],
+              [
+                257,
+                1
+              ],
+              [
+                379,
+                1
+              ],
+              [
+                445,
+                1
+              ],
+              [
+                478,
+                1
+              ],
+              [
+                495,
+                1
+              ]
+            ],
+            "flow_sha256": "d6fffab4da232670afe0d83dbc1f914780e465a4a0978091964c8c4600aae4df"
+          },
+          {
+            "combined_component_count": 3,
+            "flow": [
+              [
+                3,
+                1
+              ],
+              [
+                128,
+                1
+              ],
+              [
+                257,
+                1
+              ],
+              [
+                511,
+                5
+              ]
+            ],
+            "flow_sha256": "597d5d9ad2aeb82a764e1554865d195bacd396de2c6746ec504f71016a17a8e0"
+          }
+        ],
+        "sink_vertices": [
+          3
+        ],
+        "source_vertices": [
+          64
+        ]
+      },
+      {
+        "combined_component_count_histogram": {
+          "3": 1
+        },
+        "distinct_path_flows": 1,
+        "distinct_residual_flows": 1,
+        "omitted_edges": [
+          151,
+          344
+        ],
+        "raw_exact_decompositions": 1,
+        "residual_flows": [
+          {
+            "combined_component_count": 3,
+            "flow": [
+              [
+                88,
+                1
+              ],
+              [
+                150,
+                1
+              ],
+              [
+                178,
+                1
+              ],
+              [
+                203,
+                1
+              ],
+              [
+                300,
+                1
+              ],
+              [
+                345,
+                1
+              ],
+              [
+                357,
+                1
+              ],
+              [
+                407,
+                1
+              ]
+            ],
+            "flow_sha256": "cc21a7ebf6730a50e78720685a8e3366b9aa7cae067957ade25b017ae7b2561f"
+          }
+        ],
+        "sink_vertices": [
+          88,
+          151
+        ],
+        "source_vertices": [
+          75,
+          172
+        ]
+      },
+      {
+        "combined_component_count_histogram": {
+          "2": 1
+        },
+        "distinct_path_flows": 1,
+        "distinct_residual_flows": 1,
+        "omitted_edges": [
+          156,
+          334
+        ],
+        "raw_exact_decompositions": 1,
+        "residual_flows": [
+          {
+            "combined_component_count": 2,
+            "flow": [
+              [
+                121,
+                1
+              ],
+              [
+                158,
+                1
+              ],
+              [
+                243,
+                1
+              ],
+              [
+                316,
+                1
+              ],
+              [
+                335,
+                1
+              ],
+              [
+                412,
+                1
+              ],
+              [
+                462,
+                1
+              ],
+              [
+                487,
+                1
+              ]
+            ],
+            "flow_sha256": "bef8fc15b6c0c4165fb503fb88fb89485210f90a9dad7dd2044fcfabd4467942"
+          }
+        ],
+        "sink_vertices": [
+          156
+        ],
+        "source_vertices": [
+          167
+        ]
+      },
+      {
+        "combined_component_count_histogram": {
+          "3": 1
+        },
+        "distinct_path_flows": 1,
+        "distinct_residual_flows": 1,
+        "omitted_edges": [
+          167,
+          360
+        ],
+        "raw_exact_decompositions": 1,
+        "residual_flows": [
+          {
+            "combined_component_count": 3,
+            "flow": [
+              [
+                104,
+                1
+              ],
+              [
+                154,
+                1
+              ],
+              [
+                166,
+                1
+              ],
+              [
+                211,
+                1
+              ],
+              [
+                308,
+                1
+              ],
+              [
+                333,
+                1
+              ],
+              [
+                361,
+                1
+              ],
+              [
+                423,
+                1
+              ]
+            ],
+            "flow_sha256": "cc923a265ef598eea2936baa2c9ac1e2abb0689e0b6580772e58ab69bdb1e593"
+          }
+        ],
+        "sink_vertices": [
+          104,
+          167
+        ],
+        "source_vertices": [
+          83,
+          180
+        ]
+      },
+      {
+        "combined_component_count_histogram": {
+          "4": 2
+        },
+        "distinct_path_flows": 1,
+        "distinct_residual_flows": 2,
+        "omitted_edges": [
+          172,
+          436
+        ],
+        "raw_exact_decompositions": 2,
+        "residual_flows": [
+          {
+            "combined_component_count": 4,
+            "flow": [
+              [
+                0,
+                1
+              ],
+              [
+                173,
+                1
+              ],
+              [
+                180,
+                1
+              ],
+              [
+                214,
+                1
+              ],
+              [
+                346,
+                1
+              ],
+              [
+                363,
+                1
+              ],
+              [
+                428,
+                1
+              ],
+              [
+                437,
+                1
+              ]
+            ],
+            "flow_sha256": "dba867c3451ee580c846511bbdaa1017ed4583f811b4cd8da2400d439a786bb6"
+          },
+          {
+            "combined_component_count": 4,
+            "flow": [
+              [
+                173,
+                1
+              ],
+              [
+                180,
+                1
+              ],
+              [
+                214,
+                1
+              ],
+              [
+                346,
+                1
+              ],
+              [
+                363,
+                1
+              ],
+              [
+                428,
+                1
+              ],
+              [
+                437,
+                1
+              ],
+              [
+                511,
+                1
+              ]
+            ],
+            "flow_sha256": "3ce8883a79156e8f935169b45809901181915e57142ad017480b416a139cbae0"
+          }
+        ],
+        "sink_vertices": [
+          172,
+          180
+        ],
+        "source_vertices": [
+          86,
+          218
+        ]
+      },
+      {
+        "combined_component_count_histogram": {
+          "2": 1
+        },
+        "distinct_path_flows": 1,
+        "distinct_residual_flows": 1,
+        "omitted_edges": [
+          177,
+          355
+        ],
+        "raw_exact_decompositions": 1,
+        "residual_flows": [
+          {
+            "combined_component_count": 2,
+            "flow": [
+              [
+                24,
+                1
+              ],
+              [
+                49,
+                1
+              ],
+              [
+                99,
+                1
+              ],
+              [
+                176,
+                1
+              ],
+              [
+                195,
+                1
+              ],
+              [
+                268,
+                1
+              ],
+              [
+                353,
+                1
+              ],
+              [
+                390,
+                1
+              ]
+            ],
+            "flow_sha256": "a4c7dddf70bf2a189f22836de9159ab4798728d83812e7fa020fd8a8dc28afe7"
+          }
+        ],
+        "sink_vertices": [
+          99
+        ],
+        "source_vertices": [
+          88
+        ]
+      },
+      {
+        "combined_component_count_histogram": {
+          "4": 3,
+          "5": 1
+        },
+        "distinct_path_flows": 1,
+        "distinct_residual_flows": 4,
+        "omitted_edges": [
+          186,
+          495
+        ],
+        "raw_exact_decompositions": 4,
+        "residual_flows": [
+          {
+            "combined_component_count": 5,
+            "flow": [
+              [
+                0,
+                1
+              ],
+              [
+                187,
+                1
+              ],
+              [
+                239,
+                1
+              ],
+              [
+                375,
+                1
+              ],
+              [
+                442,
+                1
+              ],
+              [
+                477,
+                1
+              ],
+              [
+                494,
+                1
+              ],
+              [
+                511,
+                1
+              ]
+            ],
+            "flow_sha256": "3af3394794064a8c4737e3dd7d60e2b71f461443b473c5277cdba1470d49ccad"
+          },
+          {
+            "combined_component_count": 4,
+            "flow": [
+              [
+                0,
+                2
+              ],
+              [
+                187,
+                1
+              ],
+              [
+                239,
+                1
+              ],
+              [
+                375,
+                1
+              ],
+              [
+                442,
+                1
+              ],
+              [
+                477,
+                1
+              ],
+              [
+                494,
+                1
+              ]
+            ],
+            "flow_sha256": "6e81c3c322b02538c749e9b5b9231b515d2fdaa985e64281b7ebb99b4101a0ef"
+          },
+          {
+            "combined_component_count": 4,
+            "flow": [
+              [
+                170,
+                1
+              ],
+              [
+                187,
+                1
+              ],
+              [
+                239,
+                1
+              ],
+              [
+                341,
+                1
+              ],
+              [
+                375,
+                1
+              ],
+              [
+                442,
+                1
+              ],
+              [
+                477,
+                1
+              ],
+              [
+                494,
+                1
+              ]
+            ],
+            "flow_sha256": "cafefb78f509651d5e8827f1cc5a007fd19c2703fa3fc0a504917b68c289b243"
+          },
+          {
+            "combined_component_count": 4,
+            "flow": [
+              [
+                187,
+                1
+              ],
+              [
+                239,
+                1
+              ],
+              [
+                375,
+                1
+              ],
+              [
+                442,
+                1
+              ],
+              [
+                477,
+                1
+              ],
+              [
+                494,
+                1
+              ],
+              [
+                511,
+                2
+              ]
+            ],
+            "flow_sha256": "3562e168043b617ba6fcf07132ed61ac77d21816b39ae5a58421c79ff0281c65"
+          }
+        ],
+        "sink_vertices": [
+          186,
+          239
+        ],
+        "source_vertices": [
+          93,
+          247
+        ]
+      },
+      {
+        "combined_component_count_histogram": {
+          "2": 1
+        },
+        "distinct_path_flows": 1,
+        "distinct_residual_flows": 1,
+        "omitted_edges": [
+          204,
+          409
+        ],
+        "raw_exact_decompositions": 1,
+        "residual_flows": [
+          {
+            "combined_component_count": 2,
+            "flow": [
+              [
+                105,
+                1
+              ],
+              [
+                153,
+                1
+              ],
+              [
+                205,
+                1
+              ],
+              [
+                211,
+                1
+              ],
+              [
+                308,
+                1
+              ],
+              [
+                332,
+                1
+              ],
+              [
+                410,
+                1
+              ],
+              [
+                422,
+                1
+              ]
+            ],
+            "flow_sha256": "1c41722f166ddea0d5387380d6f0876cf0910637a611a928130c963793a1cb02"
+          }
+        ],
+        "sink_vertices": [
+          153
+        ],
+        "source_vertices": [
+          102
+        ]
+      },
+      {
+        "combined_component_count_histogram": {
+          "3": 2
+        },
+        "distinct_path_flows": 1,
+        "distinct_residual_flows": 2,
+        "omitted_edges": [
+          234,
+          468
+        ],
+        "raw_exact_decompositions": 2,
+        "residual_flows": [
+          {
+            "combined_component_count": 3,
+            "flow": [
+              [
+                0,
+                1
+              ],
+              [
+                181,
+                1
+              ],
+              [
+                212,
+                1
+              ],
+              [
+                235,
+                1
+              ],
+              [
+                346,
+                1
+              ],
+              [
+                362,
+                1
+              ],
+              [
+                429,
+                1
+              ],
+              [
+                470,
+                1
+              ]
+            ],
+            "flow_sha256": "b0ce4996cdd0493cfa4f54fdf44d50100a736bf13336f525767ecc11721a154b"
+          },
+          {
+            "combined_component_count": 3,
+            "flow": [
+              [
+                181,
+                1
+              ],
+              [
+                212,
+                1
+              ],
+              [
+                235,
+                1
+              ],
+              [
+                346,
+                1
+              ],
+              [
+                362,
+                1
+              ],
+              [
+                429,
+                1
+              ],
+              [
+                470,
+                1
+              ],
+              [
+                511,
+                1
+              ]
+            ],
+            "flow_sha256": "3c200af155ba573b04ddc3f9ab47bd4bcf42315c5dc471d1d3978b09103f5605"
+          }
+        ],
+        "sink_vertices": [
+          212
+        ],
+        "source_vertices": [
+          117
+        ]
+      },
+      {
+        "combined_component_count_histogram": {
+          "2": 8,
+          "3": 22,
+          "4": 16,
+          "5": 2
+        },
+        "distinct_path_flows": 6,
+        "distinct_residual_flows": 48,
+        "omitted_edges": [
+          252,
+          382
+        ],
+        "raw_exact_decompositions": 63,
+        "residual_flows": [
+          {
+            "combined_component_count": 4,
+            "flow": [
+              [
+                0,
+                1
+              ],
+              [
+                34,
+                1
+              ],
+              [
+                68,
+                1
+              ],
+              [
+                136,
+                1
+              ],
+              [
+                254,
+                1
+              ],
+              [
+                273,
+                1
+              ],
+              [
+                383,
+                1
+              ],
+              [
+                508,
+                1
+              ]
+            ],
+            "flow_sha256": "6885072fff2d114ef2a6bfc45525249629571eaf6078a1f33ca887fd8f0303de"
+          },
+          {
+            "combined_component_count": 4,
+            "flow": [
+              [
+                0,
+                1
+              ],
+              [
+                73,
+                1
+              ],
+              [
+                146,
+                1
+              ],
+              [
+                254,
+                1
+              ],
+              [
+                292,
+                1
+              ],
+              [
+                383,
+                1
+              ],
+              [
+                508,
+                1
+              ],
+              [
+                511,
+                1
+              ]
+            ],
+            "flow_sha256": "af43004790568f9cd0e0d203825bf290548c03ba9277217e27c0f9667e812fe3"
+          },
+          {
+            "combined_component_count": 3,
+            "flow": [
+              [
+                0,
+                1
+              ],
+              [
+                73,
+                1
+              ],
+              [
+                146,
+                1
+              ],
+              [
+                255,
+                1
+              ],
+              [
+                292,
+                1
+              ],
+              [
+                383,
+                1
+              ],
+              [
+                508,
+                1
+              ],
+              [
+                510,
+                1
+              ]
+            ],
+            "flow_sha256": "03dcf31ab90e746d9d17f1c12a525b7911447b6be76e3db996751aeb281717e8"
+          },
+          {
+            "combined_component_count": 3,
+            "flow": [
+              [
+                0,
+                1
+              ],
+              [
+                102,
+                1
+              ],
+              [
+                204,
+                1
+              ],
+              [
+                254,
+                1
+              ],
+              [
+                307,
+                1
+              ],
+              [
+                383,
+                1
+              ],
+              [
+                409,
+                1
+              ],
+              [
+                508,
+                1
+              ]
+            ],
+            "flow_sha256": "d09b035f9c14a97a906237ea17eaeb03cbd97c5648dae965552838dca77090ec"
+          },
+          {
+            "combined_component_count": 5,
+            "flow": [
+              [
+                0,
+                1
+              ],
+              [
+                170,
+                1
+              ],
+              [
+                254,
+                1
+              ],
+              [
+                341,
+                1
+              ],
+              [
+                383,
+                1
+              ],
+              [
+                508,
+                1
+              ],
+              [
+                511,
+                2
+              ]
+            ],
+            "flow_sha256": "4d552f084a7750dda3840bf2c6013ad24c3ba8d37f62cf11b5a874ad3bf363c4"
+          },
+          {
+            "combined_component_count": 4,
+            "flow": [
+              [
+                0,
+                1
+              ],
+              [
+                170,
+                1
+              ],
+              [
+                255,
+                1
+              ],
+              [
+                341,
+                1
+              ],
+              [
+                383,
+                1
+              ],
+              [
+                508,
+                1
+              ],
+              [
+                510,
+                1
+              ],
+              [
+                511,
+                1
+              ]
+            ],
+            "flow_sha256": "cc1a58a81561f60dec6d641c6b5f28fec014223fcfbdf99987012fed9f5b23b4"
+          },
+          {
+            "combined_component_count": 4,
+            "flow": [
+              [
+                0,
+                1
+              ],
+              [
+                170,
+                2
+              ],
+              [
+                254,
+                1
+              ],
+              [
+                341,
+                2
+              ],
+              [
+                383,
+                1
+              ],
+              [
+                508,
+                1
+              ]
+            ],
+            "flow_sha256": "4215ad853e2227f0576acc3ad924cccdde3e7f1dc4613a0b5b713bf8ce294ea4"
+          },
+          {
+            "combined_component_count": 4,
+            "flow": [
+              [
+                0,
+                1
+              ],
+              [
+                219,
+                1
+              ],
+              [
+                254,
+                1
+              ],
+              [
+                365,
+                1
+              ],
+              [
+                383,
+                1
+              ],
+              [
+                438,
+                1
+              ],
+              [
+                508,
+                1
+              ],
+              [
+                511,
+                1
+              ]
+            ],
+            "flow_sha256": "49cc31081e9d0c3d0ba941a6168774aa879c7ba1e40a0ed8020deacc4e8f4cb8"
+          },
+          {
+            "combined_component_count": 3,
+            "flow": [
+              [
+                0,
+                1
+              ],
+              [
+                219,
+                1
+              ],
+              [
+                255,
+                1
+              ],
+              [
+                365,
+                1
+              ],
+              [
+                383,
+                1
+              ],
+              [
+                438,
+                1
+              ],
+              [
+                508,
+                1
+              ],
+              [
+                510,
+                1
+              ]
+            ],
+            "flow_sha256": "b66987173eebdce0fc224c5415fe325052e93d07d720ca8d07c58a21f629d87e"
+          },
+          {
+            "combined_component_count": 4,
+            "flow": [
+              [
+                0,
+                1
+              ],
+              [
+                238,
+                1
+              ],
+              [
+                254,
+                1
+              ],
+              [
+                375,
+                1
+              ],
+              [
+                383,
+                1
+              ],
+              [
+                443,
+                1
+              ],
+              [
+                477,
+                1
+              ],
+              [
+                508,
+                1
+              ]
+            ],
+            "flow_sha256": "cef7504e3c4dbcd793a359402fe3e6f956669755f46e8b145b7daff8d70fff59"
+          },
+          {
+            "combined_component_count": 4,
+            "flow": [
+              [
+                0,
+                1
+              ],
+              [
+                254,
+                1
+              ],
+              [
+                383,
+                1
+              ],
+              [
+                508,
+                1
+              ],
+              [
+                511,
+                4
+              ]
+            ],
+            "flow_sha256": "1f95a39bd14e3cecf9c58ae3a554659b230db360340c9e30a5009a241f5b184f"
+          },
+          {
+            "combined_component_count": 3,
+            "flow": [
+              [
+                0,
+                1
+              ],
+              [
+                255,
+                1
+              ],
+              [
+                383,
+                1
+              ],
+              [
+                508,
+                1
+              ],
+              [
+                510,
+                1
+              ],
+              [
+                511,
+                3
+              ]
+            ],
+            "flow_sha256": "7fa2170eeb4ed10c28c3f8de2b2399a6189652d2cead88f2ac9952f6bfe7ec35"
+          },
+          {
+            "combined_component_count": 3,
+            "flow": [
+              [
+                0,
+                2
+              ],
+              [
+                73,
+                1
+              ],
+              [
+                146,
+                1
+              ],
+              [
+                254,
+                1
+              ],
+              [
+                292,
+                1
+              ],
+              [
+                383,
+                1
+              ],
+              [
+                508,
+                1
+              ]
+            ],
+            "flow_sha256": "535edce936dcc6777e24ba1ed424d962a6bd64d8533119cc0fcacc6ff7a3fddf"
+          },
+          {
+            "combined_component_count": 5,
+            "flow": [
+              [
+                0,
+                2
+              ],
+              [
+                170,
+                1
+              ],
+              [
+                254,
+                1
+              ],
+              [
+                341,
+                1
+              ],
+              [
+                383,
+                1
+              ],
+              [
+                508,
+                1
+              ],
+              [
+                511,
+                1
+              ]
+            ],
+            "flow_sha256": "14244937944f56250fa7c067e51fda729e88225ce935d55f85901224cad57788"
+          },
+          {
+            "combined_component_count": 4,
+            "flow": [
+              [
+                0,
+                2
+              ],
+              [
+                170,
+                1
+              ],
+              [
+                255,
+                1
+              ],
+              [
+                341,
+                1
+              ],
+              [
+                383,
+                1
+              ],
+              [
+                508,
+                1
+              ],
+              [
+                510,
+                1
+              ]
+            ],
+            "flow_sha256": "b52d654e4945d82920f924e7948a6eb2936511f279da7c7cb820614493a41f01"
+          },
+          {
+            "combined_component_count": 3,
+            "flow": [
+              [
+                0,
+                2
+              ],
+              [
+                219,
+                1
+              ],
+              [
+                254,
+                1
+              ],
+              [
+                365,
+                1
+              ],
+              [
+                383,
+                1
+              ],
+              [
+                438,
+                1
+              ],
+              [
+                508,
+                1
+              ]
+            ],
+            "flow_sha256": "517f5fc39389abdbe46d302bb9ca3e10acc4c0a3c4dd378fc66143f8951c51e5"
+          },
+          {
+            "combined_component_count": 4,
+            "flow": [
+              [
+                0,
+                2
+              ],
+              [
+                254,
+                1
+              ],
+              [
+                383,
+                1
+              ],
+              [
+                508,
+                1
+              ],
+              [
+                511,
+                3
+              ]
+            ],
+            "flow_sha256": "20b056af48a0c728726cfac2e0f49f063da42c213aa671d5945321b6c5c9ffae"
+          },
+          {
+            "combined_component_count": 3,
+            "flow": [
+              [
+                0,
+                2
+              ],
+              [
+                255,
+                1
+              ],
+              [
+                383,
+                1
+              ],
+              [
+                508,
+                1
+              ],
+              [
+                510,
+                1
+              ],
+              [
+                511,
+                2
+              ]
+            ],
+            "flow_sha256": "126a24b5e31fa06285661d68ad8790559bd3c42b2e45e7eed0b76047729dd152"
+          },
+          {
+            "combined_component_count": 4,
+            "flow": [
+              [
+                0,
+                3
+              ],
+              [
+                170,
+                1
+              ],
+              [
+                254,
+                1
+              ],
+              [
+                341,
+                1
+              ],
+              [
+                383,
+                1
+              ],
+              [
+                508,
+                1
+              ]
+            ],
+            "flow_sha256": "bdb1e2876839ac1ca26e6243ecab67c8040c73f78d921f677d0703cd4587d7b1"
+          },
+          {
+            "combined_component_count": 4,
+            "flow": [
+              [
+                0,
+                3
+              ],
+              [
+                254,
+                1
+              ],
+              [
+                383,
+                1
+              ],
+              [
+                508,
+                1
+              ],
+              [
+                511,
+                2
+              ]
+            ],
+            "flow_sha256": "e390975a11efd5b1da3e246c2287ac17d939d32bb827bcefff50a7ebc483956c"
+          },
+          {
+            "combined_component_count": 3,
+            "flow": [
+              [
+                0,
+                3
+              ],
+              [
+                255,
+                1
+              ],
+              [
+                383,
+                1
+              ],
+              [
+                508,
+                1
+              ],
+              [
+                510,
+                1
+              ],
+              [
+                511,
+                1
+              ]
+            ],
+            "flow_sha256": "69cf96d689a66cad32cd98cf4b87494a243e6c88f59eb66f62a890faa401386d"
+          },
+          {
+            "combined_component_count": 4,
+            "flow": [
+              [
+                0,
+                4
+              ],
+              [
+                254,
+                1
+              ],
+              [
+                383,
+                1
+              ],
+              [
+                508,
+                1
+              ],
+              [
+                511,
+                1
+              ]
+            ],
+            "flow_sha256": "198d144e71106fde856277d21192aafd376297925dc8f283b973e4310465ce96"
+          },
+          {
+            "combined_component_count": 3,
+            "flow": [
+              [
+                0,
+                4
+              ],
+              [
+                255,
+                1
+              ],
+              [
+                383,
+                1
+              ],
+              [
+                508,
+                1
+              ],
+              [
+                510,
+                1
+              ]
+            ],
+            "flow_sha256": "2a8c0e616014ff813c9e326ae87b82d45e74bb8d7a8e68dc4c1e704eebbb5694"
+          },
+          {
+            "combined_component_count": 3,
+            "flow": [
+              [
+                0,
+                5
+              ],
+              [
+                254,
+                1
+              ],
+              [
+                383,
+                1
+              ],
+              [
+                508,
+                1
+              ]
+            ],
+            "flow_sha256": "936d2a9af332666384a68716bcdb3e647e9b43c6b29fa1f7dc1034fdd80d89c8"
+          },
+          {
+            "combined_component_count": 2,
+            "flow": [
+              [
+                16,
+                1
+              ],
+              [
+                33,
+                1
+              ],
+              [
+                66,
+                1
+              ],
+              [
+                132,
+                1
+              ],
+              [
+                254,
+                1
+              ],
+              [
+                264,
+                1
+              ],
+              [
+                383,
+                1
+              ],
+              [
+                508,
+                1
+              ]
+            ],
+            "flow_sha256": "a3897a37557d38f7d2a886caba279965c2219630ec454317c713d33580794cea"
+          },
+          {
+            "combined_component_count": 4,
+            "flow": [
+              [
+                34,
+                1
+              ],
+              [
+                68,
+                1
+              ],
+              [
+                136,
+                1
+              ],
+              [
+                254,
+                1
+              ],
+              [
+                273,
+                1
+              ],
+              [
+                383,
+                1
+              ],
+              [
+                508,
+                1
+              ],
+              [
+                511,
+                1
+              ]
+            ],
+            "flow_sha256": "2a45cd418fe67604ecd31e4a4f54f8c34e59a8b700c5ec24b850e1416b946e63"
+          },
+          {
+            "combined_component_count": 3,
+            "flow": [
+              [
+                34,
+                1
+              ],
+              [
+                68,
+                1
+              ],
+              [
+                136,
+                1
+              ],
+              [
+                255,
+                1
+              ],
+              [
+                273,
+                1
+              ],
+              [
+                383,
+                1
+              ],
+              [
+                508,
+                1
+              ],
+              [
+                510,
+                1
+              ]
+            ],
+            "flow_sha256": "4c485ed495781694fb8044590c710b39f653ba0a579dad14c968e0c4cd734272"
+          },
+          {
+            "combined_component_count": 2,
+            "flow": [
+              [
+                49,
+                1
+              ],
+              [
+                99,
+                1
+              ],
+              [
+                198,
+                1
+              ],
+              [
+                254,
+                1
+              ],
+              [
+                280,
+                1
+              ],
+              [
+                383,
+                1
+              ],
+              [
+                396,
+                1
+              ],
+              [
+                508,
+                1
+              ]
+            ],
+            "flow_sha256": "99853d04ea285b36bcfc7a1117b44d0198a7f44a2404c9ba089b91592f18c163"
+          },
+          {
+            "combined_component_count": 3,
+            "flow": [
+              [
+                73,
+                1
+              ],
+              [
+                146,
+                1
+              ],
+              [
+                170,
+                1
+              ],
+              [
+                254,
+                1
+              ],
+              [
+                292,
+                1
+              ],
+              [
+                341,
+                1
+              ],
+              [
+                383,
+                1
+              ],
+              [
+                508,
+                1
+              ]
+            ],
+            "flow_sha256": "56349707d4ed9e859b931f81658bcfaa0f5325130cfcb99d6f1cb9a265d88716"
+          },
+          {
+            "combined_component_count": 3,
+            "flow": [
+              [
+                73,
+                1
+              ],
+              [
+                146,
+                1
+              ],
+              [
+                254,
+                1
+              ],
+              [
+                292,
+                1
+              ],
+              [
+                383,
+                1
+              ],
+              [
+                508,
+                1
+              ],
+              [
+                511,
+                2
+              ]
+            ],
+            "flow_sha256": "39c56e9ae27fe3f8f3c4917a7e79b8a98dbef53205ada416ef2c71e907675e33"
+          },
+          {
+            "combined_component_count": 2,
+            "flow": [
+              [
+                73,
+                1
+              ],
+              [
+                146,
+                1
+              ],
+              [
+                255,
+                1
+              ],
+              [
+                292,
+                1
+              ],
+              [
+                383,
+                1
+              ],
+              [
+                508,
+                1
+              ],
+              [
+                510,
+                1
+              ],
+              [
+                511,
+                1
+              ]
+            ],
+            "flow_sha256": "6524ea36f7c22857ec8c5d181fa330b7f9b4f97beed62115fa508008dda42a57"
+          },
+          {
+            "combined_component_count": 3,
+            "flow": [
+              [
+                82,
+                1
+              ],
+              [
+                148,
+                1
+              ],
+              [
+                165,
+                1
+              ],
+              [
+                254,
+                1
+              ],
+              [
+                297,
+                1
+              ],
+              [
+                330,
+                1
+              ],
+              [
+                383,
+                1
+              ],
+              [
+                508,
+                1
+              ]
+            ],
+            "flow_sha256": "fef313a9d2048d88fc6b2bd34cb6ce090e3e5501a88d770253e4448a0f52e961"
+          },
+          {
+            "combined_component_count": 3,
+            "flow": [
+              [
+                102,
+                1
+              ],
+              [
+                204,
+                1
+              ],
+              [
+                254,
+                1
+              ],
+              [
+                307,
+                1
+              ],
+              [
+                383,
+                1
+              ],
+              [
+                409,
+                1
+              ],
+              [
+                508,
+                1
+              ],
+              [
+                511,
+                1
+              ]
+            ],
+            "flow_sha256": "84de77ee5c9eda843792291fb1f723b501a45f2eaa7c8d40ac90dfc620991a80"
+          },
+          {
+            "combined_component_count": 2,
+            "flow": [
+              [
+                102,
+                1
+              ],
+              [
+                204,
+                1
+              ],
+              [
+                255,
+                1
+              ],
+              [
+                307,
+                1
+              ],
+              [
+                383,
+                1
+              ],
+              [
+                409,
+                1
+              ],
+              [
+                508,
+                1
+              ],
+              [
+                510,
+                1
+              ]
+            ],
+            "flow_sha256": "4f03e1bec872e4f16a74848b893ffb3654e4ba36fe774c3d8745504ad6364f69"
+          },
+          {
+            "combined_component_count": 2,
+            "flow": [
+              [
+                115,
+                1
+              ],
+              [
+                231,
+                1
+              ],
+              [
+                254,
+                1
+              ],
+              [
+                313,
+                1
+              ],
+              [
+                383,
+                1
+              ],
+              [
+                412,
+                1
+              ],
+              [
+                462,
+                1
+              ],
+              [
+                508,
+                1
+              ]
+            ],
+            "flow_sha256": "87560d95eb528ae389db309fc27dfd2300c6f4f296586b137a0dcc8f7464c21c"
+          },
+          {
+            "combined_component_count": 3,
+            "flow": [
+              [
+                170,
+                1
+              ],
+              [
+                219,
+                1
+              ],
+              [
+                254,
+                1
+              ],
+              [
+                341,
+                1
+              ],
+              [
+                365,
+                1
+              ],
+              [
+                383,
+                1
+              ],
+              [
+                438,
+                1
+              ],
+              [
+                508,
+                1
+              ]
+            ],
+            "flow_sha256": "dc3a1e521f74fd57f46caac6238f4c25c1318d5655910c69b6ae26007f5fab57"
+          },
+          {
+            "combined_component_count": 4,
+            "flow": [
+              [
+                170,
+                1
+              ],
+              [
+                254,
+                1
+              ],
+              [
+                341,
+                1
+              ],
+              [
+                383,
+                1
+              ],
+              [
+                508,
+                1
+              ],
+              [
+                511,
+                3
+              ]
+            ],
+            "flow_sha256": "4086bb90637dada1edde38f9529eafb4bef26f8cfa5faac3b5687f36cb90dd1d"
+          },
+          {
+            "combined_component_count": 3,
+            "flow": [
+              [
+                170,
+                1
+              ],
+              [
+                255,
+                1
+              ],
+              [
+                341,
+                1
+              ],
+              [
+                383,
+                1
+              ],
+              [
+                508,
+                1
+              ],
+              [
+                510,
+                1
+              ],
+              [
+                511,
+                2
+              ]
+            ],
+            "flow_sha256": "90ff034dae1fef5b2f3ece5cf01ce859fc2cd265a69427cb33ff52f5cd8183c9"
+          },
+          {
+            "combined_component_count": 4,
+            "flow": [
+              [
+                170,
+                2
+              ],
+              [
+                254,
+                1
+              ],
+              [
+                341,
+                2
+              ],
+              [
+                383,
+                1
+              ],
+              [
+                508,
+                1
+              ],
+              [
+                511,
+                1
+              ]
+            ],
+            "flow_sha256": "2981454dc2cf6289401203782b68ae8f79fa2420f889e533692eebf9cc051bf2"
+          },
+          {
+            "combined_component_count": 3,
+            "flow": [
+              [
+                170,
+                2
+              ],
+              [
+                255,
+                1
+              ],
+              [
+                341,
+                2
+              ],
+              [
+                383,
+                1
+              ],
+              [
+                508,
+                1
+              ],
+              [
+                510,
+                1
+              ]
+            ],
+            "flow_sha256": "f953d8b149c382dd41ef1cdd8179f82c76af81c5ac36790ff4887702b2ee727f"
+          },
+          {
+            "combined_component_count": 3,
+            "flow": [
+              [
+                181,
+                1
+              ],
+              [
+                214,
+                1
+              ],
+              [
+                254,
+                1
+              ],
+              [
+                346,
+                1
+              ],
+              [
+                363,
+                1
+              ],
+              [
+                383,
+                1
+              ],
+              [
+                429,
+                1
+              ],
+              [
+                508,
+                1
+              ]
+            ],
+            "flow_sha256": "bf799ce7062ebe375d425409cd46785a2dd2a1a5601fe5170a2c5709fb003bbd"
+          },
+          {
+            "combined_component_count": 3,
+            "flow": [
+              [
+                219,
+                1
+              ],
+              [
+                254,
+                1
+              ],
+              [
+                365,
+                1
+              ],
+              [
+                383,
+                1
+              ],
+              [
+                438,
+                1
+              ],
+              [
+                508,
+                1
+              ],
+              [
+                511,
+                2
+              ]
+            ],
+            "flow_sha256": "1c0119e6e375feedc3d12c246d897558ef049cff2ba139ce321a3a8069f94536"
+          },
+          {
+            "combined_component_count": 2,
+            "flow": [
+              [
+                219,
+                1
+              ],
+              [
+                255,
+                1
+              ],
+              [
+                365,
+                1
+              ],
+              [
+                383,
+                1
+              ],
+              [
+                438,
+                1
+              ],
+              [
+                508,
+                1
+              ],
+              [
+                510,
+                1
+              ],
+              [
+                511,
+                1
+              ]
+            ],
+            "flow_sha256": "dfcce6caee7895f82bad040f733aceea1b47d28b4194db2a71d65a1f2c40defa"
+          },
+          {
+            "combined_component_count": 4,
+            "flow": [
+              [
+                238,
+                1
+              ],
+              [
+                254,
+                1
+              ],
+              [
+                375,
+                1
+              ],
+              [
+                383,
+                1
+              ],
+              [
+                443,
+                1
+              ],
+              [
+                477,
+                1
+              ],
+              [
+                508,
+                1
+              ],
+              [
+                511,
+                1
+              ]
+            ],
+            "flow_sha256": "0f3c095b6b7f6e69aa0cf96ea6e63d427608ba131bb139cf3bcaa7302c238ffb"
+          },
+          {
+            "combined_component_count": 3,
+            "flow": [
+              [
+                238,
+                1
+              ],
+              [
+                255,
+                1
+              ],
+              [
+                375,
+                1
+              ],
+              [
+                383,
+                1
+              ],
+              [
+                443,
+                1
+              ],
+              [
+                477,
+                1
+              ],
+              [
+                508,
+                1
+              ],
+              [
+                510,
+                1
+              ]
+            ],
+            "flow_sha256": "323ffa2c8454e887a4456e2ec95c25dc0ba134655db505f95c6e9d67da9e0cee"
+          },
+          {
+            "combined_component_count": 2,
+            "flow": [
+              [
+                247,
+                1
+              ],
+              [
+                254,
+                1
+              ],
+              [
+                379,
+                1
+              ],
+              [
+                383,
+                1
+              ],
+              [
+                445,
+                1
+              ],
+              [
+                478,
+                1
+              ],
+              [
+                495,
+                1
+              ],
+              [
+                508,
+                1
+              ]
+            ],
+            "flow_sha256": "4bf39588dcd1350f11b9e391c7b962af88890d90d9734d2ec54483a9ba0bc15a"
+          },
+          {
+            "combined_component_count": 3,
+            "flow": [
+              [
+                254,
+                1
+              ],
+              [
+                383,
+                1
+              ],
+              [
+                508,
+                1
+              ],
+              [
+                511,
+                5
+              ]
+            ],
+            "flow_sha256": "cddde8485c179c10eca8e1fc138683a5706f5250c21758dea12372d851bbed12"
+          },
+          {
+            "combined_component_count": 2,
+            "flow": [
+              [
+                255,
+                1
+              ],
+              [
+                383,
+                1
+              ],
+              [
+                508,
+                1
+              ],
+              [
+                510,
+                1
+              ],
+              [
+                511,
+                4
+              ]
+            ],
+            "flow_sha256": "83ab7c42cfef9e0d3b9cf2c16b4ed4e65344121a45a8f6f8b00e66ab47f2af56"
+          }
+        ],
+        "sink_vertices": [
+          252
+        ],
+        "source_vertices": [
+          191
+        ]
+      },
+      {
+        "combined_component_count_histogram": {
+          "2": 1
+        },
+        "distinct_path_flows": 1,
+        "distinct_residual_flows": 1,
+        "omitted_edges": [
+          252,
+          505
+        ],
+        "raw_exact_decompositions": 1,
+        "residual_flows": [
+          {
+            "combined_component_count": 2,
+            "flow": [
+              [
+                249,
+                1
+              ],
+              [
+                253,
+                1
+              ],
+              [
+                380,
+                1
+              ],
+              [
+                446,
+                1
+              ],
+              [
+                479,
+                1
+              ],
+              [
+                495,
+                1
+              ],
+              [
+                503,
+                1
+              ],
+              [
+                507,
+                1
+              ]
+            ],
+            "flow_sha256": "1d7caf6729f109ec14e46d104d8000837497be60ac052b3d5b8740c082bcfb59"
+          }
+        ],
+        "sink_vertices": [
+          249
+        ],
+        "source_vertices": [
+          126
+        ]
+      },
+      {
+        "combined_component_count_histogram": {
+          "2": 3
+        },
+        "distinct_path_flows": 2,
+        "distinct_residual_flows": 3,
+        "omitted_edges": [
+          307,
+          409
+        ],
+        "raw_exact_decompositions": 3,
+        "residual_flows": [
+          {
+            "combined_component_count": 2,
+            "flow": [
+              [
+                0,
+                1
+              ],
+              [
+                51,
+                1
+              ],
+              [
+                99,
+                1
+              ],
+              [
+                198,
+                1
+              ],
+              [
+                281,
+                1
+              ],
+              [
+                305,
+                1
+              ],
+              [
+                396,
+                1
+              ],
+              [
+                408,
+                1
+              ]
+            ],
+            "flow_sha256": "a881985cc137c8d446a8a7b7d8a2047308499b22f0a86730f80701a91761c13d"
+          },
+          {
+            "combined_component_count": 2,
+            "flow": [
+              [
+                25,
+                1
+              ],
+              [
+                51,
+                1
+              ],
+              [
+                97,
+                1
+              ],
+              [
+                195,
+                1
+              ],
+              [
+                268,
+                1
+              ],
+              [
+                304,
+                1
+              ],
+              [
+                390,
+                1
+              ],
+              [
+                408,
+                1
+              ]
+            ],
+            "flow_sha256": "a1ce69d386ee0ab2ec7d647b8137227f774c2deaea16e96f1383f6dcfc700d34"
+          },
+          {
+            "combined_component_count": 2,
+            "flow": [
+              [
+                51,
+                1
+              ],
+              [
+                99,
+                1
+              ],
+              [
+                198,
+                1
+              ],
+              [
+                281,
+                1
+              ],
+              [
+                305,
+                1
+              ],
+              [
+                396,
+                1
+              ],
+              [
+                408,
+                1
+              ],
+              [
+                511,
+                1
+              ]
+            ],
+            "flow_sha256": "e6dae3ac27a34bf8135e752230e6832dfe03cb18d63587945f8d9ab61809958b"
+          }
+        ],
+        "sink_vertices": [
+          51
+        ],
+        "source_vertices": [
+          204
+        ]
+      },
+      {
+        "combined_component_count_histogram": {
+          "2": 1
+        },
+        "distinct_path_flows": 1,
+        "distinct_residual_flows": 1,
+        "omitted_edges": [
+          339,
+          425
+        ],
+        "raw_exact_decompositions": 1,
+        "residual_flows": [
+          {
+            "combined_component_count": 2,
+            "flow": [
+              [
+                41,
+                1
+              ],
+              [
+                83,
+                1
+              ],
+              [
+                138,
+                1
+              ],
+              [
+                162,
+                1
+              ],
+              [
+                276,
+                1
+              ],
+              [
+                325,
+                1
+              ],
+              [
+                337,
+                1
+              ],
+              [
+                424,
+                1
+              ]
+            ],
+            "flow_sha256": "f46615a25242e400928f49f92817f9ea124fac5d0db58679c419c82ff7a57442"
+          }
+        ],
+        "sink_vertices": [
+          83
+        ],
+        "source_vertices": [
+          212
+        ]
+      },
+      {
+        "combined_component_count_histogram": {
+          "2": 2,
+          "3": 10,
+          "4": 4
+        },
+        "distinct_path_flows": 3,
+        "distinct_residual_flows": 16,
+        "omitted_edges": [
+          425,
+          468
+        ],
+        "raw_exact_decompositions": 21,
+        "residual_flows": [
+          {
+            "combined_component_count": 3,
+            "flow": [
+              [
+                0,
+                1
+              ],
+              [
+                73,
+                1
+              ],
+              [
+                146,
+                1
+              ],
+              [
+                169,
+                1
+              ],
+              [
+                292,
+                1
+              ],
+              [
+                340,
+                1
+              ],
+              [
+                426,
+                1
+              ],
+              [
+                469,
+                1
+              ]
+            ],
+            "flow_sha256": "f91b202a174ef17b58a8c8017596cfbe56590dad0d7b6310c15b11e4c350c50b"
+          },
+          {
+            "combined_component_count": 4,
+            "flow": [
+              [
+                0,
+                1
+              ],
+              [
+                169,
+                1
+              ],
+              [
+                170,
+                1
+              ],
+              [
+                340,
+                1
+              ],
+              [
+                341,
+                1
+              ],
+              [
+                426,
+                1
+              ],
+              [
+                469,
+                1
+              ],
+              [
+                511,
+                1
+              ]
+            ],
+            "flow_sha256": "7665631153625b379a96c2cf1b02d25cc925099ff4a415833d001afce5d7bbc4"
+          },
+          {
+            "combined_component_count": 3,
+            "flow": [
+              [
+                0,
+                1
+              ],
+              [
+                169,
+                1
+              ],
+              [
+                219,
+                1
+              ],
+              [
+                340,
+                1
+              ],
+              [
+                365,
+                1
+              ],
+              [
+                426,
+                1
+              ],
+              [
+                438,
+                1
+              ],
+              [
+                469,
+                1
+              ]
+            ],
+            "flow_sha256": "d77787056219c4b8c96a7416a9e92dda198020855f6c1525ca64721e4bb87e26"
+          },
+          {
+            "combined_component_count": 4,
+            "flow": [
+              [
+                0,
+                1
+              ],
+              [
+                169,
+                1
+              ],
+              [
+                340,
+                1
+              ],
+              [
+                426,
+                1
+              ],
+              [
+                469,
+                1
+              ],
+              [
+                511,
+                3
+              ]
+            ],
+            "flow_sha256": "f884a9b8b94aeb0a3be9691fa68897cd324356f52b1dbab817a3c53c406a92ef"
+          },
+          {
+            "combined_component_count": 3,
+            "flow": [
+              [
+                0,
+                2
+              ],
+              [
+                169,
+                1
+              ],
+              [
+                170,
+                1
+              ],
+              [
+                340,
+                1
+              ],
+              [
+                341,
+                1
+              ],
+              [
+                426,
+                1
+              ],
+              [
+                469,
+                1
+              ]
+            ],
+            "flow_sha256": "b4dc710122e44dcd77916c40c7b4f438176b4a1cb75794364aac3f98894ffe19"
+          },
+          {
+            "combined_component_count": 4,
+            "flow": [
+              [
+                0,
+                2
+              ],
+              [
+                169,
+                1
+              ],
+              [
+                340,
+                1
+              ],
+              [
+                426,
+                1
+              ],
+              [
+                469,
+                1
+              ],
+              [
+                511,
+                2
+              ]
+            ],
+            "flow_sha256": "33ac49bdb32a0168163fc7a9e14403730552f3469fc69cc8788787344782b969"
+          },
+          {
+            "combined_component_count": 4,
+            "flow": [
+              [
+                0,
+                3
+              ],
+              [
+                169,
+                1
+              ],
+              [
+                340,
+                1
+              ],
+              [
+                426,
+                1
+              ],
+              [
+                469,
+                1
+              ],
+              [
+                511,
+                1
+              ]
+            ],
+            "flow_sha256": "575c5acef7ab3a71af3e2160c850290bc2093b20f757f88486dfa018a49f9a3b"
+          },
+          {
+            "combined_component_count": 3,
+            "flow": [
+              [
+                0,
+                4
+              ],
+              [
+                169,
+                1
+              ],
+              [
+                340,
+                1
+              ],
+              [
+                426,
+                1
+              ],
+              [
+                469,
+                1
+              ]
+            ],
+            "flow_sha256": "015e568efb7a5222717d3c30108636c650a78887d8a5baac93a3aff2b2068af0"
+          },
+          {
+            "combined_component_count": 3,
+            "flow": [
+              [
+                34,
+                1
+              ],
+              [
+                68,
+                1
+              ],
+              [
+                136,
+                1
+              ],
+              [
+                169,
+                1
+              ],
+              [
+                273,
+                1
+              ],
+              [
+                340,
+                1
+              ],
+              [
+                426,
+                1
+              ],
+              [
+                469,
+                1
+              ]
+            ],
+            "flow_sha256": "979556a1112bbaf18c01532be830dd053136dff7fce1a1ac48d8a6cd15518015"
+          },
+          {
+            "combined_component_count": 3,
+            "flow": [
+              [
+                73,
+                1
+              ],
+              [
+                146,
+                1
+              ],
+              [
+                169,
+                1
+              ],
+              [
+                292,
+                1
+              ],
+              [
+                340,
+                1
+              ],
+              [
+                426,
+                1
+              ],
+              [
+                469,
+                1
+              ],
+              [
+                511,
+                1
+              ]
+            ],
+            "flow_sha256": "9f582f4f977fc873ff086cae27d7e153c0ea2bd1efe02a901f0b42952d9c5fc0"
+          },
+          {
+            "combined_component_count": 2,
+            "flow": [
+              [
+                102,
+                1
+              ],
+              [
+                169,
+                1
+              ],
+              [
+                204,
+                1
+              ],
+              [
+                307,
+                1
+              ],
+              [
+                340,
+                1
+              ],
+              [
+                409,
+                1
+              ],
+              [
+                426,
+                1
+              ],
+              [
+                469,
+                1
+              ]
+            ],
+            "flow_sha256": "f983910387e9b843d1c436c2a88f97a4dcc581fe09cb4f8ec7f1af13a7031ec8"
+          },
+          {
+            "combined_component_count": 3,
+            "flow": [
+              [
+                169,
+                1
+              ],
+              [
+                170,
+                1
+              ],
+              [
+                340,
+                1
+              ],
+              [
+                341,
+                1
+              ],
+              [
+                426,
+                1
+              ],
+              [
+                469,
+                1
+              ],
+              [
+                511,
+                2
+              ]
+            ],
+            "flow_sha256": "8121afa4ff8019065483b536a049bc2bc9460a319debd0b180f898d3ebe9e763"
+          },
+          {
+            "combined_component_count": 2,
+            "flow": [
+              [
+                169,
+                1
+              ],
+              [
+                170,
+                2
+              ],
+              [
+                340,
+                1
+              ],
+              [
+                341,
+                2
+              ],
+              [
+                426,
+                1
+              ],
+              [
+                469,
+                1
+              ]
+            ],
+            "flow_sha256": "bda1521716b87c11e18cff5c2b6f4c8f575bbbc78b00a004d4612e2ae4dc8deb"
+          },
+          {
+            "combined_component_count": 3,
+            "flow": [
+              [
+                169,
+                1
+              ],
+              [
+                219,
+                1
+              ],
+              [
+                340,
+                1
+              ],
+              [
+                365,
+                1
+              ],
+              [
+                426,
+                1
+              ],
+              [
+                438,
+                1
+              ],
+              [
+                469,
+                1
+              ],
+              [
+                511,
+                1
+              ]
+            ],
+            "flow_sha256": "4fbb0e14622db482a8b45c8b40dab9ae0945aba1babc2a6919d64134151cf98b"
+          },
+          {
+            "combined_component_count": 3,
+            "flow": [
+              [
+                169,
+                1
+              ],
+              [
+                238,
+                1
+              ],
+              [
+                340,
+                1
+              ],
+              [
+                375,
+                1
+              ],
+              [
+                426,
+                1
+              ],
+              [
+                443,
+                1
+              ],
+              [
+                469,
+                1
+              ],
+              [
+                477,
+                1
+              ]
+            ],
+            "flow_sha256": "94083bfd161952731d3a1a83dc4dfc46eabd179eb3fadea835bcb245f4bd7430"
+          },
+          {
+            "combined_component_count": 3,
+            "flow": [
+              [
+                169,
+                1
+              ],
+              [
+                340,
+                1
+              ],
+              [
+                426,
+                1
+              ],
+              [
+                469,
+                1
+              ],
+              [
+                511,
+                4
+              ]
+            ],
+            "flow_sha256": "f7971ff034f49479b435918aa26c5493a2c6a96c9756ae98ba5dfe0652b1c9bf"
+          }
+        ],
+        "sink_vertices": [
+          169
+        ],
+        "source_vertices": [
+          234
+        ]
+      },
+      {
+        "combined_component_count_histogram": {
+          "2": 1
+        },
+        "distinct_path_flows": 1,
+        "distinct_residual_flows": 1,
+        "omitted_edges": [
+          457,
+          484
+        ],
+        "raw_exact_decompositions": 1,
+        "residual_flows": [
+          {
+            "combined_component_count": 2,
+            "flow": [
+              [
+                89,
+                1
+              ],
+              [
+                178,
+                1
+              ],
+              [
+                201,
+                1
+              ],
+              [
+                300,
+                1
+              ],
+              [
+                356,
+                1
+              ],
+              [
+                406,
+                1
+              ],
+              [
+                459,
+                1
+              ],
+              [
+                485,
+                1
+              ]
+            ],
+            "flow_sha256": "6b0fbb93e7f35e917c115074e8265d7437ebc1e919199e3034d40861d4af16cc"
+          }
+        ],
+        "sink_vertices": [
+          201
+        ],
+        "source_vertices": [
+          242
+        ]
+      },
+      {
+        "combined_component_count_histogram": {
+          "3": 2
+        },
+        "distinct_path_flows": 1,
+        "distinct_residual_flows": 2,
+        "omitted_edges": [
+          484,
+          498
+        ],
+        "raw_exact_decompositions": 2,
+        "residual_flows": [
+          {
+            "combined_component_count": 3,
+            "flow": [
+              [
+                0,
+                1
+              ],
+              [
+                114,
+                1
+              ],
+              [
+                228,
+                1
+              ],
+              [
+                313,
+                1
+              ],
+              [
+                412,
+                1
+              ],
+              [
+                462,
+                1
+              ],
+              [
+                487,
+                1
+              ],
+              [
+                499,
+                1
+              ]
+            ],
+            "flow_sha256": "dda701054fc14d840ee104c5216266ebc55084a044c5cce1f857eb22c1c51684"
+          },
+          {
+            "combined_component_count": 3,
+            "flow": [
+              [
+                114,
+                1
+              ],
+              [
+                228,
+                1
+              ],
+              [
+                313,
+                1
+              ],
+              [
+                412,
+                1
+              ],
+              [
+                462,
+                1
+              ],
+              [
+                487,
+                1
+              ],
+              [
+                499,
+                1
+              ],
+              [
+                511,
+                1
+              ]
+            ],
+            "flow_sha256": "4eb9e4aa561014be3a4e1518ea81c77dbd74e859374efcad7a9e1e2738132709"
+          }
+        ],
+        "sink_vertices": [
+          228
+        ],
+        "source_vertices": [
+          249
+        ]
+      }
+    ],
+    "balanced_cycle_flow_counts_by_mass": [
+      1,
+      2,
+      4,
+      8,
+      16,
+      32,
+      64,
+      128,
+      256
+    ],
+    "connected_completion_count": 0,
+    "connected_completions": [],
+    "distinct_path_flows": 44,
+    "distinct_residual_flows": 168,
+    "lower_mass_positive_control": {
+      "connected_completion_count": 2,
+      "connected_completions": [
+        {
+          "omitted_edges": [
+            102,
+            204
+          ],
+          "residual_flow": [
+            [
+              103,
+              1
+            ],
+            [
+              115,
+              1
+            ],
+            [
+              206,
+              1
+            ],
+            [
+              230,
+              1
+            ],
+            [
+              313,
+              1
+            ],
+            [
+              412,
+              1
+            ],
+            [
+              460,
+              1
+            ]
+          ],
+          "residual_flow_sha256": "65977d0621d65127f120956c0971a53e5b902b224164f7b9f4faabac0f4441c6"
+        },
+        {
+          "omitted_edges": [
+            307,
+            409
+          ],
+          "residual_flow": [
+            [
+              51,
+              1
+            ],
+            [
+              99,
+              1
+            ],
+            [
+              198,
+              1
+            ],
+            [
+              281,
+              1
+            ],
+            [
+              305,
+              1
+            ],
+            [
+              396,
+              1
+            ],
+            [
+              408,
+              1
+            ]
+          ],
+          "residual_flow_sha256": "74d1465e0dd5ffeed0c3180a95d3f5489de38790f2bd76b51edfc713903410a6"
+        }
+      ],
+      "distinct_residual_flows": 76,
+      "residual_mass": 7
+    },
+    "omission_pairs_checked": 2016,
+    "raw_exact_decompositions": 208,
+    "residual_flow_count_histogram": {
+      "0": 1988,
+      "1": 14,
+      "16": 2,
+      "2": 6,
+      "3": 2,
+      "4": 2,
+      "48": 2
+    },
+    "residual_mass": 8,
+    "source_count_histogram": {
+      "1": 64,
+      "2": 1952
+    }
+  },
+  "multiset_connector": {
+    "allowed_edges": "all de Bruijn edges, including repeated backbone edges",
+    "exhaustive_exclusion_through": 6,
+    "minimum_closed_walk_length": 7,
+    "minimum_connector_count": 2,
+    "minimum_connectors": [
+      [
+        205,
+        411,
+        310,
+        108,
+        217,
+        435,
+        358
+      ],
+      [
+        306,
+        100,
+        201,
+        403,
+        294,
+        76,
+        153
+      ]
+    ],
+    "primary_witness_edges": [
+      205,
+      411,
+      310,
+      108,
+      217,
+      435,
+      358
+    ],
+    "raw_start_bitstring_candidates_at_tight_length": 512,
+    "raw_start_bitstring_candidates_checked_through_exclusion": 504
+  },
+  "n": 9,
+  "radius": 1,
+  "simple_support_connector": {
+    "allowed_edges": "edges outside the backbone",
+    "exhaustive_exclusion_through": 6,
+    "minimum_closed_walk_length": 7,
+    "minimum_connector_count": 2,
+    "minimum_connector_edges_are_distinct": true,
+    "minimum_connectors": [
+      [
+        205,
+        411,
+        310,
+        108,
+        217,
+        435,
+        358
+      ],
+      [
+        306,
+        100,
+        201,
+        403,
+        294,
+        76,
+        153
+      ]
+    ],
+    "primary_witness_edges": [
+      205,
+      411,
+      310,
+      108,
+      217,
+      435,
+      358
+    ],
+    "primary_witness_vertices": [
+      102,
+      205,
+      155,
+      54,
+      108,
+      217,
+      179,
+      102
+    ],
+    "raw_start_bitstring_candidates_at_tight_length": 512,
+    "raw_start_bitstring_candidates_checked_through_exclusion": 504
+  },
+  "single_omission_detours": {
+    "candidate_length": 70,
+    "cases": [
+      {
+        "minimum_detour_length": 13,
+        "omitted_edge": 6,
+        "source": 3,
+        "target": 6,
+        "witness_edges": [
+          7,
+          14,
+          28,
+          57,
+          115,
+          230,
+          460,
+          408,
+          304,
+          96,
+          193,
+          387,
+          262
+        ]
+      },
+      {
+        "minimum_detour_length": 11,
+        "omitted_edge": 13,
+        "source": 6,
+        "target": 13,
+        "witness_edges": [
+          12,
+          25,
+          51,
+          102,
+          204,
+          408,
+          304,
+          97,
+          195,
+          390,
+          269
+        ]
+      },
+      {
+        "minimum_detour_length": 14,
+        "omitted_edge": 16,
+        "source": 8,
+        "target": 16,
+        "witness_edges": [
+          17,
+          35,
+          70,
+          140,
+          281,
+          51,
+          102,
+          204,
+          408,
+          305,
+          98,
+          196,
+          392,
+          272
+        ]
+      },
+      {
+        "minimum_detour_length": 15,
+        "omitted_edge": 27,
+        "source": 13,
+        "target": 27,
+        "witness_edges": [
+          26,
+          52,
+          105,
+          211,
+          422,
+          332,
+          153,
+          306,
+          100,
+          200,
+          401,
+          291,
+          70,
+          141,
+          283
+        ]
+      },
+      {
+        "minimum_detour_length": 13,
+        "omitted_edge": 32,
+        "source": 16,
+        "target": 32,
+        "witness_edges": [
+          33,
+          66,
+          132,
+          265,
+          19,
+          38,
+          76,
+          153,
+          306,
+          100,
+          200,
+          400,
+          288
+        ]
+      },
+      {
+        "minimum_detour_length": 12,
+        "omitted_edge": 43,
+        "source": 21,
+        "target": 43,
+        "witness_edges": [
+          42,
+          84,
+          169,
+          339,
+          166,
+          332,
+          153,
+          306,
+          101,
+          202,
+          405,
+          299
+        ]
+      },
+      {
+        "minimum_detour_length": 12,
+        "omitted_edge": 54,
+        "source": 27,
+        "target": 54,
+        "witness_edges": [
+          55,
+          110,
+          221,
+          443,
+          374,
+          236,
+          473,
+          435,
+          358,
+          205,
+          411,
+          310
+        ]
+      },
+      {
+        "minimum_detour_length": 11,
+        "omitted_edge": 61,
+        "source": 30,
+        "target": 61,
+        "witness_edges": [
+          60,
+          121,
+          243,
+          486,
+          460,
+          409,
+          307,
+          103,
+          207,
+          414,
+          317
+        ]
+      },
+      {
+        "minimum_detour_length": 14,
+        "omitted_edge": 64,
+        "source": 32,
+        "target": 64,
+        "witness_edges": [
+          65,
+          131,
+          262,
+          12,
+          25,
+          51,
+          102,
+          205,
+          410,
+          308,
+          104,
+          208,
+          416,
+          320
+        ]
+      },
+      {
+        "minimum_detour_length": 15,
+        "omitted_edge": 75,
+        "source": 37,
+        "target": 75,
+        "witness_edges": [
+          74,
+          148,
+          297,
+          83,
+          166,
+          332,
+          153,
+          306,
+          101,
+          202,
+          404,
+          297,
+          82,
+          165,
+          331
+        ]
+      },
+      {
+        "minimum_detour_length": 16,
+        "omitted_edge": 86,
+        "source": 43,
+        "target": 86,
+        "witness_edges": [
+          87,
+          174,
+          348,
+          185,
+          371,
+          230,
+          460,
+          409,
+          306,
+          101,
+          202,
+          405,
+          298,
+          85,
+          171,
+          342
+        ]
+      },
+      {
+        "minimum_detour_length": 14,
+        "omitted_edge": 93,
+        "source": 46,
+        "target": 93,
+        "witness_edges": [
+          92,
+          185,
+          371,
+          230,
+          460,
+          409,
+          306,
+          101,
+          202,
+          405,
+          299,
+          87,
+          174,
+          349
+        ]
+      },
+      {
+        "minimum_detour_length": 10,
+        "omitted_edge": 102,
+        "source": 51,
+        "target": 102,
+        "witness_edges": [
+          103,
+          207,
+          414,
+          317,
+          123,
+          246,
+          492,
+          473,
+          435,
+          358
+        ]
+      },
+      {
+        "minimum_detour_length": 13,
+        "omitted_edge": 109,
+        "source": 54,
+        "target": 109,
+        "witness_edges": [
+          108,
+          217,
+          435,
+          358,
+          205,
+          410,
+          309,
+          107,
+          214,
+          429,
+          347,
+          182,
+          365
+        ]
+      },
+      {
+        "minimum_detour_length": 14,
+        "omitted_edge": 112,
+        "source": 56,
+        "target": 112,
+        "witness_edges": [
+          113,
+          227,
+          454,
+          396,
+          281,
+          51,
+          102,
+          205,
+          411,
+          311,
+          110,
+          220,
+          440,
+          368
+        ]
+      },
+      {
+        "minimum_detour_length": 15,
+        "omitted_edge": 123,
+        "source": 61,
+        "target": 123,
+        "witness_edges": [
+          122,
+          244,
+          489,
+          467,
+          422,
+          332,
+          153,
+          306,
+          101,
+          203,
+          407,
+          303,
+          94,
+          189,
+          379
+        ]
+      },
+      {
+        "minimum_detour_length": 14,
+        "omitted_edge": 129,
+        "source": 64,
+        "target": 129,
+        "witness_edges": [
+          128,
+          257,
+          3,
+          6,
+          12,
+          25,
+          51,
+          102,
+          204,
+          408,
+          304,
+          96,
+          192,
+          385
+        ]
+      },
+      {
+        "minimum_detour_length": 12,
+        "omitted_edge": 138,
+        "source": 69,
+        "target": 138,
+        "witness_edges": [
+          139,
+          278,
+          44,
+          89,
+          179,
+          358,
+          204,
+          408,
+          305,
+          98,
+          197,
+          394
+        ]
+      },
+      {
+        "minimum_detour_length": 11,
+        "omitted_edge": 151,
+        "source": 75,
+        "target": 151,
+        "witness_edges": [
+          150,
+          300,
+          89,
+          179,
+          358,
+          204,
+          409,
+          306,
+          101,
+          203,
+          407
+        ]
+      },
+      {
+        "minimum_detour_length": 12,
+        "omitted_edge": 156,
+        "source": 78,
+        "target": 156,
+        "witness_edges": [
+          157,
+          314,
+          116,
+          233,
+          467,
+          422,
+          332,
+          153,
+          307,
+          103,
+          206,
+          412
+        ]
+      },
+      {
+        "minimum_detour_length": 11,
+        "omitted_edge": 167,
+        "source": 83,
+        "target": 167,
+        "witness_edges": [
+          166,
+          332,
+          153,
+          307,
+          102,
+          205,
+          410,
+          308,
+          105,
+          211,
+          423
+        ]
+      },
+      {
+        "minimum_detour_length": 13,
+        "omitted_edge": 172,
+        "source": 86,
+        "target": 172,
+        "witness_edges": [
+          173,
+          347,
+          182,
+          364,
+          217,
+          435,
+          358,
+          205,
+          410,
+          309,
+          107,
+          214,
+          428
+        ]
+      },
+      {
+        "minimum_detour_length": 14,
+        "omitted_edge": 177,
+        "source": 88,
+        "target": 177,
+        "witness_edges": [
+          176,
+          353,
+          195,
+          390,
+          268,
+          25,
+          51,
+          102,
+          205,
+          411,
+          310,
+          108,
+          216,
+          433
+        ]
+      },
+      {
+        "minimum_detour_length": 12,
+        "omitted_edge": 186,
+        "source": 93,
+        "target": 186,
+        "witness_edges": [
+          187,
+          374,
+          236,
+          473,
+          435,
+          358,
+          205,
+          411,
+          311,
+          110,
+          221,
+          442
+        ]
+      },
+      {
+        "minimum_detour_length": 11,
+        "omitted_edge": 199,
+        "source": 99,
+        "target": 199,
+        "witness_edges": [
+          198,
+          396,
+          281,
+          51,
+          103,
+          206,
+          412,
+          312,
+          113,
+          227,
+          455
+        ]
+      },
+      {
+        "minimum_detour_length": 11,
+        "omitted_edge": 204,
+        "source": 102,
+        "target": 204,
+        "witness_edges": [
+          205,
+          411,
+          311,
+          111,
+          223,
+          446,
+          380,
+          249,
+          499,
+          486,
+          460
+        ]
+      },
+      {
+        "minimum_detour_length": 14,
+        "omitted_edge": 209,
+        "source": 104,
+        "target": 209,
+        "witness_edges": [
+          208,
+          417,
+          323,
+          134,
+          268,
+          25,
+          51,
+          103,
+          206,
+          413,
+          314,
+          116,
+          232,
+          465
+        ]
+      },
+      {
+        "minimum_detour_length": 15,
+        "omitted_edge": 218,
+        "source": 109,
+        "target": 218,
+        "witness_edges": [
+          219,
+          438,
+          364,
+          217,
+          435,
+          358,
+          205,
+          411,
+          311,
+          110,
+          221,
+          443,
+          374,
+          237,
+          474
+        ]
+      },
+      {
+        "minimum_detour_length": 14,
+        "omitted_edge": 225,
+        "source": 112,
+        "target": 225,
+        "witness_edges": [
+          224,
+          449,
+          387,
+          262,
+          12,
+          25,
+          51,
+          103,
+          207,
+          414,
+          316,
+          120,
+          240,
+          481
+        ]
+      },
+      {
+        "minimum_detour_length": 15,
+        "omitted_edge": 234,
+        "source": 117,
+        "target": 234,
+        "witness_edges": [
+          235,
+          470,
+          428,
+          345,
+          179,
+          358,
+          205,
+          411,
+          311,
+          111,
+          222,
+          445,
+          378,
+          245,
+          490
+        ]
+      },
+      {
+        "minimum_detour_length": 14,
+        "omitted_edge": 247,
+        "source": 123,
+        "target": 247,
+        "witness_edges": [
+          246,
+          492,
+          473,
+          435,
+          358,
+          205,
+          411,
+          311,
+          111,
+          223,
+          446,
+          381,
+          251,
+          503
+        ]
+      },
+      {
+        "minimum_detour_length": 16,
+        "omitted_edge": 252,
+        "source": 126,
+        "target": 252,
+        "witness_edges": [
+          253,
+          506,
+          500,
+          489,
+          467,
+          422,
+          332,
+          153,
+          307,
+          103,
+          207,
+          415,
+          319,
+          127,
+          254,
+          508
+        ]
+      },
+      {
+        "minimum_detour_length": 16,
+        "omitted_edge": 259,
+        "source": 129,
+        "target": 3,
+        "witness_edges": [
+          258,
+          4,
+          9,
+          19,
+          38,
+          76,
+          153,
+          306,
+          100,
+          200,
+          400,
+          288,
+          64,
+          128,
+          257,
+          3
+        ]
+      },
+      {
+        "minimum_detour_length": 14,
+        "omitted_edge": 264,
+        "source": 132,
+        "target": 8,
+        "witness_edges": [
+          265,
+          19,
+          38,
+          76,
+          153,
+          306,
+          100,
+          200,
+          400,
+          288,
+          65,
+          130,
+          260,
+          8
+        ]
+      },
+      {
+        "minimum_detour_length": 15,
+        "omitted_edge": 277,
+        "source": 138,
+        "target": 21,
+        "witness_edges": [
+          276,
+          41,
+          83,
+          166,
+          332,
+          153,
+          306,
+          100,
+          200,
+          400,
+          289,
+          66,
+          133,
+          266,
+          21
+        ]
+      },
+      {
+        "minimum_detour_length": 14,
+        "omitted_edge": 286,
+        "source": 143,
+        "target": 30,
+        "witness_edges": [
+          287,
+          62,
+          124,
+          249,
+          499,
+          486,
+          460,
+          408,
+          304,
+          97,
+          195,
+          391,
+          271,
+          30
+        ]
+      },
+      {
+        "minimum_detour_length": 15,
+        "omitted_edge": 293,
+        "source": 146,
+        "target": 37,
+        "witness_edges": [
+          292,
+          73,
+          147,
+          294,
+          76,
+          153,
+          306,
+          100,
+          200,
+          401,
+          290,
+          68,
+          137,
+          274,
+          37
+        ]
+      },
+      {
+        "minimum_detour_length": 14,
+        "omitted_edge": 302,
+        "source": 151,
+        "target": 46,
+        "witness_edges": [
+          303,
+          94,
+          188,
+          377,
+          243,
+          486,
+          460,
+          408,
+          305,
+          98,
+          197,
+          395,
+          279,
+          46
+        ]
+      },
+      {
+        "minimum_detour_length": 11,
+        "omitted_edge": 307,
+        "source": 153,
+        "target": 51,
+        "witness_edges": [
+          306,
+          100,
+          200,
+          400,
+          288,
+          65,
+          131,
+          262,
+          12,
+          25,
+          51
+        ]
+      },
+      {
+        "minimum_detour_length": 11,
+        "omitted_edge": 312,
+        "source": 156,
+        "target": 56,
+        "witness_edges": [
+          313,
+          115,
+          230,
+          460,
+          408,
+          305,
+          99,
+          199,
+          398,
+          284,
+          56
+        ]
+      },
+      {
+        "minimum_detour_length": 12,
+        "omitted_edge": 325,
+        "source": 162,
+        "target": 69,
+        "witness_edges": [
+          324,
+          137,
+          275,
+          38,
+          76,
+          153,
+          306,
+          100,
+          200,
+          401,
+          290,
+          69
+        ]
+      },
+      {
+        "minimum_detour_length": 14,
+        "omitted_edge": 334,
+        "source": 167,
+        "target": 78,
+        "witness_edges": [
+          335,
+          158,
+          316,
+          121,
+          243,
+          486,
+          460,
+          409,
+          306,
+          100,
+          201,
+          403,
+          295,
+          78
+        ]
+      },
+      {
+        "minimum_detour_length": 13,
+        "omitted_edge": 339,
+        "source": 169,
+        "target": 83,
+        "witness_edges": [
+          338,
+          164,
+          329,
+          147,
+          294,
+          76,
+          153,
+          306,
+          101,
+          202,
+          404,
+          297,
+          83
+        ]
+      },
+      {
+        "minimum_detour_length": 11,
+        "omitted_edge": 344,
+        "source": 172,
+        "target": 88,
+        "witness_edges": [
+          345,
+          179,
+          358,
+          204,
+          409,
+          306,
+          101,
+          203,
+          406,
+          300,
+          88
+        ]
+      },
+      {
+        "minimum_detour_length": 12,
+        "omitted_edge": 355,
+        "source": 177,
+        "target": 99,
+        "witness_edges": [
+          354,
+          197,
+          395,
+          278,
+          44,
+          89,
+          179,
+          358,
+          204,
+          408,
+          305,
+          99
+        ]
+      },
+      {
+        "minimum_detour_length": 11,
+        "omitted_edge": 360,
+        "source": 180,
+        "target": 104,
+        "witness_edges": [
+          361,
+          211,
+          422,
+          332,
+          153,
+          307,
+          102,
+          205,
+          410,
+          308,
+          104
+        ]
+      },
+      {
+        "minimum_detour_length": 12,
+        "omitted_edge": 373,
+        "source": 186,
+        "target": 117,
+        "witness_edges": [
+          372,
+          233,
+          467,
+          422,
+          332,
+          153,
+          307,
+          103,
+          206,
+          413,
+          314,
+          117
+        ]
+      },
+      {
+        "minimum_detour_length": 14,
+        "omitted_edge": 382,
+        "source": 191,
+        "target": 126,
+        "witness_edges": [
+          383,
+          254,
+          508,
+          505,
+          499,
+          486,
+          460,
+          409,
+          307,
+          103,
+          207,
+          415,
+          319,
+          126
+        ]
+      },
+      {
+        "minimum_detour_length": 15,
+        "omitted_edge": 388,
+        "source": 194,
+        "target": 132,
+        "witness_edges": [
+          389,
+          266,
+          20,
+          41,
+          83,
+          166,
+          332,
+          153,
+          306,
+          100,
+          200,
+          400,
+          289,
+          66,
+          132
+        ]
+      },
+      {
+        "minimum_detour_length": 14,
+        "omitted_edge": 399,
+        "source": 199,
+        "target": 143,
+        "witness_edges": [
+          398,
+          284,
+          57,
+          115,
+          230,
+          460,
+          409,
+          306,
+          100,
+          200,
+          401,
+          291,
+          71,
+          143
+        ]
+      },
+      {
+        "minimum_detour_length": 13,
+        "omitted_edge": 402,
+        "source": 201,
+        "target": 146,
+        "witness_edges": [
+          403,
+          294,
+          76,
+          153,
+          306,
+          101,
+          202,
+          404,
+          297,
+          82,
+          164,
+          329,
+          146
+        ]
+      },
+      {
+        "minimum_detour_length": 10,
+        "omitted_edge": 409,
+        "source": 204,
+        "target": 153,
+        "witness_edges": [
+          408,
+          304,
+          97,
+          194,
+          388,
+          265,
+          19,
+          38,
+          76,
+          153
+        ]
+      },
+      {
+        "minimum_detour_length": 14,
+        "omitted_edge": 418,
+        "source": 209,
+        "target": 162,
+        "witness_edges": [
+          419,
+          326,
+          140,
+          281,
+          51,
+          102,
+          205,
+          410,
+          309,
+          106,
+          212,
+          424,
+          337,
+          162
+        ]
+      },
+      {
+        "minimum_detour_length": 16,
+        "omitted_edge": 425,
+        "source": 212,
+        "target": 169,
+        "witness_edges": [
+          424,
+          337,
+          162,
+          324,
+          137,
+          275,
+          38,
+          76,
+          153,
+          306,
+          101,
+          202,
+          405,
+          298,
+          84,
+          169
+        ]
+      },
+      {
+        "minimum_detour_length": 15,
+        "omitted_edge": 436,
+        "source": 218,
+        "target": 180,
+        "witness_edges": [
+          437,
+          362,
+          212,
+          425,
+          339,
+          166,
+          332,
+          153,
+          306,
+          101,
+          203,
+          406,
+          301,
+          90,
+          180
+        ]
+      },
+      {
+        "minimum_detour_length": 14,
+        "omitted_edge": 447,
+        "source": 223,
+        "target": 191,
+        "witness_edges": [
+          446,
+          380,
+          249,
+          499,
+          486,
+          460,
+          409,
+          306,
+          101,
+          203,
+          407,
+          303,
+          95,
+          191
+        ]
+      },
+      {
+        "minimum_detour_length": 11,
+        "omitted_edge": 450,
+        "source": 225,
+        "target": 194,
+        "witness_edges": [
+          451,
+          390,
+          268,
+          25,
+          51,
+          102,
+          204,
+          408,
+          304,
+          97,
+          194
+        ]
+      },
+      {
+        "minimum_detour_length": 12,
+        "omitted_edge": 457,
+        "source": 228,
+        "target": 201,
+        "witness_edges": [
+          456,
+          401,
+          290,
+          68,
+          137,
+          275,
+          38,
+          76,
+          153,
+          306,
+          100,
+          201
+        ]
+      },
+      {
+        "minimum_detour_length": 12,
+        "omitted_edge": 468,
+        "source": 234,
+        "target": 212,
+        "witness_edges": [
+          469,
+          427,
+          342,
+          172,
+          345,
+          179,
+          358,
+          205,
+          410,
+          309,
+          106,
+          212
+        ]
+      },
+      {
+        "minimum_detour_length": 13,
+        "omitted_edge": 479,
+        "source": 239,
+        "target": 223,
+        "witness_edges": [
+          478,
+          445,
+          379,
+          246,
+          492,
+          473,
+          435,
+          358,
+          205,
+          411,
+          311,
+          111,
+          223
+        ]
+      },
+      {
+        "minimum_detour_length": 15,
+        "omitted_edge": 484,
+        "source": 242,
+        "target": 228,
+        "witness_edges": [
+          485,
+          458,
+          404,
+          297,
+          83,
+          166,
+          332,
+          153,
+          307,
+          103,
+          206,
+          412,
+          313,
+          114,
+          228
+        ]
+      },
+      {
+        "minimum_detour_length": 14,
+        "omitted_edge": 495,
+        "source": 247,
+        "target": 239,
+        "witness_edges": [
+          494,
+          476,
+          441,
+          371,
+          230,
+          460,
+          409,
+          307,
+          103,
+          206,
+          413,
+          315,
+          119,
+          239
+        ]
+      },
+      {
+        "minimum_detour_length": 11,
+        "omitted_edge": 498,
+        "source": 249,
+        "target": 242,
+        "witness_edges": [
+          499,
+          486,
+          460,
+          409,
+          307,
+          103,
+          207,
+          414,
+          316,
+          121,
+          242
+        ]
+      },
+      {
+        "minimum_detour_length": 13,
+        "omitted_edge": 505,
+        "source": 252,
+        "target": 249,
+        "witness_edges": [
+          504,
+          497,
+          483,
+          454,
+          396,
+          281,
+          51,
+          103,
+          207,
+          415,
+          318,
+          124,
+          249
+        ]
+      }
+    ],
+    "exact_backbone_overlap": 63,
+    "exhaustive_exclusion_through": 7,
+    "maximum_detour_length_over_all_cases": 16,
+    "minimum_detour_length_histogram": {
+      "10": 2,
+      "11": 12,
+      "12": 10,
+      "13": 8,
+      "14": 18,
+      "15": 10,
+      "16": 4
+    },
+    "minimum_detour_length_over_all_cases": 10,
+    "omitted_edge_cases": 64,
+    "raw_start_bitstring_candidates_checked": 16256,
+    "residual_edge_budget": 7,
+    "short_detour_found": null
+  },
+  "source_sha256": "c35e39394d731f2e304fe8c89db8e18d9b8996ab5795a011a893cb99ca4d73dc",
+  "tight_overlap_witness": {
+    "backbone_overlap": 61,
+    "covered_words": 503,
+    "distinct_windows": 70,
+    "file_sha256": "05c9ae778cd1271749930337d3e82eb5d778c79d760f2b4d3db4678ab7fd2652",
+    "length": 70,
+    "normalized_sha256": "feda1d6c7d4d384d1679eda8f2ce5683b0153478e1912b568b126d6064522ca9",
+    "omitted_backbone_edges": [
+      13,
+      307,
+      409
+    ],
+    "path": "data/candidates/l9-r1-70-backbone-overlap-61.txt",
+    "valid_cover": false
+  },
+  "tight_super_supports": [
+    {
+      "connector_edges": [
+        205,
+        411,
+        310,
+        108,
+        217,
+        435,
+        358
+      ],
+      "decoded_sequence_valid": true,
+      "matches_baseline_support": true,
+      "report": {
+        "balanced": true,
+        "component_count": 1,
+        "component_edge_counts": [
+          71
+        ],
+        "covered_words": 512,
+        "distinct_edges": 71,
+        "uncovered_words": []
+      },
+      "size": 71,
+      "support_sha256": "77260f847e6d4fee57d59cc66664dde1462bb7842521dc5c6117a159db30a8ce"
+    },
+    {
+      "connector_edges": [
+        306,
+        100,
+        201,
+        403,
+        294,
+        76,
+        153
+      ],
+      "decoded_sequence_valid": true,
+      "matches_baseline_support": false,
+      "report": {
+        "balanced": true,
+        "component_count": 1,
+        "component_edge_counts": [
+          71
+        ],
+        "covered_words": 512,
+        "distinct_edges": 71,
+        "uncovered_words": []
+      },
+      "size": 71,
+      "support_sha256": "e864da476760744dd8d1a458b511889b04034f6bacf607294a854851e4aac888"
+    }
+  ]
+}

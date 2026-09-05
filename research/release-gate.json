@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
   "project": "binary-covering-sequence-9-1",
-  "evaluated_at": "2026-09-04",
-  "candidate_claim": "No 70-bit cyclic binary radius-1 covering sequence has exact overlap 61 with the retained 64-edge backbone; every valid cover therefore has overlap at most 60.",
+  "evaluated_at": "2026-09-05",
+  "candidate_claim": "For the explicit 64-edge backbone, every valid length-70 binary radius-1 covering sequence has overlap at most 60.",
   "gates": {
     "significant_original_result": true,
     "prior_art_refreshed": true,
@@ -11,11 +11,13 @@
     "cpp_verifier_passes": true,
     "proof_replay_passes": true,
     "clean_checkout_replay_passes": true,
+    "arxiv_bundle_replays": true,
     "claim_scope_audited": true,
     "limitations_documented": true,
     "manuscript_ready": true,
-    "external_review_addressed": false
+    "external_review_invited": true,
+    "external_review_completed": false
   },
-  "decision": "promote_artifact",
-  "reason": "All artifact-release gates pass. A broader theorem-priority announcement remains pending external mathematical review."
+  "decision": "release_preprint",
+  "reason": "The scoped theorem, retained certificates, independent implementation, semantic validators, manuscript, and clean standalone replay are publication-ready. External mathematical review is invited and is not represented as complete."
 }

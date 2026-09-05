@@ -2,8 +2,8 @@ schema_version: 1
 project: binary-covering-sequence-9-1
 author: Ruturaj R Raval
 orcid: 0000-0003-4930-8981
-updated: 2026-09-04
-status: validated_scoped_result
+updated: 2026-09-05
+status: preprint_ready_scoped_result
 target:
   primary:
     type: construction
@@ -16,12 +16,13 @@ current_supported_claim:
   project_original_upper_bound: false
 candidate_claim:
   statement: The complete exact-overlap-61 shell contains no 70-bit radius-1 covering sequence.
-  certificate_sha256: 793e9b7ddcc84c43c0105a88949673f70a8c911e0bbbe87855f2c3f74008ffcb
-  release_ref: v0.2.0
+  certificate_sha256: 2862ddf7f22a536fe319d5d54ebe85723ffcae748a05264105e508a4f4dd1ae4
+  release_ref: v0.3.0
   verifier_source_sha256:
-    - 59d498dafaea60511c945a0341b11227f59cb3b3fa859a211657f89c0db7b63f
+    - bf468e5b119289b30f3b8688915abf1e95eff6e9001b7731d0a956450881573e
+    - da3100c2a562113337b60163a3f36e3a6ba1cbc0f0722ef20226da16427667dd
     - efd83e9c7b6ec39f8396428daf9c454ba172faf3ac5268699af91028f029aa8d
-    - 0f733800c9e43c2e77a05ff9538a8a2e73eff6c59a7870a2ac99ffef0111ebac
+    - 02d1abdeebc4b4cf72d2e5ff906907bda0e298deadced3f739723f9e9ca5a191
 novelty:
   literature_checked_through: 2026-09-04
   known_public_upper_bound: 71

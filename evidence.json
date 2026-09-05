@@ -777,7 +777,7 @@
     "scope": "Two proof-checked elementary transition contradictions inside the all-distinct length-70 class; twenty nontrivial all-distinct anchor cases and all repeated-window candidates remain unresolved."
   },
   "common_backbone_theorem": {
-    "checked_on": "2026-09-02",
+    "checked_on": "2026-09-05",
     "statement": "Every 70-bit cyclic binary sequence contains at most 61 distinct edges of the retained 64-edge common backbone.",
     "bound_is_tight": true,
     "uses_covering_constraints": false,
@@ -805,6 +805,7 @@
       "distinct_path_flows": 44,
       "raw_exact_residual_decompositions": 208,
       "distinct_exact_residual_flows": 168,
+      "retained_exact_residual_flows": 168,
       "connected_residual_completions": 0,
       "mass_7_positive_control_residual_flows": 76,
       "mass_7_positive_control_connected_completions": 2
@@ -825,16 +826,18 @@
       "valid_cover": false
     },
     "evidence": {
-      "directory": "evidence/common-backbone-lemma-20260902",
-      "analysis": "evidence/common-backbone-lemma-20260902/analysis.json",
-      "analysis_sha256": "12ed5603edfa799c9cb9f5dd1f0b6e2afcce15f1a4a7c8e7b83e76ffb4a7407d",
-      "source": "evidence/common-backbone-lemma-20260902/source/analyze_common_backbone_v1.py",
-      "source_sha256": "57acc8d89ecdeefbf21453efcd26a53e50f195d5304f6556cdbdb84dd6d46a87",
-      "manifest": "evidence/common-backbone-lemma-20260902/files.sha256",
-      "manifest_sha256": "fce07582e712f52391b0bf58cbf5e7ef08266a7d31ab41ff78e0d0a023bbffda"
+      "directory": "evidence/common-backbone-lemma-20260905",
+      "analysis": "evidence/common-backbone-lemma-20260905/analysis.json",
+      "analysis_sha256": "293e45e7f50b2357071f7925d583316c4b267cd53a4e50d81f8353f70c5fa07f",
+      "source": "evidence/common-backbone-lemma-20260905/source/analyze_common_backbone_v2.py",
+      "source_sha256": "c35e39394d731f2e304fe8c89db8e18d9b8996ab5795a011a893cb99ca4d73dc",
+      "semantic_validator": "evidence/common-backbone-lemma-20260905/source/verify_common_backbone_v1.py",
+      "semantic_validator_sha256": "bf468e5b119289b30f3b8688915abf1e95eff6e9001b7731d0a956450881573e",
+      "manifest": "evidence/common-backbone-lemma-20260905/files.sha256",
+      "manifest_sha256": "14bb0dfa533130a368de86e36bc92b27696f7bc2571c73198f0e910a8778c3d6"
     },
     "global_bound_changed": false,
-    "external_review_status": "pending",
+    "external_review_status": "invited",
     "scope": "An exact graph-theoretic exclusion for one project-derived backbone. It does not prove or disprove a 70-bit radius-1 covering sequence and does not change 62 <= L(9,1) <= 71."
   },
   "common_backbone_cover61_search": {
@@ -1006,7 +1009,7 @@
     "scope": "Historical exact-model computational reduction of the overlap-61 covering shell. Nine solver leaves remained UNKNOWN at this stage. The later finite classification resolves every leaf and does not use these untraced statuses as proof evidence."
   },
   "exact_backbone_overlap61_classification": {
-    "checked_on": "2026-09-04",
+    "checked_on": "2026-09-05",
     "statement": "No 70-bit cyclic binary radius-1 covering sequence has exact overlap 61 with the retained 64-edge common backbone.",
     "combined_consequence": "Every valid 70-bit cyclic binary radius-1 covering sequence has overlap at most 60 with the retained backbone.",
     "parameters": {
@@ -1040,17 +1043,17 @@
     },
     "independent_implementations": {
       "python": {
-        "source": "evidence/exact-backbone-overlap61-20260904/source/analyze_exact_backbone_overlap_v1.py",
-        "source_sha256": "59d498dafaea60511c945a0341b11227f59cb3b3fa859a211657f89c0db7b63f"
+        "source": "evidence/exact-backbone-overlap61-20260905/source/analyze_exact_backbone_overlap_v2.py",
+        "source_sha256": "da3100c2a562113337b60163a3f36e3a6ba1cbc0f0722ef20226da16427667dd"
       },
       "cpp": {
-        "source": "evidence/exact-backbone-overlap61-20260904/source/exact_overlap_checker_v1.cpp",
+        "source": "evidence/exact-backbone-overlap61-20260905/source/exact_overlap_checker_v1.cpp",
         "source_sha256": "efd83e9c7b6ec39f8396428daf9c454ba172faf3ac5268699af91028f029aa8d",
         "agreement": "Every aggregate count and connected completion agrees with the Python enumeration."
       },
       "semantic_validator": {
-        "source": "evidence/exact-backbone-overlap61-20260904/source/verify_exact_backbone_overlap_v1.py",
-        "source_sha256": "0f733800c9e43c2e77a05ff9538a8a2e73eff6c59a7870a2ac99ffef0111ebac",
+        "source": "evidence/exact-backbone-overlap61-20260905/source/verify_exact_backbone_overlap_v2.py",
+        "source_sha256": "02d1abdeebc4b4cf72d2e5ff906907bda0e298deadced3f739723f9e9ca5a191",
         "scope": "Rechecks all 188 residuals, all derived histograms, every connected completion, the retained witness, parameters, support identity, and source digests."
       }
     },
@@ -1067,18 +1070,18 @@
       "test_source_sha256": "59d8e3e09914d016a9e9318e90d8058b2b2a748a59d0a656caa2a421038c6b7d"
     },
     "evidence": {
-      "directory": "evidence/exact-backbone-overlap61-20260904",
-      "analysis": "evidence/exact-backbone-overlap61-20260904/analysis.json",
-      "analysis_sha256": "793e9b7ddcc84c43c0105a88949673f70a8c911e0bbbe87855f2c3f74008ffcb",
-      "independent_check": "evidence/exact-backbone-overlap61-20260904/independent-check.json",
+      "directory": "evidence/exact-backbone-overlap61-20260905",
+      "analysis": "evidence/exact-backbone-overlap61-20260905/analysis.json",
+      "analysis_sha256": "2862ddf7f22a536fe319d5d54ebe85723ffcae748a05264105e508a4f4dd1ae4",
+      "independent_check": "evidence/exact-backbone-overlap61-20260905/independent-check.json",
       "independent_check_sha256": "e38c9f6a99e5312e54b1842df02d7ac5d862d6545c7dd93242e35e810b5f273c",
-      "manifest": "evidence/exact-backbone-overlap61-20260904/files.sha256",
-      "manifest_sha256": "14bd2ee9377c8ac425e88bda9b2a2420074e6dc144794ca5ddbad80aee160b04",
+      "manifest": "evidence/exact-backbone-overlap61-20260905/files.sha256",
+      "manifest_sha256": "f70c347bf10221c055458868d8d3975b5c699d1b1aa4f74cf4c9fcbf4e006f24",
       "documentation": "docs/EXACT_OVERLAP_61.md",
-      "documentation_sha256": "18d1d289bd35981004e9cb590af12028038a43571e9110987bcf465774105ce0"
+      "documentation_sha256": "33cc9cf71a4720051e2df2e1fb02a0281d9c04503fd661de5957541647e45dfb"
     },
     "global_bound_changed": false,
-    "external_review_status": "pending",
+    "external_review_status": "invited",
     "scope": "Complete fixed-backbone exclusion at exact overlap 61. Candidates with overlap at most 60 remain open, and no new upper or lower bound on L(9,1) is claimed."
   },
   "new_certificate": null,
@@ -1086,6 +1089,6 @@
     "type": "scoped exact fixed-backbone theorem",
     "claim": "The exact maximum backbone overlap of any 70-bit cyclic binary sequence is 61, but no valid radius-1 cover attains 61; every valid cover has overlap at most 60.",
     "global_bound_changed": false,
-    "external_review_status": "pending"
+    "external_review_status": "invited"
   }
 }

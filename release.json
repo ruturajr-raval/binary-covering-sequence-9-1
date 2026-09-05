@@ -1,39 +1,21 @@
 {
-  "version": "0.2.0",
-  "release_date": "2026-09-04",
-  "artifact_status": "reproducible_fixed_backbone_theorem_and_search_benchmark",
-  "supported_claim": "The exact maximum overlap between a 70-bit cyclic binary sequence and the retained 64-edge common backbone is 61. A complete finite classification proves that no valid radius-1 cover attains overlap 61, so every valid 70-bit cover has backbone overlap at most 60.",
+  "version": "0.3.0",
+  "release_date": "2026-09-05",
+  "title": "A Fixed-Backbone Exclusion for Length-70 Binary (9,1) Covering Sequences",
+  "artifact_status": "preprint_and_reproducible_certificate",
+  "supported_claim": "For the explicit 64-edge backbone, every connected nonnegative integral circulation of total mass 70 has overlap at most 61, and no valid binary radius-1 covering sequence attains overlap 61. Every valid length-70 cover therefore has backbone overlap at most 60.",
   "claim_status": "complete_scoped_theorem_no_new_global_bound",
+  "preprint_ready": true,
   "artifact_reproducibility_ready": true,
   "artifact_release_ready": true,
-  "theorem_announcement_ready": false,
-  "scoped_result_scope": "A complete theorem for one project-derived backbone at exact length 70. It is not a new construction, a new bound on L(9,1), or a global impossibility result.",
-  "theorem_announcement_blockers": [
-    "Independent external mathematical review"
-  ],
-  "external_review_status": "Pending; the public artifact explicitly requests independent mathematical review and makes no priority claim.",
-  "result_routes": {
-    "scoped_theorem": {
-      "artifact_claim_ready": true,
-      "theorem_announcement_ready": false,
-      "internal_verification_complete": true,
-      "statement": "Every 70-bit cyclic binary sequence contains at most 61 distinct edges of the retained 64-edge common backbone, no valid radius-1 cover attains 61, and every valid cover therefore has overlap at most 60.",
-      "evidence": "Two full finite enumerations, semantic validation of all 188 residual flows, four complete small-instance oracles, adversarial mutation tests, retained source snapshots, and byte-for-byte replay.",
-      "limitation": "The theorem does not exclude candidates with backbone overlap at most 60.",
-      "announcement_blocker": "Independent external mathematical review remains pending."
-    },
-    "construction": {
-      "claim_ready": false,
-      "blocker": "No independently verified 70-bit certificate exists."
-    },
-    "global_lower_bound": {
-      "claim_ready": false,
-      "blocker": "Lengths 62 through 70 have not all been excluded by independently checked proofs."
-    },
-    "benchmark_artifact": {
-      "artifact_complete": true,
-      "scope": "Verified methods, reproduced artifacts, independently checked local DRAT exclusions, separately labeled solver evidence without proof traces, the complete exact-overlap-61 classification, and explicit limitations."
-    }
+  "external_review_status": "Invited; no external mathematical review is claimed.",
+  "scope": "A complete theorem for one explicit backbone at exact length 70. It is not a new construction, a new bound on L(9,1), or a global impossibility result.",
+  "certificate": {
+    "common_residual_flows": 168,
+    "exact_residual_flows": 188,
+    "connected_boundary_completions": 8,
+    "covering_boundary_completions": 0,
+    "standalone_replay": true
   },
-  "last_reviewed": "2026-09-04"
+  "last_reviewed": "2026-09-05"
 }
