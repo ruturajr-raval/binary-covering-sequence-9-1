@@ -70,6 +70,8 @@ The self-contained manuscript is in `paper/main.tex`. The deterministic arXiv
 source archive is built at
 `dist/arxiv/binary-covering-sequence-9-1.tar.gz`.
 
-Citation metadata is in `CITATION.cff`. Archived repository releases are
-collected under the concept DOI
+Citation metadata is in `CITATION.cff`. The exact v0.3.0 release is archived
+at version DOI
+[10.5281/zenodo.22313901](https://doi.org/10.5281/zenodo.22313901).
+All repository versions are collected under the concept DOI
 [10.5281/zenodo.22260691](https://doi.org/10.5281/zenodo.22260691).
