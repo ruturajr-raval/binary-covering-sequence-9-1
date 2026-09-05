@@ -40,7 +40,7 @@ L(9,1).
 ## Comments
 
 7 pages, 4 tables. Includes deterministic ancillary source and a complete
-standard-library replay command.
+replay using standard-library Python and a C++20 compiler.
 
 ## License
 
