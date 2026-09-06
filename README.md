@@ -2,6 +2,92 @@
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22260691.svg)](https://doi.org/10.5281/zenodo.22260691)
 
+## Project Overview
+
+### Project Metadata
+
+| Field | Value |
+| --- | --- |
+| Author | Ruturaj R Raval |
+| Affiliation | Independent Researcher |
+| ORCID | [0000-0003-4930-8981](https://orcid.org/0000-0003-4930-8981) |
+| Field | Coding theory, de Bruijn graphs, and extremal combinatorics |
+| Problem | Determine the binary cyclic covering-sequence length `L(9,1)` |
+| Current result | Every valid 70-bit cover uses at most 60 distinct edges of one explicit 64-edge backbone |
+| Result type | Complete scoped theorem for one fixed backbone |
+| Release | `v0.3.0` |
+| Version DOI | `10.5281/zenodo.22313901` |
+| Concept DOI | `10.5281/zenodo.22260691` |
+| License | MIT for project-original material |
+
+### Problem And Context
+
+Covering de Bruijn sequences were introduced by Chung and Cooper in 2004.
+For binary length-9 words at radius 1, the audited public interval is
+`62 <= L(9,1) <= 71`. Rosin's 71-bit construction appeared in 2025, and no
+public 70-bit construction was located in the dated 2026-09-04 audit. The
+global length gap remains open. The project studies both construction and
+proof-producing exclusion routes.
+
+### Work And Verified Outcome
+
+The known 71-bit construction is independently verified. For one explicit
+64-edge backbone, a complete circulation theorem proves that every length-70
+cycle uses at most 61 distinct backbone edges. Exact enumeration then
+classifies 41,664 omission triples, 188 residual flows, and eight connected
+overlap-61 completions. None is a radius-1 cover. Therefore every valid
+70-bit cover, if one exists, uses at most 60 distinct edges of that backbone.
+
+### Claim Boundary
+
+The theorem concerns one fixed backbone at length 70. It does not construct a
+70-bit covering sequence, exclude all 70-bit sequences, settle shorter
+lengths, or change the global interval for `L(9,1)`. Solver timeouts, bounded
+searches, and near-covers are retained only within their exact scopes.
+Independent external mathematical review is not yet complete.
+
+### Verification And Reproduction
+
+Independent Python and C++ verifiers check constructions, coverage, and exact
+enumerations. SAT encodings have exhaustive small-instance tests, and
+retained proof-producing subcases are checked independently. The detailed
+command catalog, evidence hashes, provenance records, and trust boundaries
+appear below and under `docs/`. The retained exact classifications replay on
+a CPU-only workstation with Python 3 and a C++20 compiler; no unconstrained
+construction search is required to verify the theorem.
+
+### Significance, Limitations, And Future Work
+
+The result removes the complete overlap-61 shell around a concrete backbone
+and supplies reusable de Bruijn circulation and proof-producing search tools.
+The central open target remains a valid 70-bit sequence or a complete
+exclusion across every admissible length. Next work focuses on
+overlap-at-most-60 shells, stronger structural partitions, and independent
+construction search.
+
+### Release, Citation, And Author
+
+- **Public repository:** [`ruturajr-raval/binary-covering-sequence-9-1`](https://github.com/ruturajr-raval/binary-covering-sequence-9-1).
+- **Tagged release:** [`v0.3.0`](https://github.com/ruturajr-raval/binary-covering-sequence-9-1/releases/tag/v0.3.0)
+  at audited release commit
+  `23563e82bc2466cbc88177c6c0a7d830061d687c`.
+- **Archive status:** Published on Zenodo at version DOI
+  [`10.5281/zenodo.22313901`](https://doi.org/10.5281/zenodo.22313901);
+  all versions are collected under concept DOI
+  [`10.5281/zenodo.22260691`](https://doi.org/10.5281/zenodo.22260691).
+- **Next acceptance gate:** A global improvement requires either a valid
+  70-bit certificate accepted by both independent verifiers after a refreshed
+  prior-art audit, or checked exclusions for every admissible length from 62
+  through 70, unless a separate monotonicity theorem closes that requirement.
+- **Provenance boundary:** The 71-bit baseline was reported by Rosin and is
+  retained from CPro1 under Apache-2.0. The project implementation,
+  fixed-backbone theorem, exact classifications, and documentation are
+  independently developed and MIT licensed. No CPro1 program source is copied.
+
+Citation metadata is in `CITATION.cff`, and release history is in
+`RELEASE_NOTES.md`. The author is Ruturaj R Raval, Independent Researcher,
+ORCID `0000-0003-4930-8981`.
+
 An independent verification and exact-search toolkit for finding or excluding
 a 70-bit cyclic binary radius-1 covering sequence.
 
@@ -544,9 +630,10 @@ make backbone-overlap-cnf
 Run the complete reflection-reduced length-70 SAT cover with:
 
 ```bash
+CADICAL_BIN="${CADICAL_BIN:-cadical}"
 python3 tools/run_cadical_portfolio.py \
   search-results/cadical-complete-cover \
-  --solver /path/to/cadical \
+  --solver "$CADICAL_BIN" \
   --n 9 \
   --radius 1 \
   --length 70 \
@@ -578,7 +665,7 @@ Regenerate the distance-4 CNF and independently check the retained proof with
 an installed DRAT-trim binary:
 
 ```bash
-make distance4-proof-check DRAT_TRIM=/path/to/drat-trim
+make distance4-proof-check DRAT_TRIM="${DRAT_TRIM_BIN:-drat-trim}"
 ```
 
 Run a longer parallel search with:

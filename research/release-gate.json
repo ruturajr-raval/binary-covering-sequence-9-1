@@ -18,6 +18,6 @@
     "external_review_invited": true,
     "external_review_completed": false
   },
-  "decision": "release_preprint",
-  "reason": "The scoped theorem, retained certificates, independent implementation, semantic validators, manuscript, and clean standalone replay are publication-ready. External mathematical review is invited and is not represented as complete."
+  "decision": "released_and_archived_scoped_result",
+  "reason": "The scoped theorem, retained certificates, independent implementation, semantic validators, manuscript, clean standalone replay, tagged GitHub release, and Zenodo archive are complete. No external mathematical review is claimed."
 }
