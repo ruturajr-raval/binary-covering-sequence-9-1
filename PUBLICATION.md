@@ -41,6 +41,15 @@ None is a covering sequence.
 It follows that every valid length-70 binary radius-1 covering sequence, if
 one exists, uses at most 60 distinct edges of `B`.
 
+## Significance
+
+The theorem removes the complete overlap-61 shell around one explicit
+backbone and turns that neighborhood into a reusable exact exclusion for
+future construction and impossibility searches. Its circulation
+decomposition, independent finite enumerators, and semantic certificate
+checks can be adapted to other covering-sequence instances. The result is
+scoped to this backbone and does not change the global interval.
+
 ## Verification And Evidence
 
 The common-backbone certificate retains all 168 overlap-62 residual vectors.
