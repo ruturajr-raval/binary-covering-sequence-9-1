@@ -26,8 +26,9 @@ Covering de Bruijn sequences were introduced by Chung and Cooper in 2004.
 For binary length-9 words at radius 1, the audited public interval is
 `62 <= L(9,1) <= 71`. Rosin's 71-bit construction appeared in 2025, and no
 public 70-bit construction was located in the dated 2026-09-04 audit. The
-global length gap remains open. The project studies both construction and
-proof-producing exclusion routes.
+70-bit case had remained open for more than fifteen months at that audit, and
+the global length gap remains open. The project studies both construction
+and proof-producing exclusion routes.
 
 ### Work And Verified Outcome
 
