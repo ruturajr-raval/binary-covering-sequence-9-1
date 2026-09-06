@@ -5,6 +5,9 @@
 | Field | Value |
 | --- | --- |
 | Title | A Fixed-Backbone Exclusion for Length-70 Binary (9,1) Covering Sequences |
+| Author | Ruturaj R Raval |
+| Affiliation | Independent Researcher |
+| ORCID | [0000-0003-4930-8981](https://orcid.org/0000-0003-4930-8981) |
 | Tagged release | [`v0.3.0`](https://github.com/ruturajr-raval/binary-covering-sequence-9-1/releases/tag/v0.3.0) |
 | Release date | 2026-09-05 |
 | Audited release commit | `23563e82bc2466cbc88177c6c0a7d830061d687c` |
