@@ -809,7 +809,8 @@ Detailed phases and acceptance rules are in
 
 Suggested citation:
 
-> Raval, Ruturaj R. (2026). *Binary Covering Sequence 9-1* (v0.3.1).
+> Raval, Ruturaj R. (2026). *A Fixed-Backbone Exclusion for Length-70
+> Binary (9,1) Covering Sequences* (v0.3.1).
 > Zenodo. [https://doi.org/10.5281/zenodo.22647756](https://doi.org/10.5281/zenodo.22647756).
 
 Machine-readable citation metadata is in `CITATION.cff`, and release history

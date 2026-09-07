@@ -7,7 +7,9 @@ import unittest
 
 from tools.build_release_assets import (
     CHECKSUMS_NAME,
+    DEFAULT_OUTPUT_DIR,
     PDF_NAME,
+    RELEASE_METADATA,
     SOURCE_NAME,
     VERSION,
     build_release_assets,
@@ -34,9 +36,9 @@ class ReleaseAssetTests(unittest.TestCase):
             output = root / "release"
             pdf.write_bytes(FAKE_PDF)
 
-            build_release_assets(pdf, output)
+            build_release_assets(pdf, output, metadata_path=None)
             first = snapshot(output)
-            build_release_assets(pdf, output)
+            build_release_assets(pdf, output, metadata_path=None)
             second = snapshot(output)
 
             self.assertEqual(first, second)
@@ -52,7 +54,10 @@ class ReleaseAssetTests(unittest.TestCase):
                 .decode("ascii")
                 .splitlines()
             }
-            self.assertEqual(verify_release_assets(output), recorded)
+            self.assertEqual(
+                verify_release_assets(output, metadata_path=None),
+                recorded,
+            )
 
     def test_release_asset_verification_rejects_tampering(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
@@ -60,13 +65,13 @@ class ReleaseAssetTests(unittest.TestCase):
             pdf = root / "paper.pdf"
             output = root / "release"
             pdf.write_bytes(FAKE_PDF)
-            build_release_assets(pdf, output)
+            build_release_assets(pdf, output, metadata_path=None)
 
             with (output / PDF_NAME).open("ab") as target:
                 target.write(b"tampered")
 
             with self.assertRaisesRegex(ValueError, "checksum mismatch"):
-                verify_release_assets(output)
+                verify_release_assets(output, metadata_path=None)
 
     def test_release_asset_verification_rejects_unexpected_file(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
@@ -74,14 +79,14 @@ class ReleaseAssetTests(unittest.TestCase):
             pdf = root / "paper.pdf"
             output = root / "release"
             pdf.write_bytes(FAKE_PDF)
-            build_release_assets(pdf, output)
+            build_release_assets(pdf, output, metadata_path=None)
             (output / "unexpected.txt").write_text(
                 "unexpected\n",
                 encoding="ascii",
             )
 
             with self.assertRaisesRegex(ValueError, "exact expected set"):
-                verify_release_assets(output)
+                verify_release_assets(output, metadata_path=None)
 
     def test_release_asset_verification_rejects_reordered_checksums(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
@@ -89,7 +94,7 @@ class ReleaseAssetTests(unittest.TestCase):
             pdf = root / "paper.pdf"
             output = root / "release"
             pdf.write_bytes(FAKE_PDF)
-            build_release_assets(pdf, output)
+            build_release_assets(pdf, output, metadata_path=None)
             manifest = output / CHECKSUMS_NAME
             lines = manifest.read_text(encoding="ascii").splitlines()
             manifest.write_text(
@@ -98,7 +103,7 @@ class ReleaseAssetTests(unittest.TestCase):
             )
 
             with self.assertRaisesRegex(ValueError, "not canonical"):
-                verify_release_assets(output)
+                verify_release_assets(output, metadata_path=None)
 
     def test_release_metadata_matches_archival_assets(self) -> None:
         root = Path(__file__).resolve().parents[1]
@@ -137,6 +142,32 @@ class ReleaseAssetTests(unittest.TestCase):
             "5972bb79e1a86fd756358c45a12910a6"
             "07533227001035176496ac0aa1659ccb",
         )
+        self.assertEqual(
+            verify_release_assets(DEFAULT_OUTPUT_DIR),
+            {
+                PDF_NAME: metadata["pdf_sha256"],
+                SOURCE_NAME: metadata["source_archive_sha256"],
+            },
+        )
+
+    def test_release_asset_verification_rejects_metadata_hash_mismatch(
+        self,
+    ) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            metadata_path = Path(directory) / "release.json"
+            metadata = json.loads(
+                RELEASE_METADATA.read_text(encoding="ascii")
+            )
+            metadata["pdf_sha256"] = "0" * 64
+            metadata_path.write_text(
+                json.dumps(metadata, indent=2) + "\n",
+                encoding="ascii",
+            )
+            with self.assertRaisesRegex(
+                ValueError,
+                "metadata hash mismatch",
+            ):
+                verify_release_assets(DEFAULT_OUTPUT_DIR, metadata_path)
 
 
 if __name__ == "__main__":

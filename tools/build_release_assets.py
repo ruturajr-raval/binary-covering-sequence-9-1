@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import argparse
 import hashlib
+import json
 import os
 from pathlib import Path, PurePosixPath
 import shutil
@@ -21,6 +22,7 @@ SOURCE_NAME = f"{ASSET_STEM}-v{VERSION}-paper-source.tar.gz"
 CHECKSUMS_NAME = "SHA256SUMS"
 DEFAULT_PDF = PROJECT_ROOT / "build/paper/main.pdf"
 DEFAULT_OUTPUT_DIR = PROJECT_ROOT / f"dist/release/v{VERSION}"
+RELEASE_METADATA = PROJECT_ROOT / "release.json"
 EXPECTED_SOURCE_MEMBERS = {
     archive_name for _, archive_name in SOURCE_MAP
 } | {"MANIFEST.sha256"}
@@ -102,7 +104,42 @@ def _read_checksums(path: Path) -> dict[str, str]:
     return entries
 
 
-def verify_release_assets(output_dir: Path = DEFAULT_OUTPUT_DIR) -> dict[str, str]:
+def _verify_release_metadata(paths: dict[str, Path], metadata_path: Path) -> None:
+    _require_regular_file(metadata_path, "release metadata")
+    metadata = json.loads(metadata_path.read_text(encoding="ascii"))
+    if metadata.get("version") != VERSION:
+        raise ValueError("release metadata version mismatch")
+    expected = {
+        "pdf": (
+            metadata.get("pdf_name"),
+            metadata.get("pdf_size_bytes"),
+            metadata.get("pdf_sha256"),
+        ),
+        "source": (
+            metadata.get("source_archive_name"),
+            metadata.get("source_archive_size_bytes"),
+            metadata.get("source_archive_sha256"),
+        ),
+        "checksums": (
+            metadata.get("checksums_name"),
+            metadata.get("checksums_size_bytes"),
+            metadata.get("checksums_sha256"),
+        ),
+    }
+    for role, path in paths.items():
+        name, size, digest = expected[role]
+        if name != path.name:
+            raise ValueError(f"release metadata name mismatch for {role}")
+        if size != path.stat().st_size:
+            raise ValueError(f"release metadata size mismatch for {role}")
+        if digest != _sha256(path):
+            raise ValueError(f"release metadata hash mismatch for {role}")
+
+
+def verify_release_assets(
+    output_dir: Path = DEFAULT_OUTPUT_DIR,
+    metadata_path: Path | None = RELEASE_METADATA,
+) -> dict[str, str]:
     """Verify the exact release asset set and return its recorded hashes."""
 
     if output_dir.is_symlink() or not output_dir.is_dir():
@@ -136,12 +173,22 @@ def verify_release_assets(output_dir: Path = DEFAULT_OUTPUT_DIR) -> dict[str, st
 
     _validate_pdf(pdf)
     _validate_source_archive(source)
+    if metadata_path is not None:
+        _verify_release_metadata(
+            {
+                "pdf": pdf,
+                "source": source,
+                "checksums": output_dir / CHECKSUMS_NAME,
+            },
+            metadata_path,
+        )
     return checksums
 
 
 def build_release_assets(
     pdf: Path = DEFAULT_PDF,
     output_dir: Path = DEFAULT_OUTPUT_DIR,
+    metadata_path: Path | None = RELEASE_METADATA,
 ) -> Path:
     """Create the exact release asset set transactionally."""
 
@@ -167,7 +214,7 @@ def build_release_assets(
             f"{digest}  {name}\n" for name, digest in sorted(checksums.items())
         )
         (stage / CHECKSUMS_NAME).write_text(manifest, encoding="ascii")
-        verify_release_assets(stage)
+        verify_release_assets(stage, metadata_path)
 
         if output_dir.exists():
             if output_dir.is_symlink() or not output_dir.is_dir():

@@ -2,6 +2,7 @@ CXX ?= c++
 CXXFLAGS ?= -std=c++20 -O3 -Wall -Wextra -Wpedantic -Werror
 PYTHON ?= python3
 DRAT_TRIM ?= drat-trim
+TECTONIC ?= tectonic
 SOURCE_DATE_EPOCH ?= 1788739200
 
 BUILD_DIR := build
@@ -181,9 +182,9 @@ distance4-proof-check: distance4-cnf
 
 paper-build:
 	mkdir -p build/paper
-	SOURCE_DATE_EPOCH=$(SOURCE_DATE_EPOCH) \
-	latexmk -pdf -interaction=nonstopmode -halt-on-error -file-line-error \
-		-output-directory=build/paper paper/main.tex
+	SOURCE_DATE_EPOCH=$(SOURCE_DATE_EPOCH) FORCE_SOURCE_DATE=1 \
+	$(TECTONIC) -X compile paper/main.tex \
+		--outdir build/paper --keep-logs
 
 paper-bundle:
 	$(PYTHON) tools/build_arxiv_bundle.py
