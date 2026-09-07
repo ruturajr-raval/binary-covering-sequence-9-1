@@ -2,7 +2,7 @@
   "version": "0.3.1",
   "release_tag": "v0.3.1",
   "release_date": "2026-09-07",
-  "release_commit": null,
+  "release_commit": "af0933f5fbfa65828679dc685be0f478e777d545",
   "underlying_theorem_release": "v0.3.0",
   "release_version_doi": "10.5281/zenodo.22647756",
   "release_concept_doi": "10.5281/zenodo.22260691",

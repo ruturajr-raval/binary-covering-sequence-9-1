@@ -794,6 +794,7 @@ Detailed phases and acceptance rules are in
 
 - **Public repository:** [`ruturajr-raval/binary-covering-sequence-9-1`](https://github.com/ruturajr-raval/binary-covering-sequence-9-1).
 - **Tagged release:** [`v0.3.1`](https://github.com/ruturajr-raval/binary-covering-sequence-9-1/releases/tag/v0.3.1).
+- **Release commit:** `af0933f5fbfa65828679dc685be0f478e777d545`.
 - **Version archive:** Zenodo DOI
   [`10.5281/zenodo.22647756`](https://doi.org/10.5281/zenodo.22647756).
 - **Concept archive:** All versions are collected under Zenodo DOI

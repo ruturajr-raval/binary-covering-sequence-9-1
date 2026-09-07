@@ -118,6 +118,10 @@ class ReleaseAssetTests(unittest.TestCase):
         self.assertEqual(metadata["version"], VERSION)
         self.assertEqual(metadata["release_tag"], "v0.3.1")
         self.assertEqual(
+            metadata["release_commit"],
+            "af0933f5fbfa65828679dc685be0f478e777d545",
+        )
+        self.assertEqual(
             metadata["release_version_doi"],
             "10.5281/zenodo.22647756",
         )
