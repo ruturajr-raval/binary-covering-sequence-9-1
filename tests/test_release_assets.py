@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import hashlib
 import json
 from pathlib import Path
 import tempfile
@@ -7,7 +8,6 @@ import unittest
 
 from tools.build_release_assets import (
     CHECKSUMS_NAME,
-    DEFAULT_OUTPUT_DIR,
     PDF_NAME,
     RELEASE_METADATA,
     SOURCE_NAME,
@@ -18,6 +18,10 @@ from tools.build_release_assets import (
 
 
 FAKE_PDF = b"%PDF-1.7\n1 0 obj\n<<>>\nendobj\n%%EOF\n"
+
+
+def sha256(path: Path) -> str:
+    return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
 def snapshot(directory: Path) -> dict[str, bytes]:
@@ -142,22 +146,44 @@ class ReleaseAssetTests(unittest.TestCase):
             "5972bb79e1a86fd756358c45a12910a6"
             "07533227001035176496ac0aa1659ccb",
         )
-        self.assertEqual(
-            verify_release_assets(DEFAULT_OUTPUT_DIR),
-            {
-                PDF_NAME: metadata["pdf_sha256"],
-                SOURCE_NAME: metadata["source_archive_sha256"],
-            },
-        )
-
     def test_release_asset_verification_rejects_metadata_hash_mismatch(
         self,
     ) -> None:
         with tempfile.TemporaryDirectory() as directory:
-            metadata_path = Path(directory) / "release.json"
-            metadata = json.loads(
-                RELEASE_METADATA.read_text(encoding="ascii")
+            root = Path(directory)
+            pdf = root / "paper.pdf"
+            output = root / "release"
+            metadata_path = root / "release.json"
+            pdf.write_bytes(FAKE_PDF)
+            build_release_assets(pdf, output, metadata_path=None)
+
+            release_pdf = output / PDF_NAME
+            source = output / SOURCE_NAME
+            checksums = output / CHECKSUMS_NAME
+            metadata = {
+                "version": VERSION,
+                "pdf_name": PDF_NAME,
+                "pdf_size_bytes": release_pdf.stat().st_size,
+                "pdf_sha256": sha256(release_pdf),
+                "source_archive_name": SOURCE_NAME,
+                "source_archive_size_bytes": source.stat().st_size,
+                "source_archive_sha256": sha256(source),
+                "checksums_name": CHECKSUMS_NAME,
+                "checksums_size_bytes": checksums.stat().st_size,
+                "checksums_sha256": sha256(checksums),
+            }
+            metadata_path.write_text(
+                json.dumps(metadata, indent=2) + "\n",
+                encoding="ascii",
             )
+            self.assertEqual(
+                verify_release_assets(output, metadata_path),
+                {
+                    PDF_NAME: metadata["pdf_sha256"],
+                    SOURCE_NAME: metadata["source_archive_sha256"],
+                },
+            )
+
             metadata["pdf_sha256"] = "0" * 64
             metadata_path.write_text(
                 json.dumps(metadata, indent=2) + "\n",
@@ -167,7 +193,7 @@ class ReleaseAssetTests(unittest.TestCase):
                 ValueError,
                 "metadata hash mismatch",
             ):
-                verify_release_assets(DEFAULT_OUTPUT_DIR, metadata_path)
+                verify_release_assets(output, metadata_path)
 
 
 if __name__ == "__main__":
