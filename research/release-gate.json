@@ -1,8 +1,11 @@
 {
   "schema_version": 1,
   "project": "binary-covering-sequence-9-1",
-  "evaluated_at": "2026-09-05",
+  "evaluated_at": "2026-09-07",
   "candidate_claim": "For the explicit 64-edge backbone, every valid length-70 binary radius-1 covering sequence uses at most 60 distinct edges of the backbone.",
+  "underlying_theorem_release": "v0.3.0",
+  "release_candidate": "v0.3.1",
+  "release_candidate_commit": null,
   "gates": {
     "significant_original_result": true,
     "prior_art_refreshed": true,
@@ -15,9 +18,13 @@
     "claim_scope_audited": true,
     "limitations_documented": true,
     "manuscript_ready": true,
+    "compiled_pdf_built": true,
+    "paper_source_bundle_built": true,
+    "release_assets_checksummed": true,
+    "archival_patch_scope_documented": true,
     "external_review_invited": true,
     "external_review_completed": false
   },
-  "decision": "released_and_archived_scoped_result",
-  "reason": "The scoped theorem, retained certificates, independent implementation, semantic validators, manuscript, clean standalone replay, tagged GitHub release, and Zenodo archive are complete. No external mathematical review is claimed."
+  "decision": "release",
+  "reason": "The v0.3.1 candidate is ready as a paper-inclusive archival and documentation patch. It adds a verified PDF, deterministic source bundle, and checksums without changing the theorem, proof, certificates, data, or computations."
 }

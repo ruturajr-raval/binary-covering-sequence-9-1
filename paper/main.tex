@@ -2,11 +2,9 @@
 
 \usepackage[margin=1in]{geometry}
 \usepackage{amsmath,amssymb,amsthm}
-\usepackage{array}
 \usepackage{booktabs}
-\usepackage{longtable}
-\usepackage{microtype}
 \usepackage[hidelinks]{hyperref}
+\usepackage{microtype}
 
 \newtheorem{theorem}{Theorem}
 \newtheorem{lemma}[theorem]{Lemma}
@@ -23,16 +21,41 @@
 \newcommand{\divg}{\operatorname{div}}
 \newcommand{\ov}{\operatorname{ov}}
 
-\title{A Fixed-Backbone Exclusion for Length-70 Binary
-  $(9,1)$ Covering Sequences}
-\author{Ruturaj R Raval\\
-  Independent Researcher\\
-  \href{https://orcid.org/0000-0003-4930-8981}
-  {ORCID: 0000-0003-4930-8981}}
-\date{September 2026}
-
 \begin{document}
-\maketitle
+\ifdefined\XeTeXversion
+\fontencoding{TU}\fontfamily{lmr}\selectfont
+\DeclareFontShape{TU}{lmr}{m}{n}
+  {<-> \UnicodeFontFile{lmroman10-regular}{\UnicodeFontTeXLigatures}}{}
+\DeclareFontShape{TU}{lmr}{m}{it}
+  {<-> \UnicodeFontFile{lmroman10-italic}{\UnicodeFontTeXLigatures}}{}
+\DeclareFontShape{TU}{lmr}{m}{sl}{<->sub * lmr/m/it}{}
+\DeclareFontShape{TU}{lmr}{m}{sc}{<->sub * lmr/m/n}{}
+\DeclareFontShape{TU}{lmr}{b}{n}
+  {<-> \UnicodeFontFile{lmroman10-bold}{\UnicodeFontTeXLigatures}}{}
+\DeclareFontShape{TU}{lmr}{bx}{n}
+  {<-> \UnicodeFontFile{lmroman10-bold}{\UnicodeFontTeXLigatures}}{}
+\DeclareFontShape{TU}{lmr}{b}{it}{<->sub * lmr/b/n}{}
+\DeclareFontShape{TU}{lmr}{bx}{it}{<->sub * lmr/bx/n}{}
+\DeclareFontFamily{TU}{lmtt}{}
+\DeclareFontShape{TU}{lmtt}{m}{n}
+  {<-> \UnicodeFontFile{lmmono10-regular}{\UnicodeFontTeXLigatures}}{}
+\DeclareFontShape{OT1}{cmr}{m}{n}{<-> cmr10}{}
+\DeclareFontShape{OML}{cmm}{m}{it}{<-> cmmi10}{}
+\DeclareFontShape{OMS}{cmsy}{m}{n}{<-> cmsy10}{}
+\DeclareFontShape{OMX}{cmex}{m}{n}{<-> cmex10}{}
+\fi
+\begin{center}
+{\Large A Fixed-Backbone Exclusion for Length-70 Binary
+  $(9,1)$ Covering Sequences\par}
+\vspace{1.5em}
+Ruturaj R Raval\\
+Independent Researcher\\
+\href{https://orcid.org/0000-0003-4930-8981}
+  {ORCID: 0000-0003-4930-8981}\\
+\vspace{1em}
+September 2026
+\end{center}
+\vspace{1.5em}
 
 \begin{abstract}
 A binary $(n,R)$ covering sequence is a cyclic binary word whose
@@ -404,20 +427,17 @@ leave the eight vectors in Table~\ref{tab:completions}.  Direct Hamming
 coverage checks give the listed uncovered sets, none empty.
 \end{proof}
 
-\begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.13\textwidth}
-  >{\raggedright\arraybackslash}p{0.38\textwidth}
-  >{\raggedright\arraybackslash}p{0.38\textwidth}@{}}
+\begin{table}[p]
+\centering
+\small
 \caption{The eight connected overlap-61 completions.  All residual edge
 multiplicities are one.  Integers encode binary 9-words.}
-\label{tab:completions}\\
+\label{tab:completions}
+\begin{tabular}{@{}p{0.13\textwidth}p{0.38\textwidth}
+  p{0.38\textwidth}@{}}
 \toprule
 Omitted $E$ & Residual edges & Uncovered words\\
 \midrule
-\endfirsthead
-\toprule
-Omitted $E$ & Residual edges & Uncovered words\\
-\midrule
-\endhead
 13, 307, 409 &
 12, 25, 51, 97, 195, 269, 304, 390, 408 &
 5, 15, 141, 311, 315, 401, 411, 413, 435\\
@@ -443,7 +463,8 @@ Omitted $E$ & Residual edges & Uncovered words\\
 25, 51, 97, 194, 268, 304, 390, 408, 451 &
 311, 315, 322, 401, 411, 413, 435, 448, 458\\
 \bottomrule
-\end{longtable}
+\end{tabular}
+\end{table}
 
 \begin{corollary}
 \label{cor:cover}

@@ -33,6 +33,11 @@ The exact-overlap-61 result meets this standard through two full
 implementations, semantic validation of every retained residual, direct
 small-instance oracles, and byte-for-byte evidence replay.
 
+Release `v0.3.1` is a paper-inclusive archival and documentation patch. It
+adds an explicitly named compiled PDF, deterministic source bundle, and
+`SHA256SUMS`; the theorem, proof, certificates, data, and computations remain
+unchanged.
+
 ## Publication Standard
 
 A result is ready for publication only when it provides at least one of:

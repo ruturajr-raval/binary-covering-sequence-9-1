@@ -11,7 +11,7 @@ authors:
 repository-code: "https://github.com/ruturajr-raval/binary-covering-sequence-9-1"
 identifiers:
   - type: doi
-    value: "10.5281/zenodo.22313901"
+    value: "10.5281/zenodo.22647756"
 keywords:
   - covering sequences
   - covering codes
@@ -19,8 +19,8 @@ keywords:
   - extremal combinatorics
   - computer-assisted proof
 license: MIT
-version: 0.3.0
-date-released: 2026-09-05
+version: 0.3.1
+date-released: 2026-09-07
 preferred-citation:
   type: article
   title: "A Fixed-Backbone Exclusion for Length-70 Binary (9,1) Covering Sequences"

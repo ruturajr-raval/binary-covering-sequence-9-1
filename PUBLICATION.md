@@ -1,4 +1,4 @@
-# Release Dossier v0.3.0
+# Release Dossier v0.3.1
 
 ## Release Identity
 
@@ -8,12 +8,14 @@
 | Author | Ruturaj R Raval |
 | Affiliation | Independent Researcher |
 | ORCID | [0000-0003-4930-8981](https://orcid.org/0000-0003-4930-8981) |
-| Tagged release | [`v0.3.0`](https://github.com/ruturajr-raval/binary-covering-sequence-9-1/releases/tag/v0.3.0) |
-| Release date | 2026-09-05 |
-| Audited release commit | `23563e82bc2466cbc88177c6c0a7d830061d687c` |
-| Version DOI | [`10.5281/zenodo.22313901`](https://doi.org/10.5281/zenodo.22313901) |
+| Tagged release | [`v0.3.1`](https://github.com/ruturajr-raval/binary-covering-sequence-9-1/releases/tag/v0.3.1) |
+| Release date | 2026-09-07 |
+| Release commit | Pending until the `v0.3.1` tag is created |
+| Archive status | Paper-inclusive Zenodo successor draft reserved; publication pending |
+| Underlying theorem release | `v0.3.0` |
+| Version DOI | [`10.5281/zenodo.22647756`](https://doi.org/10.5281/zenodo.22647756) |
 | Concept DOI | [`10.5281/zenodo.22260691`](https://doi.org/10.5281/zenodo.22260691) |
-| Archive status | Published Zenodo record with source and PDF asset hashes in `release.json` |
+| Patch type | Paper-inclusive archival and documentation patch |
 | License | MIT for project-original material |
 
 ## Claim-Safe Public Summary
@@ -25,10 +27,16 @@ every valid length-70 cover, if one exists, has backbone overlap at most 60.
 This does not construct or globally exclude a 70-bit covering sequence and
 does not change `62 <= L(9,1) <= 71`.
 
+Release `v0.3.1` adds an explicitly named compiled paper PDF, deterministic
+paper-source archive, and checksum manifest. The theorem, proof,
+certificates, data, computations, and claim boundary are unchanged from
+`v0.3.0`.
+
 ## Supported Result
 
-This release provides the preprint and reproducible certificate for a
-fixed-backbone exclusion at length 70.
+The underlying theorem release provides the preprint and reproducible
+certificate for a fixed-backbone exclusion at length 70. This patch changes
+only archival packaging, paper build portability, and documentation.
 
 Let `B` be the explicit 64-edge support retained in the repository. Every
 connected nonnegative integral circulation of total mass 70 uses at most 61
@@ -74,20 +82,32 @@ classifications, and compares the two overlap-61 implementations.
 
 ## Manifest And Asset Verification
 
-Use `release-manifest.sha256` from a clean checkout of tag `v0.3.0` to verify
-the tracked release files. `release.json` records the audited release commit
-and the SHA-256 values for the deterministic source archive and generated PDF.
+Use `release-manifest.sha256` from a clean checkout of tag `v0.3.1` to verify
+the tracked release files. Run `make paper-release` followed by
+`make verify-release-assets` to build and authenticate the exact three-file
+set in `dist/release/v0.3.1/`.
+
+| Asset | Bytes | SHA-256 |
+| --- | ---: | --- |
+| `binary-covering-sequence-9-1-v0.3.1-paper.pdf` | 67,128 | `7757034a04177ab4b42f8ad0f651fecc1b11b50dad27570d06f8bf9d9e6b5872` |
+| `binary-covering-sequence-9-1-v0.3.1-paper-source.tar.gz` | 92,036 | `e578decc5cea739c9783f8238a12a73ff5bd462b15474340589b62d61330aab0` |
+| `SHA256SUMS` | 234 | `5972bb79e1a86fd756358c45a12910a607533227001035176496ac0aa1659ccb` |
+
+`release.json` records these names, sizes, SHA-256 values, both DOI values,
+and the unchanged mathematical scope.
 The retained classification snapshots and their own manifests are under:
 
 - `evidence/common-backbone-lemma-20260905/`; and
 - `evidence/exact-backbone-overlap61-20260905/`.
 
-The local release record does not contain a separate digest for the
-Zenodo-generated `v0.3.0` repository ZIP, so no such digest is asserted here.
+No digest is asserted for a platform-generated repository ZIP. The explicit
+PDF and source archive above are the canonical paper assets for this patch.
 
 ## Claim Boundary
 
-This release claims:
+The mathematical claim is unchanged from `v0.3.0`. This archival patch does
+not claim a new theorem, proof, certificate, data set, or computation. The
+underlying result claims:
 
 - the exact overlap ceiling `61` for the stated backbone at total mass 70;
 - the complete classification of the overlap-61 shell; and
@@ -125,9 +145,9 @@ The self-contained manuscript is in `paper/main.tex`. The deterministic arXiv
 source archive is built at
 `dist/arxiv/binary-covering-sequence-9-1.tar.gz`.
 
-Citation metadata is in `CITATION.cff`. The exact v0.3.0 release is archived
-at version DOI
-[10.5281/zenodo.22313901](https://doi.org/10.5281/zenodo.22313901).
+Citation metadata is in `CITATION.cff`. The paper-inclusive `v0.3.1` patch is
+identified by version DOI
+[10.5281/zenodo.22647756](https://doi.org/10.5281/zenodo.22647756).
 All repository versions are collected under the concept DOI
 [10.5281/zenodo.22260691](https://doi.org/10.5281/zenodo.22260691).
 

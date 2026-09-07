@@ -2,6 +2,7 @@ CXX ?= c++
 CXXFLAGS ?= -std=c++20 -O3 -Wall -Wextra -Wpedantic -Werror
 PYTHON ?= python3
 DRAT_TRIM ?= drat-trim
+SOURCE_DATE_EPOCH ?= 1788739200
 
 BUILD_DIR := build
 SEARCH_BIN := $(BUILD_DIR)/cover-search
@@ -14,7 +15,8 @@ DISTANCE4_PROOF := $(BUILD_DIR)/l9-r1-70-distance4-core.drat
 	analyze-backbone analyze-exact-overlap verify-publication search-smoke \
 	breakout-smoke ejection-smoke cnf pattern-cnf pattern-neighborhood-cnf \
 	exact-support-cnf backbone-overlap-cnf distance4-cnf \
-	distance4-proof-check paper-build paper-bundle paper-replay clean
+	distance4-proof-check paper-build paper-bundle paper-release \
+	verify-release-assets paper-replay clean
 
 all: build
 
@@ -179,11 +181,18 @@ distance4-proof-check: distance4-cnf
 
 paper-build:
 	mkdir -p build/paper
+	SOURCE_DATE_EPOCH=$(SOURCE_DATE_EPOCH) \
 	latexmk -pdf -interaction=nonstopmode -halt-on-error -file-line-error \
 		-output-directory=build/paper paper/main.tex
 
 paper-bundle:
 	$(PYTHON) tools/build_arxiv_bundle.py
+
+paper-release: paper-build
+	$(PYTHON) -m tools.build_release_assets
+
+verify-release-assets:
+	$(PYTHON) -m tools.build_release_assets --verify-only
 
 paper-replay: paper-bundle
 	CXX="$(CXX)" $(PYTHON) tools/replay_arxiv_bundle.py

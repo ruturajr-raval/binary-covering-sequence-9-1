@@ -3,6 +3,7 @@
 __pycache__/
 *.pyc
 build/
+dist/release/
 search-results/
 /.research-artifacts/
 *.cnf

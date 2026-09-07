@@ -74,4 +74,4 @@ https://github.com/ruturajr-raval/binary-covering-sequence-9-1
 Concept DOI:
 https://doi.org/10.5281/zenodo.22260691
 
-Release: v0.3.0
+Release: v0.3.1

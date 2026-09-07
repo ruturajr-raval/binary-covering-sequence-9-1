@@ -2,6 +2,19 @@
 
 These notes summarize the claim boundary of every tagged public release.
 
+## [v0.3.1](https://github.com/ruturajr-raval/binary-covering-sequence-9-1/releases/tag/v0.3.1) - 2026-09-07
+
+- Added an explicitly named compiled paper PDF, deterministic paper-source
+  archive, and `SHA256SUMS` for GitHub and Zenodo.
+- Simplified optional LaTeX table dependencies and added an XeTeX-only cached
+  font fallback so the current paper can be rebuilt offline without changing
+  its statements or data.
+- This is an archival and documentation patch. The theorem, proof,
+  certificates, data, computations, and claim boundary are unchanged from
+  `v0.3.0`.
+- Assigned version DOI `10.5281/zenodo.22647756`; the stable concept DOI
+  remains `10.5281/zenodo.22260691`.
+
 ## [v0.3.0](https://github.com/ruturajr-raval/binary-covering-sequence-9-1/releases/tag/v0.3.0) - 2026-09-05
 
 - Added the self-contained preprint, deterministic source archive, current

@@ -32,13 +32,31 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
       - run: sudo apt-get update
       - run: sudo apt-get install -y latexmk texlive-latex-extra
-      - run: make paper-build
       - run: make paper-bundle
+      - run: make paper-release
+      - run: make verify-release-assets
       - run: tar -tzf dist/arxiv/binary-covering-sequence-9-1.tar.gz
       - run: mkdir -p build/arxiv-extracted
       - run: tar -xzf dist/arxiv/binary-covering-sequence-9-1.tar.gz -C build/arxiv-extracted
       - run: latexmk -pdf -interaction=nonstopmode -halt-on-error -file-line-error main.tex
         working-directory: build/arxiv-extracted
+      - name: Rebuild PDF from release source archive
+        run: |
+          mkdir -p build/release-source-replay
+          tar -xzf \
+            dist/release/v0.3.1/binary-covering-sequence-9-1-v0.3.1-paper-source.tar.gz \
+            -C build/release-source-replay
+          cd build/release-source-replay
+          SOURCE_DATE_EPOCH=1788739200 \
+            latexmk -pdf -interaction=nonstopmode -halt-on-error \
+              -file-line-error main.tex
+          cmp main.pdf \
+            ../../dist/release/v0.3.1/binary-covering-sequence-9-1-v0.3.1-paper.pdf
+      - name: Assert committed paper assets are current
+        run: |
+          git diff --exit-code -- \
+            dist/arxiv/binary-covering-sequence-9-1.tar.gz \
+            dist/release/v0.3.1
 
   artifact-replay:
     runs-on: ubuntu-24.04
